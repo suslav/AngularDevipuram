@@ -2,16 +2,17 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
-import { SvcAnswer } from './svcanswer';
+import { IProduct } from './product';
 
 @Component({
-    templateUrl: './app/courses/srividyaone.component.html'
+    templateUrl: './app/products/product-edit-info.component.html'
 })
-export class SrividyaOneComponent implements OnInit {
+export class ProductEditInfoComponent implements OnInit {
     @ViewChild(NgForm) productForm: NgForm;
 
-    errorMessage: string;   
-    product: SvcAnswer;
+    errorMessage: string;
+    //product = { id: 1, productName: 'test', productCode: 'test' };
+    product: IProduct;
 
     constructor(private route: ActivatedRoute) { }
 

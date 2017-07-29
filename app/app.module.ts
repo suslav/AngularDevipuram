@@ -30,8 +30,11 @@ import { DailyscheduleComponent } from './dailyschedule/dailyschedule.component'
 import { PhotogalleryComponent } from './photogallery/photogallery.component';
 import { SrividyaComponent } from './srividya/srividya.component';
 import { PageNotFoundComponent } from './page-not-found.component';
-import { CoursesComponent } from './courses/courses.component';
+//import { CoursesComponent } from './courses/courses.component';
 
+
+import { CoursesModule } from './courses/courses.module';
+import { ProductModule } from './products/product.module';
 
 @NgModule({
     imports: [
@@ -40,6 +43,8 @@ import { CoursesComponent } from './courses/courses.component';
         HttpModule,
        // routing
         AppRoutingModule
+        , CoursesModule
+        , ProductModule
     ],
     declarations: [
         AppComponent,
@@ -54,8 +59,8 @@ import { CoursesComponent } from './courses/courses.component';
         DailyscheduleComponent,
         PhotogalleryComponent,
         SrividyaComponent,
-        PageNotFoundComponent,
-        CoursesComponent
+        PageNotFoundComponent
+        //,CoursesComponent
     ],
     providers: [
         AuthGuard,

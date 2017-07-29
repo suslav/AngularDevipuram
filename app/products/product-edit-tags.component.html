@@ -1,18 +1,16 @@
-
-
 <div class="panel-body">
     <form class="form-horizontal"
           novalidate>
         <fieldset>
             <legend>Product Search Tags</legend>
-            <div class="form-group"
-                 [ngClass]="{'has-error': (categoryVar.touched ||
-                                              categoryVar.dirty || product.id !== 0) &&
+            <div class="form-group" 
+                    [ngClass]="{'has-error': (categoryVar.touched || 
+                                              categoryVar.dirty || product.id !== 0) && 
                                               !categoryVar.valid }">
                 <label class="col-md-2 control-label" for="categoryId">Category</label>
                 <div class="col-md-8">
-                    <input class="form-control"
-                           id="categoryId"
+                    <input class="form-control" 
+                           id="categoryId" 
                            type="text"
                            placeholder="Category (required)"
                            required
@@ -32,14 +30,15 @@
                     </span>
                 </div>
             </div>
-            <div class="form-group"
-                 [ngClass]="{'has-error': (tagVar.touched ||
-                                              tagVar.dirty || product.id !== 0) &&
+
+            <div class="form-group" 
+                    [ngClass]="{'has-error': (tagVar.touched || 
+                                              tagVar.dirty || product.id !== 0) && 
                                               !tagVar.valid }">
                 <label class="col-md-2 control-label" for="tagsId">Search Tags</label>
                 <div class="col-md-8">
-                    <input class="form-control"
-                           id="tagsId"
+                    <input class="form-control" 
+                           id="tagsId" 
                            type="text"
                            placeholder="Search keywords separated by commas"
                            minlength="3"
