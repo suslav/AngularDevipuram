@@ -7,7 +7,6 @@ import { SvcAnswer } from './svcanswer';
     templateUrl: './app/courses/srividyatwo.component.html'
 })
 export class SrividyatwoComponent implements OnInit {
-    //@ViewChild(NgForm) productForm: NgForm;
     errorMessage: string;
     newTags = '';  
     product: SvcAnswer;
@@ -22,16 +21,13 @@ export class SrividyatwoComponent implements OnInit {
         });
 
     }
-
-    // Add the defined tags
+   
     addTags(): void {
-        let tagArray = this.newTags.split(',');
-       // this.product.tags = this.product.tags ? this.product.tags.concat(tagArray) : tagArray;
+        let tagArray = this.newTags.split(',');     
         this.newTags = '';
     }
 
-    // Remove the tag from the array of tags.
+
     removeTag(idx: number): void {
-        //this.product.tags.splice(idx, 1);
     }
 }

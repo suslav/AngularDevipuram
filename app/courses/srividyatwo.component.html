@@ -1,78 +1,131 @@
-
-
 <div class="panel-body">
     <form class="form-horizontal"
           novalidate>
         <fieldset>
-            <legend>Product Search Tags</legend>
-            <div class="form-group"
-                 [ngClass]="{'has-error': (categoryVar.touched ||
-                                              categoryVar.dirty || product.id !== 0) &&
-                                              !categoryVar.valid }">
-                <label class="col-md-2 control-label" for="categoryId">Category</label>
+            <legend>Sri Vidya Form Part2</legend>
+         
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="descriptionId">*Health: As we do not have any medical assistance here you may have to inform us
+if any special attention is required.  </label>
                 <div class="col-md-8">
-                    <input class="form-control"
-                           id="categoryId"
-                           type="text"
-                           placeholder="Category (required)"
-                           required
-                           minlength="3"
-                           [(ngModel)]="product.category"
-                           name="category"
-                           #categoryVar="ngModel" />
-                    <span class="help-block" *ngIf="(categoryVar.touched ||
-                                                     categoryVar.dirty || product.id !== 0) &&
-                                                     categoryVar.errors">
-                        <span *ngIf="categoryVar.errors.required">
-                            A category must be entered.
-                        </span>
-                        <span *ngIf="categoryVar.errors.minlength">
-                            The category must be at least 3 characters in length.
-                        </span>
-                    </span>
+                    <textarea class="form-control"
+                              id="descriptionId"
+                              placeholder="Description"
+                              rows=3
+                              [(ngModel)]=product.description
+                              name="description"></textarea>
                 </div>
             </div>
-            <div class="form-group"
-                 [ngClass]="{'has-error': (tagVar.touched ||
-                                              tagVar.dirty || product.id !== 0) &&
-                                              !tagVar.valid }">
-                <label class="col-md-2 control-label" for="tagsId">Search Tags</label>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="descriptionId">
+                    How did you come to know about DEVIPURAM and the Courses?
+                </label>
                 <div class="col-md-8">
-                    <input class="form-control"
-                           id="tagsId"
-                           type="text"
-                           placeholder="Search keywords separated by commas"
-                           minlength="3"
-                           [(ngModel)]="newTags"
-                           name="tags"
-                           #tagVar="ngModel" />
-                    <span class="help-block" *ngIf="(tagVar.touched ||
-                                                     tagVar.dirty || product.id !== 0) &&
-                                                     tagVar.errors">
-                        <span *ngIf="tagVar.errors.minlength">
-                            The search tag must be at least 3 characters in length.
-                        </span>
-                    </span>
-                </div>
-                <div class="col-md-1">
-                    <button type="button"
-                            class="btn btn-default"
-                            (click)="addTags()">
-                        Add
-                    </button>
+                    <textarea class="form-control"
+                              id="descriptionId"
+                              placeholder="Description"
+                              rows=3
+                              [(ngModel)]=product.description
+                              name="description"></textarea>
                 </div>
             </div>
-            <div class="row col-md-8 col-md-offset-2">
-                <span *ngFor="let tag of product.tags; let i = index">
-                    <button class="btn btn-default"
-                            style="font-size:smaller;margin-bottom:12px"
-                            (click)="removeTag(i)">
-                        {{tag}}
-                        <span class="glyphicon glyphicon-remove"></span>
-                    </button>
-                </span>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="descriptionId">
+                    Have you taken Deeksha from anybody? If ‘YES’ from Whom?
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control"
+                              id="descriptionId"
+                              placeholder="Description"
+                              rows=3
+                              [(ngModel)]=product.description
+                              name="description"></textarea>
+                </div>
             </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="descriptionId">
+                    Preference of language to learn the course. English / Telugu / Hindi / others
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control"
+                              id="descriptionId"
+                              placeholder="Description"
+                              rows=3
+                              [(ngModel)]=product.description
+                              name="description"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="descriptionId">
+                    YES / NO
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control"
+                              id="descriptionId"
+                              placeholder="Description"
+                              rows=3
+                              [(ngModel)]=product.description
+                              name="description"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="descriptionId">
+                    Want to be considered for SVC - Advanced Course (in future) at Devipuram. 
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control"
+                              id="descriptionId"
+                              placeholder="Description"
+                              rows=3
+                              [(ngModel)]=product.description
+                              name="description"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="descriptionId">
+                    At present your proficiency into Spirituality / Sadhana / Upasana?
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control"
+                              id="descriptionId"
+                              placeholder="Description"
+                              rows=3
+                              [(ngModel)]=product.description
+                              name="description"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="descriptionId">
+                    Please mention your aim and objective in learning the course/s.
+                    Personal practice / to teach / earn livelihood / just curiosity / any other ?
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control"
+                              id="descriptionId"
+                              placeholder="Description"
+                              rows=3
+                              [(ngModel)]=product.description
+                              name="description"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="descriptionId">
+                    Willing to make some voluntary contribution to improve facilities at Devipuram?
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control"
+                              id="descriptionId"
+                              placeholder="Description"
+                              rows=3
+                              [(ngModel)]=product.description
+                              name="description"></textarea>
+                </div>
+            </div>
+
+           
             <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
         </fieldset>
     </form>
-</div>
+</div> 

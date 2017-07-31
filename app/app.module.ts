@@ -34,17 +34,17 @@ import { PageNotFoundComponent } from './page-not-found.component';
 
 
 import { CoursesModule } from './courses/courses.module';
-import { ProductModule } from './products/product.module';
+//import { ProductModule } from './products/product.module';
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
-       // routing
-        AppRoutingModule
-        , CoursesModule
-        , ProductModule
+       // routing        
+        CoursesModule
+       // , ProductModule
+        ,AppRoutingModule
     ],
     declarations: [
         AppComponent,

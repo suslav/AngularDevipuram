@@ -1,11 +1,9 @@
-
-
- <!--<div class="panel-body">
+<div class="panel-body">
     <form class="form-horizontal"
           novalidate
           #productForm="ngForm">
         <fieldset>
-            <legend>Sri Vidya Form</legend>
+            <legend>Sri Vidya Form Part1</legend>
             <div class="form-group"
                  [ngClass]="{'has-error': (productNameVar.touched ||
                                               productNameVar.dirty || product.id !== 0) &&
@@ -44,7 +42,7 @@
                     <input class="form-control"
                            id="productCodeId"
                            type="text"
-                           placeholder="Code (required)"
+                           placeholder="AGE (required)"
                            required
                            [(ngModel)]=product.productCode
                            name="productCode"
@@ -53,24 +51,250 @@
                                                      productCodeVar.dirty || product.id !== 0) &&
                                                      productCodeVar.errors">
                         <span *ngIf="productCodeVar.errors.required">
-                            Product code is required.
+                            AGE required.
                         </span>
                     </span>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="col-md-2 control-label" for="descriptionId">Description</label>
+            <div class="form-group"
+                 [ngClass]="{'has-error': (productCodeVar.touched ||
+                                              productCodeVar.dirty || product.id !== 0) &&
+                                              !productCodeVar.valid }">
+                <label class="col-md-2 control-label" for="productCodeId">GENDER</label>
                 <div class="col-md-8">
-                    <textarea class="form-control"
-                              id="descriptionId"
-                              placeholder="Description"
-                              rows=3
-                              [(ngModel)]=product.description
-                              name="description"></textarea>
+                    <input class="form-control"
+                           id="productCodeId"
+                           type="text"
+                           placeholder="GENDER (required)"
+                           required
+                           [(ngModel)]=product.productCode
+                           name="productCode"
+                           #productCodeVar="ngModel" />
+                    <span class="help-block" *ngIf="(productCodeVar.touched ||
+                                                     productCodeVar.dirty || product.id !== 0) &&
+                                                     productCodeVar.errors">
+                        <span *ngIf="productCodeVar.errors.required">
+                            GENDER required.
+                        </span>
+                    </span>
                 </div>
             </div>
+
+            <div class="form-group"
+                 [ngClass]="{'has-error': (productCodeVar.touched ||
+                                              productCodeVar.dirty || product.id !== 0) &&
+                                              !productCodeVar.valid }">
+                <label class="col-md-2 control-label" for="productCodeId"> Son/of. or Dtr/of. or Wife/of </label>
+                <div class="col-md-8">
+                    <input class="form-control"
+                           id="productCodeId"
+                           type="text"
+                           placeholder="(required)"
+                           required
+                           [(ngModel)]=product.productCode
+                           name="productCode"
+                           #productCodeVar="ngModel" />
+                    <span class="help-block" *ngIf="(productCodeVar.touched ||
+                                                     productCodeVar.dirty || product.id !== 0) &&
+                                                     productCodeVar.errors">
+                        <span *ngIf="productCodeVar.errors.required">
+                            required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group"
+                 [ngClass]="{'has-error': (productCodeVar.touched ||
+                                              productCodeVar.dirty || product.id !== 0) &&
+                                              !productCodeVar.valid }">
+                <label class="col-md-2 control-label" for="productCodeId"> Place & Country </label>
+                <div class="col-md-8">
+                    <input class="form-control"
+                           id="productCodeId"
+                           type="text"
+                           placeholder="(required)"
+                           required
+                           [(ngModel)]=product.productCode
+                           name="productCode"
+                           #productCodeVar="ngModel" />
+                    <span class="help-block" *ngIf="(productCodeVar.touched ||
+                                                     productCodeVar.dirty || product.id !== 0) &&
+                                                     productCodeVar.errors">
+                        <span *ngIf="productCodeVar.errors.required">
+                            required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group"
+                 [ngClass]="{'has-error': (productCodeVar.touched ||
+                                              productCodeVar.dirty || product.id !== 0) &&
+                                              !productCodeVar.valid }">
+                <label class="col-md-2 control-label" for="productCodeId"> Nationality (Together/ Others) </label>
+                <div class="col-md-8">
+                    <input class="form-control"
+                           id="productCodeId"
+                           type="text"
+                           placeholder="(required)"
+                           required
+                           [(ngModel)]=product.productCode
+                           name="productCode"
+                           #productCodeVar="ngModel" />
+                    <span class="help-block" *ngIf="(productCodeVar.touched ||
+                                                     productCodeVar.dirty || product.id !== 0) &&
+                                                     productCodeVar.errors">
+                        <span *ngIf="productCodeVar.errors.required">
+                            required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group"
+                 [ngClass]="{'has-error': (productCodeVar.touched ||
+                                              productCodeVar.dirty || product.id !== 0) &&
+                                              !productCodeVar.valid }">
+                <label class="col-md-2 control-label" for="productCodeId"> Marital Status: Single/Married/Separated/Living  </label>
+                <div class="col-md-8">
+                    <input class="form-control"
+                           id="productCodeId"
+                           type="text"
+                           placeholder="(required)"
+                           required
+                           [(ngModel)]=product.productCode
+                           name="productCode"
+                           #productCodeVar="ngModel" />
+                    <span class="help-block" *ngIf="(productCodeVar.touched ||
+                                                     productCodeVar.dirty || product.id !== 0) &&
+                                                     productCodeVar.errors">
+                        <span *ngIf="productCodeVar.errors.required">
+                            required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 [ngClass]="{'has-error': (productCodeVar.touched ||
+                                              productCodeVar.dirty || product.id !== 0) &&
+                                              !productCodeVar.valid }">
+                <label class="col-md-2 control-label" for="productCodeId">  E Mail ID  </label>
+                <div class="col-md-8">
+                    <input class="form-control"
+                           id="productCodeId"
+                           type="text"
+                           placeholder="(required)"
+                           required
+                           [(ngModel)]=product.productCode
+                           name="productCode"
+                           #productCodeVar="ngModel" />
+                    <span class="help-block" *ngIf="(productCodeVar.touched ||
+                                                     productCodeVar.dirty || product.id !== 0) &&
+                                                     productCodeVar.errors">
+                        <span *ngIf="productCodeVar.errors.required">
+                            required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 [ngClass]="{'has-error': (productCodeVar.touched ||
+                                              productCodeVar.dirty || product.id !== 0) &&
+                                              !productCodeVar.valid }">
+                <label class="col-md-2 control-label" for="productCodeId"> Mobile Ph  </label>
+                <div class="col-md-8">
+                    <input class="form-control"
+                           id="productCodeId"
+                           type="text"
+                           placeholder="(required)"
+                           required
+                           [(ngModel)]=product.productCode
+                           name="productCode"
+                           #productCodeVar="ngModel" />
+                    <span class="help-block" *ngIf="(productCodeVar.touched ||
+                                                     productCodeVar.dirty || product.id !== 0) &&
+                                                     productCodeVar.errors">
+                        <span *ngIf="productCodeVar.errors.required">
+                            required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 [ngClass]="{'has-error': (productCodeVar.touched ||
+                                              productCodeVar.dirty || product.id !== 0) &&
+                                              !productCodeVar.valid }">
+                <label class="col-md-2 control-label" for="productCodeId"> EDUCATION  </label>
+                <div class="col-md-8">
+                    <input class="form-control"
+                           id="productCodeId"
+                           type="text"
+                           placeholder="(required)"
+                           required
+                           [(ngModel)]=product.productCode
+                           name="productCode"
+                           #productCodeVar="ngModel" />
+                    <span class="help-block" *ngIf="(productCodeVar.touched ||
+                                                     productCodeVar.dirty || product.id !== 0) &&
+                                                     productCodeVar.errors">
+                        <span *ngIf="productCodeVar.errors.required">
+                            required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 [ngClass]="{'has-error': (productCodeVar.touched ||
+                                              productCodeVar.dirty || product.id !== 0) &&
+                                              !productCodeVar.valid }">
+                <label class="col-md-2 control-label" for="productCodeId"> Expertise  </label>
+                <div class="col-md-8">
+                    <input class="form-control"
+                           id="productCodeId"
+                           type="text"
+                           placeholder="(required)"
+                           required
+                           [(ngModel)]=product.productCode
+                           name="productCode"
+                           #productCodeVar="ngModel" />
+                    <span class="help-block" *ngIf="(productCodeVar.touched ||
+                                                     productCodeVar.dirty || product.id !== 0) &&
+                                                     productCodeVar.errors">
+                        <span *ngIf="productCodeVar.errors.required">
+                            required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 [ngClass]="{'has-error': (productCodeVar.touched ||
+                                              productCodeVar.dirty || product.id !== 0) &&
+                                              !productCodeVar.valid }">
+                <label class="col-md-2 control-label" for="productCodeId"> PROFESSION: Student/ In service/ self employed/ Business/ Retired/ Others  </label>
+                <div class="col-md-8">
+                    <input class="form-control"
+                           id="productCodeId"
+                           type="text"
+                           placeholder="(required)"
+                           required
+                           [(ngModel)]=product.productCode
+                           name="productCode"
+                           #productCodeVar="ngModel" />
+                    <span class="help-block" *ngIf="(productCodeVar.touched ||
+                                                     productCodeVar.dirty || product.id !== 0) &&
+                                                     productCodeVar.errors">
+                        <span *ngIf="productCodeVar.errors.required">
+                            required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+
             <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
         </fieldset>
     </form>
-</div>--> 
+</div> 

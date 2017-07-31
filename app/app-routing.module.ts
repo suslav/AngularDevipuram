@@ -38,7 +38,9 @@ import { PageNotFoundComponent } from './page-not-found.component';
 
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: '**', component: PageNotFoundComponent }
-        ], { enableTracing: true })
+        ]
+            //,{ enableTracing: true }
+        )
     ],
     exports: [
         RouterModule

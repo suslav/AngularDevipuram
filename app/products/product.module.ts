@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { ProductListComponent } from './product-list.component';
 import { ProductDetailComponent } from './product-detail.component';
 import { ProductEditComponent } from './product-edit.component';
@@ -15,7 +18,9 @@ import { ProductResolver } from './product-resolver.service';
 
 @NgModule({
   imports: [
-    //  SharedModule,
+  //   SharedModule,
+      CommonModule,
+      FormsModule,
       RouterModule.forChild([
           {
               path: 'products',
@@ -36,7 +41,11 @@ import { ProductResolver } from './product-resolver.service';
           },
          
       ])
-  ],
+    ],
+  //exports: [
+  //    CommonModule,
+  //    FormsModule
+  //],
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
