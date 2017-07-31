@@ -14,6 +14,7 @@ import { SrividyaThreeComponent } from './srividyathree.component';
 import { SriVidyaService } from './srividya.service';
 import { SriVidyaResolver } from './srividya-resolver.service';
 //import { SharedModule } from '../shared/shared.module';
+import { AuthGuard } from '../_guards/index';
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import { SriVidyaResolver } from './srividya-resolver.service';
           {
               path: 'courses',             
               children: [
-                 { path: '', component: CoursesComponent },
+                  { path: '', component: CoursesComponent, canActivate: [AuthGuard] },
+                 //{ path: '', component: CoursesComponent },
 
                   //{
                   //    path: ':id', component: ProductDetailComponent

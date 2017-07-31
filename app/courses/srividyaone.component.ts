@@ -19,7 +19,7 @@ export class SrividyaOneComponent implements OnInit {
     constructor(private route: ActivatedRoute, private fb: FormBuilder) { }
 
     ngOnInit(): void {
-
+ 
 
         this.svoForm = this.fb.group({
             Name: ['', [Validators.required, Validators.minLength(3)]],            

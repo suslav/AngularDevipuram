@@ -38,7 +38,7 @@
                 <div class="col-md-8">
                     <input class="form-control"
                            id="AgeId"
-                           type="text"
+                           type="number"
                            placeholder="AGE (required)"
                            formControlName="Age" />
 
@@ -57,16 +57,24 @@
                        for="GenderId">GENDER</label>
 
                 <div class="col-md-8">
-                    <input class="form-control"
+                    <!--<input class="form-control"
                            id="GenderId"
                            type="text"
                            placeholder="GENDER (required)"
-                           formControlName="Gender" />
+                           formControlName="Gender" />-->
+
+                     
+                    <select formControlName="Gender" class="form-control">
+                        <!--<option value="volvo">select</option>-->
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>                      
+                    </select>
+                     
 
 
                     <span class="help-block" *ngIf="(svoForm.get('Gender').touched || svoForm.get('Gender').dirty) && svoForm.get('Gender').errors">
                         <span *ngIf="svoForm.get('Gender').errors.required">
-                            Please enter your Gender.
+                            Please select your Gender.
                         </span>
                     </span>
                 </div>
@@ -117,7 +125,8 @@
             <div class="form-group"
                  [ngClass]="{'has-error': (svoForm.get('Nationality').touched || svoForm.get('Nationality').dirty) && !svoForm.get('Nationality').valid }">
                 <label class="col-md-2 control-label"
-                       for="NationalityId">Nationality (Together/ Others)</label>
+                       for="NationalityId">Nationality: 
+                            Together/ Others</label>
 
                 <div class="col-md-8">
                     <input class="form-control"
