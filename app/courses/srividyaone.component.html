@@ -1,300 +1,268 @@
 <div class="panel-body">
     <form class="form-horizontal"
-          novalidate
-          #productForm="ngForm">
+          novalidate    [formGroup]="svoForm">      
+          <!--#productForm="ngForm"-->
+         
         <fieldset>
             <legend>Sri Vidya Form Part1</legend>
+
+
             <div class="form-group"
-                 [ngClass]="{'has-error': (productNameVar.touched ||
-                                              productNameVar.dirty || product.id !== 0) &&
-                                              !productNameVar.valid }">
+                 [ngClass]="{'has-error': (svoForm.get('Name').touched || svoForm.get('Name').dirty) && !svoForm.get('Name').valid }">
                 <label class="col-md-2 control-label"
-                       for="productNameId">Name</label>
+                       for="NameId">NAME</label>
                 <div class="col-md-8">
                     <input class="form-control"
-                           id="productNameId"
+                           id="NameId"
                            type="text"
                            placeholder="Name (required)"
-                           required
-                           minlength="3"
-                           [(ngModel)]=product.productName
-                           name="productName"
-                           #productNameVar="ngModel" />
-                    <span class="help-block" *ngIf="(productNameVar.touched ||
-                                                     productNameVar.dirty || product.id !== 0) &&
-                                                     productNameVar.errors">
-                        <span *ngIf="productNameVar.errors.required">
-                              name is required.
+                           formControlName="Name" />
+
+
+                    <span class="help-block" *ngIf="(svoForm.get('Name').touched || svoForm.get('Name').dirty) && svoForm.get('Name').errors">
+                        <span *ngIf="svoForm.get('Name').errors.required">
+                            Please enter your Name.
                         </span>
-                        <span *ngIf="productNameVar.errors.minlength">
-                              name must be at least three characters.
+                        <span *ngIf="svoForm.get('Name').errors.minlength">
+                            The Name must be longer than 3 characters.
                         </span>
                     </span>
                 </div>
             </div>
 
             <div class="form-group"
-                 [ngClass]="{'has-error': (productCodeVar.touched ||
-                                              productCodeVar.dirty || product.id !== 0) &&
-                                              !productCodeVar.valid }">
-                <label class="col-md-2 control-label" for="productCodeId">AGE</label>
+                 [ngClass]="{'has-error': (svoForm.get('Age').touched || svoForm.get('Age').dirty) && !svoForm.get('Age').valid }">
+                <label class="col-md-2 control-label"
+                       for="AgeId">AGE</label>
+
                 <div class="col-md-8">
                     <input class="form-control"
-                           id="productCodeId"
+                           id="AgeId"
                            type="text"
                            placeholder="AGE (required)"
-                           required
-                           [(ngModel)]=product.productCode
-                           name="productCode"
-                           #productCodeVar="ngModel" />
-                    <span class="help-block" *ngIf="(productCodeVar.touched ||
-                                                     productCodeVar.dirty || product.id !== 0) &&
-                                                     productCodeVar.errors">
-                        <span *ngIf="productCodeVar.errors.required">
-                            AGE required.
+                           formControlName="Age" />
+
+
+                    <span class="help-block" *ngIf="(svoForm.get('Age').touched || svoForm.get('Age').dirty) && svoForm.get('Age').errors">
+                        <span *ngIf="svoForm.get('Age').errors.required">
+                            Please enter your Age.
                         </span>
                     </span>
                 </div>
             </div>
 
             <div class="form-group"
-                 [ngClass]="{'has-error': (productCodeVar.touched ||
-                                              productCodeVar.dirty || product.id !== 0) &&
-                                              !productCodeVar.valid }">
-                <label class="col-md-2 control-label" for="productCodeId">GENDER</label>
+                 [ngClass]="{'has-error': (svoForm.get('Gender').touched || svoForm.get('Gender').dirty) && !svoForm.get('Gender').valid }">
+                <label class="col-md-2 control-label"
+                       for="GenderId">GENDER</label>
+
                 <div class="col-md-8">
                     <input class="form-control"
-                           id="productCodeId"
+                           id="GenderId"
                            type="text"
                            placeholder="GENDER (required)"
-                           required
-                           [(ngModel)]=product.productCode
-                           name="productCode"
-                           #productCodeVar="ngModel" />
-                    <span class="help-block" *ngIf="(productCodeVar.touched ||
-                                                     productCodeVar.dirty || product.id !== 0) &&
-                                                     productCodeVar.errors">
-                        <span *ngIf="productCodeVar.errors.required">
-                            GENDER required.
+                           formControlName="Gender" />
+
+
+                    <span class="help-block" *ngIf="(svoForm.get('Gender').touched || svoForm.get('Gender').dirty) && svoForm.get('Gender').errors">
+                        <span *ngIf="svoForm.get('Gender').errors.required">
+                            Please enter your Gender.
                         </span>
                     </span>
                 </div>
             </div>
 
             <div class="form-group"
-                 [ngClass]="{'has-error': (productCodeVar.touched ||
-                                              productCodeVar.dirty || product.id !== 0) &&
-                                              !productCodeVar.valid }">
-                <label class="col-md-2 control-label" for="productCodeId"> Son/of. or Dtr/of. or Wife/of </label>
+                 [ngClass]="{'has-error': (svoForm.get('Sonof').touched || svoForm.get('Sonof').dirty) && !svoForm.get('Sonof').valid }">
+                <label class="col-md-2 control-label"
+                       for="SonofId">Son/of. or Dtr/of. or Wife/of</label>
+
                 <div class="col-md-8">
                     <input class="form-control"
-                           id="productCodeId"
+                           id="SonofId"
                            type="text"
                            placeholder="(required)"
-                           required
-                           [(ngModel)]=product.productCode
-                           name="productCode"
-                           #productCodeVar="ngModel" />
-                    <span class="help-block" *ngIf="(productCodeVar.touched ||
-                                                     productCodeVar.dirty || product.id !== 0) &&
-                                                     productCodeVar.errors">
-                        <span *ngIf="productCodeVar.errors.required">
-                            required.
-                        </span>
-                    </span>
-                </div>
-            </div>
-            <div class="form-group"
-                 [ngClass]="{'has-error': (productCodeVar.touched ||
-                                              productCodeVar.dirty || product.id !== 0) &&
-                                              !productCodeVar.valid }">
-                <label class="col-md-2 control-label" for="productCodeId"> Place & Country </label>
-                <div class="col-md-8">
-                    <input class="form-control"
-                           id="productCodeId"
-                           type="text"
-                           placeholder="(required)"
-                           required
-                           [(ngModel)]=product.productCode
-                           name="productCode"
-                           #productCodeVar="ngModel" />
-                    <span class="help-block" *ngIf="(productCodeVar.touched ||
-                                                     productCodeVar.dirty || product.id !== 0) &&
-                                                     productCodeVar.errors">
-                        <span *ngIf="productCodeVar.errors.required">
-                            required.
-                        </span>
-                    </span>
-                </div>
-            </div>
-            <div class="form-group"
-                 [ngClass]="{'has-error': (productCodeVar.touched ||
-                                              productCodeVar.dirty || product.id !== 0) &&
-                                              !productCodeVar.valid }">
-                <label class="col-md-2 control-label" for="productCodeId"> Nationality (Together/ Others) </label>
-                <div class="col-md-8">
-                    <input class="form-control"
-                           id="productCodeId"
-                           type="text"
-                           placeholder="(required)"
-                           required
-                           [(ngModel)]=product.productCode
-                           name="productCode"
-                           #productCodeVar="ngModel" />
-                    <span class="help-block" *ngIf="(productCodeVar.touched ||
-                                                     productCodeVar.dirty || product.id !== 0) &&
-                                                     productCodeVar.errors">
-                        <span *ngIf="productCodeVar.errors.required">
-                            required.
-                        </span>
-                    </span>
-                </div>
-            </div>
-            <div class="form-group"
-                 [ngClass]="{'has-error': (productCodeVar.touched ||
-                                              productCodeVar.dirty || product.id !== 0) &&
-                                              !productCodeVar.valid }">
-                <label class="col-md-2 control-label" for="productCodeId"> Marital Status: Single/Married/Separated/Living  </label>
-                <div class="col-md-8">
-                    <input class="form-control"
-                           id="productCodeId"
-                           type="text"
-                           placeholder="(required)"
-                           required
-                           [(ngModel)]=product.productCode
-                           name="productCode"
-                           #productCodeVar="ngModel" />
-                    <span class="help-block" *ngIf="(productCodeVar.touched ||
-                                                     productCodeVar.dirty || product.id !== 0) &&
-                                                     productCodeVar.errors">
-                        <span *ngIf="productCodeVar.errors.required">
-                            required.
+                           formControlName="Sonof" />
+
+
+                    <span class="help-block" *ngIf="(svoForm.get('Sonof').touched || svoForm.get('Sonof').dirty) && svoForm.get('Sonof').errors">
+                        <span *ngIf="svoForm.get('Sonof').errors.required">
+                           This field is required.
                         </span>
                     </span>
                 </div>
             </div>
 
             <div class="form-group"
-                 [ngClass]="{'has-error': (productCodeVar.touched ||
-                                              productCodeVar.dirty || product.id !== 0) &&
-                                              !productCodeVar.valid }">
-                <label class="col-md-2 control-label" for="productCodeId">  E Mail ID  </label>
+                 [ngClass]="{'has-error': (svoForm.get('Place').touched || svoForm.get('Place').dirty) && !svoForm.get('Place').valid }">
+                <label class="col-md-2 control-label"
+                       for="PlaceId">Place & Country</label>
+
                 <div class="col-md-8">
                     <input class="form-control"
-                           id="productCodeId"
+                           id="PlaceId"
                            type="text"
                            placeholder="(required)"
-                           required
-                           [(ngModel)]=product.productCode
-                           name="productCode"
-                           #productCodeVar="ngModel" />
-                    <span class="help-block" *ngIf="(productCodeVar.touched ||
-                                                     productCodeVar.dirty || product.id !== 0) &&
-                                                     productCodeVar.errors">
-                        <span *ngIf="productCodeVar.errors.required">
-                            required.
+                           formControlName="Place" />
+
+
+                    <span class="help-block" *ngIf="(svoForm.get('Place').touched || svoForm.get('Place').dirty) && svoForm.get('Place').errors">
+                        <span *ngIf="svoForm.get('Place').errors.required">
+                            This field is required.
                         </span>
                     </span>
                 </div>
             </div>
 
             <div class="form-group"
-                 [ngClass]="{'has-error': (productCodeVar.touched ||
-                                              productCodeVar.dirty || product.id !== 0) &&
-                                              !productCodeVar.valid }">
-                <label class="col-md-2 control-label" for="productCodeId"> Mobile Ph  </label>
+                 [ngClass]="{'has-error': (svoForm.get('Nationality').touched || svoForm.get('Nationality').dirty) && !svoForm.get('Nationality').valid }">
+                <label class="col-md-2 control-label"
+                       for="NationalityId">Nationality (Together/ Others)</label>
+
                 <div class="col-md-8">
                     <input class="form-control"
-                           id="productCodeId"
+                           id="NationalityId"
                            type="text"
                            placeholder="(required)"
-                           required
-                           [(ngModel)]=product.productCode
-                           name="productCode"
-                           #productCodeVar="ngModel" />
-                    <span class="help-block" *ngIf="(productCodeVar.touched ||
-                                                     productCodeVar.dirty || product.id !== 0) &&
-                                                     productCodeVar.errors">
-                        <span *ngIf="productCodeVar.errors.required">
-                            required.
+                           formControlName="Nationality" />
+
+
+                    <span class="help-block" *ngIf="(svoForm.get('Nationality').touched || svoForm.get('Nationality').dirty) && svoForm.get('Nationality').errors">
+                        <span *ngIf="svoForm.get('Nationality').errors.required">
+                            This field is required.
                         </span>
                     </span>
                 </div>
             </div>
 
             <div class="form-group"
-                 [ngClass]="{'has-error': (productCodeVar.touched ||
-                                              productCodeVar.dirty || product.id !== 0) &&
-                                              !productCodeVar.valid }">
-                <label class="col-md-2 control-label" for="productCodeId"> EDUCATION  </label>
+                 [ngClass]="{'has-error': (svoForm.get('MaritalStatus').touched || svoForm.get('MaritalStatus').dirty) && !svoForm.get('MaritalStatus').valid }">
+                <label class="col-md-2 control-label"
+                       for="MaritalStatusId">Marital Status: Single/Married/Separated/Living</label>
+
                 <div class="col-md-8">
                     <input class="form-control"
-                           id="productCodeId"
+                           id="MaritalStatusId"
                            type="text"
                            placeholder="(required)"
-                           required
-                           [(ngModel)]=product.productCode
-                           name="productCode"
-                           #productCodeVar="ngModel" />
-                    <span class="help-block" *ngIf="(productCodeVar.touched ||
-                                                     productCodeVar.dirty || product.id !== 0) &&
-                                                     productCodeVar.errors">
-                        <span *ngIf="productCodeVar.errors.required">
-                            required.
+                           formControlName="MaritalStatus" />
+
+
+                    <span class="help-block" *ngIf="(svoForm.get('MaritalStatus').touched || svoForm.get('MaritalStatus').dirty) && svoForm.get('MaritalStatus').errors">
+                        <span *ngIf="svoForm.get('MaritalStatus').errors.required">
+                            This field is required.
                         </span>
                     </span>
                 </div>
             </div>
 
             <div class="form-group"
-                 [ngClass]="{'has-error': (productCodeVar.touched ||
-                                              productCodeVar.dirty || product.id !== 0) &&
-                                              !productCodeVar.valid }">
-                <label class="col-md-2 control-label" for="productCodeId"> Expertise  </label>
+                 [ngClass]="{'has-error': (svoForm.get('EMailID').touched || svoForm.get('EMailID').dirty) && !svoForm.get('EMailID').valid }">
+                <label class="col-md-2 control-label"
+                       for="EMailIDId">E Mail ID </label>
+
                 <div class="col-md-8">
                     <input class="form-control"
-                           id="productCodeId"
+                           id="EMailIDId"
                            type="text"
                            placeholder="(required)"
-                           required
-                           [(ngModel)]=product.productCode
-                           name="productCode"
-                           #productCodeVar="ngModel" />
-                    <span class="help-block" *ngIf="(productCodeVar.touched ||
-                                                     productCodeVar.dirty || product.id !== 0) &&
-                                                     productCodeVar.errors">
-                        <span *ngIf="productCodeVar.errors.required">
-                            required.
+                           formControlName="EMailID" />
+
+
+                    <span class="help-block" *ngIf="(svoForm.get('EMailID').touched || svoForm.get('EMailID').dirty) && svoForm.get('EMailID').errors">
+                        <span *ngIf="svoForm.get('EMailID').errors.required">
+                            This field is required.
                         </span>
                     </span>
                 </div>
             </div>
 
             <div class="form-group"
-                 [ngClass]="{'has-error': (productCodeVar.touched ||
-                                              productCodeVar.dirty || product.id !== 0) &&
-                                              !productCodeVar.valid }">
-                <label class="col-md-2 control-label" for="productCodeId"> PROFESSION: Student/ In service/ self employed/ Business/ Retired/ Others  </label>
+                 [ngClass]="{'has-error': (svoForm.get('MobilePh').touched || svoForm.get('MobilePh').dirty) && !svoForm.get('MobilePh').valid }">
+                <label class="col-md-2 control-label"
+                       for="MobilePhId">Mobile Ph</label>
+
                 <div class="col-md-8">
                     <input class="form-control"
-                           id="productCodeId"
+                           id="MobilePhId"
                            type="text"
                            placeholder="(required)"
-                           required
-                           [(ngModel)]=product.productCode
-                           name="productCode"
-                           #productCodeVar="ngModel" />
-                    <span class="help-block" *ngIf="(productCodeVar.touched ||
-                                                     productCodeVar.dirty || product.id !== 0) &&
-                                                     productCodeVar.errors">
-                        <span *ngIf="productCodeVar.errors.required">
-                            required.
+                           formControlName="MobilePh" />
+
+
+                    <span class="help-block" *ngIf="(svoForm.get('MobilePh').touched || svoForm.get('MobilePh').dirty) && svoForm.get('MobilePh').errors">
+                        <span *ngIf="svoForm.get('MobilePh').errors.required">
+                            This field is required.
                         </span>
                     </span>
                 </div>
             </div>
 
-            <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+            <div class="form-group"
+                 [ngClass]="{'has-error': (svoForm.get('Education').touched || svoForm.get('Education').dirty) && !svoForm.get('Education').valid }">
+                <label class="col-md-2 control-label"
+                       for="EducationId">EDUCATION</label>
+
+                <div class="col-md-8">
+                    <input class="form-control"
+                           id="EducationId"
+                           type="text"
+                           placeholder="(required)"
+                           formControlName="Education" />
+
+
+                    <span class="help-block" *ngIf="(svoForm.get('Education').touched || svoForm.get('Education').dirty) && svoForm.get('Education').errors">
+                        <span *ngIf="svoForm.get('Education').errors.required">
+                            This field is required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 [ngClass]="{'has-error': (svoForm.get('Expertise').touched || svoForm.get('Expertise').dirty) && !svoForm.get('Expertise').valid }">
+                <label class="col-md-2 control-label"
+                       for="ExpertiseId">Expertise</label>
+
+                <div class="col-md-8">
+                    <input class="form-control"
+                           id="ExpertiseId"
+                           type="text"
+                           placeholder="(required)"
+                           formControlName="Expertise" />
+
+
+                    <span class="help-block" *ngIf="(svoForm.get('Expertise').touched || svoForm.get('Expertise').dirty) && svoForm.get('Expertise').errors">
+                        <span *ngIf="svoForm.get('Expertise').errors.required">
+                            This field is required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 [ngClass]="{'has-error': (svoForm.get('Profession').touched || svoForm.get('Profession').dirty) && !svoForm.get('Profession').valid }">
+                <label class="col-md-2 control-label"
+                       for="ProfessionId">PROFESSION: Student/ In service/ self employed/ Business/ Retired/ Others</label>
+
+                <div class="col-md-8">
+                    <input class="form-control"
+                           id="ProfessionId"
+                           type="text"
+                           placeholder="(required)"
+                           formControlName="Profession" />
+
+
+                    <span class="help-block" *ngIf="(svoForm.get('Profession').touched || svoForm.get('Profession').dirty) && svoForm.get('Profession').errors">
+                        <span *ngIf="svoForm.get('Profession').errors.required">
+                            This field is required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+             
+            <!--<div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>-->
+
         </fieldset>
     </form>
 </div> 

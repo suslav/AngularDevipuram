@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+//import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { CoursesComponent } from './courses.component';
 import { SriVidyaCourseComponent } from './srividyacourse.component';
@@ -17,7 +18,8 @@ import { SriVidyaResolver } from './srividya-resolver.service';
 @NgModule({
     imports: [
         CommonModule,
-        FormsModule,
+        //FormsModule,
+        ReactiveFormsModule,
       RouterModule.forChild([
           {
               path: 'courses',             

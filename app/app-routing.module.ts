@@ -16,14 +16,11 @@ import { DailyscheduleComponent } from './dailyschedule/dailyschedule.component'
 import { PhotogalleryComponent } from './photogallery/photogallery.component';
 import { SrividyaComponent } from './srividya/srividya.component';
 import { PageNotFoundComponent } from './page-not-found.component';
-//import { CoursesComponent } from './courses/courses.component';
 
 @NgModule({
     imports: [
         RouterModule.forRoot([
-            { path: 'login', component: LoginComponent },
-           // { path: '', component: HomeComponent, canActivate: [AuthGuard] },
-    
+            { path: 'login', component: LoginComponent },           
             { path: 'home', component: HomeComponent},
             { path: 'devipuram', component: DevipuramComponent },
             { path: 'guruji', component: GurujiComponent },
@@ -34,13 +31,11 @@ import { PageNotFoundComponent } from './page-not-found.component';
             { path: 'dailyschedule', component: DailyscheduleComponent },
             { path: 'photogallery', component: PhotogalleryComponent },
             { path: 'srividya', component: SrividyaComponent },
-           // { path: 'couses', component: CoursesComponent, canActivate: [AuthGuard] },
+          //{ path: 'couses', component: CoursesComponent, canActivate: [AuthGuard] },
 
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: '**', component: PageNotFoundComponent }
-        ]
-            //,{ enableTracing: true }
-        )
+        ])
     ],
     exports: [
         RouterModule

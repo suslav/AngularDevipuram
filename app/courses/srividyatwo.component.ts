@@ -7,27 +7,27 @@ import { SvcAnswer } from './svcanswer';
     templateUrl: './app/courses/srividyatwo.component.html'
 })
 export class SrividyatwoComponent implements OnInit {
-    errorMessage: string;
-    newTags = '';  
-    product: SvcAnswer;
+    //errorMessage: string;
+    //newTags = '';  
+    //product: SvcAnswer;
 
     constructor(private route: ActivatedRoute) { }
 
     ngOnInit(): void {
 
 
-        this.route.parent.data.subscribe(data => {
-            this.product = data['product']; 
-        });
+        //this.route.parent.data.subscribe(data => {
+        //    this.product = data['product']; 
+        //});
 
     }
    
-    addTags(): void {
-        let tagArray = this.newTags.split(',');     
-        this.newTags = '';
-    }
+    //addTags(): void {
+    //    let tagArray = this.newTags.split(',');     
+    //    this.newTags = '';
+    //}
 
 
-    removeTag(idx: number): void {
-    }
+    //removeTag(idx: number): void {
+    //}
 }

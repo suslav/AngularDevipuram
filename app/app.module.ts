@@ -1,6 +1,7 @@
 ﻿import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
+//import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 // used to create fake backend
@@ -30,20 +31,16 @@ import { DailyscheduleComponent } from './dailyschedule/dailyschedule.component'
 import { PhotogalleryComponent } from './photogallery/photogallery.component';
 import { SrividyaComponent } from './srividya/srividya.component';
 import { PageNotFoundComponent } from './page-not-found.component';
-//import { CoursesComponent } from './courses/courses.component';
-
-
-import { CoursesModule } from './courses/courses.module';
-//import { ProductModule } from './products/product.module';
+ 
+import { CoursesModule } from './courses/courses.module'; 
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule,
-       // routing        
-        CoursesModule
-       // , ProductModule
+       //  ReactiveFormsModule,
+        HttpModule,    
+        CoursesModule     
         ,AppRoutingModule
     ],
     declarations: [
@@ -60,7 +57,6 @@ import { CoursesModule } from './courses/courses.module';
         PhotogalleryComponent,
         SrividyaComponent,
         PageNotFoundComponent
-        //,CoursesComponent
     ],
     providers: [
         AuthGuard,
