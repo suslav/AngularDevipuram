@@ -9,6 +9,8 @@ import { SriVidyaCourseComponent } from './srividyacourse.component';
 import { SrividyaOneComponent } from './srividyaone.component';
 import { SrividyatwoComponent } from './srividyatwo.component';
 import { SrividyaThreeComponent } from './srividyathree.component';
+import { GeneralVisitorComponent } from './generalvisitor.component';
+import { GeneralVisitorInComponent } from './generalvisitorin.component';
 
 //import { ProductFilterPipe } from './product-filter.pipe';
 import { SriVidyaService } from './srividya.service';
@@ -41,6 +43,12 @@ import { AuthGuard } from '../_guards/index';
                           { path: 'part2', component: SrividyatwoComponent },
                           { path: 'part3', component: SrividyaThreeComponent }
                       ]
+                  },
+                  {
+                      path: 'generalvisitor', component: GeneralVisitorComponent
+                  },
+                  {
+                      path: 'generalvisitorin', component: GeneralVisitorInComponent
                   }
               ]
           },
@@ -57,7 +65,9 @@ import { AuthGuard } from '../_guards/index';
       //,    
       SrividyaOneComponent,
       SrividyatwoComponent,
-      SrividyaThreeComponent
+      SrividyaThreeComponent,
+      GeneralVisitorComponent,
+      GeneralVisitorInComponent
       //,ProductFilterPipe
   ],
   providers: [

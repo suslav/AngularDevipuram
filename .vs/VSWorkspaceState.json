@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\courses",
-    "\\app\\products"
+    "\\app\\courses"
   ],
-  "SelectedNode": "\\app\\products\\product.module.ts",
+  "SelectedNode": "\\app\\courses\\srividyatwo.component.html",
   "PreviewInSolutionExplorer": false
 }
