@@ -1,13 +1,13 @@
 ﻿import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
-//import { ReactiveFormsModule } from '@angular/forms';
+//import { FormsModule }    from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 // used to create fake backend
 
-import { fakeBackendProvider } from './_helpers/index';
-import { MockBackend, MockConnection } from '@angular/http/testing';
+//import { fakeBackendProvider } from './_helpers/index';
+//import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
 
 import { AppComponent }  from './app.component';
@@ -15,8 +15,9 @@ import { AppComponent }  from './app.component';
 
 import { AuthGuard } from './_guards/index';
 import { AuthenticationService, UserService } from './_services/index';
-import { LoginComponent } from './login/index';
+import { LoginComponent, LoginService, SignupComponent, SignupService } from './login/index';
 import { HomeComponent } from './home/index';
+//import { LoginService } from './login/login.service';
 
 
 //newadd
@@ -37,8 +38,8 @@ import { CoursesModule } from './courses/courses.module';
 @NgModule({
     imports: [
         BrowserModule,
-        FormsModule,
-       //  ReactiveFormsModule,
+      // FormsModule,
+          ReactiveFormsModule,
         HttpModule,    
         CoursesModule     
         ,AppRoutingModule
@@ -46,6 +47,7 @@ import { CoursesModule } from './courses/courses.module';
     declarations: [
         AppComponent,
         LoginComponent,
+        SignupComponent,
         HomeComponent,
         DevipuramComponent,
         GurujiComponent,
@@ -62,10 +64,11 @@ import { CoursesModule } from './courses/courses.module';
         AuthGuard,
         AuthenticationService,
         UserService,
-
+        LoginService,
+        SignupService,
         // providers used to create fake backend
-        fakeBackendProvider,
-        MockBackend,
+      //  fakeBackendProvider,
+     //   MockBackend,
         BaseRequestOptions
     ],
     bootstrap: [AppComponent]

@@ -1,14 +1,15 @@
 ﻿ <div class="col-md-6 col-md-offset-3">
-    <h2>Login</h2>
+    <h2>Signup</h2>
 
     <div class="panel-body">
         <form class="form-horizontal"
               novalidate
-              (ngSubmit)="login()"
-              [formGroup]="loginForm">
-            <fieldset>
+              (ngSubmit)="signup()"
+              [formGroup]="signForm">
+            <fieldset>  
+                
                 <div class="form-group"
-                     [ngClass]="{'has-error': (loginForm.get('UserName').touched || loginForm.get('UserName').dirty) && !loginForm.get('UserName').valid }">
+                     [ngClass]="{'has-error': (signForm.get('UserName').touched || signForm.get('UserName').dirty) && !signForm.get('UserName').valid }">
                     <label class="col-md-2 control-label"
                            for="UserNameId">UserName</label>
 
@@ -19,8 +20,8 @@
                                formControlName="UserName" />
 
 
-                        <span class="help-block" *ngIf="(loginForm.get('UserName').touched || loginForm.get('UserName').dirty) && loginForm.get('UserName').errors">
-                            <span *ngIf="loginForm.get('UserName').errors.required">
+                        <span class="help-block" *ngIf="(signForm.get('UserName').touched || signForm.get('UserName').dirty) && signForm.get('UserName').errors">
+                            <span *ngIf="signForm.get('UserName').errors.required">
                                 Please enter your UserName.
                             </span>                           
                         </span>
@@ -28,7 +29,25 @@
                 </div>
 
                 <div class="form-group"
-                     [ngClass]="{'has-error': (loginForm.get('Password').touched || loginForm.get('Password').dirty) && !loginForm.get('Password').valid }">
+                     [ngClass]="{'has-error': (signForm.get('FirstName').touched || signForm.get('FirstName').dirty) && !signForm.get('FirstName').valid }">
+                    <label class="col-md-2 control-label"
+                           for="FirstNameId">FirstName</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="FirstNameId"
+                               type="text"
+                               formControlName="FirstName" />
+                        <span class="help-block" *ngIf="(signForm.get('FirstName').touched || signForm.get('FirstName').dirty) && signForm.get('FirstName').errors">
+                            <span *ngIf="signForm.get('FirstName').errors.required">
+                                Please enter your FirstName.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (signForm.get('Password').touched || signForm.get('Password').dirty) && !signForm.get('Password').valid }">
                     <label class="col-md-2 control-label"
                            for="PasswordId">Password</label>
 
@@ -39,8 +58,8 @@
                                formControlName="Password" />
 
 
-                        <span class="help-block" *ngIf="(loginForm.get('Password').touched || loginForm.get('Password').dirty) && loginForm.get('Password').errors">
-                            <span *ngIf="loginForm.get('Password').errors.required">
+                        <span class="help-block" *ngIf="(signForm.get('Password').touched || signForm.get('Password').dirty) && signForm.get('Password').errors">
+                            <span *ngIf="signForm.get('Password').errors.required">
                                 Please enter your Password.
                             </span>
                            
@@ -53,8 +72,8 @@
                         <span>
                             <button class="btn btn-primary"
                                     type="submit"
-                                    [disabled]="!loginForm.valid">
-                                Login
+                                    [disabled]="!signForm.valid">
+                                Save
                             </button>
                         </span>
                     </div>
@@ -66,10 +85,7 @@
          </div>
 
     </div> 
-
-<div class="col-md-3 btn btn-primary">
-    <a [routerLink]="['/signup']" style="color:white;">Signup</a>
-</div>
+ 
 
      <!--<div class="col-md-6 col-md-offset-3">
         <div class="alert alert-info">

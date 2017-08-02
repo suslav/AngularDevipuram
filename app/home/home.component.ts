@@ -15,10 +15,12 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
         // get users from secure api end point
-        this.userService.getUsers()
-            .subscribe(users => {
-                this.users = users;
-            });
+
+
+        //this.userService.getUsers()
+        //    .subscribe(users => {
+        //        this.users = users;
+        //    });
     }
 
 }

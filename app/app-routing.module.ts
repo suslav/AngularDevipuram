@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { LoginComponent } from './login/index';
+import { LoginComponent, SignupComponent } from './login/index';
 import { AuthGuard } from './_guards/index';
 
 import { HomeComponent } from './home/index';
@@ -20,7 +20,8 @@ import { PageNotFoundComponent } from './page-not-found.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
-            { path: 'login', component: LoginComponent },           
+            { path: 'login', component: LoginComponent },        
+            { path: 'signup', component: SignupComponent },        
             { path: 'home', component: HomeComponent},
             { path: 'devipuram', component: DevipuramComponent },
             { path: 'guruji', component: GurujiComponent },
