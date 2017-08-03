@@ -21,15 +21,50 @@ export class LoginService {
     options: RequestOptions;
  
     constructor(private http: Http) {
-        this.headers = new Headers({
-            'Content-Type': 'application/json',
-            'Accept': 'q=0.8;application/json;q=0.9'
-        });  
+        //this.headers = new Headers({
+        //    'Content-Type': 'application/json',
+        //    'Accept': 'q=0.8;application/json;q=0.9'
+        //});  
+
+
+        //let headers = new Headers();
+        //headers.append('Accept', 'application/json')
+        //headers.append('Content-Type', 'application/json');
+
+        //let options = new RequestOptions({ headers: headers, withCredentials: true });
+
+      //  this.headers = new Headers({
+       //     'Access-Control-Allow-Origin': '*',
+        //    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
+        //    'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Range, Content-Disposition, Content-Type, Authorization',
+        //    'Access-Control-Allow-Credentials': true
+       // });
+
+        //this.options = new RequestOptions({ headers: this.headers, withCredentials: true});
+
+        const headers = new Headers();
+
+        headers.append('Accept', 'application/json');
+        headers.append('Content-Type', 'application/json');
+
+        //headers.append('Access-Control-Allow-Headers', 'Content-Type');
+        //headers.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+        //headers.append('Access-Control-Allow-Origin', '*');
 
         
-        this.options = new RequestOptions({ headers: this.headers });
+        this.options = new RequestOptions({ headers: headers, withCredentials: true});
 
        
+    }
+
+
+    getDataObservable(url: string) {
+        console.log(url)
+        return this.http.get(url, this.options)
+            .map(data => {
+                data.json();
+                console.log("I CAN SEE DATA HERE: ", data.json());
+            });
     }
 
 

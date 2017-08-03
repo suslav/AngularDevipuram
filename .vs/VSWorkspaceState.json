@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
+    "",
     "\\app",
-    "\\app\\courses"
+    "\\app\\login",
+    "\\app\\_services"
   ],
+  "SelectedNode": "\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -35,6 +35,10 @@ import { PageNotFoundComponent } from './page-not-found.component';
  
 import { CoursesModule } from './courses/courses.module'; 
 
+// import { BrowserXhr } from '@angular/http';
+ //import {CustExtBrowserXhr} from './cust-ext-browser-xhr';
+// import { provide } from '@angular/core';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -70,8 +74,11 @@ import { CoursesModule } from './courses/courses.module';
       //  fakeBackendProvider,
      //   MockBackend,
         BaseRequestOptions
+      //  , { provide: BrowserXhr, useClass: CustExtBrowserXhr }
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent
+//,[provide(BrowserXhr,{useClass:CustExtBrowserXhr})]
+]
 })
 
 export class AppModule { }

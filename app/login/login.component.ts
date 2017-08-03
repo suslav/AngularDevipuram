@@ -41,16 +41,30 @@ export class LoginComponent implements OnInit {
 
        // console.log(this.loginForm);
 
-        let url = 'http://localhost:8080/DevipuramPhalcon/api/api/userlogin';
+        //let url = 'http://localhost:8080/DevipuramPhalcon/api/api/userlogin';
 
-        let body = JSON.stringify(this.loginForm.value);
+        //let body = JSON.stringify(this.loginForm.value);
 
-          // console.log(body);
+        //  // console.log(body);
 
-           this._postService.loginService(url, body).subscribe(
+        //   this._postService.loginService(url, body).subscribe(
+        //    result => console.log("5. createService: " + result),
+        //     error => this.errorMessage = <any>error
+        //);      
+
+
+         //this._postService.getDataObservable('http://localhost:8080/DevipuramPhalcon/api/api/users').subscribe(
+         //   result => console.log("5. createService: " + result),
+         //    error => this.errorMessage = <any>error
+         //); 
+
+
+        this._postService.getDataObservable('http://stage.devipuram.com/api/users').subscribe(
             result => console.log("5. createService: " + result),
             error => this.errorMessage = <any>error
-        );      
+        ); 
+
+
 
            //this._postService.loginService(url, body).subscribe(
            //    result => {
