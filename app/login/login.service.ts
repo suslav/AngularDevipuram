@@ -62,8 +62,8 @@ export class LoginService {
         console.log(url)
         return this.http.get(url, this.options)
             .map(data => {
-                data.json();
-                console.log("I CAN SEE DATA HERE: ", data.json());
+                data;
+                console.log("I CAN SEE DATA HERE: ", data);
             });
     }
 

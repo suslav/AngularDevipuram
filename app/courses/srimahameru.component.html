@@ -1,0 +1,452 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}       
+    </div>
+
+    <div class="panel-body">
+         
+        <form class="form-horizontal"
+              novalidate [formGroup]="srimaForm">            
+            <fieldset>
+                <!--<legend>General Visitor Form </legend>-->
+
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('Name').touched || srimaForm.get('Name').dirty) && !srimaForm.get('Name').valid }">
+                    <label class="col-md-4 control-label"
+                           for="NameId">NAME & Gotram</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="NameId"
+                               type="text"
+                               placeholder="Name (required)"
+                               formControlName="Name" />
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('Name').touched || srimaForm.get('Name').dirty) && srimaForm.get('Name').errors">
+                            <span *ngIf="srimaForm.get('Name').errors.required">
+                                Please enter your NAME & Gotram.
+                            </span>
+                            <span *ngIf="srimaForm.get('Name').errors.minlength">
+                                The Name must be longer than 3 characters.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('Age').touched || srimaForm.get('Age').dirty) && !srimaForm.get('Age').valid }">
+                    <label class="col-md-4 control-label"
+                           for="AgeId">AGE</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="AgeId"
+                               type="number"
+                               placeholder="AGE (required)"
+                               formControlName="Age" />
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('Age').touched || srimaForm.get('Age').dirty) && srimaForm.get('Age').errors">
+                            <span *ngIf="srimaForm.get('Age').errors.required">
+                                Please enter your Age.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('Gender').touched || srimaForm.get('Gender').dirty) && !srimaForm.get('Gender').valid }">
+                    <label class="col-md-4 control-label"
+                           for="GenderId">GENDER</label>
+
+                    <div class="col-md-8">
+
+                        <select formControlName="Gender" class="form-control">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('Gender').touched || srimaForm.get('Gender').dirty) && srimaForm.get('Gender').errors">
+                            <span *ngIf="srimaForm.get('Gender').errors.required">
+                                Please select your Gender.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('Sonof').touched || srimaForm.get('Sonof').dirty) && !srimaForm.get('Sonof').valid }">
+                    <label class="col-md-4 control-label"
+                           for="SonofId">Son/of. or Dtr/of. or Wife/of</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="SonofId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Sonof" />
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('Sonof').touched || srimaForm.get('Sonof').dirty) && srimaForm.get('Sonof').errors">
+                            <span *ngIf="srimaForm.get('Sonof').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('Nationality').touched || srimaForm.get('Nationality').dirty) && !srimaForm.get('Nationality').valid }">
+                    <label class="col-md-4 control-label"
+                           for="NationalityId">Nationality</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="NationalityId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Nationality" />
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('Nationality').touched || srimaForm.get('Nationality').dirty) && srimaForm.get('Nationality').errors">
+                            <span *ngIf="srimaForm.get('Nationality').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('EmailID').touched || srimaForm.get('EmailID').dirty) && !srimaForm.get('EmailID').valid }">
+                    <label class="col-md-4 control-label"
+                           for="EmailIDId">E Mail ID</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="EmailIDId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="EmailID" />
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('EmailID').touched || srimaForm.get('EmailID').dirty) && srimaForm.get('EmailID').errors">
+                            <span *ngIf="srimaForm.get('EmailID').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('MobilePh').touched || srimaForm.get('MobilePh').dirty) && !srimaForm.get('MobilePh').valid }">
+                    <label class="col-md-4 control-label"
+                           for="MobilePhId">
+                        Mobile Ph
+                    </label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="MobilePhId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="MobilePh" />
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('MobilePh').touched || srimaForm.get('MobilePh').dirty) && srimaForm.get('MobilePh').errors">
+                            <span *ngIf="srimaForm.get('MobilePh').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('Address').touched || srimaForm.get('Address').dirty) && !srimaForm.get('Address').valid }">
+                    <label class="col-md-4 control-label"
+                           for="AddressId">Address for Communication / Dispatch of Merus</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="AddressId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Address" />
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('Address').touched || srimaForm.get('Address').dirty) && srimaForm.get('Address').errors">
+                            <span *ngIf="srimaForm.get('Address').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('Education').touched || srimaForm.get('Education').dirty) && !srimaForm.get('Education').valid }">
+                    <label class="col-md-4 control-label"
+                           for="EducationId">EDUCATION</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="EducationId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Education" />
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('Education').touched || srimaForm.get('Education').dirty) && srimaForm.get('Education').errors">
+                            <span *ngIf="srimaForm.get('Education').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('Profession').touched || srimaForm.get('Profession').dirty) && !srimaForm.get('Profession').valid }">
+                    <label class="col-md-4 control-label"
+                           for="ProfessionId">PROFESSION: Student/ In service/ self employed/ Business/ Retired/ Others</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="ProfessionId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Profession" />
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('Profession').touched || srimaForm.get('Profession').dirty) && srimaForm.get('Profession').errors">
+                            <span *ngIf="srimaForm.get('Profession').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('Hdyctk').touched || srimaForm.get('Hdyctk').dirty) && !srimaForm.get('Hdyctk').valid }">
+                    <label class="col-md-4 control-label"
+                           for="HdyctkId">
+                        How did you come to know about DEVIPURAM and the MERUs?
+                    </label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="HdyctkId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Hdyctk" />
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('Hdyctk').touched || srimaForm.get('Hdyctk').dirty) && srimaForm.get('Hdyctk').errors">
+                            <span *ngIf="srimaForm.get('Hdyctk').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('Dytet').touched || srimaForm.get('Dytet').dirty) && !srimaForm.get('Dytet').valid }">
+                    <label class="col-md-4 control-label"
+                           for="DytetId">Did you try elsewhere to buy / procure them and what is the outcome?</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="DytetId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Dytet" />
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('Dytet').touched || srimaForm.get('Dytet').dirty) && srimaForm.get('Dytet').errors">
+                            <span *ngIf="srimaForm.get('Dytet').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('HytDG').touched || srimaForm.get('HytDG').dirty) && !srimaForm.get('HytDG').valid }">
+                    <label class="col-md-4 control-label"
+                           for="HytDGId">Have you taken Deeksha / Guru Mantra  from anybody? If 'YES' from Whom?</label>
+
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="HytDGId"
+                                  rows="3"
+                                  placeholder="(required)"
+                                  formControlName="HytDG"></textarea>
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('HytDG').touched || srimaForm.get('HytDG').dirty) && srimaForm.get('HytDG').errors">
+                            <span *ngIf="srimaForm.get('HytDG').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('INwsy').touched || srimaForm.get('INwsy').dirty) && !srimaForm.get('INwsy').valid }">
+                    <label class="col-md-4 control-label"
+                           for="INwsyId">If 'NOT' we suggest you take it from Devipuram, for effective results from the MERUs.
+   (You may add "GURU DAKSHINA " at  your level of comfort when you place an order. On confirmation of receiving MERU,
+     you can call us  and fix up a time for receiving Deeksha followed by its installation, at your place)
+</label>
+
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                               id="INwsyId"
+                               rows="3"
+                               placeholder="(required)"
+                               formControlName="INwsy" ></textarea>
+
+                        <span class="help-block" *ngIf="(srimaForm.get('INwsy').touched || srimaForm.get('INwsy').dirty) && srimaForm.get('INwsy').errors">
+                            <span *ngIf="srimaForm.get('INwsy').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('Boyp').touched || srimaForm.get('Boyp').dirty) && !srimaForm.get('Boyp').valid }">
+                    <label class="col-md-4 control-label"
+                           for="BoypId">Brief of your proficiency into Spirituality / Sadhana / Upasana?</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="BoypId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Boyp" />
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('Boyp').touched || srimaForm.get('Boyp').dirty) && srimaForm.get('Boyp').errors">
+                            <span *ngIf="srimaForm.get('Boyp').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('Yawtp').touched || srimaForm.get('Yawtp').dirty) && !srimaForm.get('Yawtp').valid }">
+                    <label class="col-md-4 control-label"
+                           for="YawtpId">
+                        You are welcome to pay a visit to Devipuram, to take 'Diksha' OR learn SriVidya course OR   get some HOMAs (Havan) done for your family / firm's name. Please apply a bit in advance  through info@devipuram.com if you have some issues / hurdles to be addressed.
+                    </label>
+
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="YawtpId"
+                                  rows="3"
+                                  placeholder="(required)"
+                                  formControlName="Yawtp"></textarea>
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('Yawtp').touched || srimaForm.get('Yawtp').dirty) && srimaForm.get('Yawtp').errors">
+                            <span *ngIf="srimaForm.get('Yawtp').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('Sombs').touched || srimaForm.get('Sombs').dirty) && !srimaForm.get('Sombs').valid }">
+                    <label class="col-md-4 control-label"
+                           for="SombsId">Sizes of MERUS (Base size is mentioned) with corresponding heights available for PUJA</label>
+
+                    <div class="col-md-8">
+                        <select formControlName="Sombs" class="form-control">
+                            <option value="Brass1">Brass   3"  x   3"</option>
+                            <option value="Brass2">Brass with Gold Plating  5"  x   5";  and  10"   x   10"  size</option>
+                        </select>
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('Sombs').touched || srimaForm.get('Sombs').dirty) && srimaForm.get('Sombs').errors">
+                            <span *ngIf="srimaForm.get('Sombs').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('Wtmsv').touched || srimaForm.get('Wtmsv').dirty) && !srimaForm.get('Wtmsv').valid }">
+                    <label class="col-md-4 control-label"
+                           for="WtmsvId">Willing to make some voluntary contribution to improve facilities OR supporting the   Annadaanam Programme at Devipuram? If 'YES', Pl tick in the box here to let us contact you.
+(Guruji's vision is to let all  be blessed by the  Divine mother. So there is no compulsion and  this is not linked to obtaining MERUs.)
+ (All Donations to SDNS (Sri Devipuram Nirman Society) are exempted under 80 G of IT Act)
+</label>
+
+                    <div class="col-md-8">
+                        <input type="checkbox" name="Wtmsv" value="Wtmsv">
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('Wtmsv').touched || srimaForm.get('Wtmsv').dirty) && srimaForm.get('Wtmsv').errors">
+                            <span *ngIf="srimaForm.get('Wtmsv').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-12 control-label">
+                        On receiving the above data we will be able to ... (1) Provide you an ID; (2)  Enlist you in our  data base for future interaction; (3) A Laghu puja will be done on your name with gotra namas soon after registration.
+                    </label>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">
+                        Date:
+
+                        </label>
+                    <div class="col-md-4"></div>
+                    <label class="col-md-4 control-label">
+                        Sign of Applicant
+
+                    </label>
+                </div>
+                 
+                        <!--<div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>-->
+
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-6 col-md-offset-2">
+                <span>
+                    <button class="btn btn-primary"
+                            type="button"
+                            style="width:80px;margin-right:10px"
+                            [disabled]="!isValid()"
+                            (click)="saveProduct()">
+                        Save
+                    </button>
+                </span>
+                <span>
+                    <a class="btn btn-default"
+                       [routerLink]="['/courses']">
+                        Cancel
+                    </a>
+                </span>
+
+            </div>
+        </div>
+    </div>
+
+</div>

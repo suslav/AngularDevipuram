@@ -11,6 +11,7 @@ import { SrividyatwoComponent } from './srividyatwo.component';
 import { SrividyaThreeComponent } from './srividyathree.component';
 import { GeneralVisitorComponent } from './generalvisitor.component';
 import { GeneralVisitorInComponent } from './generalvisitorin.component';
+import { SrimahameruComponent } from './srimahameru.component';
 
 //import { ProductFilterPipe } from './product-filter.pipe';
 import { SriVidyaService } from './srividya.service';
@@ -27,8 +28,8 @@ import { AuthGuard } from '../_guards/index';
           {
               path: 'courses',             
               children: [
-                  { path: '', component: CoursesComponent, canActivate: [AuthGuard] },
-                 //{ path: '', component: CoursesComponent },
+                //  { path: '', component: CoursesComponent, canActivate: [AuthGuard] },
+                 { path: '', component: CoursesComponent },
 
                   //{
                   //    path: ':id', component: ProductDetailComponent
@@ -49,6 +50,9 @@ import { AuthGuard } from '../_guards/index';
                   },
                   {
                       path: 'generalvisitorin', component: GeneralVisitorInComponent
+                  },
+                  {
+                      path: 'srimeru', component: SrimahameruComponent
                   }
               ]
           },
@@ -67,7 +71,8 @@ import { AuthGuard } from '../_guards/index';
       SrividyatwoComponent,
       SrividyaThreeComponent,
       GeneralVisitorComponent,
-      GeneralVisitorInComponent
+      GeneralVisitorInComponent,
+      SrimahameruComponent
       //,ProductFilterPipe
   ],
   providers: [

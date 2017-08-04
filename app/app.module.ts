@@ -32,6 +32,7 @@ import { DailyscheduleComponent } from './dailyschedule/dailyschedule.component'
 import { PhotogalleryComponent } from './photogallery/photogallery.component';
 import { SrividyaComponent } from './srividya/srividya.component';
 import { PageNotFoundComponent } from './page-not-found.component';
+import { ShoppingCartComponent } from './shoppingcart/shoppingcart.component';
  
 import { CoursesModule } from './courses/courses.module'; 
 
@@ -62,6 +63,7 @@ import { CoursesModule } from './courses/courses.module';
         DailyscheduleComponent,
         PhotogalleryComponent,
         SrividyaComponent,
+        ShoppingCartComponent,
         PageNotFoundComponent
     ],
     providers: [
