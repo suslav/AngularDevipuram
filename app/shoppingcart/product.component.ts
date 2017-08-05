@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'spa-product',
-    templateUrl: 'product1.component.html',
-    styleUrls: ['product.component.css'],
+     selector: 'spa-product',
+     templateUrl: './app/shoppingcart/product.component.html',
+     styleUrls: ['./app/shoppingcart/product.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush
-}
+})
 export class ProductComponent {
 
    @Input() public id: number;

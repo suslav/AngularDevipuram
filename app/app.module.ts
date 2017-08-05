@@ -32,9 +32,13 @@ import { DailyscheduleComponent } from './dailyschedule/dailyschedule.component'
 import { PhotogalleryComponent } from './photogallery/photogallery.component';
 import { SrividyaComponent } from './srividya/srividya.component';
 import { PageNotFoundComponent } from './page-not-found.component';
-import { ShoppingCartComponent } from './shoppingcart/shoppingcart.component';
+//import { ShoppingCart1Component } from './shoppingcart/shoppingcart1.component';
  
 import { CoursesModule } from './courses/courses.module'; 
+
+//import { ShoppingcartModule } from './shoppingcart/shoppingcart.module'; 
+
+import { ProductsModule } from './shoppingcart/products.module';
 
 // import { BrowserXhr } from '@angular/http';
  //import {CustExtBrowserXhr} from './cust-ext-browser-xhr';
@@ -46,7 +50,9 @@ import { CoursesModule } from './courses/courses.module';
       // FormsModule,
           ReactiveFormsModule,
         HttpModule,    
-        CoursesModule     
+        CoursesModule  
+      //  ,ShoppingcartModule
+        ,ProductsModule
         ,AppRoutingModule
     ],
     declarations: [
@@ -63,7 +69,7 @@ import { CoursesModule } from './courses/courses.module';
         DailyscheduleComponent,
         PhotogalleryComponent,
         SrividyaComponent,
-        ShoppingCartComponent,
+     //   ShoppingCart1Component,
         PageNotFoundComponent
     ],
     providers: [

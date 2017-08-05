@@ -15,7 +15,7 @@ import { ContactComponent } from './contact/contact.component';
 import { DailyscheduleComponent } from './dailyschedule/dailyschedule.component';
 import { PhotogalleryComponent } from './photogallery/photogallery.component';
 import { SrividyaComponent } from './srividya/srividya.component';
-import { ShoppingCartComponent } from './shoppingcart/shoppingcart.component';
+//import { ShoppingCart1Component } from './shoppingcart/shoppingcart1.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 
 @NgModule({
@@ -33,7 +33,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
             { path: 'dailyschedule', component: DailyscheduleComponent },
             { path: 'photogallery', component: PhotogalleryComponent },
             { path: 'srividya', component: SrividyaComponent },
-            { path: 'shoppingcart', component: ShoppingCartComponent },
+          //  { path: 'shoppingcart', component: ShoppingCart1Component },
           //{ path: 'couses', component: CoursesComponent, canActivate: [AuthGuard] },
 
             { path: '', redirectTo: 'home', pathMatch: 'full' },

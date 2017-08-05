@@ -1,0 +1,29 @@
+<!--<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <ul>
+                <li>
+                    <a [routerLink]="['/shoppingcart','products']">Sri Vidya Application</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/shoppingcart','productdeta']">General Visitor Application</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/shoppingcart','cart']">International General Visitor Application</a>
+                </li>               
+            </ul>
+            Shoppingcart
+        </div>
+    </div>
+</div>--> 
+
+
+<div class="nav-bar">
+    <!--<a *ngIf="location.path() !== '/products'" routerLink="/" class="back-button">Back</a>-->
+    <!--<a *ngIf="location.path() !== '/products'" routerLink="['/products','list']" class="back-button">Back</a>-->
+    <a *ngIf="location.path() !== '/products'" routerLink="list" class="back-button">Back</a>
+    <div class="open-shopping-cart" routerLink="/products/cart" style="text-align:right">
+        <i class="fa fa-shopping-cart">{{(shoppingCartItems$ | async).length}}</i>
+    </div>
+</div>
+<router-outlet></router-outlet>
