@@ -43,14 +43,7 @@ export class LoginService {
          //let body = JSON.stringify(food);    
          //console.log(body);
          //return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/userlogin', body, this.options).map((res: Response) => res.json());
-
-
-
-      //  return this.http.post('http://localhost:8080/laravel-example/public/api/v1/user/signin', body, this.options).map((res: Response) => res.json());
-          //  let body = { "time": "201701301330CET", "title": "title4", "description": "description4" };
-     //   return this.http.post('http://localhost:8080/laravel-example/public/api/v1/meeting?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9sYXJhdmVsLWV4YW1wbGUvcHVibGljL2FwaS92MS91c2VyL3NpZ25pbiIsImlhdCI6MTUwMzI5MjI3MCwiZXhwIjoxNTAzMjk1ODcwLCJuYmYiOjE1MDMyOTIyNzAsImp0aSI6Im5yajFlUkhicWhqTzNaMHAifQ.cxXWLhGirgv2JaUujN4q8jCzvQeV5xMEchCDuOtPZ28', body, this.options).map((res: Response) => res.json());
-
-
+      
         let body = JSON.stringify(food);
         console.log(body);
         return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/userlogin', body, this.options).map((response: Response) => {

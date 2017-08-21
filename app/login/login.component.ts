@@ -64,9 +64,7 @@ export class LoginComponent implements OnInit {
 
     login() {
 
-       // this.http.get("http://localhost:8080/DevipuramPhalcon/api/api/users").subscribe(
-
-        //this.http.get("http://localhost:8080/laravel-example/public/api/v1/meeting").subscribe(
+       // this.http.get("http://localhost:8080/DevipuramPhalcon/api/api/users").subscribe(        
         //    (res: Response) =>
         //    {
         //        const weatherCity = res._body;

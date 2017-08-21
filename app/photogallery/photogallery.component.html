@@ -1,1 +1,23 @@
-PhotoGallery
+<!--PhotoGallery-->
+
+
+<div class='panel panel-primary'>
+    
+    <div class='table-responsive'>
+        <table class='table' *ngIf="photos && photos.length">
+            <thead>
+                <tr>                  
+                    <th>Title</th>
+                    <th>Description</th>                                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let photo of photos'>                    
+                    <td>{{photo.Title}}</td>
+                    <td>{{photo.Description}}</td>                                     
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

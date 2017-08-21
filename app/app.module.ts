@@ -30,6 +30,7 @@ import { VideoGalleryComponent } from './videogallery/videogallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { DailyscheduleComponent } from './dailyschedule/dailyschedule.component';
 import { PhotogalleryComponent } from './photogallery/photogallery.component';
+import { PhotoGalleryService } from './photogallery/photogallery.service';
 import { SrividyaComponent } from './srividya/srividya.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 //import { ShoppingCart1Component } from './shoppingcart/shoppingcart1.component';
@@ -78,6 +79,7 @@ import { ProductsModule } from './shoppingcart/products.module';
         UserService,
         LoginService,
         SignupService,
+        PhotoGalleryService,
         // providers used to create fake backend
       //  fakeBackendProvider,
      //   MockBackend,
