@@ -16,15 +16,22 @@
                     <div class="col-md-8">
                         <input class="form-control"
                                id="UserNameId"
-                               type="text"                              
+                               type="text"   
+                               placeholder="Email (required)" 
                                formControlName="UserName" />
 
 
-                        <span class="help-block" *ngIf="(signForm.get('UserName').touched || signForm.get('UserName').dirty) && signForm.get('UserName').errors">
+                        <!--<span class="help-block" *ngIf="(signForm.get('UserName').touched || signForm.get('UserName').dirty) && signForm.get('UserName').errors">
                             <span *ngIf="signForm.get('UserName').errors.required">
                                 Please enter your UserName.
                             </span>                           
+                        </span>-->
+
+                        <span class="help-block" *ngIf="emailMessage">
+                            {{emailMessage}}
                         </span>
+
+
                     </div>
                 </div>
 
@@ -79,7 +86,7 @@
                     </div>
                 </div>
 
-                <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+                <div class="has-error" *ngIf="Message">{{Message}}</div>
                 </fieldset>
             </form>
          </div>

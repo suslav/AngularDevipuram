@@ -15,15 +15,21 @@
                     <div class="col-md-8">
                         <input class="form-control"
                                id="UserNameId"
-                               type="text"                              
+                               type="text"    
+                               placeholder="Email (required)"    
                                formControlName="UserName" />
 
-
-                        <span class="help-block" *ngIf="(loginForm.get('UserName').touched || loginForm.get('UserName').dirty) && loginForm.get('UserName').errors">
+                        <!--<span class="help-block" *ngIf="(loginForm.get('UserName').touched || loginForm.get('UserName').dirty) && loginForm.get('UserName').errors">
                             <span *ngIf="loginForm.get('UserName').errors.required">
                                 Please enter your UserName.
                             </span>                           
+                        </span>-->
+
+                        <span class="help-block" *ngIf="emailMessage">
+                            {{emailMessage}}
                         </span>
+
+
                     </div>
                 </div>
 

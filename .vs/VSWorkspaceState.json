@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
+    "",
     "\\app",
-    "\\app\\shoppingcart"
+    "\\app\\login",
+    "\\css"
   ],
+  "SelectedNode": "\\app\\login\\login.component.ts",
   "PreviewInSolutionExplorer": false
 }

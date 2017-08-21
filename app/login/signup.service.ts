@@ -17,19 +17,23 @@ import 'rxjs/add/operator/switchMap';
 
 @Injectable()
 export class SignupService {
-    headers: Headers;
+    //headers: Headers;
     options: RequestOptions;
 
     constructor(private http: Http) {
-        this.headers = new Headers({
-            'Content-Type': 'application/json',
-            'Accept': 'q=0.8;application/json;q=0.9'
-        });
+        const headers = new Headers();
 
+        headers.append('Accept', 'application/json');
+        headers.append('Content-Type', 'application/json'); 
+         
+        this.options = new RequestOptions({ headers: headers });
+         
+    }
 
-        this.options = new RequestOptions({ headers: this.headers });
-
-
+    signupUser(body: string) {
+        let jsbody = JSON.stringify(body);
+        console.log(jsbody);
+        return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/usersignup', jsbody, this.options).map((res: Response) => res.json());
     }
 
 
@@ -43,14 +47,7 @@ export class SignupService {
 
     }
 
-    //createService(url: string, param: any): Observable<any> {
-
-    //    console.log(param);
-
-    //    return this.http.post(url, param, this.options)
-    //        .map(this.extractData)
-    //        .catch(this.handleError);
-    //}   
+   
 
     private extractData(res: Response) {
         //let body = res.json();

@@ -28,8 +28,8 @@ import { AuthGuard } from '../_guards/index';
           {
               path: 'courses',             
               children: [
-                //  { path: '', component: CoursesComponent, canActivate: [AuthGuard] },
-                 { path: '', component: CoursesComponent },
+                 { path: '', component: CoursesComponent, canActivate: [AuthGuard] },
+                //  { path: '', component: CoursesComponent },
 
                   //{
                   //    path: ':id', component: ProductDetailComponent

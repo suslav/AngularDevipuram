@@ -17,47 +17,66 @@ import 'rxjs/add/operator/switchMap';
  
 @Injectable()
 export class LoginService {
-    headers: Headers;
+   // headers: Headers;
     options: RequestOptions;
+
+     public token: string;
  
     constructor(private http: Http) {
-        //this.headers = new Headers({
-        //    'Content-Type': 'application/json',
-        //    'Accept': 'q=0.8;application/json;q=0.9'
-        //});  
-
-
-        //let headers = new Headers();
-        //headers.append('Accept', 'application/json')
-        //headers.append('Content-Type', 'application/json');
-
-        //let options = new RequestOptions({ headers: headers, withCredentials: true });
-
-      //  this.headers = new Headers({
-       //     'Access-Control-Allow-Origin': '*',
-        //    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
-        //    'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Range, Content-Disposition, Content-Type, Authorization',
-        //    'Access-Control-Allow-Credentials': true
-       // });
-
-        //this.options = new RequestOptions({ headers: this.headers, withCredentials: true});
-
+         
         const headers = new Headers();
 
         headers.append('Accept', 'application/json');
-        headers.append('Content-Type', 'application/json');
+        headers.append('Content-Type', 'application/json');     
+      //   this.options = new RequestOptions({ headers: headers, withCredentials: true});
+        this.options = new RequestOptions({ headers: headers });
 
-        //headers.append('Access-Control-Allow-Headers', 'Content-Type');
-        //headers.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-        //headers.append('Access-Control-Allow-Origin', '*');
 
-        
-        this.options = new RequestOptions({ headers: headers, withCredentials: true});
 
-       
+        var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+         this.token = currentUser && currentUser.token;       
     }
 
 
+    loginUser(food: string) {   
+
+         //let body = JSON.stringify(food);    
+         //console.log(body);
+         //return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/userlogin', body, this.options).map((res: Response) => res.json());
+
+
+
+      //  return this.http.post('http://localhost:8080/laravel-example/public/api/v1/user/signin', body, this.options).map((res: Response) => res.json());
+          //  let body = { "time": "201701301330CET", "title": "title4", "description": "description4" };
+     //   return this.http.post('http://localhost:8080/laravel-example/public/api/v1/meeting?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9sYXJhdmVsLWV4YW1wbGUvcHVibGljL2FwaS92MS91c2VyL3NpZ25pbiIsImlhdCI6MTUwMzI5MjI3MCwiZXhwIjoxNTAzMjk1ODcwLCJuYmYiOjE1MDMyOTIyNzAsImp0aSI6Im5yajFlUkhicWhqTzNaMHAifQ.cxXWLhGirgv2JaUujN4q8jCzvQeV5xMEchCDuOtPZ28', body, this.options).map((res: Response) => res.json());
+
+
+        let body = JSON.stringify(food);
+        console.log(body);
+        return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/userlogin', body, this.options).map((response: Response) => {
+
+            console.log(response.json());
+          //  console.log(body);
+
+            let token = response.json() && response.json().id;
+            if (token) {
+
+                this.token = token;
+                 
+               // localStorage.setItem('currentUser', JSON.stringify({ username: "admin@gmail.com", token: token }));
+                localStorage.setItem('currentUser', JSON.stringify({token: token }));
+
+               //  return true to indicate successful login
+                return true;
+            } else {
+                // return false to indicate failed login
+                return false;
+            }
+        });
+
+
+    }
+     
     getDataObservable(url: string) {
         console.log(url)
         return this.http.get(url, this.options)
@@ -67,7 +86,7 @@ export class LoginService {
             });
     }
 
-
+     
     loginService(url: string, param: any): Observable<any> {
 
         console.log(param);
@@ -75,16 +94,7 @@ export class LoginService {
         return this.http.post(url, param, this.options)
             .map(this.extractData)
             .catch(this.handleError);
-    }   
-     
-    //createService(url: string, param: any): Observable<any> {
-
-    //    console.log(param);
- 
-    //    return this.http.post(url, param, this.options)
-    //        .map(this.extractData)
-    //        .catch(this.handleError);
-    //}   
+    }       
 
     private extractData(res: Response) {
         //let body = res.json();
