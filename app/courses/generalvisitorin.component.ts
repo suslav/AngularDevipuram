@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { SvcAnswer } from './svcanswer';
-//import { SriVidyaService } from './srividya.service';
+import { GeneralVisitorService } from './generalvisitor.service';
 
 @Component({
     templateUrl: './app/courses/generalvisitorin.component.html'
@@ -11,13 +11,13 @@ import { SvcAnswer } from './svcanswer';
 export class GeneralVisitorInComponent implements OnInit {
     pageTitle: string = 'General Visitor International';
     genvinForm: FormGroup;
+    errorMessage: string;
 
     private dataIsValid: { [key: string]: boolean } = {};
 
     constructor(
-        //  private srividyaService: SriVidyaService,
-        private route: ActivatedRoute, private fb: FormBuilder
-        // private router: Router
+        private route: ActivatedRoute, private fb: FormBuilder,
+        private gvService: GeneralVisitorService, private router: Router
     ) { }
 
     ngOnInit(): void {
@@ -50,21 +50,37 @@ export class GeneralVisitorInComponent implements OnInit {
             Health: ['', Validators.required],
             Deeksha: ['', Validators.required],
             Meru: ['', Validators.required],
+            Volunteering: ['', Validators.required],
             Extends: ['', Validators.required],
-            AreasOI: ['', Validators.required]            
+            AreasOI: ['', Validators.required],
+            Date: ['', Validators.required]
         });
     }
 
-    isValid(path: string): boolean {
-        this.validate();
-        if (path) {
-            return this.dataIsValid[path];
-        }
-        return (this.dataIsValid &&
-            Object.keys(this.dataIsValid).every(d => this.dataIsValid[d] === true));
-    }
+    save() {
+       
+        let Form = this.genvinForm.value;
 
-    validate(): void {
-        this.dataIsValid = {};
+        let body = Form.Name + '~' + 1 + '|' + Form.Age + '~' + 2 + Form.Gender + '~' + 3 + '|' + Form.Sonof + '~' + 4 + '|' + Form.Place + '~' + 5 + '|' +
+            Form.Nationality + '~' + 6 + '|' + Form.MaritalStatus + '~' + 7 + '|' + Form.DateofBirth + '~' + 8 + '|' + Form.ContactDin + '~' + 9 + '|' +
+            Form.EMailID + '~' + 10 + '|' + Form.PerLand + '~' + 11 + '|' + Form.PerMob + '~' + 12 + '|' + Form.MobileIn + '~' + 13 + '|' +
+            Form.Address + '~' + 14 + '|' + Form.Passport + '~' + 15 + '|' + Form.VisaNo + '~' + 16 + '|' + Form.Intending + '~' + 17 + '|' + Form.Departure + '~' + 18 + '|' +
+            Form.ArrivalDev + '~' + 19 + '|' + Form.DepartureDev + '~' + 20 + '|' + Form.NDestination + '~' + 21 + '|' + Form.Visited + '~' + 22 + '|' +
+            Form.Education + '~' + 23 + '|' + Form.Profession + '~' + 24 + '|' + Form.Health + '~' + 25 + '|' + Form.Deeksha + '~' + 26 + '|' +
+            Form.Meru + '~' + 27 + '|' + Form.Volunteering + '~' + 28 + '|' + Form.Extends + '~' + 29 + '|' + Form.AreasOI + '~' + 30 + '|' +
+            Form.Date + '~' + 31;
+
+
+        this.gvService.insertGeneralvisitorInterna(body).subscribe(
+            data => {
+                console.log(data);
+                return this.router.navigate(['/']);
+            },
+            error => {
+                console.error("Error While Inserting Data");
+                return this.errorMessage = "Error While Inserting Data";
+            }
+        );
+
     }
 }

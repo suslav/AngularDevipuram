@@ -1,0 +1,48 @@
+
+<div class='panel panel-primary'>
+    <div class="panel-heading">
+      Courses List
+    </div>
+    <div class="panel-body">
+
+        <div class="row">
+
+            <label class="col-md-2 control-label">Select Date</label>
+
+            <div class="col-md-3">
+                <my-date-picker [options]="myDatePickerOptions"
+                                (dateChanged)="onDateChanged($event)"></my-date-picker>
+            </div>
+
+            <div class="col-md-7"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">&nbsp;
+                </div>
+            </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class='table-responsive'>
+                            <table class='table' *ngIf="visitors && visitors.length">
+                                <thead class="bg-primary">
+                                    <tr>
+                                        <th>User</th>
+                                        <th>FormType</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let visitor of visitors'>
+                                        <td>{{visitor.UserID}}</td>
+                                        <td>{{visitor.FormTypeID}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>

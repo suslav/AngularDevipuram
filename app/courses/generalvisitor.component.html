@@ -3,492 +3,535 @@
         {{pageTitle}}       
     </div>
 
-    <div class="panel-body">
+   
          
         <form class="form-horizontal"
-              novalidate [formGroup]="genvForm">            
+              novalidate [formGroup]="genvForm" (ngSubmit)="save()">            
             <fieldset>
                 <!--<legend>General Visitor Form </legend>-->
+                <div class="panel-body">
+
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Name').touched || genvForm.get('Name').dirty) && !genvForm.get('Name').valid }">
+                        <label class="col-md-2 control-label"
+                               for="NameId">NAME</label>
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   id="NameId"
+                                   type="text"
+                                   placeholder="Name (required)"
+                                   formControlName="Name" />
 
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Name').touched || genvForm.get('Name').dirty) && !genvForm.get('Name').valid }">
-                    <label class="col-md-2 control-label"
-                           for="NameId">NAME</label>
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="NameId"
-                               type="text"
-                               placeholder="Name (required)"
-                               formControlName="Name" />
-
-
-                        <span class="help-block" *ngIf="(genvForm.get('Name').touched || genvForm.get('Name').dirty) && genvForm.get('Name').errors">
-                            <span *ngIf="genvForm.get('Name').errors.required">
-                                Please enter your Name.
+                            <span class="help-block" *ngIf="(genvForm.get('Name').touched || genvForm.get('Name').dirty) && genvForm.get('Name').errors">
+                                <span *ngIf="genvForm.get('Name').errors.required">
+                                    Please enter your Name.
+                                </span>
+                                <span *ngIf="genvForm.get('Name').errors.minlength">
+                                    The Name must be longer than 3 characters.
+                                </span>
                             </span>
-                            <span *ngIf="genvForm.get('Name').errors.minlength">
-                                The Name must be longer than 3 characters.
-                            </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Age').touched || genvForm.get('Age').dirty) && !genvForm.get('Age').valid }">
-                    <label class="col-md-2 control-label"
-                           for="AgeId">AGE</label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Age').touched || genvForm.get('Age').dirty) && !genvForm.get('Age').valid }">
+                        <label class="col-md-2 control-label"
+                               for="AgeId">AGE</label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="AgeId"
-                               type="number"
-                               placeholder="AGE (required)"
-                               formControlName="Age" />
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   id="AgeId"
+                                   type="number"
+                                   placeholder="AGE (required)"
+                                   formControlName="Age" />
 
 
-                        <span class="help-block" *ngIf="(genvForm.get('Age').touched || genvForm.get('Age').dirty) && genvForm.get('Age').errors">
-                            <span *ngIf="genvForm.get('Age').errors.required">
-                                Please enter your Age.
+                            <span class="help-block" *ngIf="(genvForm.get('Age').touched || genvForm.get('Age').dirty) && genvForm.get('Age').errors">
+                                <span *ngIf="genvForm.get('Age').errors.required">
+                                    Please enter your Age.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Gender').touched || genvForm.get('Gender').dirty) && !genvForm.get('Gender').valid }">
-                    <label class="col-md-2 control-label"
-                           for="GenderId">GENDER</label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Gender').touched || genvForm.get('Gender').dirty) && !genvForm.get('Gender').valid }">
+                        <label class="col-md-2 control-label"
+                               for="GenderId">GENDER</label>
 
-                    <div class="col-md-8">
+                        <div class="col-md-8">
 
-                        <select formControlName="Gender" class="form-control">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
-
+                            <select formControlName="Gender" class="form-control">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
 
 
-                        <span class="help-block" *ngIf="(genvForm.get('Gender').touched || genvForm.get('Gender').dirty) && genvForm.get('Gender').errors">
-                            <span *ngIf="genvForm.get('Gender').errors.required">
-                                Please select your Gender.
+
+                            <span class="help-block" *ngIf="(genvForm.get('Gender').touched || genvForm.get('Gender').dirty) && genvForm.get('Gender').errors">
+                                <span *ngIf="genvForm.get('Gender').errors.required">
+                                    Please select your Gender.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Sonof').touched || genvForm.get('Sonof').dirty) && !genvForm.get('Sonof').valid }">
-                    <label class="col-md-2 control-label"
-                           for="SonofId">Son/of. or Dtr/of. or Wife/of</label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Sonof').touched || genvForm.get('Sonof').dirty) && !genvForm.get('Sonof').valid }">
+                        <label class="col-md-2 control-label"
+                               for="SonofId">Son/of. or Dtr/of. or Wife/of</label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="SonofId"
-                               type="text"
-                               placeholder="(required)"
-                               formControlName="Sonof" />
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   id="SonofId"
+                                   type="text"
+                                   placeholder="(required)"
+                                   formControlName="Sonof" />
 
 
-                        <span class="help-block" *ngIf="(genvForm.get('Sonof').touched || genvForm.get('Sonof').dirty) && genvForm.get('Sonof').errors">
-                            <span *ngIf="genvForm.get('Sonof').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvForm.get('Sonof').touched || genvForm.get('Sonof').dirty) && genvForm.get('Sonof').errors">
+                                <span *ngIf="genvForm.get('Sonof').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Place').touched || genvForm.get('Place').dirty) && !genvForm.get('Place').valid }">
-                    <label class="col-md-2 control-label"
-                           for="PlaceId">Place & Country</label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Place').touched || genvForm.get('Place').dirty) && !genvForm.get('Place').valid }">
+                        <label class="col-md-2 control-label"
+                               for="PlaceId">Place & Country</label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="PlaceId"
-                               type="text"
-                               placeholder="(required)"
-                               formControlName="Place" />
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   id="PlaceId"
+                                   type="text"
+                                   placeholder="(required)"
+                                   formControlName="Place" />
 
 
-                        <span class="help-block" *ngIf="(genvForm.get('Place').touched || genvForm.get('Place').dirty) && genvForm.get('Place').errors">
-                            <span *ngIf="genvForm.get('Place').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvForm.get('Place').touched || genvForm.get('Place').dirty) && genvForm.get('Place').errors">
+                                <span *ngIf="genvForm.get('Place').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Nationality').touched || genvForm.get('Nationality').dirty) && !genvForm.get('Nationality').valid }">
-                    <label class="col-md-2 control-label"
-                           for="NationalityId">
-                        Nationality:
-                    </label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Nationality').touched || genvForm.get('Nationality').dirty) && !genvForm.get('Nationality').valid }">
+                        <label class="col-md-2 control-label"
+                               for="NationalityId">
+                            Nationality:
+                        </label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="NationalityId"
-                               type="text"
-                               placeholder="(required)"
-                               formControlName="Nationality" />
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   id="NationalityId"
+                                   type="text"
+                                   placeholder="(required)"
+                                   formControlName="Nationality" />
 
 
-                        <span class="help-block" *ngIf="(genvForm.get('Nationality').touched || genvForm.get('Nationality').dirty) && genvForm.get('Nationality').errors">
-                            <span *ngIf="genvForm.get('Nationality').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvForm.get('Nationality').touched || genvForm.get('Nationality').dirty) && genvForm.get('Nationality').errors">
+                                <span *ngIf="genvForm.get('Nationality').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('MaritalStatus').touched || genvForm.get('MaritalStatus').dirty) && !genvForm.get('MaritalStatus').valid }">
-                    <label class="col-md-2 control-label"
-                           for="MaritalStatusId">Marital Status: Single/Married/Separated/Living together/others</label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('MaritalStatus').touched || genvForm.get('MaritalStatus').dirty) && !genvForm.get('MaritalStatus').valid }">
+                        <label class="col-md-2 control-label"
+                               for="MaritalStatusId">Marital Status: Single/Married/Separated/Living together/others</label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="MaritalStatusId"
-                               type="text"
-                               placeholder="(required)"
-                               formControlName="MaritalStatus" />
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   id="MaritalStatusId"
+                                   type="text"
+                                   placeholder="(required)"
+                                   formControlName="MaritalStatus" />
 
 
-                        <span class="help-block" *ngIf="(genvForm.get('MaritalStatus').touched || genvForm.get('MaritalStatus').dirty) && genvForm.get('MaritalStatus').errors">
-                            <span *ngIf="genvForm.get('MaritalStatus').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvForm.get('MaritalStatus').touched || genvForm.get('MaritalStatus').dirty) && genvForm.get('MaritalStatus').errors">
+                                <span *ngIf="genvForm.get('MaritalStatus').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('EMailID').touched || genvForm.get('EMailID').dirty) && !genvForm.get('EMailID').valid }">
-                    <label class="col-md-2 control-label"
-                           for="EMailIDId">E Mail ID: Mobile No & Residence phone</label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('EMailID').touched || genvForm.get('EMailID').dirty) && !genvForm.get('EMailID').valid }">
+                        <label class="col-md-2 control-label"
+                               for="EMailIDId">E Mail ID: Mobile No & Residence phone</label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="EMailIDId"
-                               type="text"
-                               placeholder="(required)"
-                               formControlName="EMailID" />
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   id="EMailIDId"
+                                   type="text"
+                                   placeholder="(required)"
+                                   formControlName="EMailID" />
 
 
-                        <span class="help-block" *ngIf="(genvForm.get('EMailID').touched || genvForm.get('EMailID').dirty) && genvForm.get('EMailID').errors">
-                            <span *ngIf="genvForm.get('EMailID').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvForm.get('EMailID').touched || genvForm.get('EMailID').dirty) && genvForm.get('EMailID').errors">
+                                <span *ngIf="genvForm.get('EMailID').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Address').touched || genvForm.get('Address').dirty) && !genvForm.get('Address').valid }">
-                    <label class="col-md-2 control-label"
-                           for="AddressId">ADDRESS</label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Address').touched || genvForm.get('Address').dirty) && !genvForm.get('Address').valid }">
+                        <label class="col-md-2 control-label"
+                               for="AddressId">ADDRESS</label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="AddressId"
-                               type="text"
-                               placeholder="(required)"
-                               formControlName="Address" />
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   id="AddressId"
+                                   type="text"
+                                   placeholder="(required)"
+                                   formControlName="Address" />
 
 
-                        <span class="help-block" *ngIf="(genvForm.get('Address').touched || genvForm.get('Address').dirty) && genvForm.get('Address').errors">
-                            <span *ngIf="genvForm.get('Address').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvForm.get('Address').touched || genvForm.get('Address').dirty) && genvForm.get('Address').errors">
+                                <span *ngIf="genvForm.get('Address').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Passport').touched || genvForm.get('Passport').dirty) && !genvForm.get('Passport').valid }">
-                    <label class="col-md-2 control-label"
-                           for="PassportId">
-                        Passport / Photo  ID CARD - TYPE & No:
-                        ( Passport Copy is Mandatory  for other Nationals )
-                    </label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Passport').touched || genvForm.get('Passport').dirty) && !genvForm.get('Passport').valid }">
+                        <label class="col-md-2 control-label"
+                               for="PassportId">
+                            Passport / Photo  ID CARD - TYPE & No:
+                            ( Passport Copy is Mandatory  for other Nationals )
+                        </label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="PassportId"
-                               type="text"
-                               placeholder="(required)"
-                               formControlName="Passport" />
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   id="PassportId"
+                                   type="text"
+                                   placeholder="(required)"
+                                   formControlName="Passport" />
 
 
-                        <span class="help-block" *ngIf="(genvForm.get('Passport').touched || genvForm.get('Passport').dirty) && genvForm.get('Passport').errors">
-                            <span *ngIf="genvForm.get('Passport').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvForm.get('Passport').touched || genvForm.get('Passport').dirty) && genvForm.get('Passport').errors">
+                                <span *ngIf="genvForm.get('Passport').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Intending').touched || genvForm.get('Intending').dirty) && !genvForm.get('Intending').valid }">
-                    <label class="col-md-2 control-label"
-                           for="IntendingId">Intending Dt. of Arrival & Departure</label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Intending').touched || genvForm.get('Intending').dirty) && !genvForm.get('Intending').valid }">
+                        <label class="col-md-2 control-label"
+                               for="IntendingId">Intending Dt. of Arrival & Departure</label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="IntendingId"
-                               type="text"
-                               placeholder="(required)"
-                               formControlName="Intending" />
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   id="IntendingId"
+                                   type="text"
+                                   placeholder="(required)"
+                                   formControlName="Intending" />
 
 
-                        <span class="help-block" *ngIf="(genvForm.get('Intending').touched || genvForm.get('Intending').dirty) && genvForm.get('Intending').errors">
-                            <span *ngIf="genvForm.get('Intending').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvForm.get('Intending').touched || genvForm.get('Intending').dirty) && genvForm.get('Intending').errors">
+                                <span *ngIf="genvForm.get('Intending').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Visited').touched || genvForm.get('Visited').dirty) && !genvForm.get('Visited').valid }">
-                    <label class="col-md-2 control-label"
-                           for="VisitedId">Visited earlier  ( YES / NO) & Main Purpose of your visit:</label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Visited').touched || genvForm.get('Visited').dirty) && !genvForm.get('Visited').valid }">
+                        <label class="col-md-2 control-label"
+                               for="VisitedId">Visited earlier  ( YES / NO) & Main Purpose of your visit:</label>
 
-                    <div class="col-md-8">
-                        <textarea class="form-control"
-                                  id="VisitedId"
-                                  rows="3"
-                                  placeholder="(required)"
-                                  formControlName="Visited"></textarea>
+                        <div class="col-md-8">
+                            <textarea class="form-control"
+                                      id="VisitedId"
+                                      rows="3"
+                                      placeholder="(required)"
+                                      formControlName="Visited"></textarea>
 
 
-                        <span class="help-block" *ngIf="(genvForm.get('Visited').touched || genvForm.get('Visited').dirty) && genvForm.get('Visited').errors">
-                            <span *ngIf="genvForm.get('Visited').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvForm.get('Visited').touched || genvForm.get('Visited').dirty) && genvForm.get('Visited').errors">
+                                <span *ngIf="genvForm.get('Visited').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Education').touched || genvForm.get('Education').dirty) && !genvForm.get('Education').valid }">
-                    <label class="col-md-2 control-label"
-                           for="EducationId">EDUCATION</label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Education').touched || genvForm.get('Education').dirty) && !genvForm.get('Education').valid }">
+                        <label class="col-md-2 control-label"
+                               for="EducationId">EDUCATION</label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="EducationId"
-                               type="text"
-                               placeholder="(required)"
-                               formControlName="Education" />
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   id="EducationId"
+                                   type="text"
+                                   placeholder="(required)"
+                                   formControlName="Education" />
 
-                        <span class="help-block" *ngIf="(genvForm.get('Education').touched || genvForm.get('Education').dirty) && genvForm.get('Education').errors">
-                            <span *ngIf="genvForm.get('Education').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvForm.get('Education').touched || genvForm.get('Education').dirty) && genvForm.get('Education').errors">
+                                <span *ngIf="genvForm.get('Education').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Profession').touched || genvForm.get('Profession').dirty) && !genvForm.get('Profession').valid }">
-                    <label class="col-md-2 control-label"
-                           for="ProfessionId">Profession</label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Profession').touched || genvForm.get('Profession').dirty) && !genvForm.get('Profession').valid }">
+                        <label class="col-md-2 control-label"
+                               for="ProfessionId">Profession</label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="ProfessionId"
-                               type="text"
-                               placeholder="(required)"
-                               formControlName="Profession" />
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   id="ProfessionId"
+                                   type="text"
+                                   placeholder="(required)"
+                                   formControlName="Profession" />
 
 
-                        <span class="help-block" *ngIf="(genvForm.get('Profession').touched || genvForm.get('Profession').dirty) && genvForm.get('Profession').errors">
-                            <span *ngIf="genvForm.get('Profession').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvForm.get('Profession').touched || genvForm.get('Profession').dirty) && genvForm.get('Profession').errors">
+                                <span *ngIf="genvForm.get('Profession').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Health').touched || genvForm.get('Health').dirty) && !genvForm.get('Health').valid }">
-                    <label class="col-md-2 control-label"
-                           for="HealthId">Health:  (As we do not have medical assistance here, you may have to inform us if any special attention is required)</label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Health').touched || genvForm.get('Health').dirty) && !genvForm.get('Health').valid }">
+                        <label class="col-md-2 control-label"
+                               for="HealthId">Health:  (As we do not have medical assistance here, you may have to inform us if any special attention is required)</label>
 
-                    <div class="col-md-8">
-                        <textarea class="form-control"
-                                  id="HealthId"
-                                  rows="3"
-                                  placeholder="(required)"
-                                  formControlName="Health"></textarea>
+                        <div class="col-md-8">
+                            <textarea class="form-control"
+                                      id="HealthId"
+                                      rows="3"
+                                      placeholder="(required)"
+                                      formControlName="Health"></textarea>
 
 
-                        <span class="help-block" *ngIf="(genvForm.get('Health').touched || genvForm.get('Health').dirty) && genvForm.get('Health').errors">
-                            <span *ngIf="genvForm.get('Health').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvForm.get('Health').touched || genvForm.get('Health').dirty) && genvForm.get('Health').errors">
+                                <span *ngIf="genvForm.get('Health').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Deeksha').touched || genvForm.get('Deeksha').dirty) && !genvForm.get('Deeksha').valid }">
-                    <label class="col-md-2 control-label"
-                           for="DeekshaId">Do you want to take Deeksha from Guru Amma ? (Not mandatory ):  YES / NO</label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Deeksha').touched || genvForm.get('Deeksha').dirty) && !genvForm.get('Deeksha').valid }">
+                        <label class="col-md-2 control-label"
+                               for="DeekshaId">Do you want to take Deeksha from Guru Amma ? (Not mandatory ):  YES / NO</label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="DeekshaId"
-                               type="text"
-                               placeholder="(required)"
-                               formControlName="Deeksha" />
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   id="DeekshaId"
+                                   type="text"
+                                   placeholder="(required)"
+                                   formControlName="Deeksha" />
 
 
-                        <span class="help-block" *ngIf="(genvForm.get('Deeksha').touched || genvForm.get('Deeksha').dirty) && genvForm.get('Deeksha').errors">
-                            <span *ngIf="genvForm.get('Deeksha').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvForm.get('Deeksha').touched || genvForm.get('Deeksha').dirty) && genvForm.get('Deeksha').errors">
+                                <span *ngIf="genvForm.get('Deeksha').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Meru').touched || genvForm.get('Meru').dirty) && !genvForm.get('Meru').valid }">
-                    <label class="col-md-2 control-label"
-                           for="MeruId">Do you want to order for MERU s / HAVAN s/ from Devipuram : YES /  NO</label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Meru').touched || genvForm.get('Meru').dirty) && !genvForm.get('Meru').valid }">
+                        <label class="col-md-2 control-label"
+                               for="MeruId">Do you want to order for MERU s / HAVAN s/ from Devipuram : YES /  NO</label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="MeruId"
-                               type="text"
-                               placeholder="(required)"
-                               formControlName="Meru" />
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   id="MeruId"
+                                   type="text"
+                                   placeholder="(required)"
+                                   formControlName="Meru" />
 
 
-                        <span class="help-block" *ngIf="(genvForm.get('Meru').touched || genvForm.get('Meru').dirty) && genvForm.get('Meru').errors">
-                            <span *ngIf="genvForm.get('Meru').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvForm.get('Meru').touched || genvForm.get('Meru').dirty) && genvForm.get('Meru').errors">
+                                <span *ngIf="genvForm.get('Meru').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label class="col-md-10 control-label">
-                        I,  Mr / Ms.		.	.	.	    .Confirm that the data given above is factual to the best of my knowledge. I approached Sri Vidya Trust – Devipuram as General Visitor on my own and agree to abide by all the rules and regulations of the organisation. I have complete knowledge of my health condition, will take care of it on my own and  would not hold the organisation responsible for any consequences on health grounds. I am fully aware that I will get  only vegetarian food, and I also assure that I will not indulge in any controversies with the inmates / visitors and maintain  the peace and tranquillity of the Ashram / organization.
-
-                    </label>
-
-                </div>
-
-                <div class="form-group">
-                    <label class="col-md-2 control-label">
-                        Date:
+                    <div class="form-group">
+                        <label class="col-md-10 control-label">
+                            I,  Mr / Ms.		.	.	.	    .Confirm that the data given above is factual to the best of my knowledge. I approached Sri Vidya Trust – Devipuram as General Visitor on my own and agree to abide by all the rules and regulations of the organisation. I have complete knowledge of my health condition, will take care of it on my own and  would not hold the organisation responsible for any consequences on health grounds. I am fully aware that I will get  only vegetarian food, and I also assure that I will not indulge in any controversies with the inmates / visitors and maintain  the peace and tranquillity of the Ashram / organization.
 
                         </label>
-                    <div class="col-md-4"></div>
-                    <label class="col-md-4 control-label">
-                        Sign of Applicant
 
-                    </label>
                     </div>
 
-                <div class="form-group">
-                    <div class="col-md-3"></div>
-                    <label class="col-md-4 control-label">
-                        ADDITIONAL INFORMTION
+                    <!--<div class="form-group">
+        <label class="col-md-2 control-label">
+            Date:
+        </label>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+        <label class="col-md-4 control-label">
+            Sign of Applicant
 
-                    </label>
-                    <div class="col-md-3"></div>                   
-                </div>
+        </label>
+        </div>-->
 
-                <div class="form-group">                    
-                    <label class="col-md-8 control-label">
-                        Do you want  to be considered for Seva / volunteering going forwards: YES  / NO.
-                    </label> 
-                    <div class="col-md-2"></div>
-                </div>
+                    <div class="form-group" [ngClass]="{'has-error': (genvForm.get('Date').touched || genvForm.get('Date').dirty) && !genvForm.get('Date').valid }">
+                        <label class="col-md-2 control-label" for="DateId">
+                            Date:
+                        </label>
+                        <div class="col-md-2">
+                            <input class="form-control"
+                                   id="DateId"
+                                   type="text"
+                                   placeholder="(required)"
+                                   formControlName="Date" />
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('Extends').touched || genvForm.get('Extends').dirty) && !genvForm.get('Extends').valid }">
-                    <label class="col-md-2 control-label"
-                           for="ExtendsId"> If 'YES', days / months of your preference to come and extend that service:
-                            </label>
-
-                    <div class="col-md-8">
-                        <textarea class="form-control"
-                                  id="ExtendsId"
-                                  rows="3"
-                                  placeholder="(required)"
-                                  formControlName="Extends"></textarea>
-
-
-                        <span class="help-block" *ngIf="(genvForm.get('Extends').touched || genvForm.get('Extends').dirty) && genvForm.get('Extends').errors">
-                            <span *ngIf="genvForm.get('Extends').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvForm.get('Date').touched || genvForm.get('Date').dirty) && genvForm.get('Date').errors">
+                                <span *ngIf="genvForm.get('Date').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
+                        <div class="col-md-2"></div>
+                        <label class="col-md-4 control-label">
+                            Sign of Applicant
+
+                        </label>
                     </div>
-                </div>
+
+                    <div class="form-group">
+                        <div class="col-md-3"></div>
+                        <label class="col-md-4 control-label">
+                            ADDITIONAL INFORMTION
+
+                        </label>
+                        <div class="col-md-3"></div>
+                    </div>
+
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Volunteering').touched || genvForm.get('Volunteering').dirty) && !genvForm.get('Volunteering').valid }">
+                        <label class="col-md-2 control-label"
+                               for="VolunteeringVolunteeringId">
+                            <!--Do you want  to be considered for Seva / volunteering going forwards: YES  / NO.-->
+                            Do you want  to be considered for Seva / volunteering going forwards:
+                        </label>
+
+                        <div class="col-md-8">
+                            <select formControlName="Volunteering" class="form-control">
+                                <option value="Spiritual">YES</option>
+                                <option value="Poojas">NO</option>
+                            </select>
 
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvForm.get('AreasOI').touched || genvForm.get('AreasOI').dirty) && !genvForm.get('AreasOI').valid }">
-                    <label class="col-md-2 control-label"
-                           for="AreasOIId">Areas of interest to extend service </label>
-
-                    <div class="col-md-8">
-
-                        <select formControlName="AreasOI" class="form-control">
-                            <option value="Spiritual">Spiritual</option>
-                            <option value="Poojas">Poojas</option>
-                            <option value="Homas">Homas</option>                            
-                            <option value="Food &Catering">Food &Catering</option>
-                            <option value="Communication">Communication</option>
-                            <option value="Computer Tech Services">Computer Tech Services</option>
-                            <option value="General Volunteer">General Volunteer</option>
-                        </select>
-
-
-
-                        <span class="help-block" *ngIf="(genvForm.get('AreasOI').touched || genvForm.get('AreasOI').dirty) && genvForm.get('AreasOI').errors">
-                            <span *ngIf="genvForm.get('AreasOI').errors.required">
-                                Please select your Option.
+                            <span class="help-block" *ngIf="(genvForm.get('Volunteering').touched || genvForm.get('Volunteering').dirty) && genvForm.get('Volunteering').errors">
+                                <span *ngIf="genvForm.get('Volunteering').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
+
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('Extends').touched || genvForm.get('Extends').dirty) && !genvForm.get('Extends').valid }">
+                        <label class="col-md-2 control-label"
+                               for="ExtendsId">
+                            If 'YES', days / months of your preference to come and extend that service:
+                        </label>
+
+                        <div class="col-md-8">
+                            <textarea class="form-control"
+                                      id="ExtendsId"
+                                      rows="3"
+                                      placeholder="(required)"
+                                      formControlName="Extends"></textarea>
+
+
+                            <span class="help-block" *ngIf="(genvForm.get('Extends').touched || genvForm.get('Extends').dirty) && genvForm.get('Extends').errors">
+                                <span *ngIf="genvForm.get('Extends').errors.required">
+                                    This field is required.
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvForm.get('AreasOI').touched || genvForm.get('AreasOI').dirty) && !genvForm.get('AreasOI').valid }">
+                        <label class="col-md-2 control-label"
+                               for="AreasOIId">Areas of interest to extend service</label>
+
+                        <div class="col-md-8">
+
+                            <select formControlName="AreasOI" class="form-control">
+                                <option value="Spiritual">Spiritual</option>
+                                <option value="Poojas">Poojas</option>
+                                <option value="Homas">Homas</option>
+                                <option value="Food &Catering">Food &Catering</option>
+                                <option value="Communication">Communication</option>
+                                <option value="Computer Tech Services">Computer Tech Services</option>
+                                <option value="General Volunteer">General Volunteer</option>
+                            </select>
+
+
+
+                            <span class="help-block" *ngIf="(genvForm.get('AreasOI').touched || genvForm.get('AreasOI').dirty) && genvForm.get('AreasOI').errors">
+                                <span *ngIf="genvForm.get('AreasOI').errors.required">
+                                    Please select your Option.
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                   
                 </div>
 
-                        <!--<div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>-->
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-2">
+                                <span>
+                                    <button class="btn btn-primary"
+                                            type="submit"
+                                            style="width:80px;margin-right:10px"
+                                            [disabled]="!genvForm.valid">
+                                        Save
+                                    </button>
+                                </span>
+                                <span>
+                                    <a class="btn btn-default"
+                                       [routerLink]="['/courses']">
+                                        Cancel
+                                    </a>
+                                </span>
 
-            </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+
+</fieldset>
         </form>
 
     </div>
-    <div class="panel-footer">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-2">
-                <span>
-                    <button class="btn btn-primary"
-                            type="button"
-                            style="width:80px;margin-right:10px"
-                            [disabled]="!isValid()"
-                            (click)="saveProduct()">
-                        Save
-                    </button>
-                </span>
-                <span>
-                    <a class="btn btn-default"
-                       [routerLink]="['/courses']">
-                        Cancel
-                    </a>
-                </span>
-                
-            </div>
-        </div>
-    </div>
+    
 
-</div>
+

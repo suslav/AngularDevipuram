@@ -1,13 +1,16 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
-        {{pageTitle}}       
+        {{pageTitle}}
     </div>
 
-    <div class="panel-body">
-         
-        <form class="form-horizontal"
-              novalidate [formGroup]="srimaForm">            
-            <fieldset>
+
+    <form class="form-horizontal"
+          novalidate [formGroup]="srimaForm" (ngSubmit)="save()">
+        <fieldset>
+
+            <div class="panel-body">
+
+
                 <!--<legend>General Visitor Form </legend>-->
 
 
@@ -72,6 +75,28 @@
                         <span class="help-block" *ngIf="(srimaForm.get('Gender').touched || srimaForm.get('Gender').dirty) && srimaForm.get('Gender').errors">
                             <span *ngIf="srimaForm.get('Gender').errors.required">
                                 Please select your Gender.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srimaForm.get('NameofSp').touched || srimaForm.get('NameofSp').dirty) && !srimaForm.get('NameofSp').valid }">
+                    <label class="col-md-4 control-label"
+                           for="NameofSpId">Name of Spouse</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="NameofSpId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="NameofSp" />
+
+
+                        <span class="help-block" *ngIf="(srimaForm.get('NameofSp').touched || srimaForm.get('NameofSp').dirty) && srimaForm.get('NameofSp').errors">
+                            <span *ngIf="srimaForm.get('NameofSp').errors.required">
+                                This field is required.
                             </span>
                         </span>
                     </div>
@@ -295,17 +320,18 @@
                 <div class="form-group"
                      [ngClass]="{'has-error': (srimaForm.get('INwsy').touched || srimaForm.get('INwsy').dirty) && !srimaForm.get('INwsy').valid }">
                     <label class="col-md-4 control-label"
-                           for="INwsyId">If 'NOT' we suggest you take it from Devipuram, for effective results from the MERUs.
-   (You may add "GURU DAKSHINA " at  your level of comfort when you place an order. On confirmation of receiving MERU,
-     you can call us  and fix up a time for receiving Deeksha followed by its installation, at your place)
-</label>
+                           for="INwsyId">
+                        If 'NOT' we suggest you take it from Devipuram, for effective results from the MERUs.
+                        (You may add "GURU DAKSHINA " at  your level of comfort when you place an order. On confirmation of receiving MERU,
+                        you can call us  and fix up a time for receiving Deeksha followed by its installation, at your place)
+                    </label>
 
                     <div class="col-md-8">
                         <textarea class="form-control"
-                               id="INwsyId"
-                               rows="3"
-                               placeholder="(required)"
-                               formControlName="INwsy" ></textarea>
+                                  id="INwsyId"
+                                  rows="3"
+                                  placeholder="(required)"
+                                  formControlName="INwsy"></textarea>
 
                         <span class="help-block" *ngIf="(srimaForm.get('INwsy').touched || srimaForm.get('INwsy').dirty) && srimaForm.get('INwsy').errors">
                             <span *ngIf="srimaForm.get('INwsy').errors.required">
@@ -380,13 +406,14 @@
                     </div>
                 </div>
 
-                <div class="form-group"
+                <!--<div class="form-group"
                      [ngClass]="{'has-error': (srimaForm.get('Wtmsv').touched || srimaForm.get('Wtmsv').dirty) && !srimaForm.get('Wtmsv').valid }">
                     <label class="col-md-4 control-label"
-                           for="WtmsvId">Willing to make some voluntary contribution to improve facilities OR supporting the   Annadaanam Programme at Devipuram? If 'YES', Pl tick in the box here to let us contact you.
-(Guruji's vision is to let all  be blessed by the  Divine mother. So there is no compulsion and  this is not linked to obtaining MERUs.)
- (All Donations to SDNS (Sri Devipuram Nirman Society) are exempted under 80 G of IT Act)
-</label>
+                           for="WtmsvId">
+                        Willing to make some voluntary contribution to improve facilities OR supporting the   Annadaanam Programme at Devipuram? If 'YES', Pl tick in the box here to let us contact you.
+                        (Guruji's vision is to let all  be blessed by the  Divine mother. So there is no compulsion and  this is not linked to obtaining MERUs.)
+                        (All Donations to SDNS (Sri Devipuram Nirman Society) are exempted under 80 G of IT Act)
+                    </label>
 
                     <div class="col-md-8">
                         <input type="checkbox" name="Wtmsv" value="Wtmsv">
@@ -398,6 +425,20 @@
                             </span>
                         </span>
                     </div>
+                </div>-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label"
+                           for="WtmsvId">
+                        Willing to make some voluntary contribution to improve facilities OR supporting the   Annadaanam Programme at Devipuram? If 'YES', Pl tick in the box here to let us contact you.
+                        (Guruji's vision is to let all  be blessed by the  Divine mother. So there is no compulsion and  this is not linked to obtaining MERUs.)
+                        (All Donations to SDNS (Sri Devipuram Nirman Society) are exempted under 80 G of IT Act)
+                    </label>
+
+                    <div class="col-md-8">
+                        <input type="checkbox" name="Wtmsv" value="Wtmsv">
+                         
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -407,46 +448,71 @@
 
                 </div>
 
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label class="col-md-4 control-label">
                         Date:
 
-                        </label>
+                    </label>
                     <div class="col-md-4"></div>
                     <label class="col-md-4 control-label">
                         Sign of Applicant
 
                     </label>
+                </div>-->
+
+                <div class="form-group" [ngClass]="{'has-error': (srimaForm.get('Date').touched || srimaForm.get('Date').dirty) && !srimaForm.get('Date').valid }">
+                    <label class="col-md-2 control-label" for="DateId">
+                        Date:
+                    </label>
+                    <div class="col-md-2">
+                        <input class="form-control"
+                               id="DateId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Date" />
+
+                        <span class="help-block" *ngIf="(srimaForm.get('Date').touched || srimaForm.get('Date').dirty) && srimaForm.get('Date').errors">
+                            <span *ngIf="srimaForm.get('Date').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <label class="col-md-4 control-label">
+                        Sign of Applicant
+
+                    </label>
                 </div>
-                 
-                        <!--<div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>-->
 
-            </fieldset>
-        </form>
+                <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
 
-    </div>
-    <div class="panel-footer">
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-6 col-md-offset-2">
-                <span>
-                    <button class="btn btn-primary"
-                            type="button"
-                            style="width:80px;margin-right:10px"
-                            [disabled]="!isValid()"
-                            (click)="saveProduct()">
-                        Save
-                    </button>
-                </span>
-                <span>
-                    <a class="btn btn-default"
-                       [routerLink]="['/courses']">
-                        Cancel
-                    </a>
-                </span>
+
 
             </div>
-        </div>
-    </div>
+            <div class="panel-footer">
+                <div class="row">                   
+                    <div class="col-md-4"></div>
+                    <div class="col-md-6 col-md-offset-2">
+                        <span>
+                            <button class="btn btn-primary"
+                                    type="submit"
+                                    style="width:80px;margin-right:10px"
+                                    [disabled]="!srimaForm.valid">
+                                Save
+                            </button>
+                        </span>
+                        <span>
+                            <a class="btn btn-default"
+                               [routerLink]="['/courses']">
+                                Cancel
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
 
 </div>

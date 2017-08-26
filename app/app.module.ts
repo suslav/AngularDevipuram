@@ -36,6 +36,8 @@ import { PageNotFoundComponent } from './page-not-found.component';
 //import { ShoppingCart1Component } from './shoppingcart/shoppingcart1.component';
  
 import { CoursesModule } from './courses/courses.module'; 
+import { CoursesListModule } from './courseslist/courseslist.module'; 
+import { GeneralVisitorService } from './courses/generalvisitor.service'; 
 
 //import { ShoppingcartModule } from './shoppingcart/shoppingcart.module'; 
 
@@ -49,9 +51,10 @@ import { ProductsModule } from './shoppingcart/products.module';
     imports: [
         BrowserModule,
       // FormsModule,
-          ReactiveFormsModule,
+        ReactiveFormsModule,    
         HttpModule,    
         CoursesModule  
+        , CoursesListModule
       //  ,ShoppingcartModule
         ,ProductsModule
         ,AppRoutingModule
@@ -79,6 +82,7 @@ import { ProductsModule } from './shoppingcart/products.module';
         UserService,
         LoginService,
         SignupService,
+        GeneralVisitorService,
         PhotoGalleryService,
         // providers used to create fake backend
       //  fakeBackendProvider,

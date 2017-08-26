@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\login",
-    "\\css"
+    "\\app\\courseslist"
   ],
-  "SelectedNode": "\\app\\login\\login.component.ts",
+  "SelectedNode": "\\app\\courseslist\\courseslist.service.ts",
   "PreviewInSolutionExplorer": false
 }

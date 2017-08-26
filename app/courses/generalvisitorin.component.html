@@ -3,11 +3,14 @@
         {{pageTitle}}
     </div>
 
-    <div class="panel-body">
 
-        <form class="form-horizontal"
-              novalidate [formGroup]="genvinForm">
-            <fieldset>
+    <form class="form-horizontal"
+          novalidate [formGroup]="genvinForm" (ngSubmit)="save()">
+        <fieldset>
+
+            <div class="panel-body">
+
+
                 <!--<legend>General Visitor Form </legend>-->
 
 
@@ -342,7 +345,7 @@
 
                     <div class="col-md-8">
                         <input class="form-control"
-                               id="VisaNoId" 
+                               id="VisaNoId"
                                type="text"
                                placeholder="(required)"
                                formControlName="VisaNo" />
@@ -380,7 +383,7 @@
                 <div class="form-group"
                      [ngClass]="{'has-error': (genvinForm.get('Departure').touched || genvinForm.get('Departure').dirty) && !genvinForm.get('Departure').valid }">
                     <label class="col-md-2 control-label"
-                           for="DepartureId"> Intending Dt.of Departure in India, City and Place</label>
+                           for="DepartureId">Intending Dt.of Departure in India, City and Place</label>
 
                     <div class="col-md-8">
                         <input class="form-control"
@@ -595,7 +598,7 @@
 
                 </div>
 
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label class="col-md-2 control-label">
                         Date:
 
@@ -605,7 +608,33 @@
                         Sign of Applicant
 
                     </label>
+                </div>-->
+
+
+                <div class="form-group" [ngClass]="{'has-error': (genvinForm.get('Date').touched || genvinForm.get('Date').dirty) && !genvinForm.get('Date').valid }">
+                    <label class="col-md-2 control-label" for="DateId">
+                        Date:
+                    </label>
+                    <div class="col-md-2">
+                        <input class="form-control"
+                               id="DateId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Date" />
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Date').touched || genvinForm.get('Date').dirty) && genvinForm.get('Date').errors">
+                            <span *ngIf="genvinForm.get('Date').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <label class="col-md-4 control-label">
+                        Sign of Applicant
+
+                    </label>
                 </div>
+
 
                 <div class="form-group">
                     <div class="col-md-3"></div>
@@ -616,12 +645,36 @@
                     <div class="col-md-3"></div>
                 </div>
 
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label class="col-md-8 control-label">
                         Do you want  to be considered for Seva / volunteering going forwards: YES  / NO.
                     </label>
                     <div class="col-md-2"></div>
+                </div>-->
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Volunteering').touched || genvinForm.get('Volunteering').dirty) && !genvinForm.get('Volunteering').valid }">
+                    <label class="col-md-2 control-label"
+                           for="VolunteeringVolunteeringId">
+                        <!--Do you want  to be considered for Seva / volunteering going forwards: YES  / NO.-->
+                        Do you want  to be considered for Seva / volunteering going forwards:
+                    </label>
+
+                    <div class="col-md-8">
+                        <select formControlName="Volunteering" class="form-control">
+                            <option value="Spiritual">YES</option>
+                            <option value="Poojas">NO</option>
+                        </select>
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Volunteering').touched || genvinForm.get('Volunteering').dirty) && genvinForm.get('Volunteering').errors">
+                            <span *ngIf="genvinForm.get('Volunteering').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
                 </div>
+
 
                 <div class="form-group"
                      [ngClass]="{'has-error': (genvinForm.get('Extends').touched || genvinForm.get('Extends').dirty) && !genvinForm.get('Extends').valid }">
@@ -674,30 +727,32 @@
                     </div>
                 </div>
 
-                <!--<div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>-->
+                <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+                
 
-            </fieldset>
-        </form>
-    </div>
-    <div class="panel-footer">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-2">
-                <span>
-                    <button class="btn btn-primary"
-                            type="button"
-                            style="width:80px;margin-right:10px"
-                            [disabled]="!isValid()"
-                            (click)="saveProduct()">
-                        Save
-                    </button>
-                </span>
-                <span>
-                    <a class="btn btn-default"
-                       [routerLink]="['/courses']">
-                        Cancel
-                    </a>
-                </span>
             </div>
-        </div>
-    </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-2">
+                        <span>
+                            <button class="btn btn-primary"
+                                    type="submit"
+                                    style="width:80px;margin-right:10px"
+                                    [disabled]="!genvinForm.valid">
+                                Save
+                            </button>
+                        </span>
+                        <span>
+                            <a class="btn btn-default"
+                               [routerLink]="['/courses']">
+                                Cancel
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+        </fieldset>
+    </form>
 </div>

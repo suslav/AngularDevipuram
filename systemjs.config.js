@@ -24,11 +24,19 @@
             '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
             '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
 
+            //'ng2-datepicker': 'npm:ng2-datepicker', 
+
+            'mydatepicker': 'npm:mydatepicker/bundles/mydatepicker.umd.min.js',
             // other libraries
             'rxjs': 'npm:rxjs'
+
+            
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
+
+          //  'ng2-datepicker': { main: './ng2-datepicker.js', defaultExtension: 'js' },           
+
             app: {
                 main: './main.js',
                 defaultExtension: 'js'

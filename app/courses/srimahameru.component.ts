@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { SvcAnswer } from './svcanswer';
-//import { SriVidyaService } from './srividya.service';
+import { GeneralVisitorService } from './generalvisitor.service';
 
 @Component({
     templateUrl: './app/courses/srimahameru.component.html'
@@ -11,13 +11,13 @@ import { SvcAnswer } from './svcanswer';
 export class SrimahameruComponent implements OnInit {
     pageTitle: string = 'Sri Maha Meru';
     srimaForm: FormGroup;
+    errorMessage: string;
 
-    private dataIsValid: { [key: string]: boolean } = {};
+    //private dataIsValid: { [key: string]: boolean } = {};
 
     constructor(
-        //  private srividyaService: SriVidyaService,
-        private route: ActivatedRoute, private fb: FormBuilder
-        // private router: Router
+        private route: ActivatedRoute, private fb: FormBuilder,
+        private gvService: GeneralVisitorService, private router: Router
     ) { }
 
     ngOnInit(): void {
@@ -26,6 +26,7 @@ export class SrimahameruComponent implements OnInit {
             Name: ['', [Validators.required, Validators.minLength(3)]],
             Age: ['', Validators.required],
             Gender: ['', Validators.required],
+            NameofSp: ['', Validators.required],
             Sonof: ['', Validators.required],
             Nationality: ['', Validators.required],
             EmailID: ['', Validators.required],
@@ -40,20 +41,34 @@ export class SrimahameruComponent implements OnInit {
             Boyp: ['', Validators.required],
             Yawtp: ['', Validators.required],
             Sombs: ['', Validators.required],
-            Wtmsv: ['', Validators.required]
+            //Wtmsv: ['', Validators.required],
+            Wtmsv: [''],
+            Date: ['', Validators.required]
         });
     }
 
-    isValid(path: string): boolean {
-        this.validate();
-        if (path) {
-            return this.dataIsValid[path];
-        }
-        return (this.dataIsValid &&
-            Object.keys(this.dataIsValid).every(d => this.dataIsValid[d] === true));
-    }
+    save() {
 
-    validate(): void {
-        this.dataIsValid = {};
+      
+        let Form = this.srimaForm.value;
+
+        let body = Form.Name + '~' + 1 + '|' + Form.Age + '~' + 2 + Form.Gender + '~' + 3 + '|' + Form.NameofSp + '~' + 4 + '|' + Form.Sonof + '~' + 5 + '|' +
+            Form.Nationality + '~' + 6 + '|' + Form.EmailID + '~' + 7 + '|' + Form.MobilePh + '~' + 8 + '|' + Form.Address + '~' + 9 + '|' +
+            Form.Education + '~' + 10 + '|' + Form.Profession + '~' + 11 + '|' + Form.Hdyctk + '~' + 12 + '|' + Form.Dytet + '~' + 13 + '|' +
+            Form.HytDG + '~' + 14 + '|' + Form.INwsy + '~' + 15 + '|' + Form.Boyp + '~' + 16 + '|' + Form.Yawtp + '~' + 17 + '|' +
+            Form.Sombs + '~' + 18 + '|' + Form.Wtmsv + '~' + 19 + '|' + Form.Date + '~' + 20;
+
+
+        this.gvService.insertSriMahameru(body).subscribe(
+            data => {
+                console.log(data);
+                return this.router.navigate(['/']);
+            },
+            error => {
+                console.error("Error While Inserting Data");
+                return this.errorMessage = "Error While Inserting Data";
+            }
+        );
+
     }
 }

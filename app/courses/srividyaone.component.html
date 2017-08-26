@@ -1,12 +1,8 @@
 <div class="panel-body">
     <form class="form-horizontal"
-          novalidate    [formGroup]="svoForm">      
-          <!--#productForm="ngForm"-->
-         
+          novalidate    [formGroup]="svoForm" (ngSubmit)="save()">               
         <fieldset>
             <legend>Sri Vidya Form Part1</legend>
-
-
             <div class="form-group"
                  [ngClass]="{'has-error': (svoForm.get('Name').touched || svoForm.get('Name').dirty) && !svoForm.get('Name').valid }">
                 <label class="col-md-2 control-label"
@@ -269,9 +265,34 @@
                     </span>
                 </div>
             </div>
-             
-            <!--<div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>-->
 
-        </fieldset>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+                </div>
+                </div>
+
+               
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-2">
+                        <span>
+                            <button class="btn btn-primary"
+                                    type="submit"
+                                    style="width:80px;margin-right:10px"
+                                    [disabled]="!svoForm.valid">
+                                Save
+                            </button>
+                        </span>
+                        <span>
+                            <a class="btn btn-default"
+                               [routerLink]="['/courses']">
+                                Cancel
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+</fieldset>
     </form>
 </div> 

@@ -8,24 +8,15 @@ import { SvcAnswer } from './svcanswer';
     templateUrl: './app/courses/srividyathree.component.html'
 })
 export class SrividyaThreeComponent implements OnInit {
-    //@ViewChild(NgForm) productForm: NgForm;
-
+    
     svthForm: FormGroup;
 
-    //errorMessage: string;
-    //product: SvcAnswer;
-
+   
     constructor(private route: ActivatedRoute) { }
 
     ngOnInit(): void {
 
-        //this.route.parent.data.subscribe(data => {
-        //    this.product = data['product'];
-
-        //    if (this.productForm) {
-        //        this.productForm.reset();
-        //    }
-        //});
+       
 
     }
 }
