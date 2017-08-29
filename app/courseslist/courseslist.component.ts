@@ -25,14 +25,26 @@ export class CoursesListComponent implements OnInit {
 
     }
 
-    onDateChanged(event: IMyDateModel) {
-
-        console.log(event.formatted);
-
-       // let param = event.formatted;
-
-        this._courselistService.getVisitors(event.formatted).subscribe(visitors => this.visitors = visitors,
-            error => this.errorMessage = <any>error);
-
+    onDateChanged(event: IMyDateModel) {       
+        //this._courselistService.getVisitors(event.formatted).subscribe(visitors => this.visitors = visitors,
+        //    error => this.errorMessage = <any>error);
+        
+            this._courselistService.getVisitors(event.formatted).subscribe(
+                visitors => {
+                    if (visitors.length > 0)
+                    {
+                        this.errorMessage = " ";
+                        return this.visitors = visitors;                      
+                    }
+                    else
+                    {
+                        return this.errorMessage = "There is no Registrations on the selected date";
+                    }
+                    
+                },
+                error => {
+                    //return this.errorMessage = <any>error;
+                }
+            );
     }
 } 

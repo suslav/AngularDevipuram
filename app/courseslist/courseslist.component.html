@@ -1,7 +1,6 @@
-
 <div class='panel panel-primary'>
     <div class="panel-heading">
-      Courses List
+        Registered Courses List
     </div>
     <div class="panel-body">
 
@@ -31,12 +30,22 @@
                                     <tr>
                                         <th>User</th>
                                         <th>FormType</th>
+                                        <th>View</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr *ngFor='let visitor of visitors'>
-                                        <td>{{visitor.UserID}}</td>
-                                        <td>{{visitor.FormTypeID}}</td>
+                                        <td>{{visitor.UserName}}</td>
+                                        <td>{{visitor.FormType}}</td>
+                                        <td>
+                                        <!--<a [routerLink]="['/products',product.id,'edit']">
+                                                   Edit
+                                        </a>-->
+
+                                            <a [routerLink]="['/courseslist',visitor.VisitorFormID,visitor.FormTypeID]">
+                                                View
+                                            </a>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -44,5 +53,15 @@
                     </div>
                 </div>
 
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+            </div>
+        </div>        
             </div>
         </div>

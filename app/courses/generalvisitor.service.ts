@@ -34,7 +34,8 @@ export class GeneralVisitorService {
     }
 
     insertGeneralvisitors(body: string) {
-         let jsbody = JSON.stringify(body);
+       // let jsbody = JSON.stringify(body);
+        let jsbody = { "GVAnswer": body, "UserID": this.token};
        // let jsbody = body;
         console.log(jsbody);
         return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/generalvisitorsanswersinsert', jsbody, this.options).map((res: Response) => res.json());

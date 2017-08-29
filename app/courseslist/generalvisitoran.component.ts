@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { SvcAnswer } from './svcanswer';
-import { GeneralVisitorService } from './generalvisitor.service';
+//import { GeneralVisitorService } from './generalvisitor.service';
 
 @Component({
-    templateUrl: './app/courses/generalvisitor.component.html'
+    templateUrl: './app/courseslist/generalvisitoran.component.html'
 })
-export class GeneralVisitorComponent implements OnInit {
+export class GeneralVisitorAnComponent implements OnInit {
     pageTitle: string = 'General Visitor';
     genvForm: FormGroup;
     errorMessage: string;
@@ -18,7 +17,8 @@ export class GeneralVisitorComponent implements OnInit {
     constructor(
       
         private route: ActivatedRoute, private fb: FormBuilder,
-        private gvService: GeneralVisitorService, private router: Router
+        //private gvService: GeneralVisitorService,
+        private router: Router
     ) { }
 
     ngOnInit(): void {
@@ -59,14 +59,14 @@ export class GeneralVisitorComponent implements OnInit {
                    Form.Volunteering + '~' + 18 + '|' + Form.Extends + '~' + 19 + '|' + Form.AreasOI + '~' + 20 + '|' + Form.Date + '~' + 21;
          
 
-        this.gvService.insertGeneralvisitors(body).subscribe(
-            data => {
-                return this.router.navigate(['/']);
-            },
-            error => {
-                return this.errorMessage = "Error While Inserting Data";
-            }
-        );
+        //this.gvService.insertGeneralvisitors(body).subscribe(
+        //    data => {
+        //        return this.router.navigate(['/']);
+        //    },
+        //    error => {
+        //        return this.errorMessage = "Error While Inserting Data";
+        //    }
+        //);
          
     }
 

@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\courses",
     "\\app\\courseslist"
   ],
-  "SelectedNode": "\\app\\courseslist\\courseslist.service.ts",
+  "SelectedNode": "\\app\\courseslist\\generalvisitoran.component.ts",
   "PreviewInSolutionExplorer": false
 }

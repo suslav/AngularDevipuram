@@ -1,0 +1,758 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+
+
+    <form class="form-horizontal"
+          novalidate [formGroup]="genvinForm" (ngSubmit)="save()">
+        <fieldset>
+
+            <div class="panel-body">
+
+
+                <!--<legend>General Visitor Form </legend>-->
+
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Name').touched || genvinForm.get('Name').dirty) && !genvinForm.get('Name').valid }">
+                    <label class="col-md-2 control-label"
+                           for="NameId">NAME</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="NameId"
+                               type="text"
+                               placeholder="Name (required)"
+                               formControlName="Name" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Name').touched || genvinForm.get('Name').dirty) && genvinForm.get('Name').errors">
+                            <span *ngIf="genvinForm.get('Name').errors.required">
+                                Please enter your Name.
+                            </span>
+                            <span *ngIf="genvinForm.get('Name').errors.minlength">
+                                The Name must be longer than 3 characters.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Age').touched || genvinForm.get('Age').dirty) && !genvinForm.get('Age').valid }">
+                    <label class="col-md-2 control-label"
+                           for="AgeId">AGE</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="AgeId"
+                               type="number"
+                               placeholder="AGE (required)"
+                               formControlName="Age" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Age').touched || genvinForm.get('Age').dirty) && genvinForm.get('Age').errors">
+                            <span *ngIf="genvinForm.get('Age').errors.required">
+                                Please enter your Age.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Gender').touched || genvinForm.get('Gender').dirty) && !genvinForm.get('Gender').valid }">
+                    <label class="col-md-2 control-label"
+                           for="GenderId">GENDER</label>
+
+                    <div class="col-md-8">
+
+                        <select formControlName="Gender" class="form-control">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Gender').touched || genvinForm.get('Gender').dirty) && genvinForm.get('Gender').errors">
+                            <span *ngIf="genvinForm.get('Gender').errors.required">
+                                Please select your Gender.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Sonof').touched || genvinForm.get('Sonof').dirty) && !genvinForm.get('Sonof').valid }">
+                    <label class="col-md-2 control-label"
+                           for="SonofId">Son/of. or Dtr/of. or Wife/of</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="SonofId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Sonof" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Sonof').touched || genvinForm.get('Sonof').dirty) && genvinForm.get('Sonof').errors">
+                            <span *ngIf="genvinForm.get('Sonof').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Place').touched || genvinForm.get('Place').dirty) && !genvinForm.get('Place').valid }">
+                    <label class="col-md-2 control-label"
+                           for="PlaceId">Place & Country</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="PlaceId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Place" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Place').touched || genvinForm.get('Place').dirty) && genvinForm.get('Place').errors">
+                            <span *ngIf="genvinForm.get('Place').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Nationality').touched || genvinForm.get('Nationality').dirty) && !genvinForm.get('Nationality').valid }">
+                    <label class="col-md-2 control-label"
+                           for="NationalityId">
+                        Nationality:
+                    </label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="NationalityId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Nationality" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Nationality').touched || genvinForm.get('Nationality').dirty) && genvinForm.get('Nationality').errors">
+                            <span *ngIf="genvinForm.get('Nationality').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('MaritalStatus').touched || genvinForm.get('MaritalStatus').dirty) && !genvinForm.get('MaritalStatus').valid }">
+                    <label class="col-md-2 control-label"
+                           for="MaritalStatusId">Marital Status: Single/Married/Separated/Living together/others</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="MaritalStatusId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="MaritalStatus" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('MaritalStatus').touched || genvinForm.get('MaritalStatus').dirty) && genvinForm.get('MaritalStatus').errors">
+                            <span *ngIf="genvinForm.get('MaritalStatus').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('DateofBirth').touched || genvinForm.get('DateofBirth').dirty) && !genvinForm.get('DateofBirth').valid }">
+                    <label class="col-md-2 control-label"
+                           for="DateofBirthId">Date of Birth</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="DateofBirthId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="DateofBirth" />
+
+                        <span class="help-block" *ngIf="(genvinForm.get('DateofBirth').touched || genvinForm.get('DateofBirth').dirty) && genvinForm.get('DateofBirth').errors">
+                            <span *ngIf="genvinForm.get('DateofBirth').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('ContactDin').touched || genvinForm.get('ContactDin').dirty) && !genvinForm.get('ContactDin').valid }">
+                    <label class="col-md-2 control-label"
+                           for="ContactDinId">Contact details in India</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="ContactDinId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="ContactDin" />
+
+                        <span class="help-block" *ngIf="(genvinForm.get('ContactDin').touched || genvinForm.get('ContactDin').dirty) && genvinForm.get('ContactDin').errors">
+                            <span *ngIf="genvinForm.get('ContactDin').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('EMailID').touched || genvinForm.get('EMailID').dirty) && !genvinForm.get('EMailID').valid }">
+                    <label class="col-md-2 control-label"
+                           for="EMailIDId">E Mail ID</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="EMailIDId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="EMailID" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('EMailID').touched || genvinForm.get('EMailID').dirty) && genvinForm.get('EMailID').errors">
+                            <span *ngIf="genvinForm.get('EMailID').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('PerLand').touched || genvinForm.get('PerLand').dirty) && !genvinForm.get('PerLand').valid }">
+                    <label class="col-md-2 control-label"
+                           for="PerLandId">Permanent Landline (Phone)</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="PerLandId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="PerLand" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('PerLand').touched || genvinForm.get('PerLand').dirty) && genvinForm.get('PerLand').errors">
+                            <span *ngIf="genvinForm.get('PerLand').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('PerMob').touched || genvinForm.get('PerMob').dirty) && !genvinForm.get('PerMob').valid }">
+                    <label class="col-md-2 control-label"
+                           for="PerMobId">Permanent Mobile No</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="PerMobId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="PerMob" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('PerMob').touched || genvinForm.get('PerMob').dirty) && genvinForm.get('PerMob').errors">
+                            <span *ngIf="genvinForm.get('PerMob').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('MobileIn').touched || genvinForm.get('MobileIn').dirty) && !genvinForm.get('MobileIn').valid }">
+                    <label class="col-md-2 control-label"
+                           for="MobileInId">Mobile No in India</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="MobileInId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="MobileIn" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('MobileIn').touched || genvinForm.get('MobileIn').dirty) && genvinForm.get('MobileIn').errors">
+                            <span *ngIf="genvinForm.get('MobileIn').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Address').touched || genvinForm.get('Address').dirty) && !genvinForm.get('Address').valid }">
+                    <label class="col-md-2 control-label"
+                           for="AddressId">ADDRESS (Permanent)</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="AddressId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Address" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Address').touched || genvinForm.get('Address').dirty) && genvinForm.get('Address').errors">
+                            <span *ngIf="genvinForm.get('Address').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Passport').touched || genvinForm.get('Passport').dirty) && !genvinForm.get('Passport').valid }">
+                    <label class="col-md-2 control-label"
+                           for="PassportId">
+                        Passport  No, Valid up to date and Issued Place:
+                        (Passport Copy is Mandatory for other Nationals)
+                    </label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="PassportId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Passport" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Passport').touched || genvinForm.get('Passport').dirty) && genvinForm.get('Passport').errors">
+                            <span *ngIf="genvinForm.get('Passport').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('VisaNo').touched || genvinForm.get('VisaNo').dirty) && !genvinForm.get('VisaNo').valid }">
+                    <label class="col-md-2 control-label"
+                           for="VisaNoId">
+                        Visa No, Valid up to date and Issued Place
+                    </label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="VisaNoId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="VisaNo" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('VisaNo').touched || genvinForm.get('VisaNo').dirty) && genvinForm.get('VisaNo').errors">
+                            <span *ngIf="genvinForm.get('VisaNo').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Intending').touched || genvinForm.get('Intending').dirty) && !genvinForm.get('Intending').valid }">
+                    <label class="col-md-2 control-label"
+                           for="IntendingId">Intending Dt.of Arrival in India, City and Place</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="IntendingId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Intending" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Intending').touched || genvinForm.get('Intending').dirty) && genvinForm.get('Intending').errors">
+                            <span *ngIf="genvinForm.get('Intending').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Departure').touched || genvinForm.get('Departure').dirty) && !genvinForm.get('Departure').valid }">
+                    <label class="col-md-2 control-label"
+                           for="DepartureId">Intending Dt.of Departure in India, City and Place</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="DepartureId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Departure" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Departure').touched || genvinForm.get('Departure').dirty) && genvinForm.get('Departure').errors">
+                            <span *ngIf="genvinForm.get('Departure').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('ArrivalDev').touched || genvinForm.get('ArrivalDev').dirty) && !genvinForm.get('ArrivalDev').valid }">
+                    <label class="col-md-2 control-label"
+                           for="ArrivalDevId">Intending Dt.of Arrival in Devipuram</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="ArrivalDevId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="ArrivalDev" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('ArrivalDev').touched || genvinForm.get('ArrivalDev').dirty) && genvinForm.get('ArrivalDev').errors">
+                            <span *ngIf="genvinForm.get('ArrivalDev').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('DepartureDev').touched || genvinForm.get('DepartureDev').dirty) && !genvinForm.get('DepartureDev').valid }">
+                    <label class="col-md-2 control-label"
+                           for="DepartureDevId">Intending Dt.of Departure in Devipuram</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="DepartureDevId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="DepartureDev" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('DepartureDev').touched || genvinForm.get('DepartureDev').dirty) && genvinForm.get('DepartureDev').errors">
+                            <span *ngIf="genvinForm.get('DepartureDev').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('NDestination').touched || genvinForm.get('NDestination').dirty) && !genvinForm.get('NDestination').valid }">
+                    <label class="col-md-2 control-label"
+                           for="NDestinationId">Next Destination in India, City and Place</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="NDestinationId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="NDestination" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('NDestination').touched || genvinForm.get('NDestination').dirty) && genvinForm.get('NDestination').errors">
+                            <span *ngIf="genvinForm.get('NDestination').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Visited').touched || genvinForm.get('Visited').dirty) && !genvinForm.get('Visited').valid }">
+                    <label class="col-md-2 control-label"
+                           for="VisitedId">Visited earlier  ( YES / NO) & Main Purpose of your visit:</label>
+
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="VisitedId"
+                                  rows="3"
+                                  placeholder="(required)"
+                                  formControlName="Visited"></textarea>
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Visited').touched || genvinForm.get('Visited').dirty) && genvinForm.get('Visited').errors">
+                            <span *ngIf="genvinForm.get('Visited').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Education').touched || genvinForm.get('Education').dirty) && !genvinForm.get('Education').valid }">
+                    <label class="col-md-2 control-label"
+                           for="EducationId">EDUCATION</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="EducationId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Education" />
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Education').touched || genvinForm.get('Education').dirty) && genvinForm.get('Education').errors">
+                            <span *ngIf="genvinForm.get('Education').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Profession').touched || genvinForm.get('Profession').dirty) && !genvinForm.get('Profession').valid }">
+                    <label class="col-md-2 control-label"
+                           for="ProfessionId">Profession</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="ProfessionId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Profession" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Profession').touched || genvinForm.get('Profession').dirty) && genvinForm.get('Profession').errors">
+                            <span *ngIf="genvinForm.get('Profession').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Health').touched || genvinForm.get('Health').dirty) && !genvinForm.get('Health').valid }">
+                    <label class="col-md-2 control-label"
+                           for="HealthId">Health:  (As we do not have medical assistance here, you may have to inform us if any special attention is required)</label>
+
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="HealthId"
+                                  rows="3"
+                                  placeholder="(required)"
+                                  formControlName="Health"></textarea>
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Health').touched || genvinForm.get('Health').dirty) && genvinForm.get('Health').errors">
+                            <span *ngIf="genvinForm.get('Health').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Deeksha').touched || genvinForm.get('Deeksha').dirty) && !genvinForm.get('Deeksha').valid }">
+                    <label class="col-md-2 control-label"
+                           for="DeekshaId">Do you want to take Deeksha from Guru Amma ? (Not mandatory ):  YES / NO</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="DeekshaId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Deeksha" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Deeksha').touched || genvinForm.get('Deeksha').dirty) && genvinForm.get('Deeksha').errors">
+                            <span *ngIf="genvinForm.get('Deeksha').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Meru').touched || genvinForm.get('Meru').dirty) && !genvinForm.get('Meru').valid }">
+                    <label class="col-md-2 control-label"
+                           for="MeruId">Do you want to order for MERU s / HAVAN s/ from Devipuram : YES /  NO</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="MeruId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Meru" />
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Meru').touched || genvinForm.get('Meru').dirty) && genvinForm.get('Meru').errors">
+                            <span *ngIf="genvinForm.get('Meru').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-10 control-label">
+                        I,  Mr / Ms.		.	.	.	    .Confirm that the data given above is factual to the best of my knowledge. I approached Sri Vidya Trust – Devipuram as General Visitor on my own and agree to abide by all the rules and regulations of the organisation. I have complete knowledge of my health condition, will take care of it on my own and  would not hold the organisation responsible for any consequences on health grounds. I am fully aware that I will get  only vegetarian food, and I also assure that I will not indulge in any controversies with the inmates / visitors and maintain  the peace and tranquillity of the Ashram / organization.
+
+                    </label>
+
+                </div>
+
+                <!--<div class="form-group">
+                    <label class="col-md-2 control-label">
+                        Date:
+
+                    </label>
+                    <div class="col-md-4"></div>
+                    <label class="col-md-4 control-label">
+                        Sign of Applicant
+
+                    </label>
+                </div>-->
+
+
+                <div class="form-group" [ngClass]="{'has-error': (genvinForm.get('Date').touched || genvinForm.get('Date').dirty) && !genvinForm.get('Date').valid }">
+                    <label class="col-md-2 control-label" for="DateId">
+                        Date:
+                    </label>
+                    <div class="col-md-2">
+                        <input class="form-control"
+                               id="DateId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Date" />
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Date').touched || genvinForm.get('Date').dirty) && genvinForm.get('Date').errors">
+                            <span *ngIf="genvinForm.get('Date').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <label class="col-md-4 control-label">
+                        Sign of Applicant
+
+                    </label>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-3"></div>
+                    <label class="col-md-4 control-label">
+                        ADDITIONAL INFORMTION
+
+                    </label>
+                    <div class="col-md-3"></div>
+                </div>
+
+                <!--<div class="form-group">
+                    <label class="col-md-8 control-label">
+                        Do you want  to be considered for Seva / volunteering going forwards: YES  / NO.
+                    </label>
+                    <div class="col-md-2"></div>
+                </div>-->
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Volunteering').touched || genvinForm.get('Volunteering').dirty) && !genvinForm.get('Volunteering').valid }">
+                    <label class="col-md-2 control-label"
+                           for="VolunteeringVolunteeringId">
+                        <!--Do you want  to be considered for Seva / volunteering going forwards: YES  / NO.-->
+                        Do you want  to be considered for Seva / volunteering going forwards:
+                    </label>
+
+                    <div class="col-md-8">
+                        <select formControlName="Volunteering" class="form-control">
+                            <option value="Spiritual">YES</option>
+                            <option value="Poojas">NO</option>
+                        </select>
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Volunteering').touched || genvinForm.get('Volunteering').dirty) && genvinForm.get('Volunteering').errors">
+                            <span *ngIf="genvinForm.get('Volunteering').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('Extends').touched || genvinForm.get('Extends').dirty) && !genvinForm.get('Extends').valid }">
+                    <label class="col-md-2 control-label"
+                           for="ExtendsId">
+                        If 'YES', days / months of your preference to come and extend that service:
+                    </label>
+
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="ExtendsId"
+                                  rows="3"
+                                  placeholder="(required)"
+                                  formControlName="Extends"></textarea>
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('Extends').touched || genvinForm.get('Extends').dirty) && genvinForm.get('Extends').errors">
+                            <span *ngIf="genvinForm.get('Extends').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (genvinForm.get('AreasOI').touched || genvinForm.get('AreasOI').dirty) && !genvinForm.get('AreasOI').valid }">
+                    <label class="col-md-2 control-label"
+                           for="AreasOIId">Areas of interest to extend service</label>
+
+                    <div class="col-md-8">
+
+                        <select formControlName="AreasOI" class="form-control">
+                            <option value="Spiritual">Spiritual</option>
+                            <option value="Poojas">Poojas</option>
+                            <option value="Homas">Homas</option>
+                            <option value="Food &Catering">Food &Catering</option>
+                            <option value="Communication">Communication</option>
+                            <option value="Computer Tech Services">Computer Tech Services</option>
+                            <option value="General Volunteer">General Volunteer</option>
+                        </select>
+
+
+
+                        <span class="help-block" *ngIf="(genvinForm.get('AreasOI').touched || genvinForm.get('AreasOI').dirty) && genvinForm.get('AreasOI').errors">
+                            <span *ngIf="genvinForm.get('AreasOI').errors.required">
+                                Please select your Option.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+                
+
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-2">
+                        <span>
+                            <button class="btn btn-primary"
+                                    type="submit"
+                                    style="width:80px;margin-right:10px"
+                                    [disabled]="!genvinForm.valid">
+                                Save
+                            </button>
+                        </span>
+                        <span>
+                            <a class="btn btn-default"
+                               [routerLink]="['/courses']">
+                                Cancel
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+        </fieldset>
+    </form>
+</div>

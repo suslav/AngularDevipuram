@@ -1,0 +1,222 @@
+<div class="panel-body">
+    <form class="form-horizontal"
+          novalidate
+          [formGroup]="svtForm" (ngSubmit)="save()">
+        <fieldset>
+            <legend>Sri Vidya Form Part2</legend>
+
+            <div class="form-group"
+                 [ngClass]="{'has-error': (svtForm.get('Health').touched || svtForm.get('Health').dirty) && !svtForm.get('Health').valid }">
+                <label class="col-md-2 control-label"
+                       for="HealthId">
+                    *Health: As we do not have any medical assistance here you may have to inform us
+                    if any special attention is required.
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control"
+                              id="HealthId"
+                              type="text"
+                              placeholder="(required)"
+                              formControlName="Health"></textarea>
+
+
+                    <span class="help-block" *ngIf="(svtForm.get('Health').touched || svtForm.get('Health').dirty) && svtForm.get('Health').errors">
+                        <span *ngIf="svtForm.get('Health').errors.required">
+                            This field is required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 [ngClass]="{'has-error': (svtForm.get('Hdyu').touched || svtForm.get('Hdyu').dirty) && !svtForm.get('Hdyu').valid }">
+                <label class="col-md-2 control-label"
+                       for="HdyuId">
+                    How did you come to know about DEVIPURAM and the Courses?
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control"
+                              id="HdyuId"
+                              type="text"
+                              placeholder="(required)"
+                              formControlName="Hdyu"></textarea>
+
+
+                    <span class="help-block" *ngIf="(svtForm.get('Hdyu').touched || svtForm.get('Hdyu').dirty) && svtForm.get('Hdyu').errors">
+                        <span *ngIf="svtForm.get('Hdyu').errors.required">
+                            This field is required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 [ngClass]="{'has-error': (svtForm.get('HytDee').touched || svtForm.get('HytDee').dirty) && !svtForm.get('HytDee').valid }">
+                <label class="col-md-2 control-label"
+                       for="HytDeeId">
+                    Have you taken Deeksha from anybody? If 'YES' from Whom?
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control"
+                              id="HytDeeId"
+                              type="text"
+                              placeholder="(required)"
+                              formControlName="HytDee"></textarea>
+
+
+                    <span class="help-block" *ngIf="(svtForm.get('HytDee').touched || svtForm.get('HytDee').dirty) && svtForm.get('HytDee').errors">
+                        <span *ngIf="svtForm.get('HytDee').errors.required">
+                            This field is required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 [ngClass]="{'has-error': (svtForm.get('Planguage').touched || svtForm.get('Planguage').dirty) && !svtForm.get('Planguage').valid }">
+                <label class="col-md-2 control-label"
+                       for="PlanguageId">
+                    Preference of language to learn the course. English / Telugu / Hindi / others
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control"
+                              id="PlanguageId"
+                              type="text"
+                              placeholder="(required)"
+                              formControlName="Planguage"></textarea>
+
+
+                    <span class="help-block" *ngIf="(svtForm.get('Planguage').touched || svtForm.get('Planguage').dirty) && svtForm.get('Planguage').errors">
+                        <span *ngIf="svtForm.get('Planguage').errors.required">
+                            This field is required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <!--<div class="form-group"
+             [ngClass]="{'has-error': (svtForm.get('Yesno').touched || svtForm.get('Yesno').dirty) && !svtForm.get('Yesno').valid }">
+            <label class="col-md-2 control-label"
+                   for="YesnoId">
+                YES / NO
+            </label>
+            <div class="col-md-8">
+                <textarea class="form-control"
+                       id="YesnoId"
+                       type="text"
+                       placeholder="(required)"
+                       formControlName="Yesno" ></textarea>
+                <span class="help-block" *ngIf="(svtForm.get('Yesno').touched || svtForm.get('Yesno').dirty) && svtForm.get('Yesno').errors">
+                    <span *ngIf="svtForm.get('Yesno').errors.required">
+                        This field is required.
+                    </span>
+                </span>
+            </div>
+        </div>-->
+
+            <div class="form-group"
+                 [ngClass]="{'has-error': (svtForm.get('Wtbcs').touched || svtForm.get('Wtbcs').dirty) && !svtForm.get('Wtbcs').valid }">
+                <label class="col-md-2 control-label"
+                       for="WtbcsId">
+                    Want to be considered for SVC - Advanced Course (in future) at Devipuram.
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control"
+                              id="WtbcsId"
+                              type="text"
+                              placeholder="(required)"
+                              formControlName="Wtbcs"></textarea>
+                    <span class="help-block" *ngIf="(svtForm.get('Wtbcs').touched || svtForm.get('Wtbcs').dirty) && svtForm.get('Wtbcs').errors">
+                        <span *ngIf="svtForm.get('Wtbcs').errors.required">
+                            This field is required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 [ngClass]="{'has-error': (svtForm.get('Apyps').touched || svtForm.get('Apyps').dirty) && !svtForm.get('Apyps').valid }">
+                <label class="col-md-2 control-label"
+                       for="ApypsId">
+                    At present your proficiency into Spirituality / Sadhana / Upasana?
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control"
+                              id="ApypsId"
+                              type="text"
+                              placeholder="(required)"
+                              formControlName="Apyps"></textarea>
+                    <span class="help-block" *ngIf="(svtForm.get('Apyps').touched || svtForm.get('Apyps').dirty) && svtForm.get('Apyps').errors">
+                        <span *ngIf="svtForm.get('Apyps').errors.required">
+                            This field is required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 [ngClass]="{'has-error': (svtForm.get('AimObj').touched || svtForm.get('AimObj').dirty) && !svtForm.get('AimObj').valid }">
+                <label class="col-md-2 control-label"
+                       for="AimObjId">
+                    Please mention your aim and objective in learning the course/s.
+                    Personal practice / to teach / earn livelihood / just curiosity / any other ?
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control"
+                              id="AimObjId"
+                              type="text"
+                              placeholder="(required)"
+                              formControlName="AimObj"></textarea>
+                    <span class="help-block" *ngIf="(svtForm.get('AimObj').touched || svtForm.get('AimObj').dirty) && svtForm.get('AimObj').errors">
+                        <span *ngIf="svtForm.get('AimObj').errors.required">
+                            This field is required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group"
+                 [ngClass]="{'has-error': (svtForm.get('Wtmsw').touched || svtForm.get('Wtmsw').dirty) && !svtForm.get('Wtmsw').valid }">
+                <label class="col-md-2 control-label"
+                       for="WtmswId">
+                    Willing to make some voluntary contribution to improve facilities at Devipuram?
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control"
+                              id="WtmswId" rows=3
+                              placeholder="(required)"
+                              formControlName="Wtmsw"></textarea>
+                    <span class="help-block" *ngIf="(svtForm.get('Wtmsw').touched || svtForm.get('Wtmsw').dirty) && svtForm.get('Wtmsw').errors">
+                        <span *ngIf="svtForm.get('Wtmsw').errors.required">
+                            This field is required.
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+                </div>
+                </div>
+             
+            <div class="row">
+                <div class="col-md-6 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-primary"
+                                type="submit"
+                                style="width:80px;margin-right:10px"
+                                [disabled]="!svtForm.valid">
+                            Save
+                        </button>
+                    </span>
+                    <span>
+                        <a class="btn btn-default"
+                           [routerLink]="['/courses']">
+                            Cancel
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div> 
