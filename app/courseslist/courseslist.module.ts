@@ -23,11 +23,11 @@ import { MyDatePickerModule } from 'mydatepicker';
             {
                 path: 'courseslist',
                 children: [
-                    { path: '', component: CoursesListComponent, canActivate: [AuthGuard] },
-                    { path: ':id/1', component: GeneralVisitorAnComponent },
-                    { path: ':id/2', component: GeneralVisitorInAnComponent },
-                    { path: ':id/3', component: SriVidyaCourseAnComponent },
-                    { path: ':id/4', component: SrimahameruAnComponent }
+                    { path: '', component: CoursesListComponent, canActivate: [AuthGuard]},
+                    { path: ':id/1', component: GeneralVisitorAnComponent, canActivate: [AuthGuard] },
+                    { path: ':id/2', component: GeneralVisitorInAnComponent, canActivate: [AuthGuard]},
+                    { path: ':id/3', component: SriVidyaCourseAnComponent, canActivate: [AuthGuard]},
+                    { path: ':id/4', component: SrimahameruAnComponent, canActivate: [AuthGuard]}
                 ]
             },
 
