@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\app",
+    "\\app\\courseslist"
   ],
+  "SelectedNode": "\\app\\courseslist\\generalvisitorinan.component.html",
   "PreviewInSolutionExplorer": false
 }

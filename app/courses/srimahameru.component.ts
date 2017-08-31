@@ -11,7 +11,7 @@ import { GeneralVisitorService } from './generalvisitor.service';
 export class SrimahameruComponent implements OnInit {
     pageTitle: string = 'Sri Maha Meru';
     srimaForm: FormGroup;
-    errorMessage: string;
+    Message: string;
 
     //private dataIsValid: { [key: string]: boolean } = {};
 
@@ -52,7 +52,7 @@ export class SrimahameruComponent implements OnInit {
       
         let Form = this.srimaForm.value;
 
-        let body = Form.Name + '~' + 1 + '|' + Form.Age + '~' + 2 + Form.Gender + '~' + 3 + '|' + Form.NameofSp + '~' + 4 + '|' + Form.Sonof + '~' + 5 + '|' +
+        let body = Form.Name + '~' + 1 + '|' + Form.Age + '~' + 2 + '|' + Form.Gender + '~' + 3 + '|' + Form.NameofSp + '~' + 4 + '|' + Form.Sonof + '~' + 5 + '|' +
             Form.Nationality + '~' + 6 + '|' + Form.EmailID + '~' + 7 + '|' + Form.MobilePh + '~' + 8 + '|' + Form.Address + '~' + 9 + '|' +
             Form.Education + '~' + 10 + '|' + Form.Profession + '~' + 11 + '|' + Form.Hdyctk + '~' + 12 + '|' + Form.Dytet + '~' + 13 + '|' +
             Form.HytDG + '~' + 14 + '|' + Form.INwsy + '~' + 15 + '|' + Form.Boyp + '~' + 16 + '|' + Form.Yawtp + '~' + 17 + '|' +
@@ -61,12 +61,13 @@ export class SrimahameruComponent implements OnInit {
 
         this.gvService.insertSriMahameru(body).subscribe(
             data => {
-                console.log(data);
-                return this.router.navigate(['/']);
+              //  console.log(data);
+               // return this.router.navigate(['/']);
+                return this.Message = "Course Registerd Successfully";
             },
             error => {
-                console.error("Error While Inserting Data");
-                return this.errorMessage = "Error While Inserting Data";
+               // console.error("Error While Inserting Data");
+                return this.Message = "Error While Inserting Data";
             }
         );
 

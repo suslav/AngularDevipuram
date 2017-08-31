@@ -35,28 +35,34 @@ export class GeneralVisitorService {
 
     insertGeneralvisitors(body: string) {
        // let jsbody = JSON.stringify(body);
-        let jsbody = { "GVAnswer": body, "UserID": this.token};
+        let jsbody2 = { "GVAnswer": body, "UserID": this.token };
+
+        let jsbody = JSON.stringify(jsbody2);
        // let jsbody = body;
         console.log(jsbody);
         return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/generalvisitorsanswersinsert', jsbody, this.options).map((res: Response) => res.json());
     }
 
     insertGeneralvisitorInterna(body: string) {
-        let jsbody = JSON.stringify(body);
+
+        let jsbody2 = { "GVIAnswer": body, "UserID": this.token };
+        let jsbody = JSON.stringify(jsbody2);
         // let jsbody = body;
         console.log(jsbody);
         return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/generalvisitorsinteranswersinsert', jsbody, this.options).map((res: Response) => res.json());
     }
 
     insertSvcAnswer(body: string) {
-        let jsbody = JSON.stringify(body);
+        let jsbody2 = { "SVCAnswer": body, "UserID": this.token };
+        let jsbody = JSON.stringify(jsbody2);
         // let jsbody = body;
         console.log(jsbody);
         return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/svcanswerinsert', jsbody, this.options).map((res: Response) => res.json());
     }
 
     insertSriMahameru(body: string) {
-        let jsbody = JSON.stringify(body);
+        let jsbody2 = { "SMMAnswer": body, "UserID": this.token };
+        let jsbody = JSON.stringify(jsbody2);
         // let jsbody = body;
         console.log(jsbody);
         return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/srimahameruanswersinsert', jsbody, this.options).map((res: Response) => res.json());

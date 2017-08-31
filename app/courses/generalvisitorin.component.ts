@@ -11,7 +11,7 @@ import { GeneralVisitorService } from './generalvisitor.service';
 export class GeneralVisitorInComponent implements OnInit {
     pageTitle: string = 'General Visitor International';
     genvinForm: FormGroup;
-    errorMessage: string;
+    Message: string;
 
     private dataIsValid: { [key: string]: boolean } = {};
 
@@ -61,7 +61,7 @@ export class GeneralVisitorInComponent implements OnInit {
        
         let Form = this.genvinForm.value;
 
-        let body = Form.Name + '~' + 1 + '|' + Form.Age + '~' + 2 + Form.Gender + '~' + 3 + '|' + Form.Sonof + '~' + 4 + '|' + Form.Place + '~' + 5 + '|' +
+        let body = Form.Name + '~' + 1 + '|' + Form.Age + '~' + 2 +'|' + Form.Gender + '~' + 3 + '|' + Form.Sonof + '~' + 4 + '|' + Form.Place + '~' + 5 + '|' +
             Form.Nationality + '~' + 6 + '|' + Form.MaritalStatus + '~' + 7 + '|' + Form.DateofBirth + '~' + 8 + '|' + Form.ContactDin + '~' + 9 + '|' +
             Form.EMailID + '~' + 10 + '|' + Form.PerLand + '~' + 11 + '|' + Form.PerMob + '~' + 12 + '|' + Form.MobileIn + '~' + 13 + '|' +
             Form.Address + '~' + 14 + '|' + Form.Passport + '~' + 15 + '|' + Form.VisaNo + '~' + 16 + '|' + Form.Intending + '~' + 17 + '|' + Form.Departure + '~' + 18 + '|' +
@@ -73,12 +73,13 @@ export class GeneralVisitorInComponent implements OnInit {
 
         this.gvService.insertGeneralvisitorInterna(body).subscribe(
             data => {
-                console.log(data);
-                return this.router.navigate(['/']);
+                //console.log(data);
+               // return this.router.navigate(['/']);
+                return this.Message = "Course Registerd Successfully";
             },
             error => {
                 console.error("Error While Inserting Data");
-                return this.errorMessage = "Error While Inserting Data";
+                return this.Message = "Error While Inserting Data";
             }
         );
 

@@ -123,7 +123,7 @@
                          [ngClass]="{'has-error': (genvForm.get('Nationality').touched || genvForm.get('Nationality').dirty) && !genvForm.get('Nationality').valid }">
                         <label class="col-md-2 control-label"
                                for="NationalityId">
-                            Nationality:
+                            Nationality
                         </label>
 
                         <div class="col-md-8">
@@ -505,6 +505,8 @@
                    
                 </div>
 
+                <div class="has-error" *ngIf="Message">{{Message}}</div>
+
                     <div class="panel-footer">
                         <div class="row">
                             <div class="col-md-6 col-md-offset-2">
@@ -525,9 +527,7 @@
 
                             </div>
                         </div>
-                    </div>
-                <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
-
+                    </div>               
 </fieldset>
         </form>
 

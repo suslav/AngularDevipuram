@@ -19,9 +19,16 @@ export class CoursesListService {
             .catch(this.handleError);
     }
 
-    getGeneralVisitorAn(id: number,formtype:number): Observable<GeneralVisitorsAnswers[]> {
+    //getGeneralVisitorAn(id: number,formtype:number): Observable<GeneralVisitorsAnswers[]> {
+    //    return this._http.get('http://localhost:8080/DevipuramPhalcon/api/api/formanswers/' + id + '/' + formtype)
+    //        .map((response: Response) => <GeneralVisitorsAnswers[]>response.json())
+    //        .do(data => console.log('All: ' + JSON.stringify(data)))
+    //        .catch(this.handleError);
+    //}
+
+    getGeneralVisitorAn(id: number, formtype: number): Observable<any> {
         return this._http.get('http://localhost:8080/DevipuramPhalcon/api/api/formanswers/' + id + '/' + formtype)
-            .map((response: Response) => <GeneralVisitorsAnswers[]>response.json())
+            .map((response: Response) => <any>response.json())
             .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }

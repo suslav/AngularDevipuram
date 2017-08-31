@@ -39,7 +39,7 @@ export class SrividyaOneComponent implements OnInit {
     save() {        
         let Form = this.svoForm.value;
 
-        let body = Form.Name + '~' + 1 + '|' + Form.Age + '~' + 2 + Form.Gender + '~' + 3 + '|' + Form.Sonof + '~' + 4 + '|' + Form.Place + '~' + 5 + '|' +
+        let body = Form.Name + '~' + 1 + '|' + Form.Age + '~' + 2 + '|' + Form.Gender + '~' + 3 + '|' + Form.Sonof + '~' + 4 + '|' + Form.Place + '~' + 5 + '|' +
             Form.Nationality + '~' + 6 + '|' + Form.MaritalStatus + '~' + 7 + '|' + Form.EMailID + '~' + 8 + '|' + Form.MobilePh + '~' + 9 + '|' +
             Form.Education + '~' + 10 + '|' + Form.Expertise + '~' + 11 + '|' + Form.Profession + '~' + 12 ;
 
