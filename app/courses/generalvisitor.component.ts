@@ -12,6 +12,7 @@ export class GeneralVisitorComponent implements OnInit {
     pageTitle: string = 'General Visitor';
     genvForm: FormGroup;
     Message: string;
+    public pvisible = false;
      
 //    private dataIsValid: { [key: string]: boolean } = {};
 
@@ -42,8 +43,10 @@ export class GeneralVisitorComponent implements OnInit {
             Deeksha: ['', Validators.required],
             Meru: ['', Validators.required],
             Volunteering: ['', Validators.required],
-            Extends: ['', Validators.required],
-            AreasOI: ['', Validators.required],
+            //Extends: ['', Validators.required],
+            //AreasOI: ['', Validators.required],
+            Extends: [''],
+            AreasOI: [''],
             Date: ['', Validators.required]
         });       
     }
@@ -72,7 +75,17 @@ export class GeneralVisitorComponent implements OnInit {
          
     }
 
+    volchange(event:any) {       
+        console.log(event);
 
+        if (event == "YES")
+        {
+            this.pvisible = true;
+        }
+        else {
+            this.pvisible = false;
+        }
+}
 
      
     //isValid(path: string): boolean {

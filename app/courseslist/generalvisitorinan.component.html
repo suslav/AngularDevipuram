@@ -422,35 +422,37 @@
                     </div>
                 </div>
 
+                <div *ngIf="pvisible==true">
+                    <div class="form-group"
+                         [ngClass]="genvinForm.get('Extends')">
+                        <label class="col-md-2 control-label"
+                               for="ExtendsId">
+                            If 'YES', days / months of your preference to come and extend that service:
+                        </label>
 
-                <div class="form-group"
-                     [ngClass]="genvinForm.get('Extends')">
-                    <label class="col-md-2 control-label"
-                           for="ExtendsId">
-                        If 'YES', days / months of your preference to come and extend that service:
-                    </label>
-
-                    <div class="col-md-8">
-                        <textarea class="form-control"
-                                  id="ExtendsId"
-                                  rows="3"
-                                  formControlName="Extends"></textarea>                         
+                        <div class="col-md-8">
+                            <textarea class="form-control"
+                                      id="ExtendsId"
+                                      rows="3"
+                                      formControlName="Extends"></textarea>
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="form-group"
-                     [ngClass]="genvinForm.get('AreasOI')">
-                    <label class="col-md-2 control-label"
-                           for="AreasOIId">Areas of interest to extend service</label>
+                    <div class="form-group"
+                         [ngClass]="genvinForm.get('AreasOI')">
+                        <label class="col-md-2 control-label"
+                               for="AreasOIId">Areas of interest to extend service</label>
 
-                    <div class="col-md-8">
+                        <div class="col-md-8">
 
-                        <input class="form-control"
-                               id="AreasOIId"
-                               type="text"
-                               formControlName="AreasOI" />                            
+                            <input class="form-control"
+                                   id="AreasOIId"
+                                   type="text"
+                                   formControlName="AreasOI" />
+                        </div>
                     </div>
+
                 </div>
 
                 <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>

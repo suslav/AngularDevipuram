@@ -438,9 +438,9 @@
                         </label>
 
                         <div class="col-md-8">
-                            <select formControlName="Volunteering" class="form-control">
-                                <option value="Spiritual">YES</option>
-                                <option value="Poojas">NO</option>
+                            <select formControlName="Volunteering" (change)="volchange($event.target.value)" class="form-control">
+                                <option value="YES">YES</option>
+                                <option value="NO">NO</option>
                             </select>
 
 
@@ -452,6 +452,8 @@
                         </div>
                     </div>
 
+                    
+                    <div *ngIf="pvisible==true">
                     <div class="form-group"
                          [ngClass]="{'has-error': (genvForm.get('Extends').touched || genvForm.get('Extends').dirty) && !genvForm.get('Extends').valid }">
                         <label class="col-md-2 control-label"
@@ -501,6 +503,8 @@
                                 </span>
                             </span>
                         </div>
+                    </div>
+
                     </div>
                    
                 </div>

@@ -661,9 +661,9 @@
                     </label>
 
                     <div class="col-md-8">
-                        <select formControlName="Volunteering" class="form-control">
-                            <option value="Spiritual">YES</option>
-                            <option value="Poojas">NO</option>
+                        <select formControlName="Volunteering" (change)="volchange($event.target.value)" class="form-control">
+                            <option value="YES">YES</option>
+                            <option value="NO">NO</option>
                         </select>
 
 
@@ -676,61 +676,65 @@
                 </div>
 
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvinForm.get('Extends').touched || genvinForm.get('Extends').dirty) && !genvinForm.get('Extends').valid }">
-                    <label class="col-md-2 control-label"
-                           for="ExtendsId">
-                        If 'YES', days / months of your preference to come and extend that service:
-                    </label>
+                <div *ngIf="pvisible==true">
 
-                    <div class="col-md-8">
-                        <textarea class="form-control"
-                                  id="ExtendsId"
-                                  rows="3"
-                                  placeholder="(required)"
-                                  formControlName="Extends"></textarea>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvinForm.get('Extends').touched || genvinForm.get('Extends').dirty) && !genvinForm.get('Extends').valid }">
+                        <label class="col-md-2 control-label"
+                               for="ExtendsId">
+                            If 'YES', days / months of your preference to come and extend that service:
+                        </label>
+
+                        <div class="col-md-8">
+                            <textarea class="form-control"
+                                      id="ExtendsId"
+                                      rows="3"
+                                      placeholder="(required)"
+                                      formControlName="Extends"></textarea>
 
 
-                        <span class="help-block" *ngIf="(genvinForm.get('Extends').touched || genvinForm.get('Extends').dirty) && genvinForm.get('Extends').errors">
-                            <span *ngIf="genvinForm.get('Extends').errors.required">
-                                This field is required.
+                            <span class="help-block" *ngIf="(genvinForm.get('Extends').touched || genvinForm.get('Extends').dirty) && genvinForm.get('Extends').errors">
+                                <span *ngIf="genvinForm.get('Extends').errors.required">
+                                    This field is required.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (genvinForm.get('AreasOI').touched || genvinForm.get('AreasOI').dirty) && !genvinForm.get('AreasOI').valid }">
-                    <label class="col-md-2 control-label"
-                           for="AreasOIId">Areas of interest to extend service</label>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (genvinForm.get('AreasOI').touched || genvinForm.get('AreasOI').dirty) && !genvinForm.get('AreasOI').valid }">
+                        <label class="col-md-2 control-label"
+                               for="AreasOIId">Areas of interest to extend service</label>
 
-                    <div class="col-md-8">
+                        <div class="col-md-8">
 
-                        <select formControlName="AreasOI" class="form-control">
-                            <option value="Spiritual">Spiritual</option>
-                            <option value="Poojas">Poojas</option>
-                            <option value="Homas">Homas</option>
-                            <option value="Food &Catering">Food &Catering</option>
-                            <option value="Communication">Communication</option>
-                            <option value="Computer Tech Services">Computer Tech Services</option>
-                            <option value="General Volunteer">General Volunteer</option>
-                        </select>
+                            <select formControlName="AreasOI" class="form-control">
+                                <option value="Spiritual">Spiritual</option>
+                                <option value="Poojas">Poojas</option>
+                                <option value="Homas">Homas</option>
+                                <option value="Food &Catering">Food &Catering</option>
+                                <option value="Communication">Communication</option>
+                                <option value="Computer Tech Services">Computer Tech Services</option>
+                                <option value="General Volunteer">General Volunteer</option>
+                            </select>
 
 
 
-                        <span class="help-block" *ngIf="(genvinForm.get('AreasOI').touched || genvinForm.get('AreasOI').dirty) && genvinForm.get('AreasOI').errors">
-                            <span *ngIf="genvinForm.get('AreasOI').errors.required">
-                                Please select your Option.
+                            <span class="help-block" *ngIf="(genvinForm.get('AreasOI').touched || genvinForm.get('AreasOI').dirty) && genvinForm.get('AreasOI').errors">
+                                <span *ngIf="genvinForm.get('AreasOI').errors.required">
+                                    Please select your Option.
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
+
+                    </div>
+
+                    <div class="has-error" *ngIf="Message">{{Message}}</div>
+
+
                 </div>
-
-                <div class="has-error" *ngIf="Message">{{Message}}</div>
-                
-
-            </div>
             <div class="panel-footer">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-2">

@@ -11,6 +11,8 @@ export class GeneralVisitorInAnComponent implements OnInit {
     genvinForm: FormGroup;
     errorMessage: string;
 
+    public pvisible = false;
+
     //private dataIsValid: { [key: string]: boolean } = {};
 
     constructor(
@@ -91,7 +93,16 @@ export class GeneralVisitorInAnComponent implements OnInit {
                             if (gv.split("|")[26].indexOf('~') > -1)
                             { meru = gv.split("|")[26].split("~")[0]; }
                             if (gv.split("|")[27].indexOf('~') > -1)
-                            { volunteering = gv.split("|")[27].split("~")[0]; }
+                            {
+                                volunteering = gv.split("|")[27].split("~")[0];
+
+                                if (volunteering == "YES") {
+                                    this.pvisible = true;
+                                }
+                                else {
+                                    this.pvisible = false;
+                                }
+                            }
                             if (gv.split("|")[28].indexOf('~') > -1)
                             { exten = gv.split("|")[28].split("~")[0]; }
                             if (gv.split("|")[29].indexOf('~') > -1)
@@ -140,4 +151,15 @@ export class GeneralVisitorInAnComponent implements OnInit {
                 error => this.errorMessage = <any>error);
         });        
     }    
+
+    volchange(event: any) {
+        console.log(event);
+
+        if (event == "YES") {
+            this.pvisible = true;
+        }
+        else {
+            this.pvisible = false;
+        }
+    }
 }

@@ -14,7 +14,7 @@ export class GeneralVisitorAnComponent implements OnInit {
    // gvanswers: GeneralVisitorsAnswers[];
 
    // gvanswers: any;
-
+    public pvisible = false;
      answer: any;
 
     constructor(
@@ -81,7 +81,17 @@ export class GeneralVisitorAnComponent implements OnInit {
                            if (gv.split("|")[16].indexOf('~') > -1)
                            { meru = gv.split("|")[16].split("~")[0]; }
                            if (gv.split("|")[17].indexOf('~') > -1)
-                           { volunteering = gv.split("|")[17].split("~")[0]; }
+                           {
+                               volunteering = gv.split("|")[17].split("~")[0];
+                               if (volunteering == "YES")
+                               {
+                                   this.pvisible = true;
+                               }
+                               else {
+                                   this.pvisible = false;
+                               }
+                           }
+
                            if (gv.split("|")[18].indexOf('~') > -1)
                            { exten = gv.split("|")[18].split("~")[0]; }
                            if (gv.split("|")[19].indexOf('~') > -1)

@@ -289,44 +289,38 @@
                     </div>
                 </div>
 
-                <div class="form-group"
-                     [ngClass]="genvForm.get('Extends')">
-                    <label class="col-md-2 control-label"
-                           for="ExtendsId">
-                        If 'YES', days / months of your preference to come and extend that service:
-                    </label>
+                <div *ngIf="pvisible==true">
+                    <div class="form-group"
+                         [ngClass]="genvForm.get('Extends')">
+                        <label class="col-md-2 control-label"
+                               for="ExtendsId">
+                            If 'YES', days / months of your preference to come and extend that service:
+                        </label>
 
-                    <div class="col-md-8">
-                        <textarea class="form-control"
-                                  id="ExtendsId"
-                                  rows="3"
-                                  formControlName="Extends"></textarea>                       
+                        <div class="col-md-8">
+                            <textarea class="form-control"
+                                      id="ExtendsId"
+                                      rows="3"
+                                      formControlName="Extends"></textarea>
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="form-group"
-                     [ngClass]="genvForm.get('AreasOI')">
-                    <label class="col-md-2 control-label"
-                           for="AreasOIId">Areas of interest to extend service</label>
+                    <div class="form-group"
+                         [ngClass]="genvForm.get('AreasOI')">
+                        <label class="col-md-2 control-label"
+                               for="AreasOIId">Areas of interest to extend service</label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="AreasOIId"
-                               type="text"
-                               formControlName="AreasOI" />
-                        <!--<select formControlName="AreasOI" class="form-control">
-                            <option value="Spiritual">Spiritual</option>
-                            <option value="Poojas">Poojas</option>
-                            <option value="Homas">Homas</option>
-                            <option value="Food &Catering">Food &Catering</option>
-                            <option value="Communication">Communication</option>
-                            <option value="Computer Tech Services">Computer Tech Services</option>
-                            <option value="General Volunteer">General Volunteer</option>
-                        </select>-->                      
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   id="AreasOIId"
+                                   type="text"
+                                   formControlName="AreasOI" />
+                        </div>
                     </div>
+                    </div>
+
                 </div>
-            </div>
 
             <div class="panel-footer">
                 <div class="row">
