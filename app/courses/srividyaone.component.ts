@@ -46,8 +46,7 @@ export class SrividyaOneComponent implements OnInit {
 
         this.gvService.insertSvcAnswer(body).subscribe(
             data => {
-                console.log(data);
-                return this.router.navigate(['/']);
+                return this.router.navigate(['/courses', 'courseregistred']);
             },
             error => {
                 console.error("Error While Inserting Data");

@@ -18,6 +18,7 @@ export class GeneralVisitorService {
     options: RequestOptions;
 
     public token: string;
+    //public usertype: string;
 
     constructor(private http: Http) {
 
@@ -31,15 +32,16 @@ export class GeneralVisitorService {
 
         var currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.token = currentUser && currentUser.token;
+      //  this.usertype = currentUser && currentUser.usertype;
     }
 
     insertGeneralvisitors(body: string) {
        // let jsbody = JSON.stringify(body);
         let jsbody2 = { "GVAnswer": body, "UserID": this.token };
-
+       // console.log("usertypeid" + this.usertype);
         let jsbody = JSON.stringify(jsbody2);
        // let jsbody = body;
-        console.log(jsbody);
+       // console.log(jsbody);
         return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/generalvisitorsanswersinsert', jsbody, this.options).map((res: Response) => res.json());
     }
 

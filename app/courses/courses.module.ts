@@ -12,11 +12,10 @@ import { SrividyaThreeComponent } from './srividyathree.component';
 import { GeneralVisitorComponent } from './generalvisitor.component';
 import { GeneralVisitorInComponent } from './generalvisitorin.component';
 import { SrimahameruComponent } from './srimahameru.component';
+import { CourseRegistredComponent } from './courseregistred.component';
 
-//import { ProductFilterPipe } from './product-filter.pipe';
 import { SriVidyaService } from './srividya.service';
 import { SriVidyaResolver } from './srividya-resolver.service';
-//import { SharedModule } from '../shared/shared.module';
 import { AuthGuard } from '../_guards/index';
 
 @NgModule({
@@ -53,6 +52,9 @@ import { AuthGuard } from '../_guards/index';
                   },
                   {
                       path: 'srimeru', component: SrimahameruComponent
+                  },
+                  {
+                      path: 'courseregistred', component: CourseRegistredComponent
                   }
               ]
           },
@@ -72,8 +74,8 @@ import { AuthGuard } from '../_guards/index';
       SrividyaThreeComponent,
       GeneralVisitorComponent,
       GeneralVisitorInComponent,
-      SrimahameruComponent
-      //,ProductFilterPipe
+      SrimahameruComponent,
+      CourseRegistredComponent
   ],
   providers: [
       SriVidyaService

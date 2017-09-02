@@ -20,7 +20,8 @@ export class LoginService {
    // headers: Headers;
     options: RequestOptions;
 
-     public token: string;
+    public token: string;
+    public usertype: string;
  
     constructor(private http: Http) {
          
@@ -34,7 +35,8 @@ export class LoginService {
 
 
         var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-         this.token = currentUser && currentUser.token;       
+        this.token = currentUser && currentUser.token; 
+        this.usertype = currentUser && currentUser.usertype;
     }
 
 
@@ -52,12 +54,14 @@ export class LoginService {
           //  console.log(body);
 
             let token = response.json() && response.json().id;
-            if (token) {
+            let usertype = response.json() && response.json().UserTypeID;
+            if (token && usertype) {
 
                 this.token = token;
+                this.usertype = usertype;
                  
                // localStorage.setItem('currentUser', JSON.stringify({ username: "admin@gmail.com", token: token }));
-                localStorage.setItem('currentUser', JSON.stringify({token: token }));
+                localStorage.setItem('currentUser', JSON.stringify({ token: token, usertype: usertype}));
 
                //  return true to indicate successful login
                 return true;

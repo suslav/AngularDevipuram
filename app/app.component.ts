@@ -11,8 +11,10 @@ import { AuthenticationService } from './_services/index';
 export class AppComponent {
 
     pageTitle: string = 'Devipuram';
-    constructor(private router: Router, private authService: AuthenticationService) { }
-
+   
+    constructor(private router: Router, private authService: AuthenticationService) {            
+    }    
+     
     logOut(): void {
         this.authService.logout();
         console.log('Log out');

@@ -6,12 +6,11 @@ import { Router} from '@angular/router';
 
 @Injectable()
 export class AuthenticationService {
-    public token: string;
-
+    public token: string;    
     constructor(private http: Http, private router: Router) {
         // set token if saved in local storage
         var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        this.token = currentUser && currentUser.token;
+        this.token = currentUser && currentUser.token;       
     }
 
     login(username: string, password: string): Observable<boolean> {
@@ -62,5 +61,38 @@ export class AuthenticationService {
     isLoggedIn(): boolean {
         return !!localStorage.getItem('currentUser');
        // return false;
+    }
+
+    isAdmin(): boolean {       
+        
+        if (JSON.parse(localStorage.getItem('currentUser')) != null)
+        {
+            if (JSON.parse(localStorage.getItem('currentUser')).usertype == "1") {
+                return true;
+            }
+            else {
+                return false;
+            }    
+        }
+        else {
+            return false;
+        }  
+                    
+    }
+
+    isUser(): boolean {
+
+        if (JSON.parse(localStorage.getItem('currentUser')) != null) {
+            if (JSON.parse(localStorage.getItem('currentUser')).usertype == "2") {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
+
     }
 }

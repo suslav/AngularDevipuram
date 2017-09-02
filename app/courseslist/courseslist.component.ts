@@ -38,7 +38,8 @@ export class CoursesListComponent implements OnInit {
                     }
                     else
                     {
-                        return this.errorMessage = "There is no Registrations on the selected date";
+                        this.visitors = null;
+                        return this.errorMessage = "There are no Registrations on the selected date";
                     }
                     
                 },

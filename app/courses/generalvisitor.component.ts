@@ -61,9 +61,9 @@ export class GeneralVisitorComponent implements OnInit {
 
         this.gvService.insertGeneralvisitors(body).subscribe(
             data => {
-               // return this.router.navigate(['/']);
-                console.log(data);
-                return this.Message = "Course Registerd Successfully";
+                return this.router.navigate(['/courses', 'courseregistred']);
+                //console.log(data);
+                //return this.Message = "Course Registerd Successfully";
             },
             error => {
                 return this.Message = "Error While Inserting Data";

@@ -32,7 +32,7 @@ export class GeneralVisitorAnComponent implements OnInit {
             //let userId = params;
             //console.log(userId);
 
-            this.clService.getGeneralVisitorAn(userId, 1).subscribe(
+            this.clService.getCourseAnswers(userId, 1).subscribe(
                 answer => {
 
                     if (answer.length > 0) {
