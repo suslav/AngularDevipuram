@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-//import { FormsModule } from '@angular/forms';
+ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { CoursesComponent } from './courses.component';
@@ -18,10 +18,17 @@ import { SriVidyaService } from './srividya.service';
 import { SriVidyaResolver } from './srividya-resolver.service';
 import { AuthGuard } from '../_guards/index';
 
+import { ProductEditComponent } from './product-edit.component';
+import { ProductEditInfoComponent } from './product-edit-info.component';
+import { ProductEditTagsComponent } from './product-edit-tags.component';
+import { SampleResolver } from './sample-resolver.service';
+import { SampleService } from './sample.service';
+import { SampleFilterPipe } from './sample-filter.pipe';
+
 @NgModule({
     imports: [
         CommonModule,
-        //FormsModule,
+        FormsModule,
         ReactiveFormsModule,
       RouterModule.forChild([
           {
@@ -55,6 +62,18 @@ import { AuthGuard } from '../_guards/index';
                   },
                   {
                       path: 'courseregistred', component: CourseRegistredComponent
+                  },
+
+
+                  {
+                      path: 'edit', component: ProductEditComponent,
+                      resolve: { product: SampleResolver }
+                      //,
+                      //children: [
+                      //    { path: '', redirectTo: 'info', pathMatch: 'full' },
+                      //    { path: 'info', component: ProductEditInfoComponent },
+                      //    { path: 'tags', component: ProductEditTagsComponent }
+                      //]
                   }
               ]
           },
@@ -76,10 +95,19 @@ import { AuthGuard } from '../_guards/index';
       GeneralVisitorInComponent,
       SrimahameruComponent,
       CourseRegistredComponent
+
+      , ProductEditComponent,
+      ProductEditInfoComponent,
+      ProductEditTagsComponent,
+      SampleFilterPipe
   ],
   providers: [
       SriVidyaService
-     ,SriVidyaResolver
+      , SriVidyaResolver
+
+
+       ,SampleService,
+      SampleResolver
   ]
 })
 export class CoursesModule {}
