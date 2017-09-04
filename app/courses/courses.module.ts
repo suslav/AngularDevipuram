@@ -18,12 +18,12 @@ import { SriVidyaService } from './srividya.service';
 import { SriVidyaResolver } from './srividya-resolver.service';
 import { AuthGuard } from '../_guards/index';
 
-import { ProductEditComponent } from './product-edit.component';
-import { ProductEditInfoComponent } from './product-edit-info.component';
-import { ProductEditTagsComponent } from './product-edit-tags.component';
-import { SampleResolver } from './sample-resolver.service';
+import { SampleEditComponent } from './sample_edit.component';
+import { SampleEditInfoComponent } from './sample_edit_info.component';
+import { SampleEditTagsComponent } from './sample_edit_tags.component';
+import { SampleResolver } from './sample_resolver.service';
 import { SampleService } from './sample.service';
-import { SampleFilterPipe } from './sample-filter.pipe';
+import { SampleFilterPipe } from './sample_filter.pipe';
 
 @NgModule({
     imports: [
@@ -66,14 +66,14 @@ import { SampleFilterPipe } from './sample-filter.pipe';
 
 
                   {
-                      path: 'edit', component: ProductEditComponent,
-                      resolve: { product: SampleResolver }
+                      path: 'edit', component: SampleEditComponent,
+                      //resolve: { product: SampleResolver }
                       //,
-                      //children: [
-                      //    { path: '', redirectTo: 'info', pathMatch: 'full' },
-                      //    { path: 'info', component: ProductEditInfoComponent },
-                      //    { path: 'tags', component: ProductEditTagsComponent }
-                      //]
+                      children: [
+                          { path: '', redirectTo: 'info', pathMatch: 'full' },
+                          { path: 'info', component: SampleEditInfoComponent },
+                          { path: 'tags', component: SampleEditTagsComponent }
+                      ]
                   }
               ]
           },
@@ -96,9 +96,9 @@ import { SampleFilterPipe } from './sample-filter.pipe';
       SrimahameruComponent,
       CourseRegistredComponent
 
-      , ProductEditComponent,
-      ProductEditInfoComponent,
-      ProductEditTagsComponent,
+      ,SampleEditComponent,
+      SampleEditInfoComponent,
+      SampleEditTagsComponent,
       SampleFilterPipe
   ],
   providers: [

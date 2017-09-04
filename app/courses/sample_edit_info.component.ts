@@ -5,9 +5,9 @@ import { NgForm } from '@angular/forms';
 import { ISample } from './sample';
 
 @Component({
-    templateUrl: './app/courses/product-edit-info.component.html'
+    templateUrl: './app/courses/sample_edit_info.component.html'
 })
-export class ProductEditInfoComponent implements OnInit {
+export class SampleEditInfoComponent implements OnInit {
     @ViewChild(NgForm) productForm: NgForm;
 
     errorMessage: string;
@@ -21,9 +21,9 @@ export class ProductEditInfoComponent implements OnInit {
         this.route.parent.data.subscribe(data => {
             this.product = data['product'];
 
-            if (this.productForm) {
-                this.productForm.reset();
-            }
+            //if (this.productForm) {
+            //    this.productForm.reset();
+            //}
         });
 
     }

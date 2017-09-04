@@ -4,9 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 import { ISample } from './sample';
 
 @Component({
-    templateUrl: './app/courses/product-edit-tags.component.html'
+    templateUrl: './app/courses/sample_edit_tags.component.html'
 })
-export class ProductEditTagsComponent implements OnInit {
+export class SampleEditTagsComponent implements OnInit {
     //@ViewChild(NgForm) productForm: NgForm;
     errorMessage: string;
     newTags = '';
@@ -18,13 +18,9 @@ export class ProductEditTagsComponent implements OnInit {
     ngOnInit(): void {
 
 
-        this.route.parent.data.subscribe(data => {
-            this.product = data['product'];
-
-            //if (this.productForm) {
-            //    this.productForm.reset();
-            //}
-        });
+        //this.route.parent.data.subscribe(data => {
+        //    this.product = data['product'];             
+        //});
 
     }
 
