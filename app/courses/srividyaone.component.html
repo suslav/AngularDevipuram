@@ -1,6 +1,9 @@
 <div class="panel-body">
+    <!--<form class="form-horizontal"
+          novalidate    [formGroup]="svoForm" (ngSubmit)="save()">-->    
+    
     <form class="form-horizontal"
-          novalidate    [formGroup]="svoForm" (ngSubmit)="save()">               
+          novalidate [formGroup]="svoForm" (ngSubmit)="save()">
         <fieldset>
             <legend>Sri Vidya Form Part1</legend>
             <div class="form-group"
@@ -59,13 +62,13 @@
                            placeholder="GENDER (required)"
                            formControlName="Gender" />-->
 
-                     
+
                     <select formControlName="Gender" class="form-control">
                         <!--<option value="volvo">select</option>-->
                         <option value="Male">Male</option>
-                        <option value="Female">Female</option>                      
+                        <option value="Female">Female</option>
                     </select>
-                     
+
 
 
                     <span class="help-block" *ngIf="(svoForm.get('Gender').touched || svoForm.get('Gender').dirty) && svoForm.get('Gender').errors">
@@ -91,7 +94,7 @@
 
                     <span class="help-block" *ngIf="(svoForm.get('Sonof').touched || svoForm.get('Sonof').dirty) && svoForm.get('Sonof').errors">
                         <span *ngIf="svoForm.get('Sonof').errors.required">
-                           This field is required.
+                            This field is required.
                         </span>
                     </span>
                 </div>
@@ -121,8 +124,10 @@
             <div class="form-group"
                  [ngClass]="{'has-error': (svoForm.get('Nationality').touched || svoForm.get('Nationality').dirty) && !svoForm.get('Nationality').valid }">
                 <label class="col-md-2 control-label"
-                       for="NationalityId">Nationality: 
-                            Together/ Others</label>
+                       for="NationalityId">
+                    Nationality:
+                    Together/ Others
+                </label>
 
                 <div class="col-md-8">
                     <input class="form-control"
@@ -164,7 +169,7 @@
             <div class="form-group"
                  [ngClass]="{'has-error': (svoForm.get('EMailID').touched || svoForm.get('EMailID').dirty) && !svoForm.get('EMailID').valid }">
                 <label class="col-md-2 control-label"
-                       for="EMailIDId">E Mail ID </label>
+                       for="EMailIDId">E Mail ID</label>
 
                 <div class="col-md-8">
                     <input class="form-control"
@@ -270,29 +275,29 @@
                 <div class="col-md-12">
                     <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
                 </div>
+            </div>
+
+
+            <!--<div class="row">
+                <div class="col-md-6 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-primary"
+                                type="submit"
+                                style="width:80px;margin-right:10px"
+                                [disabled]="!svoForm.valid">
+                            Save
+                        </button>
+                    </span>
+                    <span>
+                        <a class="btn btn-default"
+                           [routerLink]="['/courses']">
+                            Cancel
+                        </a>
+                    </span>
+
                 </div>
+            </div>-->
 
-               
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-2">
-                        <span>
-                            <button class="btn btn-primary"
-                                    type="submit"
-                                    style="width:80px;margin-right:10px"
-                                    [disabled]="!svoForm.valid">
-                                Save
-                            </button>
-                        </span>
-                        <span>
-                            <a class="btn btn-default"
-                               [routerLink]="['/courses']">
-                                Cancel
-                            </a>
-                        </span>
-
-                    </div>
-                </div>
-
-</fieldset>
+        </fieldset>
     </form>
 </div> 

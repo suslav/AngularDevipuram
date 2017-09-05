@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
+    "",
     "\\app",
     "\\app\\courses"
   ],
+  "SelectedNode": "\\app\\courses\\sample_edit.component.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -18,13 +18,7 @@ import { SriVidyaService } from './srividya.service';
 import { SriVidyaResolver } from './srividya-resolver.service';
 import { AuthGuard } from '../_guards/index';
 
-import { SampleEditComponent } from './sample_edit.component';
-import { SampleEditInfoComponent } from './sample_edit_info.component';
-import { SampleEditTagsComponent } from './sample_edit_tags.component';
-import { SampleResolver } from './sample_resolver.service';
-import { SampleService } from './sample.service';
-import { SampleFilterPipe } from './sample_filter.pipe';
-
+  
 @NgModule({
     imports: [
         CommonModule,
@@ -62,19 +56,7 @@ import { SampleFilterPipe } from './sample_filter.pipe';
                   },
                   {
                       path: 'courseregistred', component: CourseRegistredComponent
-                  },
-
-
-                  {
-                      path: 'edit', component: SampleEditComponent,
-                      //resolve: { product: SampleResolver }
-                      //,
-                      children: [
-                          { path: '', redirectTo: 'info', pathMatch: 'full' },
-                          { path: 'info', component: SampleEditInfoComponent },
-                          { path: 'tags', component: SampleEditTagsComponent }
-                      ]
-                  }
+                  } 
               ]
           },
          
@@ -96,18 +78,14 @@ import { SampleFilterPipe } from './sample_filter.pipe';
       SrimahameruComponent,
       CourseRegistredComponent
 
-      ,SampleEditComponent,
-      SampleEditInfoComponent,
-      SampleEditTagsComponent,
-      SampleFilterPipe
+      
   ],
   providers: [
       SriVidyaService
       , SriVidyaResolver
 
 
-       ,SampleService,
-      SampleResolver
+      
   ]
 })
 export class CoursesModule {}
