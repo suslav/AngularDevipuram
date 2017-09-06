@@ -1,0 +1,337 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+
+    <form class="form-horizontal"
+          novalidate [formGroup]="srividyaForm">
+        <fieldset>          
+
+            <div class="panel-body">
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('Name')">
+                    <label class="col-md-2 control-label"
+                           for="NameId">NAME</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="NameId"
+                               type="text"
+                               formControlName="Name" />
+                         
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('Age')">
+                    <label class="col-md-2 control-label"
+                           for="AgeId">AGE</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="AgeId"
+                               type="number"
+                               formControlName="Age" />
+                         
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('Gender')">
+                    <label class="col-md-2 control-label"
+                           for="GenderId">GENDER</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="GenderId"
+                               type="text"
+                               formControlName="Gender" />
+                        
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('Sonof')">
+                    <label class="col-md-2 control-label"
+                           for="SonofId">Son/of. or Dtr/of. or Wife/of</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="SonofId"
+                               type="text"
+                               formControlName="Sonof" />
+                         
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('Place')">
+                    <label class="col-md-2 control-label"
+                           for="PlaceId">Place & Country</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="PlaceId"
+                               type="text"
+                               formControlName="Place" />
+                         
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('Nationality')">
+                    <label class="col-md-2 control-label"
+                           for="NationalityId">
+                        Nationality:
+                        Together/ Others
+                    </label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="NationalityId"
+                               type="text"
+                               formControlName="Nationality" />                         
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('MaritalStatus')">
+                    <label class="col-md-2 control-label"
+                           for="MaritalStatusId">Marital Status: Single/Married/Separated/Living</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="MaritalStatusId"
+                               type="text"
+                               formControlName="MaritalStatus" />
+                         
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('EMailID')">
+                    <label class="col-md-2 control-label"
+                           for="EMailIDId">E Mail ID</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="EMailIDId"
+                               type="text"
+                               formControlName="EMailID" />
+                         
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('MobilePh')">
+                    <label class="col-md-2 control-label"
+                           for="MobilePhId">Mobile Ph</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="MobilePhId"
+                               type="text"
+                               formControlName="MobilePh" />
+
+ 
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('Education')">
+                    <label class="col-md-2 control-label"
+                           for="EducationId">EDUCATION</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="EducationId"
+                               type="text"
+                               formControlName="Education" /> 
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('Expertise')">
+                    <label class="col-md-2 control-label"
+                           for="ExpertiseId">Expertise</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="ExpertiseId"
+                               type="text"
+                               formControlName="Expertise" />
+
+
+                       
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('Profession')">
+                    <label class="col-md-2 control-label"
+                           for="ProfessionId">PROFESSION: Student/ In service/ self employed/ Business/ Retired/ Others</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="ProfessionId"
+                               type="text"
+                               formControlName="Profession" />
+                         
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('Health')">
+                    <label class="col-md-2 control-label"
+                           for="HealthId">
+                        *Health: As we do not have any medical assistance here you may have to inform us
+                        if any special attention is required.
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="HealthId"
+                                  type="text"
+                                  formControlName="Health"></textarea>
+                         
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('Hdyu')">
+                    <label class="col-md-2 control-label"
+                           for="HdyuId">
+                        How did you come to know about DEVIPURAM and the Courses?
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="HdyuId"
+                                  type="text"
+                                  formControlName="Hdyu"></textarea>
+                         
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('HytDee')">
+                    <label class="col-md-2 control-label"
+                           for="HytDeeId">
+                        Have you taken Deeksha from anybody? If 'YES' from Whom?
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="HytDeeId"
+                                  type="text"
+                                  formControlName="HytDee"></textarea>
+                         
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('Planguage')">
+                    <label class="col-md-2 control-label"
+                           for="PlanguageId">
+                        Preference of language to learn the course. English / Telugu / Hindi / others
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="PlanguageId"
+                                  type="text"
+                                  formControlName="Planguage"></textarea>
+                         
+                    </div>
+                </div>
+                 
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('Wtbcs')">
+                    <label class="col-md-2 control-label"
+                           for="WtbcsId">
+                        Want to be considered for SVC - Advanced Course (in future) at Devipuram.
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="WtbcsId"
+                                  type="text"
+                                  formControlName="Wtbcs"></textarea>
+                        
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('Apyps')">
+                    <label class="col-md-2 control-label"
+                           for="ApypsId">
+                        At present your proficiency into Spirituality / Sadhana / Upasana?
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="ApypsId"
+                                  type="text"
+                                  formControlName="Apyps"></textarea>
+                       
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('AimObj')">
+                    <label class="col-md-2 control-label"
+                           for="AimObjId">
+                        Please mention your aim and objective in learning the course/s.
+                        Personal practice / to teach / earn livelihood / just curiosity / any other ?
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="AimObjId"
+                                  type="text"
+                                  formControlName="AimObj"></textarea>
+                      
+                    </div>
+                </div>
+                <div class="form-group"
+                     [ngClass]="srividyaForm.get('Wtmsw')">
+                    <label class="col-md-2 control-label"
+                           for="WtmswId">
+                        Willing to make some voluntary contribution to improve facilities at Devipuram?
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="WtmswId" rows=3
+                                  formControlName="Wtmsw"></textarea>
+                     
+                    </div>
+                </div>
+
+                (Donations to SDNS (Sri Devipuram  Nirman Society) are exempted under 80 G of IT Act)
+
+            </div>
+
+            <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-2">
+                        <span>
+                            <button class="btn btn-primary"
+                                    type="submit"
+                                    style="width:80px;margin-right:10px">
+                                Reply
+                            </button>
+                        </span>
+                        <span>
+                            <a class="btn btn-default"
+                               [routerLink]="['/courseslist']">
+                                Cancel
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </fieldset>
+    </form>
+
+</div>
+
+
+

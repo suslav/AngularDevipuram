@@ -33,6 +33,7 @@ export class SriVidyaCourseComponent implements OnInit {
     ngOnInit(): void {    
 
         this.svparentForm = this.fb.group({
+         //   Parent: '',
 
             svoForm: this.fb.group({
 

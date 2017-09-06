@@ -1,0 +1,480 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+
+    <form class="form-horizontal"
+          novalidate [formGroup]="srividyaForm" (ngSubmit)="save()">
+        <fieldset>          
+
+            <div class="panel-body">
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('Name').touched || srividyaForm.get('Name').dirty) && !srividyaForm.get('Name').valid }">
+                    <label class="col-md-2 control-label"
+                           for="NameId">NAME</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="NameId"
+                               type="text"
+                               placeholder="Name (required)"
+                               formControlName="Name" />
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('Name').touched || srividyaForm.get('Name').dirty) && srividyaForm.get('Name').errors">
+                            <span *ngIf="srividyaForm.get('Name').errors.required">
+                                Please enter your Name.
+                            </span>
+                            <span *ngIf="srividyaForm.get('Name').errors.minlength">
+                                The Name must be longer than 3 characters.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('Age').touched || srividyaForm.get('Age').dirty) && !srividyaForm.get('Age').valid }">
+                    <label class="col-md-2 control-label"
+                           for="AgeId">AGE</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="AgeId"
+                               type="number"
+                               placeholder="AGE (required)"
+                               formControlName="Age" />
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('Age').touched || srividyaForm.get('Age').dirty) && srividyaForm.get('Age').errors">
+                            <span *ngIf="srividyaForm.get('Age').errors.required">
+                                Please enter your Age.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('Gender').touched || srividyaForm.get('Gender').dirty) && !srividyaForm.get('Gender').valid }">
+                    <label class="col-md-2 control-label"
+                           for="GenderId">GENDER</label>
+
+                    <div class="col-md-8">
+                        <!--<input class="form-control"
+                   id="GenderId"
+                   type="text"
+                   placeholder="GENDER (required)"
+                   formControlName="Gender" />-->
+
+
+                        <select formControlName="Gender" class="form-control">
+                            <!--<option value="volvo">select</option>-->
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('Gender').touched || srividyaForm.get('Gender').dirty) && srividyaForm.get('Gender').errors">
+                            <span *ngIf="srividyaForm.get('Gender').errors.required">
+                                Please select your Gender.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('Sonof').touched || srividyaForm.get('Sonof').dirty) && !srividyaForm.get('Sonof').valid }">
+                    <label class="col-md-2 control-label"
+                           for="SonofId">Son/of. or Dtr/of. or Wife/of</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="SonofId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Sonof" />
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('Sonof').touched || srividyaForm.get('Sonof').dirty) && srividyaForm.get('Sonof').errors">
+                            <span *ngIf="srividyaForm.get('Sonof').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('Place').touched || srividyaForm.get('Place').dirty) && !srividyaForm.get('Place').valid }">
+                    <label class="col-md-2 control-label"
+                           for="PlaceId">Place & Country</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="PlaceId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Place" />
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('Place').touched || srividyaForm.get('Place').dirty) && srividyaForm.get('Place').errors">
+                            <span *ngIf="srividyaForm.get('Place').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('Nationality').touched || srividyaForm.get('Nationality').dirty) && !srividyaForm.get('Nationality').valid }">
+                    <label class="col-md-2 control-label"
+                           for="NationalityId">
+                        Nationality:
+                        Together/ Others
+                    </label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="NationalityId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Nationality" />
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('Nationality').touched || srividyaForm.get('Nationality').dirty) && srividyaForm.get('Nationality').errors">
+                            <span *ngIf="srividyaForm.get('Nationality').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('MaritalStatus').touched || srividyaForm.get('MaritalStatus').dirty) && !srividyaForm.get('MaritalStatus').valid }">
+                    <label class="col-md-2 control-label"
+                           for="MaritalStatusId">Marital Status: Single/Married/Separated/Living</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="MaritalStatusId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="MaritalStatus" />
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('MaritalStatus').touched || srividyaForm.get('MaritalStatus').dirty) && srividyaForm.get('MaritalStatus').errors">
+                            <span *ngIf="srividyaForm.get('MaritalStatus').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('EMailID').touched || srividyaForm.get('EMailID').dirty) && !srividyaForm.get('EMailID').valid }">
+                    <label class="col-md-2 control-label"
+                           for="EMailIDId">E Mail ID</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="EMailIDId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="EMailID" />
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('EMailID').touched || srividyaForm.get('EMailID').dirty) && srividyaForm.get('EMailID').errors">
+                            <span *ngIf="srividyaForm.get('EMailID').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('MobilePh').touched || srividyaForm.get('MobilePh').dirty) && !srividyaForm.get('MobilePh').valid }">
+                    <label class="col-md-2 control-label"
+                           for="MobilePhId">Mobile Ph</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="MobilePhId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="MobilePh" />
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('MobilePh').touched || srividyaForm.get('MobilePh').dirty) && srividyaForm.get('MobilePh').errors">
+                            <span *ngIf="srividyaForm.get('MobilePh').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('Education').touched || srividyaForm.get('Education').dirty) && !srividyaForm.get('Education').valid }">
+                    <label class="col-md-2 control-label"
+                           for="EducationId">EDUCATION</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="EducationId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Education" />
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('Education').touched || srividyaForm.get('Education').dirty) && srividyaForm.get('Education').errors">
+                            <span *ngIf="srividyaForm.get('Education').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('Expertise').touched || srividyaForm.get('Expertise').dirty) && !srividyaForm.get('Expertise').valid }">
+                    <label class="col-md-2 control-label"
+                           for="ExpertiseId">Expertise</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="ExpertiseId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Expertise" />
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('Expertise').touched || srividyaForm.get('Expertise').dirty) && srividyaForm.get('Expertise').errors">
+                            <span *ngIf="srividyaForm.get('Expertise').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('Profession').touched || srividyaForm.get('Profession').dirty) && !srividyaForm.get('Profession').valid }">
+                    <label class="col-md-2 control-label"
+                           for="ProfessionId">PROFESSION: Student/ In service/ self employed/ Business/ Retired/ Others</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="ProfessionId"
+                               type="text"
+                               placeholder="(required)"
+                               formControlName="Profession" />
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('Profession').touched || srividyaForm.get('Profession').dirty) && srividyaForm.get('Profession').errors">
+                            <span *ngIf="srividyaForm.get('Profession').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('Health').touched || srividyaForm.get('Health').dirty) && !srividyaForm.get('Health').valid }">
+                    <label class="col-md-2 control-label"
+                           for="HealthId">
+                        *Health: As we do not have any medical assistance here you may have to inform us
+                        if any special attention is required.
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="HealthId"
+                                  type="text"
+                                  placeholder="(required)"
+                                  formControlName="Health"></textarea>
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('Health').touched || srividyaForm.get('Health').dirty) && srividyaForm.get('Health').errors">
+                            <span *ngIf="srividyaForm.get('Health').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('Hdyu').touched || srividyaForm.get('Hdyu').dirty) && !srividyaForm.get('Hdyu').valid }">
+                    <label class="col-md-2 control-label"
+                           for="HdyuId">
+                        How did you come to know about DEVIPURAM and the Courses?
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="HdyuId"
+                                  type="text"
+                                  placeholder="(required)"
+                                  formControlName="Hdyu"></textarea>
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('Hdyu').touched || srividyaForm.get('Hdyu').dirty) && srividyaForm.get('Hdyu').errors">
+                            <span *ngIf="srividyaForm.get('Hdyu').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('HytDee').touched || srividyaForm.get('HytDee').dirty) && !srividyaForm.get('HytDee').valid }">
+                    <label class="col-md-2 control-label"
+                           for="HytDeeId">
+                        Have you taken Deeksha from anybody? If 'YES' from Whom?
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="HytDeeId"
+                                  type="text"
+                                  placeholder="(required)"
+                                  formControlName="HytDee"></textarea>
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('HytDee').touched || srividyaForm.get('HytDee').dirty) && srividyaForm.get('HytDee').errors">
+                            <span *ngIf="srividyaForm.get('HytDee').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('Planguage').touched || srividyaForm.get('Planguage').dirty) && !srividyaForm.get('Planguage').valid }">
+                    <label class="col-md-2 control-label"
+                           for="PlanguageId">
+                        Preference of language to learn the course. English / Telugu / Hindi / others
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="PlanguageId"
+                                  type="text"
+                                  placeholder="(required)"
+                                  formControlName="Planguage"></textarea>
+
+
+                        <span class="help-block" *ngIf="(srividyaForm.get('Planguage').touched || srividyaForm.get('Planguage').dirty) && srividyaForm.get('Planguage').errors">
+                            <span *ngIf="srividyaForm.get('Planguage').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                 
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('Wtbcs').touched || srividyaForm.get('Wtbcs').dirty) && !srividyaForm.get('Wtbcs').valid }">
+                    <label class="col-md-2 control-label"
+                           for="WtbcsId">
+                        Want to be considered for SVC - Advanced Course (in future) at Devipuram.
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="WtbcsId"
+                                  type="text"
+                                  placeholder="(required)"
+                                  formControlName="Wtbcs"></textarea>
+                        <span class="help-block" *ngIf="(srividyaForm.get('Wtbcs').touched || srividyaForm.get('Wtbcs').dirty) && srividyaForm.get('Wtbcs').errors">
+                            <span *ngIf="srividyaForm.get('Wtbcs').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('Apyps').touched || srividyaForm.get('Apyps').dirty) && !srividyaForm.get('Apyps').valid }">
+                    <label class="col-md-2 control-label"
+                           for="ApypsId">
+                        At present your proficiency into Spirituality / Sadhana / Upasana?
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="ApypsId"
+                                  type="text"
+                                  placeholder="(required)"
+                                  formControlName="Apyps"></textarea>
+                        <span class="help-block" *ngIf="(srividyaForm.get('Apyps').touched || srividyaForm.get('Apyps').dirty) && srividyaForm.get('Apyps').errors">
+                            <span *ngIf="srividyaForm.get('Apyps').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('AimObj').touched || srividyaForm.get('AimObj').dirty) && !srividyaForm.get('AimObj').valid }">
+                    <label class="col-md-2 control-label"
+                           for="AimObjId">
+                        Please mention your aim and objective in learning the course/s.
+                        Personal practice / to teach / earn livelihood / just curiosity / any other ?
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="AimObjId"
+                                  type="text"
+                                  placeholder="(required)"
+                                  formControlName="AimObj"></textarea>
+                        <span class="help-block" *ngIf="(srividyaForm.get('AimObj').touched || srividyaForm.get('AimObj').dirty) && srividyaForm.get('AimObj').errors">
+                            <span *ngIf="srividyaForm.get('AimObj').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group"
+                     [ngClass]="{'has-error': (srividyaForm.get('Wtmsw').touched || srividyaForm.get('Wtmsw').dirty) && !srividyaForm.get('Wtmsw').valid }">
+                    <label class="col-md-2 control-label"
+                           for="WtmswId">
+                        Willing to make some voluntary contribution to improve facilities at Devipuram?
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="WtmswId" rows=3
+                                  placeholder="(required)"
+                                  formControlName="Wtmsw"></textarea>
+                        <span class="help-block" *ngIf="(srividyaForm.get('Wtmsw').touched || srividyaForm.get('Wtmsw').dirty) && srividyaForm.get('Wtmsw').errors">
+                            <span *ngIf="srividyaForm.get('Wtmsw').errors.required">
+                                This field is required.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                (Donations to SDNS (Sri Devipuram  Nirman Society) are exempted under 80 G of IT Act)
+
+            </div>
+
+            <div class="has-error" *ngIf="Message">{{Message}}</div>
+
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-2">
+                        <span>
+                            <button class="btn btn-primary"
+                                    type="submit"
+                                    style="width:80px;margin-right:10px"
+                                    [disabled]="!srividyaForm.valid">
+                                Save
+                            </button>
+                        </span>
+                        <span>
+                            <a class="btn btn-default"
+                               [routerLink]="['/courses']">
+                                Cancel
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </fieldset>
+    </form>
+
+</div>
+
+
+

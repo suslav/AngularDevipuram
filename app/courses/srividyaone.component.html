@@ -3,7 +3,7 @@
           novalidate    [formGroup]="svoForm" (ngSubmit)="save()">-->    
     
     <form class="form-horizontal"
-          novalidate [formGroup]="svoForm" (ngSubmit)="save()">
+          novalidate [formGroup]="svparentForm.controls.svoForm" (ngSubmit)="save()">
         <fieldset>
             <legend>Sri Vidya Form Part1</legend>
             <div class="form-group"

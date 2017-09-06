@@ -7,7 +7,10 @@ import { CoursesListComponent } from './courseslist.component';
 import { GeneralVisitorAnComponent } from './generalvisitoran.component';
 import { GeneralVisitorInAnComponent } from './generalvisitorinan.component';
 import { SrimahameruAnComponent } from './srimahameruan.component';
-import { SriVidyaCourseAnComponent } from './srividyacoursean.component';
+//import { SriVidyaCourseAnComponent } from './srividyacoursean.component';
+
+import { SriVidyaRegisterAnComponent } from './srividyaregisteran.component';
+
 import { AuthGuard } from '../_guards/index';
 
 import { CoursesListService } from './courseslist.service';
@@ -26,7 +29,7 @@ import { MyDatePickerModule } from 'mydatepicker';
                     { path: '', component: CoursesListComponent, canActivate: [AuthGuard]},
                     { path: ':id/1', component: GeneralVisitorAnComponent, canActivate: [AuthGuard] },
                     { path: ':id/2', component: GeneralVisitorInAnComponent, canActivate: [AuthGuard]},
-                    { path: ':id/3', component: SriVidyaCourseAnComponent, canActivate: [AuthGuard]},
+                    { path: ':id/3', component: SriVidyaRegisterAnComponent, canActivate: [AuthGuard]},
                     { path: ':id/4', component: SrimahameruAnComponent, canActivate: [AuthGuard]}
                 ]
             },
@@ -38,7 +41,8 @@ import { MyDatePickerModule } from 'mydatepicker';
         GeneralVisitorAnComponent,
         GeneralVisitorInAnComponent,
         SrimahameruAnComponent,
-        SriVidyaCourseAnComponent
+       // SriVidyaCourseAnComponent
+        SriVidyaRegisterAnComponent
     ],
     providers: [
         CoursesListService
