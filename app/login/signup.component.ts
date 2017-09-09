@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-// import { AuthenticationService } from '../_services/index';
-
 import { FormGroup, FormBuilder, Validators,AbstractControl } from '@angular/forms';
 import { SignupService } from './signup.service';
 import { Observable } from 'rxjs/Observable';
@@ -16,16 +13,8 @@ export class SignupComponent implements OnInit {
     model: any = {};
     loading = false;
     error = '';
-
-    signForm: FormGroup;
-    //errorMessage: string;
-    //successMessage: string;
-
-
-    Message: string;
-
-     
-
+    signForm: FormGroup;    
+    Message: string;    
     emailMessage: string;
 
     private validationMessages = {
@@ -36,74 +25,60 @@ export class SignupComponent implements OnInit {
     constructor(
         private router: Router,
         private fb: FormBuilder, private _postService: SignupService
-        // private authenticationService: AuthenticationService
     ) { }
 
     ngOnInit() {
+        this.signForm = this.fb.group({      
 
-        // this.authenticationService.logout();
+            email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]],
+            name: ['', Validators.required],
+            password: ['', Validators.required],
+            UserTypeID:[2]
 
-        this.signForm = this.fb.group({            
-           // UserName: ['', Validators.required],
 
-            UserName: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]],
-            FirstName: ['', Validators.required],
-            Password: ['', Validators.required],
+            //UserName: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]],
+            //FirstName: ['', Validators.required],
+            //Password: ['', Validators.required],
         });
 
-        const emailControl = this.signForm.get('UserName');
+        const emailControl = this.signForm.get('email');
         emailControl.valueChanges.debounceTime(1000).subscribe(value =>
             this.setMessage(emailControl));
 
     }
 
-    signup() {
-
-      
-      //  let url = 'http://localhost:8080/DevipuramPhalcon/api/api/usersignup';
-
-        //let body = this.signForm.value;
-
-        //this._postService.signupUser(body).subscribe(
-        //    data => {
-                
-        //        console.log(data);
-               
-        //         return this.router.navigate(['/']);
-        //    },
-        //    error => {
-        //        console.error("Username or Password incorrect");
-        //        return Observable.throw(error);
-        //    }
-        //);       
-
-
-
+    signup() {        
         let body = this.signForm.value;
-
-        //this._postService.signupUser(body).subscribe(
-        //    result => this.successMessage = "User Registered Successfully",
-        //    error => this.errorMessage = <any>error
-        //);    
 
         this._postService.signupUser(body).subscribe(
             data => {
 
                 console.log(data);
 
-                return this.Message = "User Registered Successfully";
+                return this.Message = "User Registered Successfully, Please Login to Continue";
             },
             error => {
-              //  console.log(error.json().status);
-                if (error.json().status == "Duplicate")
+
+                if (error.json().errors[0] == "The email has already been taken.")
                 {
                     return this.Message = "UserName already exists";
                 }
 
                else {
                     return this.Message = "An Error Occured: Try Again";
-                }              
-              //  return Observable.throw(error);
+                }    
+
+
+               // if (error.json().status == "Duplicate")
+               // {
+               //     return this.Message = "UserName already exists";
+               // }
+
+               //else {
+               //     return this.Message = "An Error Occured: Try Again";
+               // }              
+
+               // return console.log(error.json().errors[0]);
             }
         ); 
         

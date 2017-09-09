@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\courses"
+    "\\app\\courseslist",
+    "\\app\\login"
   ],
-  "SelectedNode": "\\app\\courses\\srividyaone.component.html",
+  "SelectedNode": "\\app\\login\\signup.service.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -17,7 +17,6 @@ import 'rxjs/add/operator/switchMap';
  
 @Injectable()
 export class LoginService {
-   // headers: Headers;
     options: RequestOptions;
 
     public token: string;
@@ -26,47 +25,38 @@ export class LoginService {
     constructor(private http: Http) {
          
         const headers = new Headers();
-
         headers.append('Accept', 'application/json');
         headers.append('Content-Type', 'application/json');     
-      //   this.options = new RequestOptions({ headers: headers, withCredentials: true});
         this.options = new RequestOptions({ headers: headers });
-
-
-
+        
         var currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.token = currentUser && currentUser.token; 
         this.usertype = currentUser && currentUser.usertype;
     }
 
 
-    loginUser(food: string) {   
+    //getBooks(): Observable<any> {
+    //    return this.http.get('http://localhost:8080/myNextProject/public/api/book?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9teU5leHRQcm9qZWN0L3B1YmxpYy9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTUwNDc4NTA4OCwiZXhwIjoxNTA0Nzg4Njg4LCJuYmYiOjE1MDQ3ODUwODgsImp0aSI6IkFncmp6Y1NqRVlnS296Z3EifQ.JTyqA84rbw_GGU_g-SFsKRjFT_vCGtGkTZf2X9eJaW0')
+    //        .map((response: Response) => <any>response.json())
+    //        .do(data => console.log('All: ' + JSON.stringify(data)))
+    //        .catch(this.handleError);
+    //}
 
-         //let body = JSON.stringify(food);    
-         //console.log(body);
-         //return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/userlogin', body, this.options).map((res: Response) => res.json());
-      
+
+    loginUser(food: string) {   
+        
         let body = JSON.stringify(food);
         console.log(body);
-        return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/userlogin', body, this.options).map((response: Response) => {
-
-            console.log(response.json());
-          //  console.log(body);
-
-            let token = response.json() && response.json().id;
+       // return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/userlogin', body, this.options).map((response: Response) => {
+        return this.http.post('http://localhost:8080/myNextProject/public/api/auth/login', body, this.options).map((response: Response) => {
+            let token = response.json() && response.json().token;
             let usertype = response.json() && response.json().UserTypeID;
             if (token && usertype) {
-
                 this.token = token;
-                this.usertype = usertype;
-                 
-               // localStorage.setItem('currentUser', JSON.stringify({ username: "admin@gmail.com", token: token }));
+                this.usertype = usertype;                               
                 localStorage.setItem('currentUser', JSON.stringify({ token: token, usertype: usertype}));
-
-               //  return true to indicate successful login
                 return true;
             } else {
-                // return false to indicate failed login
                 return false;
             }
         });

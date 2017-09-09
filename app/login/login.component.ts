@@ -45,19 +45,36 @@ export class LoginComponent implements OnInit {
     ) {       
       }
 
-    ngOnInit() {       
+    ngOnInit() {      
+
+
+        //this._postService.getBooks().subscribe(
+        //    data => { 
+
+        //        return console.log(this.data);
+        //    },
+        //    error => 
+        //    {
+        //        return console.log("Error");
+        //    }
+        //        );
+
+
 
         // this.authenticationService.logout();
 
         this.loginForm = this.fb.group({                    
            // UserName: ['', Validators.required],
 
-            UserName: ['', [Validators.required,Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]],
-            Password: ['', Validators.required],
+            //UserName: ['', [Validators.required,Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]],
+            //Password: ['', Validators.required],
+
+            email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]],
+            password: ['', Validators.required]
         });   
 
 
-        const emailControl = this.loginForm.get('UserName');
+        const emailControl = this.loginForm.get('email');
         emailControl.valueChanges.debounceTime(1000).subscribe(value =>
             this.setMessage(emailControl));
     }

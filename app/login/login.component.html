@@ -7,7 +7,7 @@
               (ngSubmit)="login()"
               [formGroup]="loginForm">
             <fieldset>
-                <div class="form-group"
+                <!--<div class="form-group"
                      [ngClass]="{'has-error': (loginForm.get('UserName').touched || loginForm.get('UserName').dirty) && !loginForm.get('UserName').valid }">
                     <label class="col-md-2 control-label"
                            for="UserNameId">UserName</label>
@@ -15,16 +15,7 @@
                     <div class="col-md-8">
                         <input class="form-control"
                                id="UserNameId"
-                               type="text" formControlName="UserName" />  
-                               <!--placeholder="Email (required)"-->    
-                              
-
-                        <!--<span class="help-block" *ngIf="(loginForm.get('UserName').touched || loginForm.get('UserName').dirty) && loginForm.get('UserName').errors">
-                            <span *ngIf="loginForm.get('UserName').errors.required">
-                                Please enter your UserName.
-                            </span>                           
-                        </span>-->
-
+                               type="text" formControlName="UserName" />                                 
                         <span class="help-block" *ngIf="emailMessage">
                             {{emailMessage}}
                         </span>
@@ -50,6 +41,44 @@
                                 Please enter your Password.
                             </span>
                            
+                        </span>
+                    </div>
+                </div>-->
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (loginForm.get('email').touched || loginForm.get('email').dirty) && !loginForm.get('email').valid }">
+                    <label class="col-md-2 control-label"
+                           for="emailId">UserName</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="emailId"
+                               type="text" formControlName="email" />
+                        <span class="help-block" *ngIf="emailMessage">
+                            {{emailMessage}}
+                        </span>
+
+
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (loginForm.get('password').touched || loginForm.get('password').dirty) && !loginForm.get('password').valid }">
+                    <label class="col-md-2 control-label"
+                           for="passwordId">Password</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="passwordId"
+                               type="password"
+                               formControlName="password" />
+
+
+                        <span class="help-block" *ngIf="(loginForm.get('password').touched || loginForm.get('password').dirty) && loginForm.get('password').errors">
+                            <span *ngIf="loginForm.get('password').errors.required">
+                                Please enter your Password.
+                            </span>
+
                         </span>
                     </div>
                 </div>
