@@ -1,0 +1,127 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div> 
+    <form class="form-horizontal"
+          novalidate [formGroup]="vidForm" (ngSubmit)="save()">
+        <fieldset>
+            <div class="panel-body">
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (vidForm.get('VideoTitle').touched || vidForm.get('VideoTitle').dirty) && !vidForm.get('VideoTitle').valid }">
+                    <label class="col-md-2 control-label"
+                           for="VideoTitleId">VideoTitle</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="VideoTitleId"
+                               type="text"
+                               placeholder="VideoTitle required"
+                               formControlName="VideoTitle" />
+
+
+                        <span class="help-block" *ngIf="(vidForm.get('VideoTitle').touched || vidForm.get('VideoTitle').dirty) && vidForm.get('VideoTitle').errors">
+                            <span *ngIf="vidForm.get('VideoTitle').errors.required">
+                                Please enter VideoTitle.
+                            </span>
+                            <span *ngIf="vidForm.get('VideoTitle').errors.minlength">
+                                The VideoTitle must be longer than 3 characters.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (vidForm.get('VideoDescription').touched || vidForm.get('VideoDescription').dirty) && !vidForm.get('VideoDescription').valid }">
+                    <label class="col-md-2 control-label"
+                           for="VideoDescriptionId">VideoDescription</label>
+
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="VideoDescriptionId"
+                                  rows="3"
+                                  placeholder="VideoDescription required"
+                                  formControlName="VideoDescription"></textarea>
+
+                        <span class="help-block" *ngIf="(vidForm.get('VideoDescription').touched || vidForm.get('VideoDescription').dirty) && vidForm.get('VideoDescription').errors">
+                            <span *ngIf="vidForm.get('VideoDescription').errors.required">
+                                Please enter VideoDescription.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (vidForm.get('VideoEmbedcode').touched || vidForm.get('VideoEmbedcode').dirty) && !vidForm.get('VideoEmbedcode').valid }">
+                    <label class="col-md-2 control-label"
+                           for="VideoEmbedcodeId">VideoEmbedcode</label>
+
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="VideoEmbedcodeId"
+                                  rows="3"
+                                  placeholder="VideoEmbedcode required"
+                                  formControlName="VideoEmbedcode"></textarea>
+
+                        <span class="help-block" *ngIf="(vidForm.get('VideoEmbedcode').touched || vidForm.get('VideoEmbedcode').dirty) && vidForm.get('VideoEmbedcode').errors">
+                            <span *ngIf="vidForm.get('VideoEmbedcode').errors.required">
+                                Please enter VideoEmbedcode.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (vidForm.get('VideoCategoryId').touched || vidForm.get('VideoCategoryId').dirty) && !vidForm.get('VideoCategoryId').valid }">
+                    <label class="col-md-2 control-label"
+                           for="VideoCategoryIdId">Video Category</label>
+
+                    <div class="col-md-8">
+
+                        <!--<select formControlName="VideoCategoryId" class="form-control">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>-->
+
+                        <select formControlName="VideoCategoryId" class="form-control">
+                            <!--<option *ngFor="let game of videocate" [ngValue]="game"> {{game.name}} </option>-->
+
+                            <option></option>
+                            <option *ngFor="let videoc of videocate" [value]="videoc.VideoCategoryId">{{videoc.VideoCategoryName}} </option>
+                        </select>
+
+
+
+                        <span class="help-block" *ngIf="(vidForm.get('VideoCategoryId').touched || vidForm.get('VideoCategoryId').dirty) && vidForm.get('VideoCategoryId').errors">
+                            <span *ngIf="vidForm.get('VideoCategoryId').errors.required">
+                                Please select VideoCategory.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+              </div>
+
+            <div class="has-error" *ngIf="Message">{{Message}}</div>
+
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-2">
+                        <span>
+                            <button class="btn btn-primary"
+                                    type="submit"
+                                    style="width:80px;margin-right:10px"
+                                    [disabled]="!vidForm.valid">
+                                Publish
+                            </button>
+                        </span>
+                      
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+
+
+

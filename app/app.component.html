@@ -3,13 +3,11 @@
         <div class="col-md-12">
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
-                    <!--<a class="navbar-brand">{{pageTitle}}</a>-->
                     <ul class="nav navbar-nav">
                         <li routerLinkActive="active">
                             <a [routerLink]="['/home']">Home</a>
                         </li>
-                        <!--<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">-->
-                        <li routerLinkActive="active">
+                        <!--<li routerLinkActive="active">
                             <a [routerLink]="['/devipuram']">About Devipuram</a>
                         </li>
                         <li routerLinkActive="active">
@@ -20,11 +18,16 @@
                         </li>
                         <li routerLinkActive="active">
                             <a [routerLink]="['/campusevents']">Events</a>
+                        </li>-->
+                        
+                        <li routerLinkActive="active" *ngIf="!authService.isAdmin()">
+                            <a [routerLink]="['/videos','list']">Videos</a>
                         </li>
-                        <li routerLinkActive="active">
-                            <a [routerLink]="['/videogallery']">D-TV</a>
+                        <li routerLinkActive="active" *ngIf="authService.isAdmin()">
+                            <a [routerLink]="['/videos','insert']">Publish Video</a>
                         </li>
-                        <li routerLinkActive="active">
+
+                        <!--<li routerLinkActive="active">
                             <a [routerLink]="['/dailyschedule']">Rituals at Devipuram</a>
                         </li>
                         <li routerLinkActive="active">
@@ -35,7 +38,7 @@
                         </li>
                         <li routerLinkActive="active">
                             <a [routerLink]="['/contact']">Contact</a>
-                        </li>                        
+                        </li>-->                        
                         <li routerLinkActive="active" *ngIf="authService.isUser()">
                             <a [routerLink]="['/courses']">Couses</a>
                         </li>                        
@@ -45,28 +48,9 @@
 
                         <li routerLinkActive="active">
                             <a [routerLink]="['/products']">Cart</a>
-                        </li>
-
-                        <!--<li routerLinkActive="active">
-                            <a [routerLink]="['/courses']">products</a>
-                        </li>-->
-
-                        <!--<li routerLinkActive="active">
-                            <a [routerLink]="['/products']">products</a>
-                        </li>-->
+                        </li>                       
                     </ul>
-
-                     <!--<ul class="nav navbar-nav navbar-right">
-        <li *ngIf="!authService.isLoggedIn()">
-            <a [routerLink] ="['/login']">Log In</a>
-        </li>
-        <li>
-            <a (click)="logOut()">Log Out</a>
-        </li>
-    </ul>--> 
-
-
-                    <ul class="nav navbar-nav navbar-right">         
+                       <ul class="nav navbar-nav navbar-right">         
         <li *ngIf="!authService.isLoggedIn()">
             <a [routerLink] ="['/login']">Log In</a>
         </li>
@@ -74,23 +58,7 @@
             <a (click)="logOut()">Log Out</a>
         </li>
     </ul>
-
-                     
-                    <!--<ul class="nav navbar-nav navbar-right">
-         <li *ngIf="authService.isLoggedIn()">
-            <a>Welcome {{ authService.currentUser.userName }}</a>
-        </li>
-        <li>
-            <a>Show Messages</a>
-        </li>
-        <li *ngIf="!authService.isLoggedIn()">
-            <a [routerLink] ="['/login']">Log In</a>
-        </li>
-        <li *ngIf="authService.isLoggedIn()">
-            <a (click)="logOut()">Log Out</a>
-        </li>
-    </ul>-->
-
+ 
                 </div>
             </nav>
         </div>
@@ -102,13 +70,4 @@
         </div>
     </div>
 </div>
-
-
-
-<!--<div class="jumbotron">
-    <div class="container">
-        <div class="col-sm-8 col-sm-offset-2">
-            <router-outlet></router-outlet>
-        </div>
-    </div>
-</div>--> 
+ 

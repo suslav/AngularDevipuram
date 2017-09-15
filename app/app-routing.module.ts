@@ -10,7 +10,7 @@ import { DevipuramComponent } from './devipuram/devipuram.component';
 import { GurujiComponent } from './guruji/guruji.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { CampusEventsComponent } from './campusevents/campusevents.component';
-import { VideoGalleryComponent } from './videogallery/videogallery.component';
+//import { VideoGalleryComponent } from './videogallery/videogallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { DailyscheduleComponent } from './dailyschedule/dailyschedule.component';
 import { PhotogalleryComponent } from './photogallery/photogallery.component';
@@ -28,7 +28,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
             { path: 'guruji', component: GurujiComponent },
             { path: 'articles', component: ArticlesComponent },
             { path: 'campusevents', component: CampusEventsComponent },
-            { path: 'videogallery', component: VideoGalleryComponent },
+          //  { path: 'videogallery', component: VideoGalleryComponent },
             { path: 'contact', component: ContactComponent },
             { path: 'dailyschedule', component: DailyscheduleComponent },
             { path: 'photogallery', component: PhotogalleryComponent },

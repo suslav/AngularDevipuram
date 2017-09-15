@@ -26,7 +26,7 @@ import { DevipuramComponent } from './devipuram/devipuram.component';
 import { GurujiComponent } from './guruji/guruji.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { CampusEventsComponent } from './campusevents/campusevents.component';
-import { VideoGalleryComponent } from './videogallery/videogallery.component';
+//import { VideoGalleryComponent } from './videogallery/videogallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { DailyscheduleComponent } from './dailyschedule/dailyschedule.component';
 import { PhotogalleryComponent } from './photogallery/photogallery.component';
@@ -42,6 +42,7 @@ import { GeneralVisitorService } from './courses/generalvisitor.service';
 //import { ShoppingcartModule } from './shoppingcart/shoppingcart.module'; 
 
 import { ProductsModule } from './shoppingcart/products.module';
+import { VideosModule } from './videogallery/videos.module'; 
 
 // import { BrowserXhr } from '@angular/http';
  //import {CustExtBrowserXhr} from './cust-ext-browser-xhr';
@@ -56,7 +57,8 @@ import { ProductsModule } from './shoppingcart/products.module';
         CoursesModule  
         , CoursesListModule
       //  ,ShoppingcartModule
-        ,ProductsModule
+        , ProductsModule
+        , VideosModule
         ,AppRoutingModule
     ],
     declarations: [
@@ -68,7 +70,7 @@ import { ProductsModule } from './shoppingcart/products.module';
         GurujiComponent,
         ArticlesComponent,
         CampusEventsComponent,
-        VideoGalleryComponent,
+     //   VideoGalleryComponent,
         ContactComponent,
         DailyscheduleComponent,
         PhotogalleryComponent,

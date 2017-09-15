@@ -22,7 +22,7 @@ export class LoginService {
     public token: string;
     public usertype: string;
  
-    constructor(private http: Http) {
+    constructor(private http: Http) {       
          
         const headers = new Headers();
         headers.append('Accept', 'application/json');
@@ -48,7 +48,8 @@ export class LoginService {
         let body = JSON.stringify(food);
         console.log(body);
        // return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/userlogin', body, this.options).map((response: Response) => {
-        return this.http.post('http://localhost:8080/myNextProject/public/api/auth/login', body, this.options).map((response: Response) => {
+       // return this.http.post('http://localhost:8080/myNextProject/public/api/auth/login', body, this.options).map((response: Response) => {
+        return this.http.post('http://localhost:8080/LaravelProject/public/api/auth/login', body, this.options).map((response: Response) => {
             let token = response.json() && response.json().token;
             let usertype = response.json() && response.json().UserTypeID;
             if (token && usertype) {
@@ -93,4 +94,11 @@ export class LoginService {
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');
     } 
+
+
+    //public generateNewToken() {
+    //    let token: string = '...';//custom token generation;
+    //    let currentTime: number = (new Date()).getTime() + ttl;
+    //    this.store({ ttl: currentTime, token });
+    //}
 }

@@ -30,6 +30,8 @@
             // other libraries
             'rxjs': 'npm:rxjs'
 
+            , "angular2-jwt": "npm:@angular/forms/bundles/angular2-jwt"
+
             
         },
         // packages tells the System loader how to load when no filename and/or no extension

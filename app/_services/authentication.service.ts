@@ -2,7 +2,14 @@
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map'
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
+
+
+//import { tokenNotExpired } from 'angular2-jwt';
+
+import { tokenNotExpired } from 'angular2-jwt';
+
+
 
 @Injectable()
 export class AuthenticationService {
@@ -59,8 +66,8 @@ export class AuthenticationService {
 
 
     isLoggedIn(): boolean {
-        return !!localStorage.getItem('currentUser');
-       // return false;
+         return !!localStorage.getItem('currentUser');      
+       // return tokenNotExpired();
     }
 
     isAdmin(): boolean {       
