@@ -51,9 +51,17 @@ export class VideoInsertComponent implements OnInit {
         //let body = Form.Name + '~' + 1 + '|' + Form.Age + '~' + 2 + '|' + Form.Gender + '~' + 3 + '|' + Form.Sonof + '~' + 4;
 
         let body = this.vidForm.value;
+
+        console.log(body);
+
         this.vdService.insertVideos(body).subscribe(
             data => {
-                return this.router.navigate(['/courses', 'courseregistred']);               
+              //  return this.router.navigate(['/courses', 'courseregistred']);                
+
+                this.vidForm.reset();
+
+                return this.Message = "Video Published Successfully";
+               
             },
             error => {
                 return this.Message = "Error While Inserting Data";

@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VideoGalleryComponent } from './videogallery.component'; 
 import { VideoInsertComponent } from './videoinsert.component'; 
+import { VideoDisplayComponent } from './videodisplay.component'; 
 import { VideoService } from './video.service'; 
 import { AuthGuard } from '../_guards/index';
 
@@ -25,7 +26,10 @@ import { AuthGuard } from '../_guards/index';
 
                   {
                       path: 'list', component: VideoGalleryComponent
-                  }                  
+                  },
+                  {
+                      path: 'display', component: VideoDisplayComponent
+                  }  
               ]
           },
          
@@ -33,7 +37,8 @@ import { AuthGuard } from '../_guards/index';
     ], 
   declarations: [
       VideoGalleryComponent,
-      VideoInsertComponent            
+      VideoInsertComponent,
+      VideoDisplayComponent
   ],
   providers: [
       VideoService

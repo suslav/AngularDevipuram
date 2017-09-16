@@ -1,1 +1,41 @@
-D-TV
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <ul>
+                <li *ngFor='let vidca of videocate'>                                         
+                            <!--<a [routerLink]="['/courseslist',vidca.VideoCategoryId]" (click)="volchange()">-->
+
+                    <a  (click)="volchange(vidca)">
+                        {{vidca.VideoCategoryName}}
+                    </a>                                        
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-9">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4" *ngFor='let video of videos'>
+                        <!--{{video.VideoTitle}}-->
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!--<img src="https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg">-->
+
+                                       <a [routerLink]="['/videos/display',video.VideoId]">
+                                        <img src="{{video.VideoThumbUrl}}">
+                                        </a>
+                                        <!--&nbsp;-->
+</div>
+                                <!--&nbsp;-->
+                            </div>
+                            <br/>
+                            <!--<div class="row"><div class="col-md-12">&nbsp;</div></div>-->
+                            </div>                        
+                    </div>                    
+                </div>
+            </div>
+            </div>
+
+        </div>
+</div> 

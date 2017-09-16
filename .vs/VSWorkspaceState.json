@@ -1,11 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app\\login",
-    "\\app\\_services",
-    "\\node_modules",
-    "\\node_modules\\angular2-jwt"
+    "\\app",
+    "\\app\\courseslist",
+    "\\app\\videogallery"
   ],
-  "SelectedNode": "\\node_modules\\angular2-jwt\\angular2-jwt.js",
+  "SelectedNode": "\\app\\videogallery\\videoinsert.component.ts",
   "PreviewInSolutionExplorer": false
 }
