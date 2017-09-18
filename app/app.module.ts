@@ -29,8 +29,8 @@ import { CampusEventsComponent } from './campusevents/campusevents.component';
 //import { VideoGalleryComponent } from './videogallery/videogallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { DailyscheduleComponent } from './dailyschedule/dailyschedule.component';
-import { PhotogalleryComponent } from './photogallery/photogallery.component';
-import { PhotoGalleryService } from './photogallery/photogallery.service';
+//import { PhotogalleryComponent } from './photogallery/photogallery.component';
+//import { PhotoGalleryService } from './photogallery/photogallery.service';
 import { SrividyaComponent } from './srividya/srividya.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 //import { ShoppingCart1Component } from './shoppingcart/shoppingcart1.component';
@@ -43,6 +43,7 @@ import { GeneralVisitorService } from './courses/generalvisitor.service';
 
 import { ProductsModule } from './shoppingcart/products.module';
 import { VideosModule } from './videogallery/videos.module'; 
+import { PhotoModule } from './photogallery/photo.module'; 
 
 // import { BrowserXhr } from '@angular/http';
  //import {CustExtBrowserXhr} from './cust-ext-browser-xhr';
@@ -59,6 +60,7 @@ import { VideosModule } from './videogallery/videos.module';
       //  ,ShoppingcartModule
         , ProductsModule
         , VideosModule
+        , PhotoModule
         ,AppRoutingModule
     ],
     declarations: [
@@ -73,7 +75,7 @@ import { VideosModule } from './videogallery/videos.module';
      //   VideoGalleryComponent,
         ContactComponent,
         DailyscheduleComponent,
-        PhotogalleryComponent,
+     //   PhotogalleryComponent,
         SrividyaComponent,
      //   ShoppingCart1Component,
         PageNotFoundComponent
@@ -85,7 +87,7 @@ import { VideosModule } from './videogallery/videos.module';
         LoginService,
         SignupService,
         GeneralVisitorService,
-        PhotoGalleryService,
+      //  PhotoGalleryService,
         // providers used to create fake backend
       //  fakeBackendProvider,
      //   MockBackend,

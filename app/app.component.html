@@ -27,6 +27,14 @@
                             <a [routerLink]="['/videos','insert']">Publish Video</a>
                         </li>
 
+                        <li routerLinkActive="active" *ngIf="!authService.isAdmin()">
+                            <a [routerLink]="['/photos','list']">Photos</a>
+                        </li>
+                        <li routerLinkActive="active" *ngIf="authService.isAdmin()">
+                            <a [routerLink]="['/photos','insert']">Publish Photo</a>
+                        </li>
+
+
                         <!--<li routerLinkActive="active">
                             <a [routerLink]="['/dailyschedule']">Rituals at Devipuram</a>
                         </li>

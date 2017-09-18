@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IPhoto } from './photoalbum';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PhotoGalleryService } from './photogallery.service';
 
 @Component({
@@ -7,15 +7,29 @@ import { PhotoGalleryService } from './photogallery.service';
 })
 export class PhotogalleryComponent implements OnInit {
 
-    photos: IPhoto[];
+    public photos: any;
     errorMessage: string;
 
-    constructor(private _photoService: PhotoGalleryService) {
+    constructor(private route: ActivatedRoute, private router: Router
+        ,private photoService: PhotoGalleryService) {
     }
 
     ngOnInit(): void {
-        this._photoService.getPhotos().subscribe(photos => this.photos = photos,
-            error => this.errorMessage = <any>error);
+        this.photoService.photosList().subscribe(
+            data => {
+                if (data.length > 0) {
+                    this.errorMessage = " ";
+                    return this.photos = data;
+                }
+                else {
+                    this.photos = null;
+                    return this.errorMessage = "There are no Photoalbums";
+                }
 
+            },
+            error => {
+                return this.errorMessage = <any>error;
+            }
+        );
     }
 }

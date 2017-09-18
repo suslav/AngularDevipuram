@@ -13,7 +13,7 @@ import { CampusEventsComponent } from './campusevents/campusevents.component';
 //import { VideoGalleryComponent } from './videogallery/videogallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { DailyscheduleComponent } from './dailyschedule/dailyschedule.component';
-import { PhotogalleryComponent } from './photogallery/photogallery.component';
+//import { PhotogalleryComponent } from './photogallery/photogallery.component';
 import { SrividyaComponent } from './srividya/srividya.component';
 //import { ShoppingCart1Component } from './shoppingcart/shoppingcart1.component';
 import { PageNotFoundComponent } from './page-not-found.component';
@@ -31,7 +31,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
           //  { path: 'videogallery', component: VideoGalleryComponent },
             { path: 'contact', component: ContactComponent },
             { path: 'dailyschedule', component: DailyscheduleComponent },
-            { path: 'photogallery', component: PhotogalleryComponent },
+         //   { path: 'photogallery', component: PhotogalleryComponent },
             { path: 'srividya', component: SrividyaComponent },
           //  { path: 'shoppingcart', component: ShoppingCart1Component },
           //{ path: 'couses', component: CoursesComponent, canActivate: [AuthGuard] },

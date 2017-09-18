@@ -1,33 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
-import { VideoService } from './video.service';
+import { PhotoGalleryService } from './photogallery.service';
 
 @Component({
-    templateUrl: './app/videogallery/videodisplay.component.html'
+    templateUrl: './app/photogallery/photodisplay.component.html'
 })
-export class VideoDisplayComponent implements OnInit {
+export class PhotoDisplayComponent implements OnInit {
 
-    public video: any;
+    public photo: any;
 
     errorMessage: string;
 
     constructor(private route: ActivatedRoute, private router: Router
-        , private vdService: VideoService) { }
+        , private phService: PhotoGalleryService) { }
 
     ngOnInit(): void {
 
         this.route.params.subscribe((params: Params) => {
-            let videoId = params['id'];
+            let photoId = params['id'];
 
-            this.vdService.videosDetailbyId(videoId).subscribe(
+            this.phService.photoDetailbyId(photoId).subscribe(
                 data => {
                     if (data.length > 0) {
                         this.errorMessage = " ";
-                        return this.video = data[0];
+                        return this.photo = data[0];
                     }
                     else {
-                        this.video = null;
-                        return this.errorMessage = "There are no Categories";
+                        this.photo = null;
+                        return this.errorMessage = "There are no Photo";
                     }
 
                 },

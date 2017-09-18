@@ -1,23 +1,23 @@
-<!--PhotoGallery-->
+<div class="container-fluid">
+    <div class="row">        
+        <div class="col-md-12">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4" *ngFor='let photo of photos'>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">                                  
+                                    <a [routerLink]="['/photos/display',photo.AlbumId]">
+                                        <img src="{{photo.AlbumThumbUrl}}">
+                                    </a>                                   
+                                </div>
+                            </div>
+                            <br />                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-
-<div class='panel panel-primary'>
-    
-    <div class='table-responsive'>
-        <table class='table' *ngIf="photos && photos.length">
-            <thead>
-                <tr>                  
-                    <th>Title</th>
-                    <th>Description</th>                                   
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor='let photo of photos'>                    
-                    <td>{{photo.Title}}</td>
-                    <td>{{photo.Description}}</td>                                     
-                </tr>
-            </tbody>
-        </table>
     </div>
-
-</div>
+</div> 

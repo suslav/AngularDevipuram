@@ -47,6 +47,14 @@ export class VideoService {
             .catch(this.handleError);
     }
 
+
+    videosDetailbyId(id: number): Observable<any> {
+        return this.http.get('http://localhost:8080/LaravelProject/public/api/videodisplay/' + id)
+            .map((response: Response) => <any>response.json())
+            .do(data => console.log('All: ' + JSON.stringify(data)))
+            .catch(this.handleError);
+    }
+
     private handleError(error: Response) {
         return Observable.throw(error.json().error || 'Server error');
     }

@@ -1,0 +1,136 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div> 
+    <form class="form-horizontal"
+          novalidate [formGroup]="phoForm" (ngSubmit)="save()">
+        <fieldset>
+            <div class="panel-body">
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (phoForm.get('Title').touched || phoForm.get('Title').dirty) && !phoForm.get('Title').valid }">
+                    <label class="col-md-2 control-label"
+                           for="TitleId">Title</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="TitleId"
+                               type="text"
+                               placeholder="Title required"
+                               formControlName="Title" />
+
+
+                        <span class="help-block" *ngIf="(phoForm.get('Title').touched || phoForm.get('Title').dirty) && phoForm.get('Title').errors">
+                            <span *ngIf="phoForm.get('Title').errors.required">
+                                Please enter Title.
+                            </span>
+                            <span *ngIf="phoForm.get('Title').errors.minlength">
+                                The Title must be longer than 3 characters.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (phoForm.get('Description').touched || phoForm.get('Description').dirty) && !phoForm.get('Description').valid }">
+                    <label class="col-md-2 control-label"
+                           for="DescriptionId">Description</label>
+
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="DescriptionId"
+                                  rows="3"
+                                  placeholder="Description required"
+                                  formControlName="Description"></textarea>
+
+                        <span class="help-block" *ngIf="(phoForm.get('Description').touched || phoForm.get('Description').dirty) && phoForm.get('Description').errors">
+                            <span *ngIf="phoForm.get('Description').errors.required">
+                                Please enter Description.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (phoForm.get('AlbumUrl').touched || phoForm.get('AlbumUrl').dirty) && !phoForm.get('AlbumUrl').valid }">
+                    <label class="col-md-2 control-label"
+                           for="AlbumUrlId">AlbumUrl</label>
+
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="AlbumUrlId"
+                                  rows="3"
+                                  placeholder="AlbumUrl required"
+                                  formControlName="AlbumUrl"></textarea>
+
+                        <span class="help-block" *ngIf="(phoForm.get('AlbumUrl').touched || phoForm.get('AlbumUrl').dirty) && phoForm.get('AlbumUrl').errors">
+                            <span *ngIf="phoForm.get('AlbumUrl').errors.required">
+                                Please enter AlbumUrl.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (phoForm.get('AlbumThumbUrl').touched || phoForm.get('AlbumThumbUrl').dirty) && !phoForm.get('AlbumThumbUrl').valid }">
+                    <label class="col-md-2 control-label"
+                           for="AlbumThumbUrlId">AlbumThumbUrl</label>
+
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="AlbumThumbUrlId"
+                                  rows="3"
+                                  placeholder="AlbumThumbUrl required"
+                                  formControlName="AlbumThumbUrl"></textarea>
+
+                        <span class="help-block" *ngIf="(phoForm.get('AlbumThumbUrl').touched || phoForm.get('AlbumThumbUrl').dirty) && phoForm.get('AlbumThumbUrl').errors">
+                            <span *ngIf="phoForm.get('AlbumThumbUrl').errors.required">
+                                Please enter AlbumThumbUrl.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <!--<div class="form-group"
+                     [ngClass]="{'has-error': (phoForm.get('VideoCategoryId').touched || phoForm.get('VideoCategoryId').dirty) && !phoForm.get('VideoCategoryId').valid }">
+                    <label class="col-md-2 control-label"
+                           for="VideoCategoryIdId">Video Category</label>
+
+                    <div class="col-md-8">                        
+                        <select formControlName="VideoCategoryId" class="form-control">
+                            <option></option>
+                            <option *ngFor="let videoc of videocate" [value]="videoc.VideoCategoryId">{{videoc.VideoCategoryName}} </option>
+                        </select>                         
+                        <span class="help-block" *ngIf="(phoForm.get('VideoCategoryId').touched || phoForm.get('VideoCategoryId').dirty) && phoForm.get('VideoCategoryId').errors">
+                            <span *ngIf="phoForm.get('VideoCategoryId').errors.required">
+                                Please select VideoCategory.
+                            </span>
+                        </span>
+                    </div>
+                </div>-->
+
+              </div>
+
+            <div class="has-error" *ngIf="Message">{{Message}}</div>
+
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-2">
+                        <span>
+                            <button class="btn btn-primary"
+                                    type="submit"
+                                    style="width:80px;margin-right:10px"
+                                    [disabled]="!phoForm.valid">
+                                Publish
+                            </button>
+                        </span>
+                      
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+
+
+
