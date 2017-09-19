@@ -1,21 +1,17 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
 import { LoginComponent, SignupComponent } from './login/index';
 import { AuthGuard } from './_guards/index';
 
 import { HomeComponent } from './home/index';
 import { DevipuramComponent } from './devipuram/devipuram.component';
 import { GurujiComponent } from './guruji/guruji.component';
-import { ArticlesComponent } from './articles/articles.component';
+//import { ArticlesComponent } from './articles/articles.component';
 import { CampusEventsComponent } from './campusevents/campusevents.component';
-//import { VideoGalleryComponent } from './videogallery/videogallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { DailyscheduleComponent } from './dailyschedule/dailyschedule.component';
-//import { PhotogalleryComponent } from './photogallery/photogallery.component';
 import { SrividyaComponent } from './srividya/srividya.component';
-//import { ShoppingCart1Component } from './shoppingcart/shoppingcart1.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 
 @NgModule({
@@ -26,16 +22,11 @@ import { PageNotFoundComponent } from './page-not-found.component';
             { path: 'home', component: HomeComponent},
             { path: 'devipuram', component: DevipuramComponent },
             { path: 'guruji', component: GurujiComponent },
-            { path: 'articles', component: ArticlesComponent },
+         //   { path: 'articles', component: ArticlesComponent },
             { path: 'campusevents', component: CampusEventsComponent },
-          //  { path: 'videogallery', component: VideoGalleryComponent },
             { path: 'contact', component: ContactComponent },
             { path: 'dailyschedule', component: DailyscheduleComponent },
-         //   { path: 'photogallery', component: PhotogalleryComponent },
-            { path: 'srividya', component: SrividyaComponent },
-          //  { path: 'shoppingcart', component: ShoppingCart1Component },
-          //{ path: 'couses', component: CoursesComponent, canActivate: [AuthGuard] },
-
+            { path: 'srividya', component: SrividyaComponent },          
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: '**', component: PageNotFoundComponent }
         ])

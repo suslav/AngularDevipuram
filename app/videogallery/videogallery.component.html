@@ -26,7 +26,7 @@
                                         <img src="{{video.VideoThumbUrl}}">
                                         </a>
                                         <!--&nbsp;-->
-</div>
+                                </div>
                                 <!--&nbsp;-->
                             </div>
                             <br/>
@@ -34,8 +34,19 @@
                             </div>                        
                     </div>                    
                 </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+                    </div>
+
+                </div>
+
+
+                </div>
             </div>
-            </div>
+
 
         </div>
 </div> 

@@ -4,50 +4,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-// used to create fake backend
-
-//import { fakeBackendProvider } from './_helpers/index';
-//import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
-
 import { AppComponent }  from './app.component';
-//import { routing }        from './app.routing';
-
 import { AuthGuard } from './_guards/index';
 import { AuthenticationService, UserService } from './_services/index';
 import { LoginComponent, LoginService, SignupComponent, SignupService } from './login/index';
 import { HomeComponent } from './home/index';
-//import { LoginService } from './login/login.service';
-
-
 //newadd
 import { AppRoutingModule } from './app-routing.module';
 import { DevipuramComponent } from './devipuram/devipuram.component';
 import { GurujiComponent } from './guruji/guruji.component';
-import { ArticlesComponent } from './articles/articles.component';
+//import { ArticlesComponent } from './articles/articles.component';
 import { CampusEventsComponent } from './campusevents/campusevents.component';
-//import { VideoGalleryComponent } from './videogallery/videogallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { DailyscheduleComponent } from './dailyschedule/dailyschedule.component';
-//import { PhotogalleryComponent } from './photogallery/photogallery.component';
-//import { PhotoGalleryService } from './photogallery/photogallery.service';
 import { SrividyaComponent } from './srividya/srividya.component';
-import { PageNotFoundComponent } from './page-not-found.component';
-//import { ShoppingCart1Component } from './shoppingcart/shoppingcart1.component';
- 
+import { PageNotFoundComponent } from './page-not-found.component'; 
 import { CoursesModule } from './courses/courses.module'; 
 import { CoursesListModule } from './courseslist/courseslist.module'; 
-import { GeneralVisitorService } from './courses/generalvisitor.service'; 
-
-//import { ShoppingcartModule } from './shoppingcart/shoppingcart.module'; 
-
+import { GeneralVisitorService } from './courses/generalvisitor.service';  
 import { ProductsModule } from './shoppingcart/products.module';
 import { VideosModule } from './videogallery/videos.module'; 
 import { PhotoModule } from './photogallery/photo.module'; 
-
-// import { BrowserXhr } from '@angular/http';
- //import {CustExtBrowserXhr} from './cust-ext-browser-xhr';
-// import { provide } from '@angular/core';
+import { ArticlesModule } from './articles/articles.module'; 
 
 @NgModule({
     imports: [
@@ -57,11 +36,11 @@ import { PhotoModule } from './photogallery/photo.module';
         HttpModule,    
         CoursesModule  
         , CoursesListModule
-      //  ,ShoppingcartModule
         , ProductsModule
         , VideosModule
         , PhotoModule
-        ,AppRoutingModule
+        , ArticlesModule
+        , AppRoutingModule
     ],
     declarations: [
         AppComponent,
@@ -70,14 +49,11 @@ import { PhotoModule } from './photogallery/photo.module';
         HomeComponent,
         DevipuramComponent,
         GurujiComponent,
-        ArticlesComponent,
+       // ArticlesComponent,
         CampusEventsComponent,
-     //   VideoGalleryComponent,
         ContactComponent,
         DailyscheduleComponent,
-     //   PhotogalleryComponent,
         SrividyaComponent,
-     //   ShoppingCart1Component,
         PageNotFoundComponent
     ],
     providers: [
@@ -86,17 +62,10 @@ import { PhotoModule } from './photogallery/photo.module';
         UserService,
         LoginService,
         SignupService,
-        GeneralVisitorService,
-      //  PhotoGalleryService,
-        // providers used to create fake backend
-      //  fakeBackendProvider,
-     //   MockBackend,
+        GeneralVisitorService,      
         BaseRequestOptions
-      //  , { provide: BrowserXhr, useClass: CustExtBrowserXhr }
     ],
-    bootstrap: [AppComponent
-//,[provide(BrowserXhr,{useClass:CustExtBrowserXhr})]
-]
+    bootstrap: [AppComponent]
 })
 
 export class AppModule { }

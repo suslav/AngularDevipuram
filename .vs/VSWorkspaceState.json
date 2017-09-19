@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "\\app",
+    "\\app\\photogallery",
+    "\\app\\videogallery"
   ],
   "PreviewInSolutionExplorer": false
 }

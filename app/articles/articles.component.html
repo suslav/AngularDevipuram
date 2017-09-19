@@ -1,1 +1,52 @@
-Guruji's Writings
+<!--<div class='panel panel-primary'>
+    <div class='table-responsive'>
+        <table class='table' *ngIf="articles && articles.length">
+            <thead>
+                <tr>
+                    <th>ArticleTitle</th>
+                    <th>ArticleDescription</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let article of articles'>
+                    <td>{{article.ArticleTitle}}</td>
+                    <td>{{article.ArticleDescription}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>-->
+
+<div class="container-fluid">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Articles
+        </div>
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4" *ngFor='let article of articles'>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a [routerLink]="['/photos/display',article.ArticleID]">
+                                                {{article.ArticleTitle}}
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -14,13 +14,19 @@
                     <div *ngIf="video">
                         <div class="row">
                             <div class="col-md-12">    
-                                {{video.VideoEmbedcode}}
+                                <!--{{video.VideoEmbedcode}}-->
                                 <!--<iframe width="450" height="338" src="https://www.youtube.com/embed/z-ni9eJnKVU?controls=0" frameborder="0" allowfullscreen></iframe>-->
+
+                                <!--<iframe [src]="{{video.VideoEmbedcode}}" frameborder="0" allowfullscreen></iframe>-->
+
+                                <iframe width="1000" height="450" [src]='safeURL' frameborder="0" allowfullscreen></iframe>
+
+
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                {{video.VideoTitle}}
+                                <h3>  {{video.VideoTitle}}</h3>
                             </div>
                         </div>
                         <div class="row">

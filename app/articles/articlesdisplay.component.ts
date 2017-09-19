@@ -1,45 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
-import { VideoService } from './video.service';
+import { ArticlesService } from './articles.service';
 
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-    templateUrl: './app/videogallery/videodisplay.component.html'
+    templateUrl: './app/articles/articlesdisplay.component.html'
 })
-export class VideoDisplayComponent implements OnInit {
+export class ArticlesDisplayComponent implements OnInit {
 
-    public video: any;
+    public article: any;
 
     public safeURL: any;
 
     errorMessage: string;
 
     constructor(private route: ActivatedRoute, private router: Router
-        , private vdService: VideoService, private _sanitizer: DomSanitizer) {
-
-       
-
+        , private arService: ArticlesService, private _sanitizer: DomSanitizer) {
     }
 
     ngOnInit(): void {
 
         this.route.params.subscribe((params: Params) => {
-            let videoId = params['id'];
+            let articleId = params['id'];
 
-            this.vdService.videosDetailbyId(videoId).subscribe(
+            this.arService.ArticleDetailbyId(articleId).subscribe(
                 data => {
                     if (data.length > 0) {
                         this.errorMessage = " ";
-                      //  return this.video = data[0];
+                       // return this.photo = data[0];
+                        this.article = data[0];
 
-                        this.video = data[0];
-
-                        this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(data[0].VideoEmbedcode);
+                        this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(data[0].AlbumUrl);
                     }
                     else {
-                        this.video = null;
-                        return this.errorMessage = "There are no Categories";
+                        this.article = null;
+                        return this.errorMessage = "There are no Article";
                     }
 
                 },
