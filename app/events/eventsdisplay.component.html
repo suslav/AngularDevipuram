@@ -1,0 +1,58 @@
+ <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            &nbsp;
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="container-fluid">                     
+                    <div *ngIf="event">
+                        <div class="row">
+                            <div class="col-md-12" style="text-align:center;">
+                                <h3>  {{event.EventTitle}} </h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="text-align:center;">
+                                From Date : {{event.EventFromDate}} &nbsp;&nbsp; To Date :  {{event.EventToDate}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                &nbsp;
+                                </div></div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img src="{{event.EventImageUrl}}" class="img-responsive">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                    {{event.EventDescription}}
+                            </div>
+                        </div>
+                    </div>
+
+                        </div>
+                    </div>
+        <div class="col-md-1"></div>
+        </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+        </div>
+    </div>
+</div>  
+
+

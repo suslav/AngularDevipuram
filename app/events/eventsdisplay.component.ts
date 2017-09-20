@@ -1,45 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
-import { ArticlesService } from './articles.service';
+import { EventsService } from './events.service';
 
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-     templateUrl: './app/articles/articlesdisplay.component.html'
-
-   // template: '<div>{{article.ArticleDescription }}</div>'
-
-    //template: <div [innerHTML]="post.body" ></div>
+    templateUrl: './app/events/eventsdisplay.component.html' 
 })
-export class ArticlesDisplayComponent implements OnInit {
+export class EventsDisplayComponent implements OnInit {
 
-    public article: any;
+    public event: any;
 
     public safeURL: any;
 
     errorMessage: string;
 
     constructor(private route: ActivatedRoute, private router: Router
-        , private arService: ArticlesService, private _sanitizer: DomSanitizer) {
+        , private evService: EventsService, private _sanitizer: DomSanitizer) {
     }
 
     ngOnInit(): void {
 
         this.route.params.subscribe((params: Params) => {
-            let articleId = params['id'];
+            let eventId = params['id'];
 
-            this.arService.ArticleDetailbyId(articleId).subscribe(
+            this.evService.EventDetailbyId(eventId).subscribe(
                 data => {
                     if (data.length > 0) {
                         this.errorMessage = " ";
                        // return this.photo = data[0];
-                        this.article = data[0];
+                        this.event = data[0];
 
-                        this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(data[0].ArticleDescription);
+                       // this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(data[0].ArticleDescription);
                     }
                     else {
-                        this.article = null;
-                        return this.errorMessage = "There are no Article";
+                        this.event = null;
+                        return this.errorMessage = "There are no Event";
                     }
 
                 },

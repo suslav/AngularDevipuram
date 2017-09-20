@@ -3,10 +3,10 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ArticlesComponent } from './articles.component'; 
-import { ArticlesInsertComponent } from './articlesinsert.component'; 
-import { ArticlesDisplayComponent } from './articlesdisplay.component'; 
-import { ArticlesService } from './articles.service'; 
+import { EventsComponent } from './events.component'; 
+import { EventsInsertComponent } from './eventsinsert.component'; 
+import { EventsDisplayComponent } from './eventsdisplay.component'; 
+import { EventsService } from './events.service'; 
 import { AuthGuard } from '../_guards/index';
 
   
@@ -17,17 +17,17 @@ import { AuthGuard } from '../_guards/index';
         ReactiveFormsModule,
         RouterModule.forChild([
           {
-              path: 'articles',             
+              path: 'events',             
               children: [                                
                   {
-                      path: 'insert', component: ArticlesInsertComponent, canActivate: [AuthGuard]
+                      path: 'insert', component: EventsInsertComponent, canActivate: [AuthGuard]
                   }
                   ,
                   {
-                      path: 'list', component: ArticlesComponent
+                      path: 'list', component: EventsComponent
                   },
                   {
-                      path: 'display/:id', component: ArticlesDisplayComponent
+                      path: 'display/:id', component: EventsDisplayComponent
                   }  
               ]
           },
@@ -35,12 +35,12 @@ import { AuthGuard } from '../_guards/index';
       ])
     ], 
   declarations: [
-      ArticlesComponent,
-      ArticlesInsertComponent
-     ,ArticlesDisplayComponent
+      EventsComponent,
+      EventsInsertComponent
+     ,EventsDisplayComponent
   ],
   providers: [
-      ArticlesService
+      EventsService
   ]
 })
-export class ArticlesModule {}
+export class EventsModule {}

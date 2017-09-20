@@ -27,6 +27,8 @@ import { ProductsModule } from './shoppingcart/products.module';
 import { VideosModule } from './videogallery/videos.module'; 
 import { PhotoModule } from './photogallery/photo.module'; 
 import { ArticlesModule } from './articles/articles.module'; 
+import { EventsModule } from './events/events.module'; 
+import { SrividyaCourseModule } from './srividyacourses/srividyacourse.module'; 
 
 @NgModule({
     imports: [
@@ -40,6 +42,8 @@ import { ArticlesModule } from './articles/articles.module';
         , VideosModule
         , PhotoModule
         , ArticlesModule
+        , EventsModule
+        , SrividyaCourseModule
         , AppRoutingModule
     ],
     declarations: [

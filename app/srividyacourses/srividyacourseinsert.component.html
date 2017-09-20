@@ -1,0 +1,140 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div> 
+    <form class="form-horizontal"
+          novalidate [formGroup]="svcForm" (ngSubmit)="save()">
+        <fieldset>
+            <div class="panel-body">
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (svcForm.get('CouresTitle').touched || svcForm.get('CouresTitle').dirty) && !svcForm.get('CouresTitle').valid }">
+                    <label class="col-md-2 control-label"
+                           for="CouresTitleId">CouresTitle</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="CouresTitleId"
+                               type="text"
+                               placeholder="CouresTitle required"
+                               formControlName="CouresTitle" />
+
+
+                        <span class="help-block" *ngIf="(svcForm.get('CouresTitle').touched || svcForm.get('CouresTitle').dirty) && svcForm.get('CouresTitle').errors">
+                            <span *ngIf="svcForm.get('CouresTitle').errors.required">
+                                Please enter CouresTitle.
+                            </span>
+                            <span *ngIf="svcForm.get('CouresTitle').errors.minlength">
+                                The CouresTitle must be longer than 3 characters.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (svcForm.get('CourseFromDate').touched || svcForm.get('CourseFromDate').dirty) && !svcForm.get('CourseFromDate').valid }">
+                    <label class="col-md-2 control-label"
+                           for="CourseFromDateId">Event FromDate</label>
+                    <div class="col-md-8">
+
+
+
+                        <input type="text" formControlName="CourseFromDate" placeholder="YYYY-MM-DD" />
+
+                        <span class="help-block" *ngIf="(svcForm.get('CourseFromDate').touched || svcForm.get('CourseFromDate').dirty) && svcForm.get('CourseFromDate').errors">
+                            <span *ngIf="svcForm.get('CourseFromDate').errors.required">
+                                Please enter CourseFromDate.
+                            </span>
+                            <span *ngIf="svcForm.get('CourseFromDate').errors.pattern">
+                                Enter a date in this format YYYY-MM-DD.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (svcForm.get('CourseToDate').touched || svcForm.get('CourseToDate').dirty) && !svcForm.get('CourseToDate').valid }">
+                    <label class="col-md-2 control-label"
+                           for="CourseToDateId">Event ToDate</label>
+                    <div class="col-md-8">
+
+                        <input type="text" formControlName="CourseToDate" placeholder="YYYY-MM-DD" />
+
+                        <span class="help-block" *ngIf="(svcForm.get('CourseToDate').touched || svcForm.get('CourseToDate').dirty) && svcForm.get('CourseToDate').errors">
+                            <span *ngIf="svcForm.get('CourseToDate').errors.required">
+                                Please enter CourseToDate.
+                            </span>
+                            <span *ngIf="svcForm.get('CourseToDate').errors.pattern">
+                                Enter a date in this format YYYY-MM-DD.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (svcForm.get('CourseImageUrl').touched || svcForm.get('CourseImageUrl').dirty) && !svcForm.get('CourseImageUrl').valid }">
+                    <label class="col-md-2 control-label"
+                           for="CourseImageUrlId">CourseImageUrl</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="CourseImageUrlId"
+                               type="text"
+                               placeholder="CourseImageUrl required"
+                               formControlName="CourseImageUrl" />
+
+
+                        <span class="help-block" *ngIf="(svcForm.get('CourseImageUrl').touched || svcForm.get('CourseImageUrl').dirty) && svcForm.get('CourseImageUrl').errors">
+                            <span *ngIf="svcForm.get('CourseImageUrl').errors.required">
+                                Please enter CourseImageUrl.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (svcForm.get('CourseDescription').touched || svcForm.get('CourseDescription').dirty) && !svcForm.get('CourseDescription').valid }">
+                    <label class="col-md-2 control-label"
+                           for="CourseDescriptionId">CourseDescription</label>
+
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="CourseDescriptionId"
+                                  rows="3"
+                                  placeholder="CourseDescription required"
+                                  formControlName="CourseDescription"></textarea>
+
+                        <span class="help-block" *ngIf="(svcForm.get('CourseDescription').touched || svcForm.get('CourseDescription').dirty) && svcForm.get('CourseDescription').errors">
+                            <span *ngIf="svcForm.get('CourseDescription').errors.required">
+                                Please enter CourseDescription.
+                            </span>
+                        </span>
+                    </div>
+                </div>  
+                 
+              </div>
+
+            <div class="has-error" *ngIf="Message">{{Message}}</div>
+
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-2">
+                        <span>
+                            <button class="btn btn-primary"
+                                    type="submit"
+                                    style="width:80px;margin-right:10px"
+                                    [disabled]="!svcForm.valid">
+                                Publish
+                            </button>
+                        </span>
+                      
+                    </div>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div>
+
+
+

@@ -1,0 +1,148 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div> 
+    <form class="form-horizontal"
+          novalidate [formGroup]="evnForm" (ngSubmit)="save()">
+        <fieldset>
+            <div class="panel-body">
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (evnForm.get('EventTitle').touched || evnForm.get('EventTitle').dirty) && !evnForm.get('EventTitle').valid }">
+                    <label class="col-md-2 control-label"
+                           for="EventTitleId">EventTitle</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="EventTitleId"
+                               type="text"
+                               placeholder="EventTitle required"
+                               formControlName="EventTitle" />
+
+
+                        <span class="help-block" *ngIf="(evnForm.get('EventTitle').touched || evnForm.get('EventTitle').dirty) && evnForm.get('EventTitle').errors">
+                            <span *ngIf="evnForm.get('EventTitle').errors.required">
+                                Please enter EventTitle.
+                            </span>
+                            <span *ngIf="evnForm.get('EventTitle').errors.minlength">
+                                The EventTitle must be longer than 3 characters.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (evnForm.get('EventDescription').touched || evnForm.get('EventDescription').dirty) && !evnForm.get('EventDescription').valid }">
+                    <label class="col-md-2 control-label"
+                           for="EventDescriptionId">EventDescription</label>
+
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="EventDescriptionId"
+                                  rows="3"
+                                  placeholder="EventDescription required"
+                                  formControlName="EventDescription"></textarea>
+
+                        <span class="help-block" *ngIf="(evnForm.get('EventDescription').touched || evnForm.get('EventDescription').dirty) && evnForm.get('EventDescription').errors">
+                            <span *ngIf="evnForm.get('EventDescription').errors.required">
+                                Please enter EventDescription.
+                            </span>
+                        </span>
+                    </div>
+                </div>  
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (evnForm.get('EventImageUrl').touched || evnForm.get('EventImageUrl').dirty) && !evnForm.get('EventImageUrl').valid }">
+                    <label class="col-md-2 control-label"
+                           for="EventImageUrlId">EventImageUrl</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="EventImageUrlId"
+                               type="text"
+                               placeholder="EventImageUrl required"
+                               formControlName="EventImageUrl" />
+
+
+                        <span class="help-block" *ngIf="(evnForm.get('EventImageUrl').touched || evnForm.get('EventImageUrl').dirty) && evnForm.get('EventImageUrl').errors">
+                            <span *ngIf="evnForm.get('EventImageUrl').errors.required">
+                                Please enter EventImageUrl.
+                            </span>                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="form-group"
+                     [ngClass]="{'has-error': (evnForm.get('EventFromDate').touched || evnForm.get('EventFromDate').dirty) && !evnForm.get('EventFromDate').valid }">
+                    <label class="col-md-2 control-label"
+                           for="EventFromDateId">Event FromDate</label>
+                    <div class="col-md-8">
+
+                       
+                        <!--<input type="text" formControlName="EventFromDate" placeholder="YYYY-MM-DD"
+                               pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
+                               />-->
+
+                        <input type="text" formControlName="EventFromDate" placeholder="YYYY-MM-DD"
+                                 />
+
+                        <span class="help-block" *ngIf="(evnForm.get('EventFromDate').touched || evnForm.get('EventFromDate').dirty) && evnForm.get('EventFromDate').errors">
+                            <span *ngIf="evnForm.get('EventFromDate').errors.required">
+                                Please enter EventFromDate.
+                            </span>      
+                            <span *ngIf="evnForm.get('EventFromDate').errors.pattern">
+                                Enter a date in this format YYYY-MM-DD.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (evnForm.get('EventToDate').touched || evnForm.get('EventToDate').dirty) && !evnForm.get('EventToDate').valid }">
+                    <label class="col-md-2 control-label"
+                           for="EventToDateId">Event ToDate</label>
+                    <div class="col-md-8">                     
+                        <!--<input type="text" formControlName="EventToDate" placeholder="YYYY-MM-DD"  
+                               pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
+                               />-->
+
+                        <input type="text" formControlName="EventToDate" placeholder="YYYY-MM-DD"
+                                 />
+
+                        <span class="help-block" *ngIf="(evnForm.get('EventToDate').touched || evnForm.get('EventToDate').dirty) && evnForm.get('EventToDate').errors">
+                            <span *ngIf="evnForm.get('EventToDate').errors.required">
+                                Please enter EventToDate.
+                            </span>
+                            <span *ngIf="evnForm.get('EventToDate').errors.pattern">
+                                Enter a date in this format YYYY-MM-DD.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                
+              </div>
+
+            <div class="has-error" *ngIf="Message">{{Message}}</div>
+
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-2">
+                        <span>
+                            <button class="btn btn-primary"
+                                    type="submit"
+                                    style="width:80px;margin-right:10px"
+                                    [disabled]="!evnForm.valid">
+                                Publish
+                            </button>
+                        </span>
+                      
+                    </div>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div>
+
+
+

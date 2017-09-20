@@ -1,0 +1,64 @@
+
+<div class="container-fluid">
+    <div class='panel panel-primary'>
+        <div class="panel-heading">
+            Events
+        </div>
+        <div class="panel-body">
+            <div class='table-responsive'>
+                <table class='table' *ngIf="events && events.length">
+                    <thead>
+                        <tr>
+                            <th>EventTitle</th>
+                            <th>Event Date</th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let event of events'>
+                            <td>{{event.EventTitle}}</td>
+                            <td>{{event.EventFromDate}}</td>
+                            <td>
+                                <a [routerLink]="['/events/display',event.EventID]">
+                                   View Details
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--<div class="container-fluid">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Articles
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-4" *ngFor='let article of articles'>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <a [routerLink]="['/articles/display',article.ArticleID]">
+                                                    {{article.ArticleTitle}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->

@@ -1,0 +1,60 @@
+ <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            &nbsp;
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="container-fluid">                     
+                    <div *ngIf="srividyacourse">
+                        <div class="row">
+                            <div class="col-md-12" style="text-align:center;">
+                                <h3>  {{srividyacourse.CouresTitle}} </h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="text-align:center;">
+                                From Date : {{srividyacourse.CourseFromDate}} &nbsp;&nbsp; To Date :  {{srividyacourse.CourseToDate}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                &nbsp;
+                                </div></div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img src="{{srividyacourse.CourseImageUrl}}" class="img-responsive">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                    <!--{{srividyacourse.CourseDescription}}-->
+
+                                <div [innerHTML]="srividyacourse.CourseDescription"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                        </div>
+                    </div>
+        <div class="col-md-1"></div>
+        </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+        </div>
+    </div>
+</div>  
+
+

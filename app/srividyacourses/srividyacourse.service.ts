@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 @Injectable()
-export class ArticlesService {
+export class SrividyaCourseService {
     options: RequestOptions;
 
     public token: string;
@@ -20,20 +20,20 @@ export class ArticlesService {
       //  this.usertype = currentUser && currentUser.usertype;
     }
 
-    insertArticles(body: string) {       
-        return this.http.post('http://localhost:8080/LaravelProject/public/api/articles/store?token=' + this.token, body, this.options).map((res: Response) => res.json());
+    insertSrividyaCourse(body: string) {       
+        return this.http.post('http://localhost:8080/LaravelProject/public/api/srividyacourses/store?token=' + this.token, body, this.options).map((res: Response) => res.json());
     }    
 
     
-   ArticlesList(): Observable<any> {
-       return this.http.get('http://localhost:8080/LaravelProject/public/api/articleslist')
+   SrividyaCourseList(): Observable<any> {
+       return this.http.get('http://localhost:8080/LaravelProject/public/api/srividyacourseslist')
             .map((response: Response) => <any>response.json())
             .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
 
-   ArticleDetailbyId(id: number): Observable<any> {
-       return this.http.get('http://localhost:8080/LaravelProject/public/api/articleslist/' + id)
+   SrividyaCourseDetailbyId(id: number): Observable<any> {
+       return this.http.get('http://localhost:8080/LaravelProject/public/api/srividyacourseslist/' + id)
            .map((response: Response) => <any>response.json())
            .do(data => console.log('All: ' + JSON.stringify(data)))
            .catch(this.handleError);

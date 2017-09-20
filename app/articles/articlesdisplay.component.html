@@ -8,22 +8,20 @@
     <div class="row">
         <div class="col-md-1"></div>
             <div class="col-md-10">
-                <div class="container-fluid">
-                     
-                    <div *ngIf="article">
-                        <!--<div class="row">
-                            <div class="col-md-12">                                    
-                                <iframe width="800" height="600" [src]='safeURL' frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>-->
+                <div class="container-fluid">                     
+                    <div *ngIf="article">                       
                         <div class="row">
                             <div class="col-md-12">
                                 <h3>  {{article.ArticleTitle}} </h3>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
-                                {{article.ArticleDescription}}
+                            <div class="col-md-12">                              
+                                <!--<div>
+                                    {{article.ArticleDescription}}
+                                </div>-->
+
+                                <div [innerHTML]="article.ArticleDescription"></div>
                             </div>
                         </div>
                     </div>
@@ -41,4 +39,10 @@
     </div>
 </div> 
  
-<!--one two-->
+
+    <!--<div>
+    {{article.ArticleDescription}}
+    </div>-->
+    <!--one two-->
+
+

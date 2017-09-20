@@ -41,6 +41,20 @@
                             <a [routerLink]="['/articles','insert']">Publish Article</a>
                         </li>
 
+                        <li routerLinkActive="active" *ngIf="!authService.isAdmin()">
+                            <a [routerLink]="['/events','list']">Events</a>
+                        </li>
+                        <li routerLinkActive="active" *ngIf="authService.isAdmin()">
+                            <a [routerLink]="['/events','insert']">Publish Event</a>
+                        </li>
+
+                        <li routerLinkActive="active" *ngIf="!authService.isAdmin()">
+                            <a [routerLink]="['/srividyacourse','list']">SrividyaCourse</a>
+                        </li>
+                        <li routerLinkActive="active" *ngIf="authService.isAdmin()">
+                            <a [routerLink]="['/srividyacourse','insert']">Publish SrividyaCourse</a>
+                        </li>
+
 
                         <!--<li routerLinkActive="active">
                             <a [routerLink]="['/dailyschedule']">Rituals at Devipuram</a>
