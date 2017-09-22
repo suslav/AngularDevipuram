@@ -35,7 +35,8 @@ export class SignupService {
         console.log(jsbody);
         //return this.http.post('http://localhost:8080/DevipuramPhalcon/api/api/usersignup', jsbody, this.options).map((res: Response) => res.json());
 
-        return this.http.post('http://localhost:8080/myNextProject/public/api/auth/signup', jsbody, this.options).map((res: Response) => res.json());
+       // return this.http.post('http://localhost:8080/myNextProject/public/api/auth/signup', jsbody, this.options).map((res: Response) => res.json());
+        return this.http.post('http://localhost:8080/LaravelProject/public/api/auth/signup', jsbody, this.options).map((res: Response) => res.json());
     }
 
 

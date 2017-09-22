@@ -31,7 +31,7 @@ export class LoginService {
         
         var currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.token = currentUser && currentUser.token; 
-        this.usertype = currentUser && currentUser.usertype;
+        this.usertype = currentUser && currentUser.UserTypeID;
     }
 
 
@@ -52,10 +52,11 @@ export class LoginService {
         return this.http.post('http://localhost:8080/LaravelProject/public/api/auth/login', body, this.options).map((response: Response) => {
             let token = response.json() && response.json().token;
             let usertype = response.json() && response.json().UserTypeID;
+            let userid = response.json() && response.json().UserID;
             if (token && usertype) {
                 this.token = token;
                 this.usertype = usertype;                               
-                localStorage.setItem('currentUser', JSON.stringify({ token: token, usertype: usertype}));
+                localStorage.setItem('currentUser', JSON.stringify({ token: token, usertype: usertype, userid: userid}));
                 return true;
             } else {
                 return false;

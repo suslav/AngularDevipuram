@@ -34,7 +34,8 @@ export class SriVidyaRegisterAnComponent implements OnInit {
                     console.log(answer);
 
                     if (answer.length > 0) {
-                        let gv = answer[0].Answer;
+                       // let gv = answer[0].Answer;
+                        let gv = answer[0].SVCAnswer;
                         let name,age, gender, sonof, place, nationality, maritalstatus, eMailid, mobileph, education, expertise, profession, health = " ";
                         let hydu, hytdee, planguage, wtbcs, apyps, aimobj, wtmsw = "";
 

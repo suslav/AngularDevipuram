@@ -37,11 +37,10 @@
                                     <tr *ngFor='let visitor of visitors'>
                                         <td>{{visitor.UserName}}</td>
                                         <td>{{visitor.FormType}}</td>
-                                        <td>
-                                        <!--<a [routerLink]="['/products',product.id,'edit']">
-                                                   Edit
-                                        </a>-->
 
+                                        <!--<td>{{visitor.UserID}}</td>
+                                        <td>{{visitor.FormTypeID}}</td>-->
+                                        <td>                                       
                                             <a [routerLink]="['/courseslist',visitor.VisitorFormID,visitor.FormTypeID]">
                                                 View
                                             </a>

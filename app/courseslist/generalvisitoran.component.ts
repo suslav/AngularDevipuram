@@ -30,14 +30,19 @@ export class GeneralVisitorAnComponent implements OnInit {
         this.route.params.subscribe((params: Params) => {
             let userId = params['id'];
             //let userId = params;
-            //console.log(userId);
+          console.log(userId);
 
             this.clService.getCourseAnswers(userId, 1).subscribe(
                 answer => {
 
+                    console.log('answer');
+                    console.log(answer);
+
                     if (answer.length > 0) {
                        // this.answer = answer[0].Answer;
-                        let gv = answer[0].Answer;    
+                      //  let gv = answer[0].Answer;    
+
+                        let gv = answer[0].GVAnswer;    
                         let name = "";
                         let age, gender, sonof, place, nationality, maritalstatus, eMailid, address, passport, intending = " ";                       
                         let visited, education, profession, health, deeksha, meru, volunteering, exten, areasoi, date1 = "";                        

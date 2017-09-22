@@ -45,20 +45,20 @@ import { AuthGuard } from '../_guards/index';
                   //    ]
                   //},
                   {
-                      path: 'srividyareg', component: SriVidyaRegisterComponent
+                      path: 'srividyareg', component: SriVidyaRegisterComponent, canActivate: [AuthGuard]
                   },
 
                   {
-                      path: 'generalvisitor', component: GeneralVisitorComponent
+                      path: 'generalvisitor', component: GeneralVisitorComponent, canActivate: [AuthGuard]
                   },
                   {
-                      path: 'generalvisitorin', component: GeneralVisitorInComponent
+                      path: 'generalvisitorin', component: GeneralVisitorInComponent, canActivate: [AuthGuard]
                   },
                   {
-                      path: 'srimeru', component: SrimahameruComponent
+                      path: 'srimeru', component: SrimahameruComponent, canActivate: [AuthGuard]
                   },
                   {
-                      path: 'courseregistred', component: CourseRegistredComponent
+                      path: 'courseregistred', component: CourseRegistredComponent, canActivate: [AuthGuard]
                   } 
               ]
           },

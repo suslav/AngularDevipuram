@@ -30,7 +30,8 @@ export class GeneralVisitorInAnComponent implements OnInit {
                 answer => {
 
                     if (answer.length > 0) {
-                        let gv = answer[0].Answer;
+                       // let gv = answer[0].Answer;
+                        let gv = answer[0].GVIAnswer;
                         let name = "";
                         let age, gender, sonof, place, nationality, maritalstatus, dateofbirth, contactdin, eMailid, perland, permob, mobilein, address, passport, visano, intending = " ";
                         let departure, arrivaldev, departuredev, ndestination, visited, education, profession, health, deeksha, meru, volunteering, exten, areasoi, date1 = "";

@@ -27,7 +27,8 @@ export class SrimahameruAnComponent implements OnInit {
                 answer => {
 
                     if (answer.length > 0) {
-                        let gv = answer[0].Answer;
+                        //let gv = answer[0].Answer;
+                        let gv = answer[0].SMMAnswer;
 
                         console.log(gv);
 
