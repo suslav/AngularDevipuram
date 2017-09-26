@@ -16,6 +16,8 @@ import { AuthGuard } from '../_guards/index';
 import { CoursesListService } from './courseslist.service';
 import { MyDatePickerModule } from 'mydatepicker';
 
+import { UserCoursesListComponent } from './usercourseslist.component';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -30,7 +32,8 @@ import { MyDatePickerModule } from 'mydatepicker';
                     { path: ':id/1', component: GeneralVisitorAnComponent, canActivate: [AuthGuard] },
                     { path: ':id/2', component: GeneralVisitorInAnComponent, canActivate: [AuthGuard]},
                     { path: ':id/3', component: SriVidyaRegisterAnComponent, canActivate: [AuthGuard]},
-                    { path: ':id/4', component: SrimahameruAnComponent, canActivate: [AuthGuard]}
+                    { path: ':id/4', component: SrimahameruAnComponent, canActivate: [AuthGuard] },
+                    { path: 'user', component: UserCoursesListComponent, canActivate: [AuthGuard] }
                 ]
             },
 
@@ -41,6 +44,7 @@ import { MyDatePickerModule } from 'mydatepicker';
         GeneralVisitorAnComponent,
         GeneralVisitorInAnComponent,
         SrimahameruAnComponent,
+        UserCoursesListComponent,
        // SriVidyaCourseAnComponent
         SriVidyaRegisterAnComponent
     ],

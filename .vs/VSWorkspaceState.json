@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "\\app",
-    "\\app\\srividyacourses"
+    "\\app\\courses",
+    "\\app\\login"
   ],
   "PreviewInSolutionExplorer": false
 }

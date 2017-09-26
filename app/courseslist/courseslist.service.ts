@@ -9,6 +9,7 @@ import { GeneralVisitorsAnswers } from './generalvisitorsanswers';
 export class CoursesListService {   
     options: RequestOptions;
     public token: string;
+    public userid: string;
 
     public  formUrl: string;
     constructor(private _http: Http) {
@@ -21,6 +22,7 @@ export class CoursesListService {
 
         var currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.token = currentUser && currentUser.token;
+        this.userid = currentUser && currentUser.userid;
 
     }
 
@@ -31,6 +33,14 @@ export class CoursesListService {
             .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
+
+    getVisitorsbyUserID(): Observable<IVisitors[]> {
+        return this._http.get('http://localhost:8080/LaravelProject/public/api/visitorslistbyid/' + this.userid + '?token=' + this.token)
+            .map((response: Response) => <IVisitors[]>response.json())
+            .do(data => console.log('All: ' + JSON.stringify(data)))
+            .catch(this.handleError);
+    }
+
 
     //getGeneralVisitorAn(id: number,formtype:number): Observable<GeneralVisitorsAnswers[]> {
     //    return this._http.get('http://localhost:8080/DevipuramPhalcon/api/api/formanswers/' + id + '/' + formtype)

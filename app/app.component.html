@@ -70,7 +70,10 @@
                         </li>-->                        
                         <li routerLinkActive="active" *ngIf="authService.isUser()">
                             <a [routerLink]="['/courses']">Couses</a>
-                        </li>                        
+                        </li>   
+                        <li routerLinkActive="active" *ngIf="authService.isUser()">
+                            <a [routerLink]="['/courseslist','user']">MyRequests</a>
+                        </li>    
                         <li routerLinkActive="active" *ngIf="authService.isAdmin()">
                             <a [routerLink]="['/courseslist']">CoursesList</a>
                         </li>

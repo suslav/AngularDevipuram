@@ -1,0 +1,48 @@
+<div class='panel panel-primary'>
+    <div class="panel-heading">
+        My Requests
+    </div>
+    <div class="panel-body">          
+        <div class="row">
+            <div class="col-md-12">&nbsp;
+            </div>
+            </div>         
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class='table-responsive'>
+                            <table class='table' *ngIf="visitors && visitors.length">
+                                <thead class="bg-primary">
+                                    <tr>                                        
+                                        <th>FormType</th>
+                                        <th>Date</th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let visitor of visitors'>                                       
+                                        <td>{{visitor.FormType}}</td> 
+                                        <td>{{visitor.Date}}</td>
+                                        <td>                                       
+                                            <a [routerLink]="['/courseslist',visitor.VisitorFormID,visitor.FormTypeID]">
+                                                View
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+            </div>
+        </div>        
+            </div>
+        </div>

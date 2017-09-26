@@ -1,315 +1,230 @@
+<div class="container-fluid">
 <div class="panel panel-primary">
     <div class="panel-heading">
         {{pageTitle}}
-    </div>
-
-
-    <form class="form-horizontal"
-          novalidate [formGroup]="srimaForm">
-        <fieldset>
-
+    </div>    
             <div class="panel-body">
 
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('Name')">
-                    <label class="col-md-4 control-label"
-                           for="NameId">NAME & Gotram</label>
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="NameId"
-                               type="text"
-                               formControlName="Name" />
-                         
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">NAME & Gotram</label>
+                        <div class="col-md-8">
+                            {{name}}
+                        </div>
                     </div>
                 </div>
-
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('Age')">
-                    <label class="col-md-4 control-label"
-                           for="AgeId">AGE</label>
-
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="AgeId"
-                               type="number"
-                               formControlName="Age" />
-                         
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">AGE</label>
+                        <div class="col-md-8">
+                            {{age}}
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('Gender')">
-                    <label class="col-md-4 control-label"
-                           for="GenderId">GENDER</label>
-
-                    <div class="col-md-8">
-
-                        <input class="form-control"
-                               id="GenderId"
-                               type="text"
-                               formControlName="Gender" />
                     </div>
-                </div>
 
-
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('NameofSp')">
-                    <label class="col-md-4 control-label"
-                           for="NameofSpId">Name of Spouse</label>
-
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="NameofSpId"
-                               type="text"
-                               formControlName="NameofSp" />
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">GENDER</label>
+                        <div class="col-md-8">
+                            {{gender}}
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('Sonof')">
-                    <label class="col-md-4 control-label"
-                           for="SonofId">Son/of. or Dtr/of. or Wife/of</label>
-
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="SonofId"
-                               type="text"
-                               formControlName="Sonof" />
-
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('Nationality')">
-                    <label class="col-md-4 control-label"
-                           for="NationalityId">Nationality</label>
-
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="NationalityId"
-                               type="text"
-                               formControlName="Nationality" />
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Name of Spouse</label>
+                        <div class="col-md-8">
+                            {{nameofSp}}
+                        </div>
                     </div>
-                </div>
-
-
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('EmailID')">
-                    <label class="col-md-4 control-label"
-                           for="EmailIDId">E Mail ID</label>
-
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="EmailIDId"
-                               type="text"
-                               formControlName="EmailID" />
-
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('MobilePh')">
-                    <label class="col-md-4 control-label"
-                           for="MobilePhId">
-                        Mobile Ph
-                    </label>
-
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="MobilePhId"
-                               type="text"
-                               formControlName="MobilePh" />
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Son/of. or Dtr/of. or Wife/of</label>
+                        <div class="col-md-8">
+                            {{sonof}}
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('Address')">
-                    <label class="col-md-4 control-label"
-                           for="AddressId">Address for Communication / Dispatch of Merus</label>
-
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="AddressId"
-                               type="text"
-                               formControlName="Address" />
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('Education')">
-                    <label class="col-md-4 control-label"
-                           for="EducationId">EDUCATION</label>
-
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="EducationId"
-                               type="text"
-                               formControlName="Education" />
-                         
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Nationality</label>
+                        <div class="col-md-8">
+                            {{nationality}}
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('Profession')">
-                    <label class="col-md-4 control-label"
-                           for="ProfessionId">PROFESSION: Student/ In service/ self employed/ Business/ Retired/ Others</label>
-
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="ProfessionId"
-                               type="text"
-                               formControlName="Profession" />
-                         
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('Hdyctk')">
-                    <label class="col-md-4 control-label"
-                           for="HdyctkId">
-                        How did you come to know about DEVIPURAM and the MERUs?
-                    </label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="HdyctkId"
-                               type="text"
-                               formControlName="Hdyctk" />                         
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">E Mail ID</label>
+                        <div class="col-md-8">
+                            {{eMailid}}
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('Dytet')">
-                    <label class="col-md-4 control-label"
-                           for="DytetId">Did you try elsewhere to buy / procure them and what is the outcome?</label>
-
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="DytetId"
-                               type="text"
-                               formControlName="Dytet" />                         
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('HytDG')">
-                    <label class="col-md-4 control-label"
-                           for="HytDGId">Have you taken Deeksha / Guru Mantra  from anybody? If 'YES' from Whom?</label>
-
-                    <div class="col-md-8">
-                        <textarea class="form-control"
-                                  id="HytDGId"
-                                  rows="3"
-                                  formControlName="HytDG"></textarea>                         
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">
+                            Mobile Ph
+                        </label>
+                        <div class="col-md-8">
+                            {{mobileph}}
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('INwsy')">
-                    <label class="col-md-4 control-label"
-                           for="INwsyId">
-                        If 'NOT' we suggest you take it from Devipuram, for effective results from the MERUs.
-                        (You may add "GURU DAKSHINA " at  your level of comfort when you place an order. On confirmation of receiving MERU,
-                        you can call us  and fix up a time for receiving Deeksha followed by its installation, at your place)
-                    </label>
-
-                    <div class="col-md-8">
-                        <textarea class="form-control"
-                                  id="INwsyId"
-                                  rows="3"
-                                  formControlName="INwsy"></textarea>                      
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('Boyp')">
-                    <label class="col-md-4 control-label"
-                           for="BoypId">Brief of your proficiency into Spirituality / Sadhana / Upasana?</label>
-
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="BoypId"
-                               type="text"
-                               formControlName="Boyp" />                         
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Address for Communication / Dispatch of Merus</label>
+                        <div class="col-md-8">
+                            {{address}}
+                        </div>
                     </div>
-                </div>
-
-
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('Yawtp')">
-                    <label class="col-md-4 control-label"
-                           for="YawtpId">
-                        You are welcome to pay a visit to Devipuram, to take 'Diksha' OR learn SriVidya course OR   get some HOMAs (Havan) done for your family / firm's name. Please apply a bit in advance  through info@devipuram.com if you have some issues / hurdles to be addressed.
-                    </label>
-
-                    <div class="col-md-8">
-                        <textarea class="form-control"
-                                  id="YawtpId"
-                                  rows="3"
-                                  formControlName="Yawtp"></textarea>                         
                     </div>
-                </div>
 
-                <div class="form-group"
-                     [ngClass]="srimaForm.get('Sombs')">
-                    <label class="col-md-4 control-label"
-                           for="SombsId">Sizes of MERUS (Base size is mentioned) with corresponding heights available for PUJA</label>
-
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="SombsId"
-                               type="text"
-                               formControlName="Sombs" /> 
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">EDUCATION</label>
+                        <div class="col-md-8">
+                            {{education}}
+                        </div>
                     </div>
-                </div> 
-                <div class="form-group">
-                    <label class="col-md-4 control-label"
-                           for="WtmsvId">
-                        Willing to make some voluntary contribution to improve facilities OR supporting the   Annadaanam Programme at Devipuram? If 'YES', Pl tick in the box here to let us contact you.
-                        (Guruji's vision is to let all  be blessed by the  Divine mother. So there is no compulsion and  this is not linked to obtaining MERUs.)
-                        (All Donations to SDNS (Sri Devipuram Nirman Society) are exempted under 80 G of IT Act)
-                    </label>
-
-                    <div class="col-md-8">
-                        <!--<input type="checkbox" name="Wtmsv" value="Wtmsv">-->        
-                        
-                        <input type="checkbox" id="WtmsvId" formControlName="Wtmsv">
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label class="col-md-12 control-label">
-                        On receiving the above data we will be able to ... (1) Provide you an ID; (2)  Enlist you in our  data base for future interaction; (3) A Laghu puja will be done on your name with gotra namas soon after registration.
-                    </label>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">PROFESSION: Student/ In service/ self employed/ Business/ Retired/ Others</label>
+                        <div class="col-md-8">
+                            {{profession}}
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">
+                            How did you come to know about DEVIPURAM and the MERUs?
+                        </label>
+                        <div class="col-md-8">
+                            {{hdyctk}}
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Did you try elsewhere to buy / procure them and what is the outcome?</label>
+                        <div class="col-md-8">
+                            {{dytet}}
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Have you taken Deeksha / Guru Mantra  from anybody? If 'YES' from Whom?</label>
+
+                        <div class="col-md-8">
+                            {{hytdg}}
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">
+                            If 'NOT' we suggest you take it from Devipuram, for effective results from the MERUs.
+                            (You may add "GURU DAKSHINA " at  your level of comfort when you place an order. On confirmation of receiving MERU,
+                            you can call us  and fix up a time for receiving Deeksha followed by its installation, at your place)
+                        </label>
+
+                        <div class="col-md-8">
+                            {{inwsy}}
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Brief of your proficiency into Spirituality / Sadhana / Upasana?</label>
+                        <div class="col-md-8">
+                            {{boyp}}
+                        </div>
+                    </div>
+                    </div>
+
+
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">
+                            You are welcome to pay a visit to Devipuram, to take 'Diksha' OR learn SriVidya course OR   get some HOMAs (Havan) done for your family / firm's name. Please apply a bit in advance  through info@devipuram.com if you have some issues / hurdles to be addressed.
+                        </label>
+
+                        <div class="col-md-8">
+                            {{yawtp}}
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Sizes of MERUS (Base size is mentioned) with corresponding heights available for PUJA</label>
+                        <div class="col-md-8">
+                            {{sombs}}
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">
+                            Willing to make some voluntary contribution to improve facilities OR supporting the   Annadaanam Programme at Devipuram? If 'YES', Pl tick in the box here to let us contact you.
+                            (Guruji's vision is to let all  be blessed by the  Divine mother. So there is no compulsion and  this is not linked to obtaining MERUs.)
+                            (All Donations to SDNS (Sri Devipuram Nirman Society) are exempted under 80 G of IT Act)
+                        </label>
+
+                        <div class="col-md-8">
+                            <!--<input type="checkbox" id="WtmsvId" formControlName="Wtmsv">-->
+                            {{wtmsv}}
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-12 control-label">
+                            On receiving the above data we will be able to ... (1) Provide you an ID; (2)  Enlist you in our  data base for future interaction; (3) A Laghu puja will be done on your name with gotra namas soon after registration.
+                        </label>
+                    </div>
+                    </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            Date:
+                        </label>
+                        <div class="col-md-2">
+                            {{date1}}
+                        </div>
+                        <div class="col-md-2"></div>
+                        <label class="col-md-4 control-label">
+                            Sign of Applicant
+
+                        </label>
+                    </div>
+                    </div>
+
+                    <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
 
                 </div>
-
-                
-
-                <div class="form-group" [ngClass]="srimaForm.get('Date')">
-                    <label class="col-md-2 control-label" for="DateId">
-                        Date:
-                    </label>
-                    <div class="col-md-2">
-                        <input class="form-control"
-                               id="DateId"
-                               type="text"
-                               formControlName="Date" />                       
-                    </div>
-                    <div class="col-md-2"></div>
-                    <label class="col-md-4 control-label">
-                        Sign of Applicant
-
-                    </label>
-                </div>
-
-                <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
-
-
-
-            </div>
             <div class="panel-footer">
-                <div class="row">                   
+                <div class="row">
                     <div class="col-md-4"></div>
                     <div class="col-md-6 col-md-offset-2">
                         <span>
@@ -328,9 +243,339 @@
 
                     </div>
                 </div>
-            </div>
-
-        </fieldset>
-    </form>
-
+            </div>     
 </div>
+    </div>
+
+
+        <!--<div class="panel panel-primary">
+            <div class="panel-heading">
+                {{pageTitle}}
+            </div>
+            <form class="form-horizontal"
+                  novalidate [formGroup]="srimaForm">
+                <fieldset>
+
+                    <div class="panel-body">
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('Name')">
+                            <label class="col-md-4 control-label"
+                                   for="NameId">NAME & Gotram</label>
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                       id="NameId"
+                                       type="text"
+                                       formControlName="Name" />
+
+                            </div>
+                        </div>
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('Age')">
+                            <label class="col-md-4 control-label"
+                                   for="AgeId">AGE</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                       id="AgeId"
+                                       type="number"
+                                       formControlName="Age" />
+
+                            </div>
+                        </div>
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('Gender')">
+                            <label class="col-md-4 control-label"
+                                   for="GenderId">GENDER</label>
+
+                            <div class="col-md-8">
+
+                                <input class="form-control"
+                                       id="GenderId"
+                                       type="text"
+                                       formControlName="Gender" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('NameofSp')">
+                            <label class="col-md-4 control-label"
+                                   for="NameofSpId">Name of Spouse</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                       id="NameofSpId"
+                                       type="text"
+                                       formControlName="NameofSp" />
+                            </div>
+                        </div>
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('Sonof')">
+                            <label class="col-md-4 control-label"
+                                   for="SonofId">Son/of. or Dtr/of. or Wife/of</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                       id="SonofId"
+                                       type="text"
+                                       formControlName="Sonof" />
+
+                            </div>
+                        </div>
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('Nationality')">
+                            <label class="col-md-4 control-label"
+                                   for="NationalityId">Nationality</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                       id="NationalityId"
+                                       type="text"
+                                       formControlName="Nationality" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('EmailID')">
+                            <label class="col-md-4 control-label"
+                                   for="EmailIDId">E Mail ID</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                       id="EmailIDId"
+                                       type="text"
+                                       formControlName="EmailID" />
+
+                            </div>
+                        </div>
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('MobilePh')">
+                            <label class="col-md-4 control-label"
+                                   for="MobilePhId">
+                                Mobile Ph
+                            </label>
+
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                       id="MobilePhId"
+                                       type="text"
+                                       formControlName="MobilePh" />
+                            </div>
+                        </div>
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('Address')">
+                            <label class="col-md-4 control-label"
+                                   for="AddressId">Address for Communication / Dispatch of Merus</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                       id="AddressId"
+                                       type="text"
+                                       formControlName="Address" />
+                            </div>
+                        </div>
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('Education')">
+                            <label class="col-md-4 control-label"
+                                   for="EducationId">EDUCATION</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                       id="EducationId"
+                                       type="text"
+                                       formControlName="Education" />
+
+                            </div>
+                        </div>
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('Profession')">
+                            <label class="col-md-4 control-label"
+                                   for="ProfessionId">PROFESSION: Student/ In service/ self employed/ Business/ Retired/ Others</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                       id="ProfessionId"
+                                       type="text"
+                                       formControlName="Profession" />
+
+                            </div>
+                        </div>
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('Hdyctk')">
+                            <label class="col-md-4 control-label"
+                                   for="HdyctkId">
+                                How did you come to know about DEVIPURAM and the MERUs?
+                            </label>
+
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                       id="HdyctkId"
+                                       type="text"
+                                       formControlName="Hdyctk" />
+                            </div>
+                        </div>
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('Dytet')">
+                            <label class="col-md-4 control-label"
+                                   for="DytetId">Did you try elsewhere to buy / procure them and what is the outcome?</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                       id="DytetId"
+                                       type="text"
+                                       formControlName="Dytet" />
+                            </div>
+                        </div>
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('HytDG')">
+                            <label class="col-md-4 control-label"
+                                   for="HytDGId">Have you taken Deeksha / Guru Mantra  from anybody? If 'YES' from Whom?</label>
+
+                            <div class="col-md-8">
+                                <textarea class="form-control"
+                                          id="HytDGId"
+                                          rows="3"
+                                          formControlName="HytDG"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('INwsy')">
+                            <label class="col-md-4 control-label"
+                                   for="INwsyId">
+                                If 'NOT' we suggest you take it from Devipuram, for effective results from the MERUs.
+                                (You may add "GURU DAKSHINA " at  your level of comfort when you place an order. On confirmation of receiving MERU,
+                                you can call us  and fix up a time for receiving Deeksha followed by its installation, at your place)
+                            </label>
+
+                            <div class="col-md-8">
+                                <textarea class="form-control"
+                                          id="INwsyId"
+                                          rows="3"
+                                          formControlName="INwsy"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('Boyp')">
+                            <label class="col-md-4 control-label"
+                                   for="BoypId">Brief of your proficiency into Spirituality / Sadhana / Upasana?</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                       id="BoypId"
+                                       type="text"
+                                       formControlName="Boyp" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('Yawtp')">
+                            <label class="col-md-4 control-label"
+                                   for="YawtpId">
+                                You are welcome to pay a visit to Devipuram, to take 'Diksha' OR learn SriVidya course OR   get some HOMAs (Havan) done for your family / firm's name. Please apply a bit in advance  through info@devipuram.com if you have some issues / hurdles to be addressed.
+                            </label>
+
+                            <div class="col-md-8">
+                                <textarea class="form-control"
+                                          id="YawtpId"
+                                          rows="3"
+                                          formControlName="Yawtp"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group"
+                             [ngClass]="srimaForm.get('Sombs')">
+                            <label class="col-md-4 control-label"
+                                   for="SombsId">Sizes of MERUS (Base size is mentioned) with corresponding heights available for PUJA</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                       id="SombsId"
+                                       type="text"
+                                       formControlName="Sombs" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"
+                                   for="WtmsvId">
+                                Willing to make some voluntary contribution to improve facilities OR supporting the   Annadaanam Programme at Devipuram? If 'YES', Pl tick in the box here to let us contact you.
+                                (Guruji's vision is to let all  be blessed by the  Divine mother. So there is no compulsion and  this is not linked to obtaining MERUs.)
+                                (All Donations to SDNS (Sri Devipuram Nirman Society) are exempted under 80 G of IT Act)
+                            </label>
+
+                            <div class="col-md-8">
+                                <input type="checkbox" id="WtmsvId" formControlName="Wtmsv">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-12 control-label">
+                                On receiving the above data we will be able to ... (1) Provide you an ID; (2)  Enlist you in our  data base for future interaction; (3) A Laghu puja will be done on your name with gotra namas soon after registration.
+                            </label>
+
+                        </div>
+
+
+
+                        <div class="form-group" [ngClass]="srimaForm.get('Date')">
+                            <label class="col-md-2 control-label" for="DateId">
+                                Date:
+                            </label>
+                            <div class="col-md-2">
+                                <input class="form-control"
+                                       id="DateId"
+                                       type="text"
+                                       formControlName="Date" />
+                            </div>
+                            <div class="col-md-2"></div>
+                            <label class="col-md-4 control-label">
+                                Sign of Applicant
+
+                            </label>
+                        </div>
+
+                        <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+
+
+
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-6 col-md-offset-2">
+                                <span>
+                                    <button class="btn btn-primary"
+                                            type="submit"
+                                            style="width:80px;margin-right:10px">
+                                        Reply
+                                    </button>
+                                </span>
+                                <span>
+                                    <a class="btn btn-default"
+                                       [routerLink]="['/courseslist']">
+                                        Cancel
+                                    </a>
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>-->

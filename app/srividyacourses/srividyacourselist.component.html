@@ -11,6 +11,7 @@
                         <tr>
                             <th>Course From Date</th>
                             <th>View</th>
+                            <th>Register Course</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -19,6 +20,11 @@
                             <td>
                                 <a [routerLink]="['/srividyacourse/display',svc.CourseID]">
                                    View Course
+                                </a>
+                            </td>
+                            <td>
+                                <a [routerLink]="['/courses/srividyareg']">
+                                    Register Course
                                 </a>
                             </td>
                         </tr>
