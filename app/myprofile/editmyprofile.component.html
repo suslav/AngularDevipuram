@@ -1,0 +1,121 @@
+﻿ <div class="col-md-6 col-md-offset-3">
+    <h2>Edit Profile</h2>
+
+    <div class="panel-body">
+        <form class="form-horizontal"
+              novalidate
+              (ngSubmit)="update()"
+              [formGroup]="editForm">             
+            <fieldset>
+                 
+                <div class="form-group"
+                     [ngClass]="{'has-error': (editForm.get('name').touched || editForm.get('name').dirty) && !editForm.get('name').valid }">
+                    <label class="col-md-2 control-label"
+                           for="nameId">Name</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="nameId"
+                               type="text"
+                               formControlName="name" />
+                        <span class="help-block" *ngIf="(editForm.get('name').touched || editForm.get('name').dirty) && editForm.get('name').errors">
+                            <span *ngIf="editForm.get('name').errors.required">
+                                Please enter your name.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (editForm.get('City').touched || editForm.get('City').dirty) && !editForm.get('City').valid }">
+                    <label class="col-md-2 control-label"
+                           for="CityId">City</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="CityId"
+                               type="text"
+                               formControlName="City" />
+                        <span class="help-block" *ngIf="(editForm.get('City').touched || editForm.get('City').dirty) && editForm.get('City').errors">
+                            <span *ngIf="editForm.get('City').errors.required">
+                                Please enter your City.
+                            </span>
+
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (editForm.get('Country').touched || editForm.get('Country').dirty) && !editForm.get('Country').valid }">
+                    <label class="col-md-2 control-label"
+                           for="CountryId">Country</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="CountryId"
+                               type="text"
+                               formControlName="Country" />
+                        <span class="help-block" *ngIf="(editForm.get('Country').touched || editForm.get('Country').dirty) && editForm.get('Country').errors">
+                            <span *ngIf="editForm.get('Country').errors.required">
+                                Please enter your Country.
+                            </span>
+
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (editForm.get('Address').touched || editForm.get('Address').dirty) && !editForm.get('Address').valid }">
+                    <label class="col-md-2 control-label"
+                           for="AddressId">Address</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="AddressId"
+                               type="text"
+                               formControlName="Address" />
+                        <span class="help-block" *ngIf="(editForm.get('Address').touched || editForm.get('Address').dirty) && editForm.get('Address').errors">
+                            <span *ngIf="editForm.get('Address').errors.required">
+                                Please enter your Address.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (editForm.get('Mobile').touched || editForm.get('Mobile').dirty) && !editForm.get('Mobile').valid }">
+                    <label class="col-md-2 control-label"
+                           for="MobileId">Mobile</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="MobileId"
+                               type="text"
+                               formControlName="Mobile" />
+                        <span class="help-block" *ngIf="(editForm.get('Mobile').touched || editForm.get('Mobile').dirty) && editForm.get('Mobile').errors">
+                            <span *ngIf="editForm.get('Mobile').errors.required">
+                                Please enter your Mobile.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-4 col-md-offset-2">
+                        <span>
+                            <button class="btn btn-primary"
+                                    type="submit"
+                                    [disabled]="!editForm.valid">
+                                Update
+                            </button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="has-error" *ngIf="Message">{{Message}}</div>
+            </fieldset>             
+            </form>
+         </div>
+
+    </div> 
+  

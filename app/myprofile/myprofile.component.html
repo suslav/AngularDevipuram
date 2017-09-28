@@ -1,89 +1,100 @@
-﻿ <!--<div class="col-md-6 col-md-offset-3">
-    <h2>Signup</h2>
+﻿<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-6" style="text-align:center">
+            <h3>My Profile</h3>
+        </div>
+    </div>
 
     <div class="panel-body">
-        <form class="form-horizontal"
-              novalidate
-              (ngSubmit)="signup()"
-              [formGroup]="signForm">
 
+        <div class="row">
+            <div class="form-group">
+                <label class="col-md-3 control-label">UserName</label>
+                <div class="col-md-9">
+                    {{email}}
+                </div>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="form-group">
+                <label class="col-md-3 control-label">Name</label>
+                <div class="col-md-9">
+                    {{name}}
+                </div>
+            </div>
+        </div>
 
-            <fieldset>
+        <div class="row">
+            <div class="form-group">
+                <label class="col-md-3 control-label">City</label>
+                <div class="col-md-9">
+                    {{city}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label class="col-md-3 control-label">Country</label>
+                <div class="col-md-9">
+                    {{country}}
+                </div>
+            </div>
+        </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (signForm.get('email').touched || signForm.get('email').dirty) && !signForm.get('email').valid }">
-                    <label class="col-md-2 control-label"
-                           for="emailId">UserName</label>
+        <div class="row">
+            <div class="form-group">
+                <label class="col-md-3 control-label">Address</label>
+                <div class="col-md-9">
+                    {{address}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label class="col-md-3 control-label">Mobile</label>
+                <div class="col-md-9">
+                    {{mobile}}
+                </div>
+            </div>
+        </div>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="emailId"
-                               type="text"
-                               placeholder="Email (required)"
-                               formControlName="email" />
-                        <span class="help-block" *ngIf="emailMessage">
-                            {{emailMessage}}
-                        </span>
+        <div class="row">
+            <div class="col-md-6" style="text-align:center">
+                <a class="btn btn-primary" role="button" [routerLink]="['/user','editprofile']">
+                    Edit Profile
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+            </div></div>
 
-
+                <div class="row">
+                    <div class="col-md-6" style="text-align:center">
+                        <a class="btn btn-primary" role="button" [routerLink]="['/user','changepassword']">
+                            Change Password
+                        </a>
                     </div>
                 </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (signForm.get('name').touched || signForm.get('name').dirty) && !signForm.get('name').valid }">
-                    <label class="col-md-2 control-label"
-                           for="nameId">Name</label>
-
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="nameId"
-                               type="text"
-                               formControlName="name" />
-                        <span class="help-block" *ngIf="(signForm.get('name').touched || signForm.get('name').dirty) && signForm.get('name').errors">
-                            <span *ngIf="signForm.get('name').errors.required">
-                                Please enter your name.
+                    <!--<div class="form-group">
+                        <div class="col-md-4 col-md-offset-2">
+                            <span>
+                                <button class="btn btn-primary"
+                                        type="submit"
+                                        [disabled]="!signForm.valid">
+                                    Save
+                                </button>
                             </span>
-                        </span>
-                    </div>
+                        </div>
+                    </div>-->
+
+                    <!--<div class="has-error" *ngIf="Message">{{Message}}</div>-->
+
                 </div>
 
-                <div class="form-group"
-                     [ngClass]="{'has-error': (signForm.get('password').touched || signForm.get('password').dirty) && !signForm.get('password').valid }">
-                    <label class="col-md-2 control-label"
-                           for="passwordId">Password</label>
 
-                    <div class="col-md-8">
-                        <input class="form-control"
-                               id="passwordId"
-                               type="password"
-                               formControlName="password" />
-
-
-                        <span class="help-block" *ngIf="(signForm.get('password').touched || signForm.get('password').dirty) && signForm.get('password').errors">
-                            <span *ngIf="signForm.get('password').errors.required">
-                                Please enter your Password.
-                            </span>
-
-                        </span>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-4 col-md-offset-2">
-                        <span>
-                            <button class="btn btn-primary"
-                                    type="submit"
-                                    [disabled]="!signForm.valid">
-                                Save
-                            </button>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="has-error" *ngIf="Message">{{Message}}</div>
-            </fieldset> 
-            </form>
-         </div>
-    </div>--> 
-  
+        </div>

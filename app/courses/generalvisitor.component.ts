@@ -87,7 +87,11 @@ export class GeneralVisitorComponent implements OnInit {
         }
 }
 
-     
+
+
+
+
+
     //isValid(path: string): boolean {
     //    this.validate();
     //    if (path) {

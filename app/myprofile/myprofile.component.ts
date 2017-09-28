@@ -1,78 +1,51 @@
-//import { Component, OnInit } from '@angular/core';
-//import { Router } from '@angular/router';
-//import { FormGroup, FormBuilder, Validators,AbstractControl } from '@angular/forms';
-//import { SignupService } from './signup.service';
-//import { Observable } from 'rxjs/Observable';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators,AbstractControl } from '@angular/forms';
+import { MyProfileService } from './myprofile.service';
+import { Observable } from 'rxjs/Observable';
 
-//@Component({
-//    moduleId: module.id,
-//    templateUrl: 'signup.component.html'
-//})
+@Component({   
+     templateUrl: './app/myprofile/myprofile.component.html'
+})
 
-//export class SignupComponent implements OnInit {
-//    model: any = {};
-//    loading = false;
-//    error = '';
-//    signForm: FormGroup;    
-//    Message: string;    
-//    emailMessage: string;
+export class MyProfileComponent implements OnInit {
+   
+    errorMessage: string;
 
-//    private validationMessages = {
-//        required: 'Please enter your email address.',
-//        pattern: 'Please enter a valid email address.'
-//    };
+    user: any;
 
-//    constructor(
-//        private router: Router,
-//        private fb: FormBuilder, private _postService: SignupService
-//    ) { }
+    email: string; name: string; city: string; country: string; address: string; mobile: string;
 
-//    ngOnInit() {
-//        this.signForm = this.fb.group({      
+    constructor(private _mypService: MyProfileService) {
 
-//            email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]],
-//            name: ['', Validators.required],
-//            password: ['', Validators.required],
-//            UserTypeID:['2'] 
-//        });
+    }
 
-//        const emailControl = this.signForm.get('email');
-//        emailControl.valueChanges.debounceTime(1000).subscribe(value =>
-//            this.setMessage(emailControl));
+    ngOnInit(): void {
 
-//    }
+        this._mypService.UserDetailsbyId().subscribe(
+            users => {
+                if (users.length > 0) {
+                   // this.errorMessage = "";
+                   // return this.user = visitors;
+                    this.email = users[0].email;
+                    this.name = users[0].name;
+                    this.city = users[0].City;
+                    this.country = users[0].Country;
+                    this.address = users[0].Address;
+                    this.mobile = users[0].Mobile;
 
-//    signup() {        
-//        let body = this.signForm.value;
+                }
+                else {
+                  //  this.user = null;
+                    return this.errorMessage = "Error Try again";
+                }
 
-//        this._postService.signupUser(body).subscribe(
-//            data => {
+            },
+            error => {
+                //return this.errorMessage = <any>error;
+            }
+        );
 
-//                console.log(data);
-
-//                return this.Message = "User Registered Successfully, Please Login to Continue";
-//            },
-//            error => {
-
-//                if (error.json().errors[0] == "The email has already been taken.")
-//                {
-//                    return this.Message = "UserName already exists";
-//                }
-
-//               else {
-//                    return this.Message = "An Error Occured: Try Again";
-//                }                 
-//            }
-//        ); 
-        
-//    }
-
-//    setMessage(c: AbstractControl): void {
-//        this.emailMessage = '';
-//        if ((c.touched || c.dirty) && c.errors) {
-//            this.emailMessage = Object.keys(c.errors).map(key =>
-//                this.validationMessages[key]).join(' ');
-//        }
-//    }
-
-//}
+    }
+     
+}
