@@ -5,9 +5,9 @@ import { CoursesListService } from './courseslist.service';
 import { GeneralVisitorsAnswers } from './generalvisitorsanswers';
 
 @Component({
-    templateUrl: './app/courseslist/generalvisitoran.component.html'
+    templateUrl: './app/courseslist/usergeneralvisitoran.component.html'
 })
-export class GeneralVisitorAnComponent implements OnInit {
+export class UserGeneralVisitorAnComponent implements OnInit {
     pageTitle: string = 'General Visitor';
  //   genvForm: FormGroup;
     errorMessage: string;
@@ -15,7 +15,7 @@ export class GeneralVisitorAnComponent implements OnInit {
     answer: any; 
 
     public visitorformId: number;
-    public userId: number;
+   // public userId: number;
 
     name: string; age: string; gender: string; sonof: string; place: string; nationality: string; maritalstatus: string; eMailid: string; address: string; passport: string; intending: string;   
     visited: string; education: string; profession: string; health: string; deeksha: string; meru: string; volunteering: string; exten: string; areasoi: string; date1: string;
@@ -35,7 +35,7 @@ export class GeneralVisitorAnComponent implements OnInit {
         this.route.params.subscribe((params: Params) => {
 
             this.visitorformId = params['id'];
-            this.userId = params['uid'];
+          //  this.userId = params['uid'];
 
             this.clService.getCourseAnswers(this.visitorformId, 1).subscribe(
                 answer => {

@@ -41,7 +41,9 @@
                                         <!--<td>{{visitor.UserID}}</td>
                                         <td>{{visitor.FormTypeID}}</td>-->
                                         <td>                                       
-                                            <a [routerLink]="['/courseslist',visitor.VisitorFormID,visitor.FormTypeID]">
+                                            <!--<a [routerLink]="['/courseslist',visitor.VisitorFormID,visitor.FormTypeID]">-->
+
+                                            <a [routerLink]="['/courseslist',visitor.VisitorFormID,visitor.FormTypeID,visitor.UserID]">
                                                 View
                                             </a>
                                         </td>

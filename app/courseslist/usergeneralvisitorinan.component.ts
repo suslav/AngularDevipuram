@@ -4,16 +4,16 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CoursesListService } from './courseslist.service';
 
 @Component({
-    templateUrl: './app/courseslist/generalvisitorinan.component.html'
+    templateUrl: './app/courseslist/usergeneralvisitorinan.component.html'
 })
-export class GeneralVisitorInAnComponent implements OnInit {
+export class UserGeneralVisitorInAnComponent implements OnInit {
     pageTitle: string = 'General Visitor International';
     //genvinForm: FormGroup;
     errorMessage: string;
     public pvisible = false;   
 
     public visitorformId: number;
-    public userId: number; 
+    //public userId: number; 
 
     name: string; age: string; gender: string; sonof: string; place: string; nationality: string; maritalstatus: string; dateofbirth: string; contactdin: string; eMailid: string; perland: string; permob: string; mobilein: string; address: string; passport: string; visano: string; intending: string;
     departure: string; arrivaldev: string; departuredev: string; ndestination: string; visited: string; education: string; profession: string; health: string; deeksha: string; meru: string; volunteering: string; exten: string; areasoi: string; date1: string;
@@ -29,7 +29,7 @@ export class GeneralVisitorInAnComponent implements OnInit {
         this.route.params.subscribe((params: Params) => {
 
             this.visitorformId = params['id'];
-            this.userId = params['uid'];       
+        //    this.userId = params['uid'];       
 
             this.clService.getCourseAnswers(this.visitorformId, 2).subscribe(
                 answer => {

@@ -29,6 +29,7 @@ import { PhotoModule } from './photogallery/photo.module';
 import { ArticlesModule } from './articles/articles.module'; 
 import { EventsModule } from './events/events.module'; 
 import { MyProfileModule } from './myprofile/myprofile.module'; 
+import { ReplyModule } from './replys/reply.module'; 
 import { SrividyaCourseModule } from './srividyacourses/srividyacourse.module'; 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { SrividyaCourseModule } from './srividyacourses/srividyacourse.module';
         , ArticlesModule
         , EventsModule
         , MyProfileModule
+        , ReplyModule
         , SrividyaCourseModule
         , AppRoutingModule
     ],

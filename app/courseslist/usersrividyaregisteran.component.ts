@@ -4,9 +4,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CoursesListService } from './courseslist.service';
 
 @Component({
-    templateUrl: './app/courseslist/srividyaregisteran.component.html'
+    templateUrl: './app/courseslist/usersrividyaregisteran.component.html'
 })
-export class SriVidyaRegisterAnComponent implements OnInit {
+export class UserSriVidyaRegisterAnComponent implements OnInit {
     pageTitle: string = 'Sri Vidya';
    // srividyaForm: FormGroup;
     errorMessage: string;
@@ -15,7 +15,7 @@ export class SriVidyaRegisterAnComponent implements OnInit {
     answer: any;
 
     public visitorformId: number;
-    public userId: number;
+  //  public userId: number;
 
     name: string; age: string; gender: string; sonof: string; place: string; nationality: string; maritalstatus: string; eMailid: string; mobileph: string; education: string; expertise: string; profession: string; health: string;
     hydu: string; hytdee: string; planguage: string; wtbcs: string; apyps: string; aimobj: string; wtmsw: string;
@@ -34,7 +34,7 @@ export class SriVidyaRegisterAnComponent implements OnInit {
         this.route.params.subscribe((params: Params) => {
 
             this.visitorformId = params['id'];
-            this.userId = params['uid'];
+          //  this.userId = params['uid'];
 
             this.clService.getCourseAnswers(this.visitorformId, 3).subscribe(
                 answer => {                 

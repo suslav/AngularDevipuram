@@ -16,6 +16,7 @@
                                         <th>FormType</th>
                                         <th>Date</th>
                                         <th>View</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -23,10 +24,11 @@
                                         <td>{{visitor.FormType}}</td> 
                                         <td>{{visitor.Date}}</td>
                                         <td>                                       
-                                            <a [routerLink]="['/courseslist',visitor.VisitorFormID,visitor.FormTypeID]">
+                                            <a [routerLink]="['/courseslist','useran',visitor.VisitorFormID,visitor.FormTypeID]">
                                                 View
                                             </a>
                                         </td>
+                                        <td>{{visitor.ApproveStatus}}</td>
                                     </tr>
                                 </tbody>
                             </table>

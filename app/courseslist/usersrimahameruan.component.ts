@@ -4,15 +4,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CoursesListService } from './courseslist.service';
 
 @Component({
-    templateUrl: './app/courseslist/srimahameruan.component.html'
+    templateUrl: './app/courseslist/usersrimahameruan.component.html'
 })
-export class SrimahameruAnComponent implements OnInit {
+export class UserSrimahameruAnComponent implements OnInit {
     pageTitle: string = 'Sri Maha Meru';
     //srimaForm: FormGroup;
     errorMessage: string;
 
     public visitorformId: number;
-    public userId: number;
+    //public userId: number;
 
     name: string; age: string; gender: string; nameofSp: string; sonof: string; nationality: string; eMailid: string; mobileph: string; address: string;
     education: string; profession: string; hdyctk: string; dytet: string; hytdg: string; inwsy: string; boyp: string; yawtp: string; sombs: string; wtmsv: string; date1: string;
@@ -29,7 +29,7 @@ export class SrimahameruAnComponent implements OnInit {
         this.route.params.subscribe((params: Params) => {
 
             this.visitorformId = params['id'];
-            this.userId = params['uid'];
+           // this.userId = params['uid'];
 
             this.clService.getCourseAnswers(this.visitorformId, 4).subscribe(
                 answer => {

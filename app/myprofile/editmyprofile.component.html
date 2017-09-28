@@ -70,10 +70,10 @@
                            for="AddressId">Address</label>
 
                     <div class="col-md-8">
-                        <input class="form-control"
+                        <textarea class="form-control"
                                id="AddressId"
-                               type="text"
-                               formControlName="Address" />
+                               rows="3"
+                               formControlName="Address"></textarea>
                         <span class="help-block" *ngIf="(editForm.get('Address').touched || editForm.get('Address').dirty) && editForm.get('Address').errors">
                             <span *ngIf="editForm.get('Address').errors.required">
                                 Please enter your Address.
