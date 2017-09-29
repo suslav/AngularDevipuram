@@ -31,6 +31,7 @@
                                         <th>User</th>
                                         <th>FormType</th>
                                         <th>View</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -47,6 +48,14 @@
                                                 View
                                             </a>
                                         </td>
+
+                                        <td>
+                                            <div *ngIf="visitor.ApproveStatus === '1'">Approved</div>
+                                            <div *ngIf="visitor.ApproveStatus === '0'">UnApproved</div>
+                                            <div *ngIf="visitor.ApproveStatus === null">Pending</div>
+                                            <!--<td>{{visitor.ApproveStatus}}-->
+                                        </td>
+
                                     </tr>
                                 </tbody>
                             </table>

@@ -61,10 +61,5 @@ export class UserCoursesListComponent implements OnInit {
     //            }
     //        );
     //}
-
-
-
-
-
-
+ 
 } 

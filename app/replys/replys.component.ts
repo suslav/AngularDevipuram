@@ -17,6 +17,8 @@ export class ReplysComponent implements OnInit {
     public visitorformId: number;
     public userId: number;
 
+    public pvisible = true;
+
     constructor(
         private router: Router,
         private fb: FormBuilder, private _postService: ReplyService, private route: ActivatedRoute,
@@ -30,12 +32,54 @@ export class ReplysComponent implements OnInit {
             this.userId = params['uid'];
 
 
-        this.replyForm = this.fb.group({
+            this._postService.ReplyDetailsbyId(this.visitorformId).subscribe(
+                answer => {
+                    if (answer.length > 0) {
+
+                        this.pvisible = false;
+
+                        let replymessage, approvestatus= " ";
+                        replymessage = answer[0].ReplyMessage;
+                        approvestatus = answer[0].ApproveStatus;
+                        
+
+                        this.replyForm = this.fb.group({
+                        UserID: [this.userId],
+                        VisitorFormID: [this.visitorformId],
+                        ReplyMessage: [replymessage, Validators.required],
+                        ApproveStatus: [approvestatus, Validators.required]                       
+                    });
+                         
+                    }
+
+                    else
+                    {
+                        this.replyForm = this.fb.group({
                         UserID: [this.userId],
                         VisitorFormID: [this.visitorformId],
                         ReplyMessage: ['', Validators.required],
                         ApproveStatus: ['', Validators.required]                       
-                    });
+                        });
+
+                    }
+
+                },
+                error => {
+                    //this.errorMessage = <any>error
+
+                    return this.Message = "An Error Occured: Try Again";
+
+                }
+            );
+
+        //this.replyForm = this.fb.group({
+        //                UserID: [this.userId],
+        //                VisitorFormID: [this.visitorformId],
+        //                ReplyMessage: ['', Validators.required],
+        //                ApproveStatus: ['', Validators.required]                       
+        //            });
+
+
  
         }); 
     }

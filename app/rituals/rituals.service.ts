@@ -3,7 +3,7 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
  
 @Injectable()
-export class ReplyService {
+export class RitualsService {
     options: RequestOptions;
     public token: string;
     public userid: string;

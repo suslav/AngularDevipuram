@@ -14,16 +14,9 @@
                     <div *ngIf="photo">
                         <div class="row">
                             <div class="col-md-12">    
-                                <!--{{photo.AlbumUrl}}-->
-
-                                <!--<iframe src="https://devipuramalbums.smugmug.com/frame/slideshow?key=Wk77rP&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2" width="800" height="600" scrolling="no"></iframe>-->
-
-
-                                <!--<iframe src={{photo.AlbumUrl}}></iframe>-->
-
-
-                                <iframe width="800" height="600" [src]='safeURL' frameborder="0" allowfullscreen></iframe>
-
+                                <!--{{photo.AlbumUrl}}-->                                 
+                                <!--<iframe width="800" height="600" [src]='safeURL' frameborder="0" allowfullscreen></iframe>-->
+                                <div [innerHTML]="albumurl"></div>
                             </div>
                         </div>
                         <div class="row">

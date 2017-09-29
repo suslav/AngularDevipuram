@@ -28,7 +28,13 @@
                                                 View
                                             </a>
                                         </td>
-                                        <td>{{visitor.ApproveStatus}}</td>
+                                        <td>                                            
+                                           <div *ngIf="visitor.ApproveStatus === '1'">Approved</div>
+                                            <div *ngIf="visitor.ApproveStatus === '0'">UnApproved</div>
+                                            <div *ngIf="visitor.ApproveStatus === null">Pending</div>
+                                          <!--<td>{{visitor.ApproveStatus}}--> 
+                                        </td>
+
                                     </tr>
                                 </tbody>
                             </table>

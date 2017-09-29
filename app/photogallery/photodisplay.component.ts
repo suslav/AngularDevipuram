@@ -13,6 +13,8 @@ export class PhotoDisplayComponent implements OnInit {
 
     public safeURL: any;
 
+    public albumurl: any;
+
     errorMessage: string;
 
     constructor(private route: ActivatedRoute, private router: Router
@@ -31,7 +33,9 @@ export class PhotoDisplayComponent implements OnInit {
                        // return this.photo = data[0];
                         this.photo = data[0];
 
-                        this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(data[0].AlbumUrl);
+                      //  this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(data[0].AlbumUrl);
+
+                        this.albumurl = this._sanitizer.bypassSecurityTrustHtml(data[0].AlbumUrl);
                     }
                     else {
                         this.photo = null;
