@@ -1,0 +1,58 @@
+<div class='panel panel-primary'>
+    <div class="panel-heading">
+        My Ritual Requests
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class='table-responsive'>
+                    <table class='table' *ngIf="bookritual && bookritual.length">
+                        <thead class="bg-primary">
+                            <tr>
+                                <th>RitualCategory</th>
+                                <th>RitualName</th>
+                                <th>Date</th>
+                                <th>View</th>
+                                <!--<th>Status</th>-->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor='let britual of bookritual'>
+                                <td>{{britual.RitualCategory}}</td>
+                                <td>{{britual.RitualName}}</td>
+                                <td>{{britual.Date}}</td>
+                                <td>
+                                    <a [routerLink]="['/ritual','display',britual.BookritualID]">
+                                        View
+                                    </a>
+                                </td>
+                                <!--<td>
+                                    <div *ngIf="visitor.ApproveStatus === '1'">Approved</div>
+                                    <div *ngIf="visitor.ApproveStatus === '0'">UnApproved</div>
+                                    <div *ngIf="visitor.ApproveStatus === null">Pending</div>
+                                </td>-->
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+            </div>
+        </div>
+    </div>
+</div>

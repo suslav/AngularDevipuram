@@ -1,0 +1,152 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2>Book Ritual</h2>
+
+    <div class="panel-body">
+        <form class="form-horizontal"
+              novalidate
+              (ngSubmit)="signup()"
+              [formGroup]="bookritualForm">
+             
+            <fieldset>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (bookritualForm.get('Name').touched || bookritualForm.get('Name').dirty) && !bookritualForm.get('Name').valid }">
+                    <label class="col-md-2 control-label"
+                           for="NameId">Name</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="NameId"
+                               type="text"
+                               placeholder="Name (required)"
+                               formControlName="Name" />
+                        <span class="help-block" *ngIf="(bookritualForm.get('Name').touched || bookritualForm.get('Name').dirty) && bookritualForm.get('Name').errors">
+                            <span *ngIf="bookritualForm.get('Name').errors.required">
+                                Please enter your Name.
+                            </span>
+                        </span>
+
+
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (bookritualForm.get('Gotram').touched || bookritualForm.get('Gotram').dirty) && !bookritualForm.get('Gotram').valid }">
+                    <label class="col-md-2 control-label"
+                           for="GotramId">Gotram</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="GotramId"
+                               type="text"
+                               formControlName="Gotram" />
+                        <span class="help-block" *ngIf="(bookritualForm.get('Gotram').touched || bookritualForm.get('Gotram').dirty) && bookritualForm.get('Gotram').errors">
+                            <span *ngIf="bookritualForm.get('Gotram').errors.required">
+                                Please enter your Gotram.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (bookritualForm.get('Gender').touched || bookritualForm.get('Gender').dirty) && !bookritualForm.get('Gender').valid }">
+                    <label class="col-md-2 control-label"
+                           for="GenderId">GENDER</label>
+
+                    <div class="col-md-8">
+
+                        <select formControlName="Gender" class="form-control">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                         
+                        <span class="help-block" *ngIf="(bookritualForm.get('Gender').touched || bookritualForm.get('Gender').dirty) && bookritualForm.get('Gender').errors">
+                            <span *ngIf="bookritualForm.get('Gender').errors.required">
+                                Please select your Gender.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (bookritualForm.get('Address').touched || bookritualForm.get('Address').dirty) && !bookritualForm.get('Address').valid }">
+                    <label class="col-md-2 control-label"
+                           for="AddressId">Address</label>
+
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                               id="AddressId"
+                               rows="3"
+                               formControlName="Address" ></textarea>
+
+
+                        <span class="help-block" *ngIf="(bookritualForm.get('Address').touched || bookritualForm.get('Address').dirty) && bookritualForm.get('Address').errors">
+                            <span *ngIf="bookritualForm.get('Address').errors.required">
+                                Please enter your Address.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (bookritualForm.get('Mobile').touched || bookritualForm.get('Mobile').dirty) && !bookritualForm.get('Mobile').valid }">
+                    <label class="col-md-2 control-label"
+                           for="MobileId">Mobile</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="MobileId"
+                               type="text"
+                               formControlName="Mobile" />
+
+
+                        <span class="help-block" *ngIf="(bookritualForm.get('Mobile').touched || bookritualForm.get('Mobile').dirty) && bookritualForm.get('Mobile').errors">
+                            <span *ngIf="bookritualForm.get('Mobile').errors.required">
+                                Please enter your Mobile.
+                            </span>
+
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (bookritualForm.get('Date').touched || bookritualForm.get('Date').dirty) && !bookritualForm.get('Date').valid }">
+                    <label class="col-md-2 control-label"
+                           for="DateId">Date</label>
+                    <div class="col-md-8">
+                         
+                        <input type="text" formControlName="Date" placeholder="YYYY-MM-DD" />
+
+                        <span class="help-block" *ngIf="(bookritualForm.get('Date').touched || bookritualForm.get('Date').dirty) && bookritualForm.get('Date').errors">
+                            <span *ngIf="bookritualForm.get('Date').errors.required">
+                                Please enter Date.
+                            </span>
+                            <span *ngIf="bookritualForm.get('Date').errors.pattern">
+                                Enter a date in this format YYYY-MM-DD.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-md-4 col-md-offset-2">
+                        <span>
+                            <button class="btn btn-primary"
+                                    type="submit"
+                                    [disabled]="!bookritualForm.valid">
+                                Save
+                            </button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="has-error" *ngIf="Message">{{Message}}</div>
+            </fieldset> 
+        </form>
+    </div>
+
+</div>

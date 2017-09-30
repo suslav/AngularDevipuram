@@ -1,0 +1,66 @@
+<div class='panel panel-primary'>
+    <div class="panel-heading">
+        Booked Rituals List
+    </div>
+    <div class="panel-body">
+        <div class="row">
+
+            <label class="col-md-2 control-label">Select Date</label>
+
+            <div class="col-md-3">
+                <my-date-picker [options]="myDatePickerOptions"
+                                (dateChanged)="onDateChanged($event)"></my-date-picker>
+            </div>
+
+            <div class="col-md-7"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">&nbsp;
+                </div>
+            </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class='table-responsive'>
+                            <table class='table' *ngIf="rituals && rituals.length">
+                                <thead class="bg-primary">
+                                    <tr>
+                                        <th>RitualCategory</th>
+                                        <th>RitualName</th>
+                                        <th>When</th>
+                                        <th>User</th>
+                                        <th>View</th>                                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let ritual of rituals'>
+                                        <td>{{ritual.RitualCategory}}</td>
+                                        <td>{{ritual.RitualName}}</td>
+                                        <td>{{ritual.When}}</td>   
+                                        <td>{{ritual.Username}}</td>  
+                                        <td>                                                                                    
+                                            <a [routerLink]="['/ritual','display',ritual.BookritualID]">
+                                                View
+                                            </a>
+                                        </td>                                         
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+            </div>
+        </div>        
+            </div>
+        </div>

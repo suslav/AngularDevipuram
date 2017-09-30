@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class='panel panel-primary'>
+        <div class="panel-heading">
+            Rituals List
+        </div>
+        <div class="panel-body">
+            <div class='table-responsive'>
+                <table class='table' *ngIf="ritualsdata && ritualsdata.length">
+                    <thead>
+                        <tr>
+                            <th>Ritual Category</th>
+                            <th>Ritual Name</th>
+                            <th>When</th>
+                            <th>Book Ritual</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let ritual of ritualsdata'>
+                            <td>{{ritual.RitualCategory}}</td>
+                            <td>{{ritual.RitualName}}</td>
+                            <td>{{ritual.When}}</td>
+                            <td>
+                                <a [routerLink]="['/ritual/bookritual',ritual.RitualID]">
+                                    Book Ritual
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

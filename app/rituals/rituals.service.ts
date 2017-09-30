@@ -22,26 +22,49 @@ export class RitualsService {
 
     }
 
-    
-    ReplyDetailsbyId(id:number): Observable<any> {
-        return this.http.get('http://localhost:8080/LaravelProject/public/api/replydetail/' + id + '?token=' + this.token)
+    ritualsList(): Observable<any> {
+        return this.http.get('http://localhost:8080/LaravelProject/public/api/ritualslist')
             .map((response: Response) => <any>response.json())
             .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
 
-    //Updatepassword(body: string) {
-    //    let jsbody2 = { "password": body };
-    //    let jsbody = JSON.stringify(jsbody2);                       
-    //    return this.http.put('http://localhost:8080/LaravelProject/public/api/updatepassword/' + this.userid + '?token=' + this.token, jsbody, this.options).map((res: Response) => res.json());
+    
+    ritualsListbyId(): Observable<any> {
+        return this.http.get('http://localhost:8080/LaravelProject/public/api/requstritualslist/' + this.userid + '?token=' + this.token)
+            .map((response: Response) => <any>response.json())
+            .do(data => console.log('All: ' + JSON.stringify(data)))
+            .catch(this.handleError);
+    }
 
+    BookRitual(body: string) {         
+        let jsbody = JSON.stringify(body);         
+        return this.http.post('http://localhost:8080/LaravelProject/public/api/bookritual/store?token=' + this.token, jsbody, this.options).map((res: Response) => res.json());
+    }
 
-    //}
+    ritualcategoriesList(): Observable<any> {
+        return this.http.get('http://localhost:8080/LaravelProject/public/api/ritualcategoriesList')
+            .map((response: Response) => <any>response.json())
+            .do(data => console.log('All: ' + JSON.stringify(data)))
+            .catch(this.handleError);
+    }
 
-    replyUser(body: string) {      
-        let jsbody = JSON.stringify(body);     
-        console.log(jsbody);
-        return this.http.post('http://localhost:8080/LaravelProject/public/api/reply/store?token=' + this.token, jsbody, this.options).map((res: Response) => res.json());
+    insertRituals(body: string) {          
+        return this.http.post('http://localhost:8080/LaravelProject/public/api/rituals/store?token=' + this.token, body, this.options).map((res: Response) => res.json());
+    }    
+
+    getRitualsbydate(date: string): Observable<any> {       
+        return this.http.get('http://localhost:8080/LaravelProject/public/api/ritualslistdate/' + date + '?token=' + this.token)
+            .map((response: Response) => <any>response.json())
+            .do(data => console.log('All: ' + JSON.stringify(data)))
+            .catch(this.handleError);
+    }
+
+    ritualsListbyBookritualID(id:number): Observable<any> {
+        return this.http.get('http://localhost:8080/LaravelProject/public/api/bookritualbyid/' + id + '?token=' + this.token)
+            .map((response: Response) => <any>response.json())
+            .do(data => console.log('All: ' + JSON.stringify(data)))
+            .catch(this.handleError);
     }
 
     private handleError(error: Response) {

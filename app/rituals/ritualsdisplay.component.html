@@ -1,0 +1,96 @@
+<div class="container-fluid">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            {{pageTitle}}
+        </div>
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Name</label>
+                    <div class="col-md-10">
+                        {{bookrituals.Name}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Gotram</label>
+
+                    <div class="col-md-8">
+                        {{bookrituals.Gotram}}
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Gender</label>
+
+                        <div class="col-md-8">
+                            {{bookrituals.Gender}}
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Address</label>
+
+                            <div class="col-md-8">
+                                {{bookrituals.Address}}
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Mobile</label>
+
+                                <div class="col-md-8">
+                                    {{bookrituals.Mobile}}
+                                </div>
+                            </div>
+                        </div>
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Date</label>
+
+                                    <div class="col-md-8">
+                                        {{bookrituals.Date}}
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+
+        <div class="has-error" *ngIf="Message">{{Message}}</div>
+
+        <!--<div class="panel-footer">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-primary"
+                                type="submit"
+                                style="width:80px;margin-right:10px"
+                                [disabled]="!ritualForm.valid">
+                            Publish
+                        </button>
+                    </span>
+
+                </div>
+            </div>
+        </div>-->
+
+
+
+
+    </div>
+
+</div>
+
+
+

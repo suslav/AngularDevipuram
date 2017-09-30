@@ -1,0 +1,96 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div> 
+    <form class="form-horizontal"
+          novalidate [formGroup]="ritualForm" (ngSubmit)="save()">
+        <fieldset>
+            <div class="panel-body">
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (ritualForm.get('RitualName').touched || ritualForm.get('RitualName').dirty) && !ritualForm.get('RitualName').valid }">
+                    <label class="col-md-2 control-label"
+                           for="RitualNameId">Ritual Name</label>
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                               id="RitualNameId"
+                                rows="3" 
+                               formControlName="RitualName" ></textarea>
+
+
+                        <span class="help-block" *ngIf="(ritualForm.get('RitualName').touched || ritualForm.get('RitualName').dirty) && ritualForm.get('RitualName').errors">
+                            <span *ngIf="ritualForm.get('RitualName').errors.required">
+                                Please enter RitualName.
+                            </span>                            
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (ritualForm.get('When').touched || ritualForm.get('When').dirty) && !ritualForm.get('When').valid }">
+                    <label class="col-md-2 control-label"
+                           for="WhenId">When</label>
+
+                    <div class="col-md-8">
+                        <textarea class="form-control"
+                                  id="WhenId"
+                                  rows="3"                                   
+                                  formControlName="When"></textarea>
+
+                        <span class="help-block" *ngIf="(ritualForm.get('When').touched || ritualForm.get('When').dirty) && ritualForm.get('When').errors">
+                            <span *ngIf="ritualForm.get('When').errors.required">
+                                Please enter 'When'.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+               
+
+                <div class="form-group"
+                     [ngClass]="{'has-error': (ritualForm.get('RitualCategoryID').touched || ritualForm.get('RitualCategoryID').dirty) && !ritualForm.get('RitualCategoryID').valid }">
+                    <label class="col-md-2 control-label"
+                           for="RitualCategoryIDId">Ritual Category</label>
+
+                    <div class="col-md-8">                         
+                        <select formControlName="RitualCategoryID" class="form-control">                           
+                            <option></option>
+                            <option *ngFor="let ricname of ricate" [value]="ricname.RitualCategoryID">{{ricname.RitualCategory}} </option>
+                        </select>
+
+
+
+                        <span class="help-block" *ngIf="(ritualForm.get('RitualCategoryID').touched || ritualForm.get('RitualCategoryID').dirty) && ritualForm.get('RitualCategoryID').errors">
+                            <span *ngIf="ritualForm.get('RitualCategoryID').errors.required">
+                                Please select Ritual Category.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+              </div>
+
+            <div class="has-error" *ngIf="Message">{{Message}}</div>
+
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-2">
+                        <span>
+                            <button class="btn btn-primary"
+                                    type="submit"
+                                    style="width:80px;margin-right:10px"
+                                    [disabled]="!ritualForm.valid">
+                                Publish
+                            </button>
+                        </span>
+                      
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+
+
+

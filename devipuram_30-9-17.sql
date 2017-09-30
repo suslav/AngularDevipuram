@@ -43,6 +43,37 @@ INSERT INTO `articles` VALUES (1,'Amritopanishad','<p><font face=\"Century Gothi
 UNLOCK TABLES;
 
 --
+-- Table structure for table `bookrituals`
+--
+
+DROP TABLE IF EXISTS `bookrituals`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bookrituals` (
+  `BookritualID` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(100) DEFAULT NULL,
+  `Gotram` varchar(100) DEFAULT NULL,
+  `Gender` varchar(45) DEFAULT NULL,
+  `Address` varchar(500) DEFAULT NULL,
+  `Mobile` varchar(45) DEFAULT NULL,
+  `Date` date DEFAULT NULL,
+  `RitualID` int(11) NOT NULL,
+  `UserID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`BookritualID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bookrituals`
+--
+
+LOCK TABLES `bookrituals` WRITE;
+/*!40000 ALTER TABLE `bookrituals` DISABLE KEYS */;
+INSERT INTO `bookrituals` VALUES (1,'Name','Gotram','Female','Address','Mobile','2017-09-30',1,2),(2,'Name2','Gotram2','Female','Address2','987654321','2017-09-30',2,2);
+/*!40000 ALTER TABLE `bookrituals` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `dialyschdule`
 --
 
@@ -163,7 +194,7 @@ CREATE TABLE `events` (
   `EventToDate` date NOT NULL,
   `EventImageUrl` varchar(100) NOT NULL,
   PRIMARY KEY (`EventID`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -172,7 +203,7 @@ CREATE TABLE `events` (
 
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
-INSERT INTO `events` VALUES (1,'Ganapathi Navaratri','Tarpanams, Abhishekam, Archana, Yantra Puja and Anna danam','2016-09-05','2016-09-13','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg'),(3,'Amrita Kaumudi','Tarpanams, Abhishekam, Archana, Yantra Puja and Anna danam','2016-09-26','2016-09-28','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg'),(4,'Anandam','Tarpanams, Abhishekam, Archana, Yantra Puja and Anna danam','2016-12-27','2016-12-30','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg'),(6,'NewEventTitle','NewEventDescription','2017-07-20','2017-07-27','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg'),(7,'event2','eventdis2','2017-07-22','2017-07-27','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg'),(8,'event3','eventdis3','2017-07-22','2017-07-27','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg'),(10,'event4','eventdis4','2017-07-22','2017-07-27','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg'),(11,'event5','eventdis5','2017-07-25','2017-07-27','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg'),(12,'event6','eventdis6','2017-07-25','2017-07-27','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg'),(13,'event7','eventdis7','2017-07-25','2017-07-28','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg'),(14,'event8','eventdis78','2017-07-25','2017-07-28','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg'),(15,'event9','eventdis9','2017-08-02','2017-08-05','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg'),(16,'Event10','Eventdis','2017-09-20','2017-09-21','EventImageUrl');
+INSERT INTO `events` VALUES (1,'Ganapathi Navaratri','Tarpanams, Abhishekam, Archana, Yantra Puja and Anna danam','2016-09-05','2016-09-13','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg'),(3,'Amrita Kaumudi','Tarpanams, Abhishekam, Archana, Yantra Puja and Anna danam','2016-09-26','2016-09-28','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg'),(4,'Anandam','Tarpanams, Abhishekam, Archana, Yantra Puja and Anna danam','2016-12-27','2016-12-30','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg'),(6,'NewEventTitle','NewEventDescription','2017-07-20','2017-07-27','https://c2.staticflickr.com/9/8362/28486887153_940cdd421b.jpg');
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -217,7 +248,7 @@ CREATE TABLE `generalvisitorsanswers` (
   `GVQuestionID` int(11) NOT NULL,
   `VisitorFormID` int(11) NOT NULL,
   PRIMARY KEY (`GVAnswerID`)
-) ENGINE=InnoDB AUTO_INCREMENT=159 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=164 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -226,7 +257,7 @@ CREATE TABLE `generalvisitorsanswers` (
 
 LOCK TABLES `generalvisitorsanswers` WRITE;
 /*!40000 ALTER TABLE `generalvisitorsanswers` DISABLE KEYS */;
-INSERT INTO `generalvisitorsanswers` VALUES (83,'NAME',1,5),(84,'38',2,5),(85,'1',3,5),(86,'Son/of',4,5),(87,'Place',5,5),(88,'Nationality',6,5),(89,'1',7,5),(90,'E Mail ID: Mobile No & Residence phone:',8,5),(91,'E Mail ID: Mobile No & Residence phone:',9,5),(92,'E Mail ID: Mobile No & Residence phone:',10,5),(93,'Intending Dt. of Arrival & Departure:',11,5),(94,'Visited earlier ( YES / NO) & Main Purpose of your visit:',12,5),(95,'Education:',13,5),(96,'Profession:',14,5),(97,'Health:',15,5),(98,'1',16,5),(99,'2',17,5),(100,'1',18,5),(101,'If ‘YES’, days / months of your preference to come and extend that service:',19,5),(102,'3',20,5),(103,'2017-01-28',21,5),(104,'NAME:',1,14),(105,'54',2,14),(106,'1',3,14),(107,'Son/of',4,14),(108,'Place',5,14),(109,'Nationality:',6,14),(110,'2',7,14),(111,'E Mail ID: Mobile No & Residence phone:',8,14),(112,'ADDRESS:',9,14),(113,'Passport / Photo ID CARD - TYPE & No:',10,14),(114,'Intending Dt. of Arrival & Departure:',11,14),(115,'Visited earlier ( YES / NO) & Main Purpose of your visit:',12,14),(116,'Education:',13,14),(117,'Profession:',14,14),(118,'Health:',15,14),(119,'1',16,14),(120,'2',17,14),(121,'2',18,14),(122,'If ‘YES’, days / months of your preference to come and extend that service:',19,14),(123,'6',20,14),(124,'2017-01-30',21,14),(129,'NAME~1|33~2Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|Spiritual~18|NAME~19|Poojas~20|NAME~21',1,11),(137,'NAME~1|33~2Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|Spiritual~18|NAME~19|Poojas~20|NAME~21',1,17),(152,'NAME~1|11~2|Male~3|Son/of. or Dtr/of. or Wife/of~4|Place & Country~5|Nationality~6|Marital Status~7|E Mail ID~8|ADDRESS~9|Passport~10|Intending Dt. of Arrival~11|Visited earlier~12|EDUCATION~13|Profession~14|Health:~15|Do you want to take ~16|Do you want to order for MERU~17|Spiritual~18|If \'YES\', days / months of ~19|Spiritual~20|2017-31-8~21',1,32),(153,'NAME~1|11~2|Female~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|Spiritual~18|NAME~19|Poojas~20|2017-09-01~21',1,39),(154,'NAME~1|11~2|Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|Poojas~18|NAME~19|Spiritual~20|2017-09-01~21',1,40),(155,'NAME~1|11~2|Male~3|Son/of. or Dtr/of. or Wife/of~4|Place & Country~5|Nationality~6|Marital Status~7|E Mail ID~8|ADDRESS~9|Passport~10|Intending Dt. of Arrival~11|Visited earlier ( YES / NO)~12|EDUCATION~13|Profession~14|Health:~15|Do you want to take Deeksha from Guru Amma~16|Do you want to order for MERU~17|Spiritual~18|If \'YES\', days / months of ~19|Spiritual~20|2017-09-01~21',1,41),(156,'NAME~1|11~2|Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|Spiritual~18|NAME~19|Poojas~20|2017-09-01~21',1,42),(157,'NAME~1|11~2|Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|NO~18|~19|~20|NAME~21',1,45),(158,'NAME~1|11~2|Male~3|NAME~4|NAMENAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|YES~18|NAME~19|Food &Catering~20|NAME~21',1,47);
+INSERT INTO `generalvisitorsanswers` VALUES (83,'NAME',1,5),(84,'38',2,5),(85,'1',3,5),(86,'Son/of',4,5),(87,'Place',5,5),(88,'Nationality',6,5),(89,'1',7,5),(90,'E Mail ID: Mobile No & Residence phone:',8,5),(91,'E Mail ID: Mobile No & Residence phone:',9,5),(92,'E Mail ID: Mobile No & Residence phone:',10,5),(93,'Intending Dt. of Arrival & Departure:',11,5),(94,'Visited earlier ( YES / NO) & Main Purpose of your visit:',12,5),(95,'Education:',13,5),(96,'Profession:',14,5),(97,'Health:',15,5),(98,'1',16,5),(99,'2',17,5),(100,'1',18,5),(101,'If ‘YES’, days / months of your preference to come and extend that service:',19,5),(102,'3',20,5),(103,'2017-01-28',21,5),(104,'NAME:',1,14),(105,'54',2,14),(106,'1',3,14),(107,'Son/of',4,14),(108,'Place',5,14),(109,'Nationality:',6,14),(110,'2',7,14),(111,'E Mail ID: Mobile No & Residence phone:',8,14),(112,'ADDRESS:',9,14),(113,'Passport / Photo ID CARD - TYPE & No:',10,14),(114,'Intending Dt. of Arrival & Departure:',11,14),(115,'Visited earlier ( YES / NO) & Main Purpose of your visit:',12,14),(116,'Education:',13,14),(117,'Profession:',14,14),(118,'Health:',15,14),(119,'1',16,14),(120,'2',17,14),(121,'2',18,14),(122,'If ‘YES’, days / months of your preference to come and extend that service:',19,14),(123,'6',20,14),(124,'2017-01-30',21,14),(129,'NAME~1|33~2Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|Spiritual~18|NAME~19|Poojas~20|NAME~21',1,11),(137,'NAME~1|33~2Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|Spiritual~18|NAME~19|Poojas~20|NAME~21',1,17),(152,'NAME~1|11~2|Male~3|Son/of. or Dtr/of. or Wife/of~4|Place & Country~5|Nationality~6|Marital Status~7|E Mail ID~8|ADDRESS~9|Passport~10|Intending Dt. of Arrival~11|Visited earlier~12|EDUCATION~13|Profession~14|Health:~15|Do you want to take ~16|Do you want to order for MERU~17|Spiritual~18|If \'YES\', days / months of ~19|Spiritual~20|2017-31-8~21',1,32),(153,'NAME~1|11~2|Female~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|Spiritual~18|NAME~19|Poojas~20|2017-09-01~21',1,39),(154,'NAME~1|11~2|Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|Poojas~18|NAME~19|Spiritual~20|2017-09-01~21',1,40),(155,'NAME~1|11~2|Male~3|Son/of. or Dtr/of. or Wife/of~4|Place & Country~5|Nationality~6|Marital Status~7|E Mail ID~8|ADDRESS~9|Passport~10|Intending Dt. of Arrival~11|Visited earlier ( YES / NO)~12|EDUCATION~13|Profession~14|Health:~15|Do you want to take Deeksha from Guru Amma~16|Do you want to order for MERU~17|Spiritual~18|If \'YES\', days / months of ~19|Spiritual~20|2017-09-01~21',1,41),(156,'NAME~1|11~2|Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|Spiritual~18|NAME~19|Poojas~20|2017-09-01~21',1,42),(157,'NAME~1|11~2|Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|NO~18|~19|~20|NAME~21',1,45),(158,'NAME~1|11~2|Male~3|NAME~4|NAMENAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|YES~18|NAME~19|Food &Catering~20|NAME~21',1,47),(160,'NAME1~1|11~2|Male~3|Son/of. or Dtr/of. or Wife/of~4|Place & Country~5|Nationality~6|Marital Status~7|E Mail ID:~8|ADDRESS~9|Passport / Photo ID CARD~10|Intending Dt. of Arrival ~11|Visited earlier~12|EDUCATION~13|Profession~14|Health:~15|Do you want to take ~16|Do you want to order for ~17|NO~18|~19|~20|2017-09-21~21',1,59),(161,'NAME1~1|11~2|Male~3|Son/of. or Dtr/of. or Wife/of~4|Place & Country~5|Nationality~6|Marital Status~7|E Mail ID:~8|ADDRESS~9|Passport / Photo ID CARD~10|Intending Dt. of Arrival ~11|Visited earlier ( YES / NO)~12|EDUCATION~13|Profession~14|Health:~15|Do you want to take ~16|Do you want to order for ~17|YES~18|If \'YES\', days / months of ~19|Poojas~20|2017-09-21~21',0,60),(162,'NAME~1|11~2|Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|YES~18|NAME~19|Spiritual~20|NAME~21',0,61),(163,'NAME~1|11~2|Female~3|Son/of. or Dtr/of. or Wife/of~4|Place & Country~5|Nationality~6|Marital Status~7|E Mail ID~8|ADDRESS~9|Passport ~10|ntending Dt. of Arrival~11|Visited earlier ( YES / NO)~12|EDUCATION~13|Profession~14|Health:~15|Do you want to take Deeksha from Guru Amma ~16|Do you want to order for MERU~17|YES~18|If \'YES\', days / months of ~19|Poojas~20|2017-22-09~21',0,62);
 /*!40000 ALTER TABLE `generalvisitorsanswers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -243,7 +274,7 @@ CREATE TABLE `generalvisitorsinteranswers` (
   `GVIQuestionID` int(11) NOT NULL,
   `VisitorFormID` int(11) NOT NULL,
   PRIMARY KEY (`GVIAnswerID`)
-) ENGINE=InnoDB AUTO_INCREMENT=159 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=161 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -252,7 +283,7 @@ CREATE TABLE `generalvisitorsinteranswers` (
 
 LOCK TABLES `generalvisitorsinteranswers` WRITE;
 /*!40000 ALTER TABLE `generalvisitorsinteranswers` DISABLE KEYS */;
-INSERT INTO `generalvisitorsinteranswers` VALUES (92,'NAME',1,8),(93,'38',2,8),(94,'1',3,8),(95,'Son/of',4,8),(96,'Place',5,8),(97,'Nationality',6,8),(98,'1',7,8),(99,'Date of Birth:',8,8),(100,'ADDRESS (Permanent):',9,8),(101,'E Mail ID:',10,8),(102,'Permanent Landline (Phone):',11,8),(103,'Permanent Mobile No:',12,8),(104,'Mobile No in India:',13,8),(105,'ADDRESS (Permanent):',14,8),(106,'ADDRESS (Permanent):',15,8),(107,'Visa No, Valid up to date and Issued Place:',16,8),(108,'Intending Dt.of Arrival in India, City and Place:',17,8),(109,'Intending Dt.of Arrival in India, City and Place:',18,8),(110,'Intending Dt.of Arrival in Devipuram',19,8),(111,'Intending Dt.of Departure in Devipuram',20,8),(112,'Next Destination in India, City and Place:',21,8),(113,'Visited earlier (YES/NO) & Main Purpose of your visit:',22,8),(114,'Education:',23,8),(115,'Profession:',24,8),(116,'Health:',25,8),(117,'1',26,8),(118,'2',27,8),(119,'1',28,8),(120,'If ‘YES’, days / months of your preference to come and extend that service:',29,8),(121,'2',30,8),(122,'2017-01-31',31,8),(123,'NAME:',1,15),(124,'54',2,15),(125,'1',3,15),(126,'Son/of',4,15),(127,'Place',5,15),(128,'Nationality:',6,15),(129,'2',7,15),(130,'Date of Birth:',8,15),(131,'ADDRESS (Permanent):',9,15),(132,'E Mail ID:',10,15),(133,'Permanent Landline (Phone)',11,15),(134,'Permanent Mobile No:',12,15),(135,'Mobile No in India:',13,15),(136,'ADDRESS (Permanent):',14,15),(137,'Passport No, Valid up to date and Issued Place:',15,15),(138,'Visa No, Valid up to date and Issued Place:',16,15),(139,'Intending Dt.of Arrival in India, City and Place:',17,15),(140,'Intending Dt.of Departure in India, City and Place:',18,15),(141,'Intending Dt.of Arrival in Devipuram',19,15),(142,'Intending Dt.of Departure in Devipuram',20,15),(143,'Next Destination in India, City and Place:',21,15),(144,'Visited earlier (YES/NO) & Main Purpose of your visit:',22,15),(145,'Education:',23,15),(146,'Profession:',24,15),(147,'Health:',25,15),(148,'1',26,15),(149,'2',27,15),(150,'2',28,15),(151,'If ‘YES’, days / months of your preference to come and extend that service:',29,15),(152,'3',30,15),(153,'2017-01-31',31,15),(155,'NAME~1|11~2|Male~3|Son/of. or Dtr/of. or Wife/of~4|Place & Country~5|Nationality~6|Marital Status~7|Date of Birth~8|Contact details in India~9|E Mail ID~10|Permanent Landline ~11|Permanent Mobile No~12|Mobile No in India~13|ADDRESS~14|Passport No~15|Visa No,~16|Intending Dt.of Arrival in ~17|ntending Dt.of Departure in ~18|Intending Dt.of Arrival in Devipuram~19|Intending Dt.of Departure in Devipuram~20|Next Destination in India, City and Place~21|Visited earlier ( YES / NO)~22|EDUCATION~23|Profession~24|Health~25|Do you want to take Deeksha from Guru Amma~26|Do you want to order for MERU ~27|Spiritual~28|If \'YES\', days / months of your preference to come ~29|Spiritual~30|2017-31-08~31',1,34),(156,'NAME~1|11~2|Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|NAME~18|NAME~19|NAME~20|NAME~21|NAME~22|NAME~23|NAME~24|NAME~25|NAME~26|NAME~27|Poojas~28|NAME~29|General Volunteer~30|NAME~31',1,43),(157,'NAME~1|11~2|Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|NAME~18|NAME~19|NAME~20|NAME~21|NAME~22|NAME~23|NAME~24|NAME~25|NAME~26|NAME~27|NO~28|~29|~30|NAME~31',1,46),(158,'NAME~1|22~2|Male~3|NAME~4|NAMENAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAMENAME~13|NAMENAME~14|NAME~15|NAME~16|NAME~17|NAME~18|NAME~19|NAME~20|NAME~21|NAME~22|NAME~23|NAME~24|NAME~25|NAME~26|NAME~27|YES~28|NAME~29|Computer Tech Services~30|NAME~31',1,48);
+INSERT INTO `generalvisitorsinteranswers` VALUES (92,'NAME',1,8),(93,'38',2,8),(94,'1',3,8),(95,'Son/of',4,8),(96,'Place',5,8),(97,'Nationality',6,8),(98,'1',7,8),(99,'Date of Birth:',8,8),(100,'ADDRESS (Permanent):',9,8),(101,'E Mail ID:',10,8),(102,'Permanent Landline (Phone):',11,8),(103,'Permanent Mobile No:',12,8),(104,'Mobile No in India:',13,8),(105,'ADDRESS (Permanent):',14,8),(106,'ADDRESS (Permanent):',15,8),(107,'Visa No, Valid up to date and Issued Place:',16,8),(108,'Intending Dt.of Arrival in India, City and Place:',17,8),(109,'Intending Dt.of Arrival in India, City and Place:',18,8),(110,'Intending Dt.of Arrival in Devipuram',19,8),(111,'Intending Dt.of Departure in Devipuram',20,8),(112,'Next Destination in India, City and Place:',21,8),(113,'Visited earlier (YES/NO) & Main Purpose of your visit:',22,8),(114,'Education:',23,8),(115,'Profession:',24,8),(116,'Health:',25,8),(117,'1',26,8),(118,'2',27,8),(119,'1',28,8),(120,'If ‘YES’, days / months of your preference to come and extend that service:',29,8),(121,'2',30,8),(122,'2017-01-31',31,8),(123,'NAME:',1,15),(124,'54',2,15),(125,'1',3,15),(126,'Son/of',4,15),(127,'Place',5,15),(128,'Nationality:',6,15),(129,'2',7,15),(130,'Date of Birth:',8,15),(131,'ADDRESS (Permanent):',9,15),(132,'E Mail ID:',10,15),(133,'Permanent Landline (Phone)',11,15),(134,'Permanent Mobile No:',12,15),(135,'Mobile No in India:',13,15),(136,'ADDRESS (Permanent):',14,15),(137,'Passport No, Valid up to date and Issued Place:',15,15),(138,'Visa No, Valid up to date and Issued Place:',16,15),(139,'Intending Dt.of Arrival in India, City and Place:',17,15),(140,'Intending Dt.of Departure in India, City and Place:',18,15),(141,'Intending Dt.of Arrival in Devipuram',19,15),(142,'Intending Dt.of Departure in Devipuram',20,15),(143,'Next Destination in India, City and Place:',21,15),(144,'Visited earlier (YES/NO) & Main Purpose of your visit:',22,15),(145,'Education:',23,15),(146,'Profession:',24,15),(147,'Health:',25,15),(148,'1',26,15),(149,'2',27,15),(150,'2',28,15),(151,'If ‘YES’, days / months of your preference to come and extend that service:',29,15),(152,'3',30,15),(153,'2017-01-31',31,15),(155,'NAME~1|11~2|Male~3|Son/of. or Dtr/of. or Wife/of~4|Place & Country~5|Nationality~6|Marital Status~7|Date of Birth~8|Contact details in India~9|E Mail ID~10|Permanent Landline ~11|Permanent Mobile No~12|Mobile No in India~13|ADDRESS~14|Passport No~15|Visa No,~16|Intending Dt.of Arrival in ~17|ntending Dt.of Departure in ~18|Intending Dt.of Arrival in Devipuram~19|Intending Dt.of Departure in Devipuram~20|Next Destination in India, City and Place~21|Visited earlier ( YES / NO)~22|EDUCATION~23|Profession~24|Health~25|Do you want to take Deeksha from Guru Amma~26|Do you want to order for MERU ~27|Spiritual~28|If \'YES\', days / months of your preference to come ~29|Spiritual~30|2017-31-08~31',1,34),(156,'NAME~1|11~2|Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|NAME~18|NAME~19|NAME~20|NAME~21|NAME~22|NAME~23|NAME~24|NAME~25|NAME~26|NAME~27|Poojas~28|NAME~29|General Volunteer~30|NAME~31',1,43),(157,'NAME~1|11~2|Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|NAME~18|NAME~19|NAME~20|NAME~21|NAME~22|NAME~23|NAME~24|NAME~25|NAME~26|NAME~27|NO~28|~29|~30|NAME~31',1,46),(158,'NAME~1|22~2|Male~3|NAME~4|NAMENAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAMENAME~13|NAMENAME~14|NAME~15|NAME~16|NAME~17|NAME~18|NAME~19|NAME~20|NAME~21|NAME~22|NAME~23|NAME~24|NAME~25|NAME~26|NAME~27|YES~28|NAME~29|Computer Tech Services~30|NAME~31',1,48),(160,'NAME~1|11~2|Male~3|Son/of. or Dtr/of. or Wife/of~4|Place & Country~5|Nationality~6|Marital Status~7|Date of Birth~8|Contact details in India~9|E Mail ID~10|Permanent Landline ~11|Permanent Mobile No~12|Mobile No in India~13|ADDRESS~14|Passport No~15|Visa No~16|Intending Dt.of Arrival in India, City and Place~17|Intending Dt.of Departure in India, City and Place~18|Intending Dt.of Arrival in Devipuram~19|Intending Dt.of Departure in Devipuram~20|Next Destination in India, City and Place~21|Visited earlier ( YES / NO) ~22|EDUCATION~23|Profession~24|Health:~25|Do you want to take Deeksha from Guru Amma~26|Do you want to order for MERU s / HAVAN~27|YES~28|If \'YES\', days / months of your preference to come ~29|Poojas~30|2017-22-09~31',0,67);
 /*!40000 ALTER TABLE `generalvisitorsinteranswers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -350,8 +381,86 @@ CREATE TABLE `photoalbums` (
 
 LOCK TABLES `photoalbums` WRITE;
 /*!40000 ALTER TABLE `photoalbums` DISABLE KEYS */;
-INSERT INTO `photoalbums` VALUES (1,'Dasara 1st October 2016','Alankara Bala Tripura Sundari Devi','https://devipuramalbums.smugmug.com/frame/slideshow?key=KMBS9G&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(2,'Dasara 2nd October 2016','Alankara Gayatri Devi','https://devipuramalbums.smugmug.com/frame/slideshow?key=KMBS9G&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(3,'Dasara 3rd October 2016','Alankara Gayatri Devi','https://devipuramalbums.smugmug.com/frame/slideshow?key=KMBS9G&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(4,'Dasara 4th October 2016','Alankara Annapoorna Devi','https://devipuramalbums.smugmug.com/frame/slideshow?key=KMBS9G&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(5,'Dasara 5th October 2016','Alankara Rajarajeswari Devi','https://devipuramalbums.smugmug.com/frame/slideshow?key=KMBS9G&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(6,'Dasara 6th October 2016','Alankara Lalita Tripura Sundari Devi','https://devipuramalbums.smugmug.com/frame/slideshow?key=KMBS9G&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(7,'Dasara 7th October 2016','Alankara Mahalakshmi Devi','https://devipuramalbums.smugmug.com/frame/slideshow?key=KMBS9G&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(8,'Dasara 8th October 2016','Alankara Mahasaraswati Devi','https://devipuramalbums.smugmug.com/frame/slideshow?key=KMBS9G&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(9,'Dasara 9th October 2016','Alankara Durga Devi','https://devipuramalbums.smugmug.com/frame/slideshow?key=KMBS9G&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(10,'Dasara 10th October 2016','Alankara Mahishasuramardini','https://devipuramalbums.smugmug.com/frame/slideshow?key=KMBS9G&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(11,'Dasara 11th October 2016','Alankara Vijaya Durga Devi','https://devipuramalbums.smugmug.com/frame/slideshow?key=KMBS9G&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(12,'Margasira Masam 2016 Celebrations','Margasira Masam 2016 Celebrations','https://devipuramalbums.smugmug.com/frame/slideshow?key=KMBS9G&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg');
+INSERT INTO `photoalbums` VALUES (1,'Dasara 1st October 2016','Alankara Bala Tripura Sundari Devi','<iframe src=\"https://devipuramalbums.smugmug.com/frame/slideshow?key=KMBS9G&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2\" width=\"800\" height=\"600\" frameborder=\"no\" scrolling=\"no\"></iframe>\n ','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(2,'Dasara 2nd October 2016','Alankara Gayatri Devi','<iframe src=\"https://devipuramalbums.smugmug.com/frame/slideshow?key=Wk77rP&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2\" width=\"800\" height=\"600\" frameborder=\"no\" scrolling=\"no\"></iframe>','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(3,'Dasara 3rd October 2016','Alankara Gayatri Devi','<iframe src=\"https://devipuramalbums.smugmug.com/frame/slideshow?key=QNkMSj&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2\" width=\"800\" height=\"600\" frameborder=\"no\" scrolling=\"no\"></iframe>','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(4,'Dasara 4th October 2016','Alankara Annapoorna Devi','<iframe src=\"https://devipuramalbums.smugmug.com/frame/slideshow?key=JRKcFr&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2\" width=\"800\" height=\"600\" frameborder=\"no\" scrolling=\"no\"></iframe>','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(5,'Dasara 5th October 2016','Alankara Rajarajeswari Devi','<iframe src=\"https://devipuramalbums.smugmug.com/frame/slideshow?key=FXLfPm&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2\" width=\"800\" height=\"600\" frameborder=\"no\" scrolling=\"no\"></iframe>','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(6,'Dasara 6th October 2016','Alankara Lalita Tripura Sundari Devi','<iframe src=\"https://devipuramalbums.smugmug.com/frame/slideshow?key=nBvG7H&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2\" width=\"800\" height=\"600\" frameborder=\"no\" scrolling=\"no\"></iframe>','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(7,'Dasara 7th October 2016','Alankara Mahalakshmi Devi','<iframe src=\"https://devipuramalbums.smugmug.com/frame/slideshow?key=sk8zZm&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2\" width=\"800\" height=\"600\" frameborder=\"no\" scrolling=\"no\"></iframe>','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(8,'Dasara 8th October 2016','Alankara Mahasaraswati Devi','<iframe src=\"https://devipuramalbums.smugmug.com/frame/slideshow?key=b2pdQM&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2\" width=\"800\" height=\"600\" frameborder=\"no\" scrolling=\"no\"></iframe>','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(9,'Dasara 9th October 2016','Alankara Durga Devi','<iframe src=\"https://devipuramalbums.smugmug.com/frame/slideshow?key=mGXFsp&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2\" width=\"800\" height=\"600\" frameborder=\"no\" scrolling=\"no\"></iframe>','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(10,'Dasara 10th October 2016','Alankara Mahishasuramardini','<iframe src=\"https://devipuramalbums.smugmug.com/frame/slideshow?key=qgLfNZ&autoStart=1&captions=1&navigation=1&playButton=1&speed=3&transition=fade&transitionSpeed=2\" width=\"800\" height=\"600\" frameborder=\"no\" scrolling=\"no\"></iframe>','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(11,'Dasara 11th October 2016','Alankara Vijaya Durga Devi','<iframe src=\"https://devipuramalbums.smugmug.com/frame/slideshow?key=mTbMpg&autoStart=1&captions=0&navigation=0&playButton=0&speed=3&transition=fade&transitionSpeed=2\" width=\"800\" height=\"600\" frameborder=\"no\" scrolling=\"no\"></iframe>','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg'),(12,'Margasira Masam 2016 Celebrations','Margasira Masam 2016 Celebrations','<iframe src=\"https://devipuramalbums.smugmug.com/frame/slideshow?key=5fmBgw&autoStart=1&captions=1&navigation=1&playButton=1&randomize=1&speed=3&transition=fade&transitionSpeed=2\" width=\"800\" height=\"600\" frameborder=\"no\" scrolling=\"no\"></iframe>','https://c3.staticflickr.com/8/7460/27593517402_8818574cdf_k.jpg');
 /*!40000 ALTER TABLE `photoalbums` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `replys`
+--
+
+DROP TABLE IF EXISTS `replys`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `replys` (
+  `ReplyID` int(11) NOT NULL AUTO_INCREMENT,
+  `UserID` int(11) DEFAULT NULL,
+  `VisitorFormID` int(11) DEFAULT NULL,
+  `ReplyMessage` varchar(500) DEFAULT NULL,
+  `ReplyDate` datetime DEFAULT NULL,
+  `ApproveStatus` char(1) DEFAULT NULL,
+  PRIMARY KEY (`ReplyID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `replys`
+--
+
+LOCK TABLES `replys` WRITE;
+/*!40000 ALTER TABLE `replys` DISABLE KEYS */;
+INSERT INTO `replys` VALUES (2,2,62,'you are approved','2017-09-28 00:00:00','1'),(3,2,67,'your form is not approved','2017-09-28 00:00:00','0'),(4,2,68,'not selected','2017-09-29 00:00:00','0');
+/*!40000 ALTER TABLE `replys` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ritualcategories`
+--
+
+DROP TABLE IF EXISTS `ritualcategories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ritualcategories` (
+  `RitualCategoryID` int(11) NOT NULL AUTO_INCREMENT,
+  `RitualCategory` varchar(100) NOT NULL,
+  PRIMARY KEY (`RitualCategoryID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ritualcategories`
+--
+
+LOCK TABLES `ritualcategories` WRITE;
+/*!40000 ALTER TABLE `ritualcategories` DISABLE KEYS */;
+INSERT INTO `ritualcategories` VALUES (1,'Homas'),(2,'Archana'),(3,'Abhishekam'),(4,'Empowerment Rituals');
+/*!40000 ALTER TABLE `ritualcategories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rituals`
+--
+
+DROP TABLE IF EXISTS `rituals`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rituals` (
+  `RitualID` int(11) NOT NULL AUTO_INCREMENT,
+  `RitualName` varchar(100) NOT NULL,
+  `When` varchar(45) NOT NULL,
+  `RitualCategoryID` int(11) NOT NULL,
+  PRIMARY KEY (`RitualID`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rituals`
+--
+
+LOCK TABLES `rituals` WRITE;
+/*!40000 ALTER TABLE `rituals` DISABLE KEYS */;
+INSERT INTO `rituals` VALUES (1,'Ayush Homam','On any day',1),(2,'Ganapthi Rudra, Chandi, Shyama, Varahi, Lalitha, Dasha Maha Vidya Homas','On Sundays of every month',1),(3,'Ganapthi Rudra, Chandi, Shyama, Varahi, Lalitha, Dasha Maha Vidya Homas','On any other day',1),(4,'Pratyangira','On any day',1),(5,'Kumkuma Puja','On any day',2),(6,'Khadgamala','On any day',2),(7,'Lalitha Sahasranamam','On any day',2),(8,'Moola Virat- Sri Sahasrakshi Devi','Amavasya and Pournami',3),(9,'Ashta maatruka','Any day',3),(10,'Kalavahana','Any day at Kamakhya Guru peetham',4),(11,'Siri Jyothi','Any day at Devipuram or any other location',4);
+/*!40000 ALTER TABLE `rituals` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -419,7 +528,7 @@ CREATE TABLE `srimahameruanswers` (
   `SMMQuestionID` int(11) NOT NULL,
   `VisitorFormID` int(11) NOT NULL,
   PRIMARY KEY (`SMMAnswerID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -428,7 +537,7 @@ CREATE TABLE `srimahameruanswers` (
 
 LOCK TABLES `srimahameruanswers` WRITE;
 /*!40000 ALTER TABLE `srimahameruanswers` DISABLE KEYS */;
-INSERT INTO `srimahameruanswers` VALUES (1,'NAME & Gotram~1|11~2|Male~3|Name of Spouse~4|Son/of. or Dtr/of. or Wife/of~5|Nationality~6|E Mail ID~7|Mobile Ph~8|Address for Communication / Dispatch of Merus~9|EDUCATION~10|PROFESSION~11|How did you come to know about DEVIPURAM and the ~12|Did you try elsewhere to buy / procure them and what is the ~13|Have you taken Deeksha / Guru Mantra from anybody~14|If \'NOT\' we suggest you take it from Devipuram, for effective ~15|Brief of your proficiency into Spirituality / Sadhana~16|You are welcome to pay a visit to Devipuram, to take \'Diksha\' ~17|Brass2~18|~19|2017-31-08~20',1,35),(2,'NAME & Gotram~1|11~2|Male~3|Name of Spouse~4|Son/of. or Dtr/of. or Wife/of~5|Nationality~6|E Mail ID~7|Mobile Ph~8|Address for Communication / Dispatch of Merus~9|EDUCATION~10|PROFESSION~11|How did you come to know about DEVIPURAM and the ~12|Did you try elsewhere to buy / procure them and what is the ~13|Have you taken Deeksha / Guru Mantra from anybody~14|If \'NOT\' we suggest you take it from Devipuram, for effectiv~15|Brief of your proficiency into Spirituality / Sadhana / ~16|You are welcome to pay a visit to Devipuram, to take \'Diksha\' ~17|Brass1~18|~19|2017-09-01~20',1,36),(3,'NAME & Gotram~1|11~2|Female~3|Name of Spouse~4|Son/of. or Dtr/of. or Wife/of~5|Nationality~6|E Mail ID~7|Mobile Ph~8|Address for Communication / Dispatch of Merus~9|EDUCATION~10|PROFESSION~11|How did you come to know about DEVIPURAM and the ~12|Did you try elsewhere to buy / procure them and what is the ~13|Have you taken Deeksha / Guru Mantra from anybody? If ~14|If \'NOT\' we suggest you take it from Devipuram, for effective ~15|Brief of your proficiency into Spirituality / Sadhana / ~16|You are welcome to pay a visit to Devipuram, to take \'Diksha\' ~17|Brass1~18|true~19|2017-09-01~20',1,37),(4,'NAME & Gotram~1|11~2|Male~3|Name of Spouse~4|Son/of. or Dtr/of. or Wife/of~5|Nationality~6|E Mail ID~7|Mobile Ph~8|Address for Communication / Dispatch of Merus~9|EDUCATION~10|PROFESSION: Student/ In service/ self employed/ Business/ ~11|How did you come to know about DEVIPURAM and the ~12|Did you try elsewhere to buy / procure them and what is the ~13|Have you taken Deeksha / Guru Mantra from anybody? If ~14|If \'NOT\' we suggest you take it from Devipuram, for effective results from the MERUs. (You may add \"GURU DAKSHINA \" ~15|Brief of your proficiency into Spirituality / Sadhana / ~16|You are welcome to pay a visit to Devipuram, to take \'Diksha\' ~17|Brass1~18|~19|2017-09-01~20',1,38),(5,'NAME~1|22~2|Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|Brass1~18|true~19|NAME~20',1,44);
+INSERT INTO `srimahameruanswers` VALUES (1,'NAME & Gotram~1|11~2|Male~3|Name of Spouse~4|Son/of. or Dtr/of. or Wife/of~5|Nationality~6|E Mail ID~7|Mobile Ph~8|Address for Communication / Dispatch of Merus~9|EDUCATION~10|PROFESSION~11|How did you come to know about DEVIPURAM and the ~12|Did you try elsewhere to buy / procure them and what is the ~13|Have you taken Deeksha / Guru Mantra from anybody~14|If \'NOT\' we suggest you take it from Devipuram, for effective ~15|Brief of your proficiency into Spirituality / Sadhana~16|You are welcome to pay a visit to Devipuram, to take \'Diksha\' ~17|Brass2~18|~19|2017-31-08~20',1,35),(2,'NAME & Gotram~1|11~2|Male~3|Name of Spouse~4|Son/of. or Dtr/of. or Wife/of~5|Nationality~6|E Mail ID~7|Mobile Ph~8|Address for Communication / Dispatch of Merus~9|EDUCATION~10|PROFESSION~11|How did you come to know about DEVIPURAM and the ~12|Did you try elsewhere to buy / procure them and what is the ~13|Have you taken Deeksha / Guru Mantra from anybody~14|If \'NOT\' we suggest you take it from Devipuram, for effectiv~15|Brief of your proficiency into Spirituality / Sadhana / ~16|You are welcome to pay a visit to Devipuram, to take \'Diksha\' ~17|Brass1~18|~19|2017-09-01~20',1,36),(3,'NAME & Gotram~1|11~2|Female~3|Name of Spouse~4|Son/of. or Dtr/of. or Wife/of~5|Nationality~6|E Mail ID~7|Mobile Ph~8|Address for Communication / Dispatch of Merus~9|EDUCATION~10|PROFESSION~11|How did you come to know about DEVIPURAM and the ~12|Did you try elsewhere to buy / procure them and what is the ~13|Have you taken Deeksha / Guru Mantra from anybody? If ~14|If \'NOT\' we suggest you take it from Devipuram, for effective ~15|Brief of your proficiency into Spirituality / Sadhana / ~16|You are welcome to pay a visit to Devipuram, to take \'Diksha\' ~17|Brass1~18|true~19|2017-09-01~20',1,37),(4,'NAME & Gotram~1|11~2|Male~3|Name of Spouse~4|Son/of. or Dtr/of. or Wife/of~5|Nationality~6|E Mail ID~7|Mobile Ph~8|Address for Communication / Dispatch of Merus~9|EDUCATION~10|PROFESSION: Student/ In service/ self employed/ Business/ ~11|How did you come to know about DEVIPURAM and the ~12|Did you try elsewhere to buy / procure them and what is the ~13|Have you taken Deeksha / Guru Mantra from anybody? If ~14|If \'NOT\' we suggest you take it from Devipuram, for effective results from the MERUs. (You may add \"GURU DAKSHINA \" ~15|Brief of your proficiency into Spirituality / Sadhana / ~16|You are welcome to pay a visit to Devipuram, to take \'Diksha\' ~17|Brass1~18|~19|2017-09-01~20',1,38),(5,'NAME~1|22~2|Male~3|NAME~4|NAME~5|NAME~6|NAME~7|NAME~8|NAME~9|NAME~10|NAME~11|NAME~12|NAME~13|NAME~14|NAME~15|NAME~16|NAME~17|Brass1~18|true~19|NAME~20',1,44),(7,'NAME & Gotram~1|11~2|Male~3|Name of Spouse~4|Son/of. or Dtr/of. or Wife/of~5|Nationality~6|E Mail ID~7|Mobile Ph~8|Address for Communication / Dispatch of Merus~9|EDUCATION~10|PROFESSION~11|How did you come to know about DEVIPURAM and the ~12|Did you try elsewhere to buy / procure them and what is the ~13|Have you taken Deeksha / Guru Mantra from anybody~14|If \'NOT\' we suggest you take it from Devipuram~15|Brief of your proficiency into Spirituality / Sadhana~16|You are welcome to pay a visit to Devipuram, to take \'Diksha\' ~17|Brass1~18|true~19|2017-22-09~20',0,68);
 /*!40000 ALTER TABLE `srimahameruanswers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -471,7 +580,7 @@ CREATE TABLE `srividyacourses` (
   `CourseDescription` varchar(800) NOT NULL,
   `CourseImageUrl` varchar(100) NOT NULL,
   PRIMARY KEY (`CourseID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -512,29 +621,29 @@ LOCK TABLES `subevents` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `svcanswer`
+-- Table structure for table `svcanswers`
 --
 
-DROP TABLE IF EXISTS `svcanswer`;
+DROP TABLE IF EXISTS `svcanswers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `svcanswer` (
+CREATE TABLE `svcanswers` (
   `SVCAnswerID` int(11) NOT NULL AUTO_INCREMENT,
   `SVCAnswer` varchar(5000) NOT NULL,
   `SVCQuestionID` int(11) NOT NULL,
   `VisitorFormID` int(11) NOT NULL,
   PRIMARY KEY (`SVCAnswerID`)
-) ENGINE=InnoDB AUTO_INCREMENT=256 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=258 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `svcanswer`
+-- Dumping data for table `svcanswers`
 --
 
-LOCK TABLES `svcanswer` WRITE;
-/*!40000 ALTER TABLE `svcanswer` DISABLE KEYS */;
-INSERT INTO `svcanswer` VALUES (212,'NAME',1,9),(213,'44',2,9),(214,'1',3,9),(215,'Son/of',4,9),(216,'Place',5,9),(217,'Nationality',6,9),(218,'2',7,9),(219,'E Mail ID:',8,9),(220,'Mobile Ph',9,9),(221,'EDUCATION:',10,9),(222,'Expertise:',11,9),(223,'1',12,9),(224,'Health: As we do not have any medical assistance here you may have to inform us if any special attention is required.',13,9),(225,'How did you come to know about DEVIPURAM and the Courses?',14,9),(226,'Have you taken Deeksha from anybody? If ‘YES’ from Whom?',15,9),(227,'Preference of language to learn the course. English / Telugu / Hindi / others',16,9),(228,'Want to be considered for SVC - Advanced Course (in future) at Devipuram.',17,9),(229,'At present your proficiency into Spirituality / Sadhana / Upasana?',18,9),(230,'Please mention your aim and objective in learning the course/s.',19,9),(231,'Willing to make some voluntary contribution to improve facilities at Devipuram?',20,9),(232,'2017-01-27 17:11:56',21,9),(233,'NAME:',1,16),(234,'54',2,16),(235,'1',3,16),(236,'Son/of',4,16),(237,'Place',5,16),(238,'Nationality:',6,16),(239,'1',7,16),(240,'E Mail ID:',8,16),(241,'Mobile Ph:',9,16),(242,'EDUCATION:',10,16),(243,'Expertise:',11,16),(244,'1',12,16),(245,'Health: As we do not have any medical assistance here you may have to inform us if any special attention is required.',13,16),(246,'How did you come to know about DEVIPURAM and the Courses?',14,16),(247,'Have you taken Deeksha from anybody? If ‘YES’ from Whom?',15,16),(248,'Preference of language to learn the course. English / Telugu / Hindi / others',16,16),(249,'Want to be considered for SVC - Advanced Course (in future) at Devipuram.',17,16),(250,'At present your proficiency into Spirituality / Sadhana / Upasana?',18,16),(251,'Please mention your aim and objective in learning the course/s.',19,16),(252,'Willing to make some voluntary contribution to improve facilities at Devipuram?',20,16),(253,'2017-01-28 10:37:13',21,16),(255,'NAME~1|11~2|Male~3|Son/of. or Dtr/of. or Wife/of~4|Place & Country~5|Nationality:~6|Marital Status: ~7|E Mail ID~8|Mobile Ph~9|EDUCATION~10|Expertise~11|PROFESSION:~12|Health:~13|How did you come to know about DEVIPURAM and the ~14|Have you taken Deeksha from anybody? If \'YES\' from ~15|Preference of language to ~16|Want to be considered for ~17|At present your proficiency ~18|Please mention your aim ~19|Willing to make some ~20',1,50);
-/*!40000 ALTER TABLE `svcanswer` ENABLE KEYS */;
+LOCK TABLES `svcanswers` WRITE;
+/*!40000 ALTER TABLE `svcanswers` DISABLE KEYS */;
+INSERT INTO `svcanswers` VALUES (212,'NAME',1,9),(213,'44',2,9),(214,'1',3,9),(215,'Son/of',4,9),(216,'Place',5,9),(217,'Nationality',6,9),(218,'2',7,9),(219,'E Mail ID:',8,9),(220,'Mobile Ph',9,9),(221,'EDUCATION:',10,9),(222,'Expertise:',11,9),(223,'1',12,9),(224,'Health: As we do not have any medical assistance here you may have to inform us if any special attention is required.',13,9),(225,'How did you come to know about DEVIPURAM and the Courses?',14,9),(226,'Have you taken Deeksha from anybody? If ‘YES’ from Whom?',15,9),(227,'Preference of language to learn the course. English / Telugu / Hindi / others',16,9),(228,'Want to be considered for SVC - Advanced Course (in future) at Devipuram.',17,9),(229,'At present your proficiency into Spirituality / Sadhana / Upasana?',18,9),(230,'Please mention your aim and objective in learning the course/s.',19,9),(231,'Willing to make some voluntary contribution to improve facilities at Devipuram?',20,9),(232,'2017-01-27 17:11:56',21,9),(233,'NAME:',1,16),(234,'54',2,16),(235,'1',3,16),(236,'Son/of',4,16),(237,'Place',5,16),(238,'Nationality:',6,16),(239,'1',7,16),(240,'E Mail ID:',8,16),(241,'Mobile Ph:',9,16),(242,'EDUCATION:',10,16),(243,'Expertise:',11,16),(244,'1',12,16),(245,'Health: As we do not have any medical assistance here you may have to inform us if any special attention is required.',13,16),(246,'How did you come to know about DEVIPURAM and the Courses?',14,16),(247,'Have you taken Deeksha from anybody? If ‘YES’ from Whom?',15,16),(248,'Preference of language to learn the course. English / Telugu / Hindi / others',16,16),(249,'Want to be considered for SVC - Advanced Course (in future) at Devipuram.',17,16),(250,'At present your proficiency into Spirituality / Sadhana / Upasana?',18,16),(251,'Please mention your aim and objective in learning the course/s.',19,16),(252,'Willing to make some voluntary contribution to improve facilities at Devipuram?',20,16),(253,'2017-01-28 10:37:13',21,16),(255,'NAME~1|11~2|Male~3|Son/of. or Dtr/of. or Wife/of~4|Place & Country~5|Nationality:~6|Marital Status: ~7|E Mail ID~8|Mobile Ph~9|EDUCATION~10|Expertise~11|PROFESSION:~12|Health:~13|How did you come to know about DEVIPURAM and the ~14|Have you taken Deeksha from anybody? If \'YES\' from ~15|Preference of language to ~16|Want to be considered for ~17|At present your proficiency ~18|Please mention your aim ~19|Willing to make some ~20',1,50),(257,'NAME~1|11~2|Male~3|Son/of. or Dtr/of. or Wife/of~4|Place & Country~5|Nationality~6|Marital Status~7|E Mail ID~8|Mobile Ph~9|EDUCATION~10|Expertise~11|PROFESSION~12|Health~13|How did you come to know ~14|Have you taken Deeksha from~15|Preference of language to learn the course~16|Want to be considered for SVC - Advanced Course~17|At present your proficiency into Spirituality / Sadhana~18|Please mention your aim and objective~19|Willing to make some voluntary contribution~20',0,66);
+/*!40000 ALTER TABLE `svcanswers` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -575,13 +684,15 @@ CREATE TABLE `users` (
   `name` varchar(500) NOT NULL,
   `LastName` varchar(500) DEFAULT NULL,
   `password` varchar(300) NOT NULL,
-  `Address` varchar(4000) DEFAULT NULL,
+  `Address` varchar(1000) DEFAULT NULL,
   `Mobile` varchar(45) DEFAULT NULL,
   `RegisteredDate` datetime DEFAULT NULL,
   `active` char(1) DEFAULT NULL,
   `remember_token` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `City` varchar(100) DEFAULT NULL,
+  `Country` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -590,7 +701,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,1,'admin@gmail.com','admin','admin','$2y$10$W5R8BNnTBGQmkCGz471GXumpDxGiyP6nY.Zdr8BR7IFVS4ABzTZne',NULL,NULL,NULL,NULL,NULL),(2,2,'user@gmail.com','user','user','$2y$10$W5R8BNnTBGQmkCGz471GXumpDxGiyP6nY.Zdr8BR7IFVS4ABzTZne',NULL,NULL,NULL,NULL,NULL),(3,3,'learner@gmail.com','Learner','Learner','7c4a8d09ca3762af61e59520943dc26494f8941b',NULL,NULL,NULL,NULL,NULL),(4,2,'last@gmail.com','FirstName','LastName','7c4a8d09ca3762af61e59520943dc26494f8941b','Address','Address','2017-01-21 14:23:28',NULL,NULL),(5,2,'glakshmi494@gmail.com','FirstName2','LastName2','7c4a8d09ca3762af61e59520943dc26494f8941b','Address','7894561234','2017-01-24 11:48:37','N',NULL),(19,2,'user1@gmail.com','user1',NULL,'7c4a8d09ca3762af61e59520943dc26494f8941b',NULL,NULL,NULL,NULL,NULL),(28,2,'user2@gmail.com','user',NULL,'$2y$10$W5R8BNnTBGQmkCGz471GXumpDxGiyP6nY.Zdr8BR7IFVS4ABzTZne',NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `users` VALUES (1,1,'admin@gmail.com','admin','admin','$2y$10$W5R8BNnTBGQmkCGz471GXumpDxGiyP6nY.Zdr8BR7IFVS4ABzTZne',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,2,'user@gmail.com','user','user','$2y$10$MwtTmYt3dkceRAOCdL195eoxEWGn/5jc0q4lGExbS39tOd63emnky','address1,\nline2','1234567899',NULL,NULL,NULL,'city1','country1'),(3,3,'learner@gmail.com','Learner','Learner','7c4a8d09ca3762af61e59520943dc26494f8941b',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,2,'last@gmail.com','FirstName','LastName','7c4a8d09ca3762af61e59520943dc26494f8941b','Address','Address','2017-01-21 14:23:28',NULL,NULL,NULL,NULL),(5,2,'glakshmi494@gmail.com','FirstName2','LastName2','7c4a8d09ca3762af61e59520943dc26494f8941b','Address','7894561234','2017-01-24 11:48:37','N',NULL,NULL,NULL),(19,2,'user1@gmail.com','user1',NULL,'7c4a8d09ca3762af61e59520943dc26494f8941b',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(28,2,'user2@gmail.com','user',NULL,'$2y$10$W5R8BNnTBGQmkCGz471GXumpDxGiyP6nY.Zdr8BR7IFVS4ABzTZne','Address1','789456123',NULL,NULL,NULL,'City1','Country1'),(30,2,'user3@gmail.com','user3',NULL,'$2y$10$eeTcnmjtAbb5ZZ6K5e/kR.xW39KVlbtN1LO/ofX8gmwETO8.uvfMi',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -657,7 +768,7 @@ CREATE TABLE `videolists` (
   `VideoEmbedcode` varchar(500) NOT NULL,
   `VideoCategoryId` int(11) NOT NULL,
   PRIMARY KEY (`VideoId`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -666,7 +777,7 @@ CREATE TABLE `videolists` (
 
 LOCK TABLES `videolists` WRITE;
 /*!40000 ALTER TABLE `videolists` DISABLE KEYS */;
-INSERT INTO `videolists` VALUES (1,'Guruji -Sri Amritananda Natha Saraswati of Devipuram talks about Sri Vidya!','Guruji? He is a scientist, a perfectionist of the first order, a walking encyclopedia, an authority on Srividya and Tantra and, above all, a brahma nishta, carrying those who take refuge at his feet to that great source, the Sarva Yoni. With numerous loving disciples all over the world, Guruji and his wife, Srimati Annapurnamba (lovingly known as Guruji Amma) have dedicated their lives to the service of the people. They have established the Sri Vidya Trust for this purpose.','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','https://www.youtube.com/embed/z-ni9eJnKVU?controls=0',1),(2,'Guruji - Sri Amritananda talks about, your body is a Temple, Rituals, and its purpose!','Sri Amritananda Natha Saraswati (GuruJi) and one of his illuminating talks given at the Rochester Petam USA in 1996. Who is Guruji? He is a scientist, a perfectionist of the first order, a walking encyclopedia, an authority on Srividya and Tantra and, above all, a brahma nishta, carrying those who take refuge at his feet to that great source, the Sarva Yoni','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','https://www.youtube.com/embed/sF1HYyWxHCc?controls=0',1),(3,'Guruji - Sri Amritananda talks about, Going backwards in Time and Time travel.','Guruji? He is a scientist, a perfectionist of the first order, a walking encyclopedia, an authority on Srividya and Tantra and, above all, a brahma nishta, carrying those who take refuge at his feet to that great source, the Sarva Yoni. With numerous loving disciples all over the world, Guruji and his wife, Srimati Annapurnamba (lovingly known as Guruji Amma) have dedicated their lives to the service of the people. They have established the Sri Vidya Trust for this purpose.','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','https://www.youtube.com/embed/3gy-tpybJ_o?controls=0',1),(4,'Desamahavidya and Sri Vidya','Guru Sri Amritananda Natha of Devipuram answering the question about Desamahavidya in Sri Vidya. ','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','https://www.youtube.com/embed/ESW6K1DZr6I?controls=0',1),(5,'Quantum physics, Tantra and Free Will','Dr. N. Prahalada Sastry, Ph.D., also known as Guru Sri Amritananda Natha Saraswati, talking about quantum phisics, tantra and human free will.','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','https://www.youtube.com/embed/H9_gQm1TFGs?controls=0',1),(6,'When work with chakras is finished, greed and granthas...','Guruji Sri Amritananda answering questions about what happening when we finish work with particular chakra, greed and granthas.','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','https://www.youtube.com/embed/_W2lvQVABOw?controls=0',1),(7,'Our will and how to create our reality','Guru Sri Amritananda of Devipuram talking about our will and how to create our reality. ','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','https://www.youtube.com/embed/yyjUrfWXnhg?controls=0',1),(8,'Guruji being interviewed by Julianna Reynolds','Interview with Guruji Amritananda by Juliana at devipuram.\nQuestions are re-framed as text for better understanding of Questions and Answers.','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','https://www.youtube.com/embed/FzWQuRxZyJo',2),(9,'Guruji being interviewed by Anamika Bandopadhyay','Guruji\'s interview by his desciple','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','https://www.youtube.com/embed/0z5afBxC_ms',2),(10,'VideoTitle','VideoDescription',NULL,'VideoEmbedcode',1);
+INSERT INTO `videolists` VALUES (1,'Guruji -Sri Amritananda Natha Saraswati of Devipuram talks about Sri Vidya!','Guruji? He is a scientist, a perfectionist of the first order, a walking encyclopedia, an authority on Srividya and Tantra and, above all, a brahma nishta, carrying those who take refuge at his feet to that great source, the Sarva Yoni. With numerous loving disciples all over the world, Guruji and his wife, Srimati Annapurnamba (lovingly known as Guruji Amma) have dedicated their lives to the service of the people. They have established the Sri Vidya Trust for this purpose.','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','<iframe width=\"450\" height=\"338\" src=\"https://www.youtube.com/embed/z-ni9eJnKVU?controls=0\" frameborder=\"0\" allowfullscreen></iframe>',1),(2,'Guruji - Sri Amritananda talks about, your body is a Temple, Rituals, and its purpose!','Sri Amritananda Natha Saraswati (GuruJi) and one of his illuminating talks given at the Rochester Petam USA in 1996. Who is Guruji? He is a scientist, a perfectionist of the first order, a walking encyclopedia, an authority on Srividya and Tantra and, above all, a brahma nishta, carrying those who take refuge at his feet to that great source, the Sarva Yoni','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','<iframe width=\"450\" height=\"338\" src=\"https://www.youtube.com/embed/sF1HYyWxHCc?controls=0\" frameborder=\"0\" allowfullscreen></iframe>',1),(3,'Guruji - Sri Amritananda talks about, Going backwards in Time and Time travel.','Guruji? He is a scientist, a perfectionist of the first order, a walking encyclopedia, an authority on Srividya and Tantra and, above all, a brahma nishta, carrying those who take refuge at his feet to that great source, the Sarva Yoni. With numerous loving disciples all over the world, Guruji and his wife, Srimati Annapurnamba (lovingly known as Guruji Amma) have dedicated their lives to the service of the people. They have established the Sri Vidya Trust for this purpose.','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','<iframe width=\"450\" height=\"338\" src=\"https://www.youtube.com/embed/3gy-tpybJ_o?controls=0\" frameborder=\"0\" allowfullscreen></iframe>',1),(4,'Desamahavidya and Sri Vidya','Guru Sri Amritananda Natha of Devipuram answering the question about Desamahavidya in Sri Vidya. ','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','<iframe width=\"450\" height=\"253\" src=\"https://www.youtube.com/embed/ESW6K1DZr6I?controls=0\" frameborder=\"0\" allowfullscreen></iframe>',1),(5,'Quantum physics, Tantra and Free Will','Dr. N. Prahalada Sastry, Ph.D., also known as Guru Sri Amritananda Natha Saraswati, talking about quantum phisics, tantra and human free will.','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','<iframe width=\"450\" height=\"253\" src=\"https://www.youtube.com/embed/H9_gQm1TFGs?controls=0\" frameborder=\"0\" allowfullscreen></iframe>',1),(6,'When work with chakras is finished, greed and granthas...','Guruji Sri Amritananda answering questions about what happening when we finish work with particular chakra, greed and granthas.','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','<iframe width=\"450\" height=\"253\" src=\"https://www.youtube.com/embed/_W2lvQVABOw?controls=0\" frameborder=\"0\" allowfullscreen></iframe>',1),(7,'Our will and how to create our reality','Guru Sri Amritananda of Devipuram talking about our will and how to create our reality. ','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','<iframe width=\"450\" height=\"253\" src=\"https://www.youtube.com/embed/yyjUrfWXnhg?controls=0\" frameborder=\"0\" allowfullscreen></iframe>',1),(8,'Guruji being interviewed by Julianna Reynolds','Interview with Guruji Amritananda by Juliana at devipuram.\nQuestions are re-framed as text for better understanding of Questions and Answers.','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','<iframe width=\"450\" height=\"253\" src=\"https://www.youtube.com/embed/FzWQuRxZyJo\" frameborder=\"0\" allowfullscreen></iframe>',2),(9,'Guruji being interviewed by Anamika Bandopadhyay','Guruji\'s interview by his desciple','https://farm5.staticflickr.com/4404/36440405583_baea7ac8e3_m.jpg','<iframe width=\"450\" height=\"253\" src=\"https://www.youtube.com/embed/0z5afBxC_ms\" frameborder=\"0\" allowfullscreen></iframe>',2);
 /*!40000 ALTER TABLE `videolists` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -707,7 +818,7 @@ CREATE TABLE `visitors` (
   `FormTypeID` int(11) NOT NULL,
   `Date` date NOT NULL,
   PRIMARY KEY (`VisitorFormID`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -716,7 +827,7 @@ CREATE TABLE `visitors` (
 
 LOCK TABLES `visitors` WRITE;
 /*!40000 ALTER TABLE `visitors` DISABLE KEYS */;
-INSERT INTO `visitors` VALUES (5,5,1,'2017-01-27'),(8,5,2,'2017-01-27'),(9,5,3,'2017-01-27'),(10,4,1,'2017-01-27'),(11,4,1,'2017-01-27'),(12,4,3,'2017-01-27'),(14,5,1,'2017-01-28'),(15,5,2,'2017-01-28'),(16,5,3,'2017-01-28'),(17,1,1,'2017-08-29'),(32,1,1,'2017-08-31'),(34,1,2,'2017-08-31'),(35,1,4,'2017-08-31'),(36,1,4,'2017-09-01'),(37,1,4,'2017-09-01'),(38,1,4,'2017-09-01'),(39,1,1,'2017-09-01'),(40,1,1,'2017-09-01'),(41,2,1,'2017-09-01'),(42,2,1,'2017-09-01'),(43,2,2,'2017-09-01'),(44,2,4,'2017-09-01'),(45,2,1,'2017-09-02'),(46,2,2,'2017-09-02'),(47,2,1,'2017-09-02'),(48,2,2,'2017-09-02'),(50,2,3,'2017-09-06');
+INSERT INTO `visitors` VALUES (5,5,1,'2017-01-27'),(8,5,2,'2017-01-27'),(9,5,3,'2017-01-27'),(10,4,1,'2017-01-27'),(11,4,1,'2017-01-27'),(12,4,3,'2017-01-27'),(14,5,1,'2017-01-28'),(15,5,2,'2017-01-28'),(16,5,3,'2017-01-28'),(17,1,1,'2017-08-29'),(32,1,1,'2017-08-31'),(34,1,2,'2017-08-31'),(35,1,4,'2017-08-31'),(36,1,4,'2017-09-01'),(37,1,4,'2017-09-01'),(38,1,4,'2017-09-01'),(39,1,1,'2017-09-01'),(40,1,1,'2017-09-01'),(61,2,1,'2017-09-21'),(62,2,1,'2017-09-22'),(66,2,3,'2017-09-22'),(67,2,2,'2017-09-22'),(68,2,4,'2017-09-22');
 /*!40000 ALTER TABLE `visitors` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -737,4 +848,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-20 18:05:27
+-- Dump completed on 2017-09-30 14:23:43

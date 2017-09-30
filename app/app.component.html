@@ -72,7 +72,7 @@
                             <a [routerLink]="['/courses']">Couses</a>
                         </li>   
                         <li routerLinkActive="active" *ngIf="authService.isUser()">
-                            <a [routerLink]="['/courseslist','user']">MyRequests</a>
+                            <a [routerLink]="['/courseslist','user']">My Requests</a>
                         </li>   
                         <li routerLinkActive="active" *ngIf="authService.isUser()">
                             <a [routerLink]="['/user','myprofile']">My Profile</a>
@@ -80,7 +80,18 @@
                         <li routerLinkActive="active" *ngIf="authService.isAdmin()">
                             <a [routerLink]="['/courseslist']">CoursesList</a>
                         </li>
-
+                        <li routerLinkActive="active" *ngIf="!authService.isAdmin()">
+                            <a [routerLink]="['/ritual','list']">Rituals</a>
+                        </li>  
+                        <li routerLinkActive="active" *ngIf="authService.isAdmin()">
+                            <a [routerLink]="['/ritual','insert']">Publish Rituals</a>
+                        </li>
+                        <li routerLinkActive="active" *ngIf="authService.isAdmin()">
+                            <a [routerLink]="['/ritual','listbydate']">Booked Rituals</a>
+                        </li>
+                        <li routerLinkActive="active" *ngIf="authService.isUser()">
+                            <a [routerLink]="['/ritual','myrequests']">MyRituals Requests</a>
+                        </li>  
                         <li routerLinkActive="active">
                             <a [routerLink]="['/products']">Cart</a>
                         </li>                       

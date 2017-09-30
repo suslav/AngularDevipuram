@@ -29,7 +29,7 @@ export class UserCoursesListComponent implements OnInit {
                 }
                 else {
                     this.visitors = null;
-                    return this.errorMessage = "There are no Registrations on the selected date";
+                    return this.errorMessage = "There are no Requested Courses";
                 }
 
             },

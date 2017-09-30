@@ -3,33 +3,63 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-//import { ReplysComponent } from './replys.component'; 
-//import { ReplyService } from './reply.service'; 
+import { RitualComponent } from './rituals.component'; 
+import { BookRitualComponent } from './bookritual.component'; 
+import { MyBookRitualComponent } from './mybookritual.component'; 
+import { RitualsInsertComponent } from './ritualsinsert.component'; 
+import { RitualsListComponent } from './ritualslist.component'; 
+import { RitualsDisplayComponent } from './ritualsdisplay.component'; 
+import { RitualsService } from './rituals.service'; 
 import { AuthGuard } from '../_guards/index';
-
+import { MyDatePickerModule } from 'mydatepicker';
   
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
+        MyDatePickerModule,
         RouterModule.forChild([
           {
-              path: 'reply',             
+              path: 'ritual',             
               children: [                                                 
                   {
-                   //   path: ':vid/:uid', component: ReplysComponent, canActivate: [AuthGuard]
-                  }                  
+                      path: 'list', component: RitualComponent
+                      //, canActivate: [AuthGuard]
+                  },
+                  {
+                      path: 'bookritual/:id', component: BookRitualComponent, canActivate: [AuthGuard]
+                  },
+                  {
+                      path: 'myrequests', component: MyBookRitualComponent, canActivate: [AuthGuard]
+                  } 
+                  ,
+                  {
+                      path: 'insert', component: RitualsInsertComponent, canActivate: [AuthGuard]
+                  } 
+                  ,
+                  {
+                      path: 'listbydate', component: RitualsListComponent, canActivate: [AuthGuard]
+                  } 
+                  ,
+                  {
+                      path: 'display/:rid', component: RitualsDisplayComponent, canActivate: [AuthGuard]
+                  } 
               ]
           },
          
       ])
     ], 
   declarations: [
-    //  ReplysComponent     
+      RitualComponent   
+      , BookRitualComponent
+      , MyBookRitualComponent
+      , RitualsInsertComponent
+      , RitualsListComponent
+      , RitualsDisplayComponent
   ],
   providers: [
-     // ReplyService
+      RitualsService
   ]
 })
 export class RitualsModule {}
